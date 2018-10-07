@@ -1,5 +1,8 @@
+<style scoped lang="scss">
+</style>
+
 <template>
-  <div>
+  <div class="nav">
     <p>トップページ</p>
   </div>
 </template>

@@ -18,4 +18,14 @@ npm run build
 npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## vue.jsでポートフォリオ
+
+実装したいこと
+
+- firebaseでログイン機能
+- DBはfirestore
+- hostsはfirebase
+- 画像管理はfirebaseのcloud storage
+- googleアナリティクスでどこまでスクロールしたかを取得。firebaseに連携
+- deploy機能　github -> gcp source repository -> cloud build -> firebase hostingへのdeploy
+- jsのエラー通知はslackで受け取る

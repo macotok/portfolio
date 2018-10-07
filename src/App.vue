@@ -5,6 +5,7 @@
 <template>
   <div id="app">
     <p>test</p>
+    <nav-link></nav-link>
     <router-view/>
   </div>
 </template>

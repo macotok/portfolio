@@ -3,22 +3,23 @@
  .router-link-active {
    text-decoration: none;
    pointer-events: none;
-   color: $key-color;
+   color: $white-color;
+   background-color: $key-color;
  }
   nav {
-    padding: 20px 0;
     ul {
       display: flex;
       justify-content: center;
+      background-color: $gray-color;
       li {
-        padding-right: 30px;
-        &:last-child {
-          padding-right: 0;
-        }
         a {
-          color: $link-color;
+          text-decoration: none;
+          display: block;
+          padding: 20px 40px;
+          background-color: $gray-color;
           &:hover {
-            text-decoration: none;
+            color: $white-color;
+            background-color: $key-color;
           }
         }
       }
@@ -30,7 +31,7 @@
   <nav>
     <ul>
       <li><router-link :to="{name: 'root'}" exact>Top</router-link></li>
-      <li><router-link :to="{name: 'list'}">List</router-link></li>
+      <li><router-link :to="{name: 'works'}">Works</router-link></li>
       <li><router-link :to="{name: 'skill'}">Skill</router-link></li>
       <li><router-link :to="{name: 'about'}">About</router-link></li>
       <li><router-link :to="{name: 'add'}">Add</router-link></li>

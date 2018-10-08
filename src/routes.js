@@ -1,6 +1,6 @@
 import Root from './page/Root';
 import Add from './page/Add';
-import List from './page/List';
+import Works from './page/Works';
 import Detail from './page/Detail';
 import Skill from './page/Skill';
 import About from './page/About';
@@ -21,9 +21,9 @@ export default {
       name: 'add',
     },
     {
-      path: '/list',
-      component: List,
-      name: 'list',
+      path: '/works',
+      component: Works,
+      name: 'works',
       children: [
         {
           path: ':id',

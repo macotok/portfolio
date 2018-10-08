@@ -1,3 +1,7 @@
+$key-color: #4B4D52;
+$link-color: #1C93FA;
+$white-color: #F6F9FF;
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -9,6 +13,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   border: 0;
   font-size: 100%;
   vertical-align: baseline;
+  color: $key-color;
   font-family: Meiryo, sans-serif;}
 
 /* HTML5 display-role reset for older browsers */

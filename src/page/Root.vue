@@ -2,7 +2,5 @@
 </style>
 
 <template>
-  <div class="nav">
-    <p>トップページ</p>
-  </div>
+  <p>トップページ</p>
 </template>

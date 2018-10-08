@@ -1,12 +1,13 @@
 <style scoped lang="scss">
+  @import "../assets/sass/styles.scss";
   header {
-    background: #333;
-    color: #fff;
+    background: $key-color;
     text-align: center;
     padding: 10px 0;
     h1 {
       letter-spacing: 5px;
       font-weight: normal;
+      color: $white-color;
     }
   }
 </style>

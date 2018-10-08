@@ -5,9 +5,9 @@
     padding: 20px 0;
     background-color: $white-color;
     h1 {
-      letter-spacing: 5px;
+      letter-spacing: 10px;
       font-weight: normal;
-      font-size: 120%;
+      font-size: 140%;
     }
   }
 </style>

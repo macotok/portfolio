@@ -15,7 +15,7 @@
         a {
           text-decoration: none;
           display: block;
-          padding: 20px 40px;
+          padding: 15px 30px;
           background-color: $gray-color;
           &:hover {
             color: $white-color;

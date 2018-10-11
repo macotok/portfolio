@@ -1,5 +1,7 @@
+const workList = require('./works.json');
+
 const state = {
-  works: require('./works.json'),
+  works: workList,
 };
 
 const util = {
@@ -10,16 +12,17 @@ const util = {
 };
 
 const mutations = {
-  addWork(state, newWork) {
-    newWork.id = state.works.reduce((id, work) => (id < work.id ? work.id : id), 0) + 1;
-    state.works.push(newWork);
+  addWork(data, newWork) {
+    const addWork = newWork;
+    addWork.id = data.works.reduce((id, work) => (id < work.id ? work.id : id), 0) + 1;
+    state.works.push(addWork);
   },
-  removeWork(state, id) {
-    const index = util.findIndex(state.works, id);
+  removeWork(data, id) {
+    const index = util.findIndex(data.works, id);
     state.works.splice(index, 1);
   },
-  updateWork(state, work) {
-    const index = util.findIndex(state.works, work.id);
+  updateWork(data, work) {
+    const index = util.findIndex(data.works, work.id);
     state.works.splice(index, 1, work);
   },
 };

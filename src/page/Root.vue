@@ -16,7 +16,6 @@
 import WorkList from '../components/WorkList';
 
 export default {
-  components: { WorkList },
   data() {
     return {
       privateState: {
@@ -28,9 +27,9 @@ export default {
     sharedState() {
       return this.$store.state;
     },
-    components: {
-      WorkList,
-    },
+  },
+  components: {
+    WorkList,
   },
 };
 </script>

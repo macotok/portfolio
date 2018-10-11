@@ -4,7 +4,7 @@
       <img :src="work.image_path" width="200" :alt="work.title" />
       <p>{{work.title}}</p>
       <ul>
-        <li v-for="tag in work.tags">
+        <li v-for="(tag, index) in work.tags" :key="index">
           {{tag}}
         </li>
       </ul>

@@ -3,7 +3,7 @@
     <div v-if="hasWork">
       <ul>
         <work-item
-          v-for="work in filteredWorks"
+          v-for="(work, index) in filteredWorks" :key="index"
           :work="work"
           @select="select"
         >

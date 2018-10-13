@@ -1,19 +1,54 @@
 <style scoped lang="scss">
-li {
-  width: 18%;
-  margin-right: 2.5%;
-  &:last-child {
-    margin-right: 0;
+  @import "../assets/sass/styles.scss";
+  .workList {
+    width: 18%;
+    margin: 0 2.5% 2.5% 0;
+    &:nth-child(5n) {
+      margin-right: 0;
+    }
+    a {
+      text-decoration: none;
+      display: block;
+      .image {
+        overflow: hidden;
+        img {
+          display: block;
+          transform: scale(1);
+          transition: .2s ease-in-out;
+        }
+      }
+      &:hover .image img {
+        transform: scale(1.05);
+      }
+      .title {
+        color: $key-color;
+        font-weight: bold;
+        margin: .5em 0;
+      }
+      .tagList {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          background-color: $sub-color;
+          padding: 5px 8px;
+          margin: 0 2.5% 2.5% 0;
+          font-size: 80%;
+          color: $white-color;
+          border-radius: $border-radius;
+        }
+      }
+    }
   }
-}
 </style>
 
 <template>
-  <li>
+  <li class="workList">
     <a :href="'/work/' + work.id">
-      <img :src="work.image_path" width="200" :alt="work.title" />
-      <p>{{work.title}}</p>
-      <ul>
+      <div class="image">
+        <img :src="work.image_path" width="200" :alt="work.title" />
+      </div>
+      <p class="title">{{work.title}}</p>
+      <ul class="tagList">
         <li v-for="(tag, index) in work.tags" :key="index">
           {{tag}}
         </li>

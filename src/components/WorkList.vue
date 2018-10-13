@@ -1,15 +1,17 @@
 <style scoped lang="scss" >
-.workList {
+.workBlock {
   padding: 2.5%;
+  width: 95%;
   ul {
     display: flex;
+    flex-wrap: wrap;
   }
 }
 </style>
 
 <template>
   <div>
-    <div v-if="hasWork" class="workList">
+    <div v-if="hasWork" class="workBlock">
       <ul>
         <work-item
           v-for="(work, index) in filteredWorks" :key="index"

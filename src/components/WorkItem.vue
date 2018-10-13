@@ -1,3 +1,13 @@
+<style scoped lang="scss">
+li {
+  width: 18%;
+  margin-right: 2.5%;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+</style>
+
 <template>
   <li>
     <a :href="'/work/' + work.id">

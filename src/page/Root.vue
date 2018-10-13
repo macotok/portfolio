@@ -19,7 +19,7 @@ export default {
   data() {
     return {
       privateState: {
-        count: 2,
+        count: 20,
       },
     };
   },

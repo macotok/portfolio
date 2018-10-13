@@ -1,7 +1,7 @@
-const workList = require('./works.json');
+import db from './stub';
 
 const state = {
-  works: workList,
+  works: db.works,
 };
 
 const util = {

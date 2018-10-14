@@ -10,9 +10,6 @@
 <template>
   <div>
     <div v-if="hasWork" class="workBlock">
-      <div class="m-title01">
-        <h2 class="m-title01-title">Works</h2>
-      </div>
       <ul>
         <work-item
           v-for="(work, index) in filteredWorks" :key="index"

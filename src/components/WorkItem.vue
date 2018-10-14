@@ -32,7 +32,7 @@
           background-color: $sub-color;
           padding: 5px 8px;
           margin: 0 2.5% 2.5% 0;
-          font-size: 80%;
+          font-size: .8rem;
           color: $white-color;
           border-radius: $border-radius;
         }

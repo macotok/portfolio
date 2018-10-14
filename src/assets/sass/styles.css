@@ -39,23 +39,4 @@ table {
 .l-container {
   padding: 2.5%; }
 
-.m-title01 {
-  position: relative;
-  margin-bottom: 2.5%; }
-  .m-title01:before {
-    content: "";
-    width: 3%;
-    position: absolute;
-    display: block;
-    height: 2px;
-    background: #4B4D52;
-    left: 0;
-    top: 50%;
-    margin: -1px 0 0 0; }
-  .m-title01-title {
-    background-color: #fff;
-    position: relative;
-    margin-left: 4%;
-    font-size: 110%; }
-
 /*# sourceMappingURL=styles.css.map */

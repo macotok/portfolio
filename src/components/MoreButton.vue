@@ -12,7 +12,7 @@
       padding: 10px 18px;
       text-align: center;
       border-radius: $border-radius;
-      font-size: 90%;
+      font-size: .9rem;
     }
   }
 </style>

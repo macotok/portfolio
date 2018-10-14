@@ -7,7 +7,7 @@
     h1 {
       letter-spacing: 10px;
       font-weight: normal;
-      font-size: 140%;
+      font-size: 1.4rem;
     }
   }
 </style>

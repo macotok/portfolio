@@ -5,21 +5,27 @@
   <div>
     <work-list
       :works="sharedState.works"
-      :count="privateState.count"
+      :count="privateState.worksCount"
     >
     </work-list>
-    <router-link :to="{name: 'works'}">もっと見る</router-link>
+    <more-button
+      linkTo="works"
+    >
+    </more-button>
+    <skill-top></skill-top>
   </div>
 </template>
 
 <script>
 import WorkList from '../components/WorkList';
+import SkillTop from '../components/SkillTop';
+import MoreButton from '../components/MoreButton';
 
 export default {
   data() {
     return {
       privateState: {
-        count: 20,
+        worksCount: 10,
       },
     };
   },
@@ -30,6 +36,8 @@ export default {
   },
   components: {
     WorkList,
+    MoreButton,
+    SkillTop,
   },
 };
 </script>

@@ -6,7 +6,9 @@
   <div id="app">
     <header-block></header-block>
     <nav-link></nav-link>
-    <router-view/>
+    <div  class="l-container">
+      <router-view/>
+    </div>
     <footer-block></footer-block>
   </div>
 </template>

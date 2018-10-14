@@ -14,7 +14,7 @@ for (let i = 0; i < worksLength; i += 1) {
     title: Vue.faker().name.title(),
     text: Vue.faker().lorem.words(),
     tags: [Vue.faker().lorem.word(), Vue.faker().lorem.word()],
-    image_path: Vue.faker().image.image(),
+    image_path: Vue.faker().image.avatar(),
     createdAt: Vue.faker().date.past(),
     updateAt: Vue.faker().date.future(),
   });

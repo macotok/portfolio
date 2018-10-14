@@ -13,6 +13,12 @@
       text-align: center;
       border-radius: $border-radius;
       font-size: .9rem;
+      transition: $transition;
+      border: 1px solid $link-color;
+      &:hover {
+        background-color: $white-color;
+        color: $link-color;
+      }
     }
   }
 </style>

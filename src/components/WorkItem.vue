@@ -14,11 +14,21 @@
         img {
           display: block;
           transform: scale(1);
-          transition: .2s ease-in-out;
+          transition: $transition;
         }
       }
-      &:hover .image img {
-        transform: scale(1.05);
+      &:hover {
+        .image {
+          img {
+            transform: scale(1.05);
+          }
+        }
+        .tagList {
+          li {
+            background-color: $white-color;
+            color: $sub-color;
+          }
+        }
       }
       .title {
         color: $key-color;
@@ -35,6 +45,8 @@
           font-size: .8rem;
           color: $white-color;
           border-radius: $border-radius;
+          transition: $transition;
+          border: 1px solid $sub-color;
         }
       }
     }

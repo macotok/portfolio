@@ -2,6 +2,7 @@ import db from './stub';
 
 const state = {
   works: db.works,
+  skill: db.skill,
 };
 
 const util = {

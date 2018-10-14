@@ -3,17 +3,28 @@ import VueFaker from 'vue-faker';
 
 Vue.use(VueFaker);
 
-const worksLength = 50;
 const db = {
   works: [],
+  skill: [],
 };
 
-for (let i = 0; i < worksLength; i += 1) {
+for (let i = 0; i < 50; i += 1) {
   db.works.push({
     id: i + 1,
     title: Vue.faker().name.title(),
     text: Vue.faker().lorem.words(),
     tags: [Vue.faker().lorem.word(), Vue.faker().lorem.word()],
+    image_path: Vue.faker().image.avatar(),
+    createdAt: Vue.faker().date.past(),
+    updateAt: Vue.faker().date.future(),
+  });
+}
+
+for (let i = 0; i < 20; i += 1) {
+  db.skill.push({
+    id: i + 1,
+    title: Vue.faker().name.title(),
+    text: Vue.faker().lorem.words(),
     image_path: Vue.faker().image.avatar(),
     createdAt: Vue.faker().date.past(),
     updateAt: Vue.faker().date.future(),

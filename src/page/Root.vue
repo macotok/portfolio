@@ -1,6 +1,3 @@
-<style scoped lang="scss">
-</style>
-
 <template>
   <div>
     <title-block title="Works"></title-block>
@@ -11,7 +8,7 @@
     </work-list>
     <more-button linkTo="works"></more-button>
     <title-block title="Skill"></title-block>
-    <skill-top></skill-top>
+    <skill-top :skill="sharedState.skill"></skill-top>
     <more-button linkTo="skill"></more-button>
   </div>
 </template>

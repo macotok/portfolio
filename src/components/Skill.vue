@@ -13,12 +13,17 @@
 </style>
 
 <template>
-  <div v-if="hasSkill" class="skillBlock">
-    <ul>
-      <li v-for="(skill, index) in this.skill" :key="index">
-        {{skill.title}}
-      </li>
-    </ul>
+  <div v-if="page === 'top'">
+    <div v-if="hasSkill" class="skillBlock">
+      <ul>
+        <li v-for="(skill, index) in this.skill" :key="index">
+          {{skill.title}}
+        </li>
+      </ul>
+    </div>
+    <div v-else>
+      表示するSkillがありません。
+    </div>
   </div>
 </template>
 
@@ -26,6 +31,7 @@
 export default {
   props: {
     skill: Array,
+    page: String,
   },
   computed: {
     hasSkill() {

@@ -8,16 +8,20 @@
     </work-list>
     <more-button linkTo="works"></more-button>
     <title-block title="Skill"></title-block>
-    <skill-top :skill="sharedState.skill"></skill-top>
+    <skill :skill="sharedState.skill" page="top"></skill>
     <more-button linkTo="skill"></more-button>
+    <title-block title="About"></title-block>
+    <About page="top"></About>
+    <more-button linkTo="about"></more-button>
   </div>
 </template>
 
 <script>
 import TitleBlock from '../components/TitleBlock';
 import WorkList from '../components/WorkList';
-import SkillTop from '../components/SkillTop';
+import Skill from '../components/Skill';
 import MoreButton from '../components/MoreButton';
+import About from '../components/About';
 
 export default {
   data() {
@@ -36,7 +40,8 @@ export default {
     TitleBlock,
     WorkList,
     MoreButton,
-    SkillTop,
+    Skill,
+    About,
   },
 };
 </script>

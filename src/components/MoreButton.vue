@@ -25,7 +25,7 @@
 
 <template>
   <div class="moreButton">
-    <router-link :to="{name: linkTo}">詳しく見る</router-link>
+    <router-link :to="{name: linkTo}">More</router-link>
   </div>
 </template>
 

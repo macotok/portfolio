@@ -3,7 +3,7 @@ import Add from './page/Add';
 import Works from './page/Works';
 import Detail from './page/Detail';
 import Skill from './page/Skill';
-import About from './page/About';
+import Profile from './page/Profile';
 import Login from './page/Login';
 import Editor from './components/Editor';
 
@@ -43,9 +43,9 @@ export default {
       name: 'skill',
     },
     {
-      path: 'about',
-      component: About,
-      name: 'about',
+      path: 'profile',
+      component: Profile,
+      name: 'profile',
     },
     {
       path: 'login',

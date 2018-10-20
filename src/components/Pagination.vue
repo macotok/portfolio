@@ -28,7 +28,7 @@
 <template>
   <paginate
     :page-count="paginationNumber"
-    :page-range="20"
+    :page-range="worksLength"
     :margin-pages="0"
     :prev-text=null
     :next-text=null
@@ -41,10 +41,16 @@
 <script>
 import Vue from 'vue';
 import Paginate from 'vuejs-paginate';
+import { WORKS_LIST_LENGTH } from '../defines';
 
 Vue.component('paginate', Paginate);
 
 export default {
+  data() {
+    return {
+      worksLength: WORKS_LIST_LENGTH,
+    };
+  },
   methods: {
     clickCallback(pageNum) {
       console.log(pageNum);
@@ -52,7 +58,7 @@ export default {
   },
   computed: {
     paginationNumber() {
-      return this.$store.state.works.length / 20;
+      return this.$store.state.works.length / WORKS_LIST_LENGTH;
     },
   },
 };

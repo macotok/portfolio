@@ -25,12 +25,13 @@ import Skill from '../components/Skill';
 import MoreButton from '../components/MoreButton';
 import Profile from '../components/Profile';
 import About from '../components/About';
+import { WORKS_LIST_TOP_LENGTH } from '../defines';
 
 export default {
   data() {
     return {
       privateState: {
-        worksCount: 10,
+        worksCount: WORKS_LIST_TOP_LENGTH,
       },
     };
   },

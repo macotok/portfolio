@@ -1,8 +1,10 @@
 import db from './stub';
+import { WORKS_START_NUMBER } from './defines';
 
 const state = {
   works: db.works,
   skill: db.skill,
+  worksPaginationNUmber: WORKS_START_NUMBER,
 };
 
 const util = {

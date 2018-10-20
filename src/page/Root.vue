@@ -3,6 +3,7 @@
     <title-block title="Works"></title-block>
     <work-list
       :works="sharedState.works"
+      :start="privateState.worksStart"
       :count="privateState.worksCount"
     >
     </work-list>
@@ -32,6 +33,7 @@ export default {
     return {
       privateState: {
         worksCount: WORKS_LIST_TOP_LENGTH,
+        worksStart: 0,
       },
     };
   },

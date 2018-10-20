@@ -49,11 +49,15 @@ export default {
   data() {
     return {
       worksLength: WORKS_LIST_LENGTH,
+      pageNumber: null,
     };
   },
   methods: {
     clickCallback(pageNum) {
-      console.log(pageNum);
+      this.pageNumber = pageNum;
+      this.$store.state.worksPaginationNUmber = pageNum;
+      document.querySelector('.page-item').classList.remove('active');
+      document.querySelectorAll('.page-item')[pageNum - 1].classList.add('active');
     },
   },
   computed: {

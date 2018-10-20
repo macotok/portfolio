@@ -31,6 +31,7 @@ import WorkItem from './WorkItem';
 export default {
   props: {
     works: Array,
+    start: Number,
     count: Number,
   },
   computed: {
@@ -40,7 +41,7 @@ export default {
     filteredWorks() {
       let works = this.works.concat();
       if (this.count) {
-        works = works.splice(0, this.count);
+        works = works.splice(this.start, this.count);
       }
       return works;
     },

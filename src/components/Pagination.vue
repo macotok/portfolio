@@ -27,6 +27,7 @@
 
 <template>
   <paginate
+    v-model="page"
     :page-count="paginationNumber"
     :page-range="worksLength"
     :margin-pages="0"
@@ -49,15 +50,13 @@ export default {
   data() {
     return {
       worksLength: WORKS_LIST_LENGTH,
-      pageNumber: null,
+      page: this.$store.state.worksPaginationNUmber,
     };
   },
   methods: {
     clickCallback(pageNum) {
-      this.pageNumber = pageNum;
+      this.page = pageNum;
       this.$store.state.worksPaginationNUmber = pageNum;
-      document.querySelector('.page-item').classList.remove('active');
-      document.querySelectorAll('.page-item')[pageNum - 1].classList.add('active');
     },
   },
   computed: {

@@ -24,7 +24,7 @@ for (let i = 0; i < 20; i += 1) {
   db.skill.push({
     id: i + 1,
     title: Vue.faker().name.title(),
-    text: Vue.faker().lorem.words(),
+    text: Vue.faker().lorem.sentences(),
     image_path: Vue.faker().image.avatar(),
     createdAt: Vue.faker().date.past(),
     updateAt: Vue.faker().date.future(),

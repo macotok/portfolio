@@ -10,6 +10,25 @@
       }
     }
   }
+  .skillList {
+    table {
+      border-left: solid 1px $gray-color;
+      border-top: solid 1px $gray-color;
+    }
+    th {
+      border-bottom: solid 1px $gray-color;
+      vertical-align: middle;
+      text-align: center;
+      padding: 10px;
+    }
+    td {
+      border-right: solid 1px $gray-color;
+      border-bottom: solid 1px $gray-color;
+      vertical-align: middle;
+      text-align: left;
+      padding: 10px;
+    }
+  }
 </style>
 
 <template>
@@ -27,8 +46,17 @@
       </div>
     </div>
     <div v-else-if="page === 'list'">
-      <div v-if="hasSkill">
-        test2
+      <div v-if="hasSkill" class="skillList">
+        <table>
+          <tr v-for="(skill, index) in this.skill" :key="index">
+            <th>
+              <img :src="skill.image_path" width="75" :alt="skill.title">
+            </th>
+            <td>
+              {{skill.text}}
+            </td>
+          </tr>
+        </table>
       </div>
       <div v-else>
         表示するSkillがありません。

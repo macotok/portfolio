@@ -12,18 +12,18 @@
   }
   .skillList {
     table {
-      border-left: solid 1px $gray-color;
-      border-top: solid 1px $gray-color;
+      border-left: solid 1px $white-color;
+      border-top: solid 1px $white-color;
     }
     th {
-      border-bottom: solid 1px $gray-color;
+      border-bottom: solid 1px $white-color;
       vertical-align: middle;
       text-align: center;
       padding: 10px;
     }
     td {
-      border-right: solid 1px $gray-color;
-      border-bottom: solid 1px $gray-color;
+      border-right: solid 1px $white-color;
+      border-bottom: solid 1px $white-color;
       vertical-align: middle;
       text-align: left;
       padding: 10px;

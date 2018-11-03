@@ -49,7 +49,19 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')],
+        query: {
+          'presets': [
+            ['env', {
+              'modules': false,
+              'targets': {
+                'browsers': ["> 1%", "last 2 versions", "not ie <= 8"]
+              }
+            }],
+            "stage-2"
+          ],
+          "plugins": ["transform-vue-jsx", "transform-runtime"]
+        }
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

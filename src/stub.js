@@ -12,7 +12,7 @@ for (let i = 0; i < 50; i += 1) {
   db.works.push({
     id: i + 1,
     title: Vue.faker().name.title(),
-    text: Vue.faker().lorem.words(),
+    text: Vue.faker().lorem.sentences(),
     tags: [Vue.faker().lorem.word(), Vue.faker().lorem.word()],
     image_path: Vue.faker().image.avatar(),
     createdAt: Vue.faker().date.past(),

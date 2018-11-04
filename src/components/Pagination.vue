@@ -57,6 +57,7 @@ export default {
     clickCallback(pageNum) {
       this.page = pageNum;
       this.$store.state.worksPaginationNUmber = pageNum;
+      window.scrollTo(0, 0);
     },
   },
   computed: {

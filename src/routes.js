@@ -53,4 +53,7 @@ export default {
       name: 'login',
     },
   ],
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  },
 };

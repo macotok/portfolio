@@ -5,7 +5,6 @@ import Detail from './page/Detail';
 import Skill from './page/Skill';
 import Profile from './page/Profile';
 import Login from './page/Login';
-import Editor from './components/Editor';
 
 export default {
   mode: 'history',
@@ -24,16 +23,9 @@ export default {
       path: '/works',
       component: Works,
       name: 'works',
-      children: [
-        {
-          path: ':id',
-          component: Editor,
-          name: 'edit',
-        },
-      ],
     },
     {
-      path: ':id',
+      path: '/works/:id',
       component: Detail,
       name: 'detail',
     },

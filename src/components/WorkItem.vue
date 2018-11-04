@@ -48,7 +48,7 @@
 
 <template>
   <li class="workList">
-    <a :href="'/work/' + work.id">
+    <a :href="'/works/' + work.id">
       <div class="image">
         <img :src="work.image_path" width="200" :alt="work.title" />
       </div>

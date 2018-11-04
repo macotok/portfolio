@@ -26,7 +26,7 @@ import Skill from '../components/Skill';
 import MoreButton from '../components/MoreButton';
 import Profile from '../components/Profile';
 import About from '../components/About';
-import { WORKS_LIST_TOP_LENGTH } from '../defines';
+import { WORKS_LIST_TOP_LENGTH, WORKS_START_NUMBER } from '../defines';
 
 export default {
   data() {
@@ -41,6 +41,9 @@ export default {
     sharedState() {
       return this.$store.state;
     },
+  },
+  created() {
+    this.$store.state.worksPaginationNUmber = WORKS_START_NUMBER;
   },
   components: {
     TitleBlock,

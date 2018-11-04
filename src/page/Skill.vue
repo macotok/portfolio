@@ -8,12 +8,16 @@
 <script>
 import TitleBlock from '../components/TitleBlock';
 import Skill from '../components/Skill';
+import { WORKS_START_NUMBER } from '../defines';
 
 export default {
   computed: {
     sharedState() {
       return this.$store.state;
     },
+  },
+  created() {
+    this.$store.state.worksPaginationNUmber = WORKS_START_NUMBER;
   },
   components: {
     TitleBlock,

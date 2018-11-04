@@ -14,19 +14,25 @@
     table {
       border-left: solid 1px $white-color;
       border-top: solid 1px $white-color;
-    }
-    th {
-      border-bottom: solid 1px $white-color;
-      vertical-align: middle;
-      text-align: center;
-      padding: 10px;
-    }
-    td {
-      border-right: solid 1px $white-color;
-      border-bottom: solid 1px $white-color;
-      vertical-align: middle;
-      text-align: left;
-      padding: 10px;
+      tr {
+        &:nth-child(even) th,
+        &:nth-child(even) td {
+          background-color: $white-color;
+        }
+        th {
+          border-bottom: solid 1px $white-color;
+          vertical-align: middle;
+          text-align: center;
+          padding: 10px;
+        }
+        td {
+          border-right: solid 1px $white-color;
+          border-bottom: solid 1px $white-color;
+          vertical-align: middle;
+          text-align: left;
+          padding: 10px;
+        }
+      }
     }
   }
 </style>

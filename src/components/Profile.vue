@@ -1,4 +1,5 @@
 <style scoped lang="scss">
+  @import "../assets/sass/styles.scss";
   .profileTopBlock {
     margin-bottom: 2.5%;
   }
@@ -7,7 +8,7 @@
     .photo {
       img {
         display: block;
-        border-radius: 5px;
+        border-radius: $border-radius;
       }
     }
     .name {

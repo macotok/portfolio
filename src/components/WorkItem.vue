@@ -15,6 +15,8 @@
           display: block;
           transform: scale(1);
           transition: $transition;
+          border-radius: $border-radius;
+          width: 100%;
         }
       }
       &:hover {

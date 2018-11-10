@@ -5,10 +5,10 @@
     align-items: center;
     margin-top: 2.5%;
   }
-  .page-item {
+  .pagination .page-item {
     margin-right: .5%;
   }
-  .page-item:last-child {
+  .pagination li:last-of-type {
     margin-right: 0;
   }
   .page-item a {

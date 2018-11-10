@@ -69,10 +69,5 @@ export default {
   props: {
     work: Object,
   },
-  methods: {
-    select(id) {
-      this.$emit('select', id);
-    },
-  },
 };
 </script>

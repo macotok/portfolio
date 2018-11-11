@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "firebase": "^5.5.8",
     "vue": "^2.5.2",
     "vue-faker": "^1.0.1",
     "vue-router": "^3.0.1",
@@ -30,6 +31,7 @@
     "chalk": "^2.0.1",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.0",
+    "dotenv-webpack": "^1.5.7",
     "eslint": "^4.15.0",
     "eslint-config-airbnb-base": "^11.3.0",
     "eslint-friendly-formatter": "^3.0.0",

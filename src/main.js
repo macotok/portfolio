@@ -13,12 +13,12 @@ const router = new VueRouter(routes);
 const store = new Vuex.Store(_store);
 
 const config = {
-  apiKey: process.env.API_KEY,
-  authDomain: process.env.AUTH_DOMAIN,
-  databaseURL: process.env.DATABASE_URL,
-  projectId: process.env.PROJECT_ID,
-  storageBucket: process.env.STORAGE_BUCKET,
-  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  apiKey: process.env.FIRE_BASE.API_KEY,
+  authDomain: process.env.FIRE_BASE.AUTH_DOMAIN,
+  databaseURL: process.env.FIRE_BASE.DATABASE_URL,
+  projectId: process.env.FIRE_BASE.PROJECT_ID,
+  storageBucket: process.env.FIRE_BASE.STORAGE_BUCKET,
+  messagingSenderId: process.env.FIRE_BASE.MESSAGING_SENDER_ID,
 };
 firebase.initializeApp(config);
 

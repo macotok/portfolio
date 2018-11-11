@@ -1,5 +1,8 @@
 import db from './stub';
+import database from './database';
 import { WORKS_START_NUMBER } from './defines';
+
+console.log(database);
 
 const state = {
   works: db.works,

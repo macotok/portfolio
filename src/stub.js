@@ -15,6 +15,7 @@ for (let i = 0; i < 50; i += 1) {
     text: Vue.faker().lorem.sentences(),
     tags: [Vue.faker().lorem.word(), Vue.faker().lorem.word()],
     image_path: Vue.faker().image.avatar(),
+    url: Vue.faker().image.avatar(),
     createdAt: Vue.faker().date.past(),
     updateAt: Vue.faker().date.future(),
   });

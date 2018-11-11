@@ -14,7 +14,17 @@
         display: flex;
         flex-wrap: wrap;
         li {
-          @include skill($margin: 0 10px 10px 0);
+          @include skill($margin: 0 .5rem .5rem 0);
+        }
+      }
+      .url {
+        text-align: right;
+        margin-bottom: .5rem;
+        a {
+          color: $link-color;
+          &:hover {
+            text-decoration: none;
+          }
         }
       }
     }
@@ -32,7 +42,8 @@
             {{tag}}
           </li>
         </ul>
-        <p>{{data.text}}</p>
+        <p class="url"><a :href="data.url" target="_blank">{{data.url}}</a></p>
+        <p class="text">{{data.text}}</p>
       </div>
     </div>
   </div>

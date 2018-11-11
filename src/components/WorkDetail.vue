@@ -42,7 +42,7 @@
             {{tag}}
           </li>
         </ul>
-        <p class="url"><a :href="data.url" target="_blank">{{data.url}}</a></p>
+        <p class="url"><a :href="data.url" target="_blank">作品ページへ</a></p>
         <p class="text">{{data.text}}</p>
       </div>
     </div>

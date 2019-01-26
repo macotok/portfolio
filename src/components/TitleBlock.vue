@@ -1,6 +1,6 @@
 <style scoped lang="scss">
   @import "../assets/sass/styles.scss";
-  .m-title01 {
+  .title {
     position: relative;
     margin-bottom: 2.5%;
     &:before {
@@ -14,7 +14,7 @@
       top: 50%;
       margin: -1px 0 0 0;
     }
-    &-title {
+    h2 {
       background-color: #fff;
       position: relative;
       margin-left: 4%;
@@ -24,8 +24,8 @@
 </style>
 
 <template>
-  <div class="m-title01">
-    <h2 class="m-title01-title">{{title}}</h2>
+  <div class="title">
+    <h2>{{title}}</h2>
   </div>
 </template>
 

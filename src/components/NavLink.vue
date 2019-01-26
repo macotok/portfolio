@@ -10,13 +10,13 @@
     ul {
       display: flex;
       justify-content: center;
-      background-color: $gray-color;
+      background-color: $gray-color-01;
       li {
         a {
           text-decoration: none;
           display: block;
           padding: 15px 30px;
-          background-color: $gray-color;
+          background-color: $gray-color-01;
           &:hover {
             color: $white-color;
             background-color: $key-color;

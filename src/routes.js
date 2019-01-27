@@ -1,5 +1,5 @@
 import Root from './page/Root';
-import Add from './page/Add';
+import WorkAdd from './page/WorkAdd';
 import Works from './page/Works';
 import Detail from './page/Detail';
 import Skill from './page/Skill';
@@ -15,9 +15,9 @@ export default {
       name: 'root',
     },
     {
-      path: '/add',
-      component: Add,
-      name: 'add',
+      path: '/work_add',
+      component: WorkAdd,
+      name: 'workAdd',
     },
     {
       path: '/works',

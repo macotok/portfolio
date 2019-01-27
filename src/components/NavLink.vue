@@ -34,7 +34,7 @@
       <li><router-link :to="{name: 'works'}">Works</router-link></li>
       <li><router-link :to="{name: 'skill'}">Skill</router-link></li>
       <li><router-link :to="{name: 'profile'}">Profile</router-link></li>
-      <li><router-link :to="{name: 'add'}">Add</router-link></li>
+      <li><router-link :to="{name: 'workAdd'}">Work Add</router-link></li>
       <li><router-link :to="{name: 'login'}">Login</router-link></li>
     </ul>
   </nav>

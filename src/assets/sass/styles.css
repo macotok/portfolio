@@ -39,4 +39,41 @@ table {
 .l-container {
   padding: 2.5%; }
 
+.m-table-01 {
+  border-left: solid 1px #F6F9FF;
+  border-top: solid 1px #F6F9FF; }
+  .m-table-01 tr:nth-child(even) th, .m-table-01 tr:nth-child(even) td {
+    background-color: #F6F9FF; }
+  .m-table-01 tr th {
+    border-bottom: solid 1px #F6F9FF;
+    vertical-align: middle;
+    text-align: center;
+    padding: 10px; }
+  .m-table-01 tr td {
+    border-right: solid 1px #F6F9FF;
+    border-bottom: solid 1px #F6F9FF;
+    vertical-align: middle;
+    text-align: left;
+    padding: 10px; }
+
+.m-button-01 {
+  margin-bottom: 2.5%;
+  display: flex;
+  justify-content: flex-end; }
+  .m-button-01-link {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #1C93FA;
+    color: #F6F9FF;
+    padding: 10px 25px;
+    text-align: center;
+    border-radius: 3px;
+    font-size: .9rem;
+    transition: 0.1s ease-in-out;
+    border: 1px solid #1C93FA; }
+    .m-button-01-link:hover {
+      background-color: #F6F9FF;
+      color: #1C93FA;
+      cursor: pointer; }
+
 /*# sourceMappingURL=styles.css.map */

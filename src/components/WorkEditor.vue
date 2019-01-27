@@ -36,7 +36,7 @@
           <label>ID</label>
         </th>
         <td>
-          <input v-model="work.id" disabled>
+          <input v-model="input.id" disabled>
         </td>
       </tr>
       <tr>
@@ -44,7 +44,7 @@
           <label>タイトル</label>
         </th>
         <td>
-          <input v-mode="work.title">
+          <input v-model="input.title">
         </td>
       </tr>
       <tr>
@@ -52,7 +52,7 @@
           <label>タグ</label>
         </th>
         <td>
-          <input v-model="work.tags" placeholder="カンマ区切りで指定">
+          <input v-model="input.tags" placeholder="カンマ区切りで指定">
         </td>
       </tr>
       <tr>
@@ -60,7 +60,7 @@
           <label>画像のpath</label>
         </th>
         <td>
-          <input v-model="work.image_path">
+          <input v-model="input.image_path">
         </td>
       </tr>
       <tr>
@@ -68,7 +68,7 @@
           <label>url</label>
         </th>
         <td>
-          <input v-model="work.url">
+          <input v-model="input.url">
         </td>
       </tr>
       <tr>
@@ -76,21 +76,24 @@
           <label>内容</label>
         </th>
         <td>
-          <textarea v-model="work.text" rows="10"></textarea>
+          <textarea v-model="input.text" rows="10"></textarea>
         </td>
       </tr>
     </table>
     <div class="m-button-01">
-      <button type="submit" class="m-button-01-link">追加</button>
+      <button @click="save" type="submit" class="m-button-01-link">追加</button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    work: Object,
+  },
   data() {
     return {
-      work: {
+      input: {
         title: '',
         text: '',
         tags: '',
@@ -98,6 +101,18 @@ export default {
         url: '',
       },
     };
+  },
+  computed: {
+    tagsList() {
+      const tags = this.input.tags;
+      return tags.trim() ? tags.replace(/\s+/g, '').split(',') : [];
+    },
+  },
+  methods: {
+    save() {
+      const data = Object.assign({}, this.input, { tags: this.tagsList });
+      this.$emit('add', data);
+    },
   },
 };
 </script>

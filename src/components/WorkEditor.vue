@@ -111,7 +111,7 @@ export default {
   methods: {
     save() {
       const data = Object.assign({}, this.input, { tags: this.tagsList });
-      this.$emit('add', data);
+      this.$emit('workAdd', data);
     },
   },
 };

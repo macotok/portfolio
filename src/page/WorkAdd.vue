@@ -11,7 +11,7 @@ import WorkEditor from '../components/WorkEditor';
 
 export default {
   methods: {
-    workAdd(data) {
+    add(data) {
       this.$store.commit('addWork', data);
       this.$router.push({ name: 'root' });
     },

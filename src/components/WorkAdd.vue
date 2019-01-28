@@ -31,20 +31,12 @@
 <template>
   <div class="workEditor">
     <table class="m-table-01">
-      <tr v-if="work">
-        <th>
-          <label>ID</label>
-        </th>
-        <td>
-          <input v-model="input.id" disabled>
-        </td>
-      </tr>
       <tr>
         <th>
           <label>タイトル</label>
         </th>
         <td>
-          <input v-model="input.title">
+          <input v-model="work.title">
         </td>
       </tr>
       <tr>
@@ -52,15 +44,16 @@
           <label>タグ</label>
         </th>
         <td>
-          <input v-model="input.tags" placeholder="カンマ区切りで指定">
+          <input v-model="work.tags" placeholder="カンマ区切りで指定">
         </td>
       </tr>
       <tr>
         <th>
-          <label>画像のpath</label>
+          <label>画像</label>
         </th>
         <td>
-          <input v-model="input.image_path">
+          <input type="file" @change="onFileChange">
+          <img v-show="work.image_path" :src="work.image_path">
         </td>
       </tr>
       <tr>
@@ -68,7 +61,7 @@
           <label>url</label>
         </th>
         <td>
-          <input v-model="input.url">
+          <input v-model="work.url">
         </td>
       </tr>
       <tr>
@@ -76,7 +69,7 @@
           <label>内容</label>
         </th>
         <td>
-          <textarea v-model="input.text" rows="10"></textarea>
+          <textarea v-model="work.text" rows="10"></textarea>
         </td>
       </tr>
     </table>
@@ -88,12 +81,9 @@
 
 <script>
 export default {
-  props: {
-    work: Object,
-  },
   data() {
     return {
-      input: {
+      work: {
         title: '',
         text: '',
         tags: '',
@@ -104,13 +94,24 @@ export default {
   },
   computed: {
     tagsList() {
-      const tags = this.input.tags;
+      const tags = this.work.tags;
       return tags.trim() ? tags.replace(/\s+/g, '').split(',') : [];
     },
   },
   methods: {
+    onFileChange(e) {
+      const files = e.target.files || e.dataTransfer.files;
+      this.createImage(files[0]);
+    },
+    createImage(file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        this.work.image_path = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    },
     save() {
-      const data = Object.assign({}, this.input, { tags: this.tagsList });
+      const data = Object.assign({}, this.work, { tags: this.tagsList });
       this.$emit('workAdd', data);
     },
   },

@@ -50,7 +50,7 @@
 
 <template>
   <li class="workList">
-    <a :href="'/works/' + work.id">
+    <router-link :to="'/works/' + work.id">
       <div class="image">
         <img :src="work.image_path" width="200" :alt="work.title" />
       </div>
@@ -60,7 +60,7 @@
           {{tag}}
         </li>
       </ul>
-    </a>
+    </router-link>
   </li>
 </template>
 

@@ -46,6 +46,7 @@
         <p class="text">{{data.text}}</p>
       </div>
     </div>
+    <button @click="edit">編集</button>
   </div>
 </template>
 
@@ -55,6 +56,11 @@ import TitleBlock from './TitleBlock';
 export default {
   props: {
     data: Object,
+  },
+  methods: {
+    edit() {
+      this.$router.push({ name: 'root' });
+    },
   },
   components: {
     TitleBlock,

@@ -1,13 +1,13 @@
 <template>
   <div>
     <title-block title="Work Add"></title-block>
-    <work-editor @workAdd="add"></work-editor>
+    <work-add @workAdd="add"></work-add>
   </div>
 </template>
 
 <script>
 import TitleBlock from '../components/TitleBlock';
-import WorkEditor from '../components/WorkEditor';
+import WorkAdd from '../components/WorkAdd';
 
 export default {
   methods: {
@@ -18,7 +18,7 @@ export default {
   },
   components: {
     TitleBlock,
-    WorkEditor,
+    WorkAdd,
   },
 };
 </script>

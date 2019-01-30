@@ -19,6 +19,24 @@
           &:disabled {
             border: none;
           }
+          &.fileInput {
+            border: none;
+            display: none;
+          }
+        }
+        .file {
+          color: $white-color;
+          background-color: $sub-color;
+          border-radius: $border-radius;
+          padding: $borderPadding;
+          display: inline-block;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .fileThumnail {
+          display: block;
+          margin-top: 10px;
         }
       }
     }
@@ -49,11 +67,14 @@
       </tr>
       <tr>
         <th>
-          <label>画像</label>
+          画像
         </th>
         <td>
-          <input type="file" @change="onFileChange">
-          <img v-show="work.image_path" :src="work.image_path">
+          <label class="file">
+            選択
+            <input class="fileInput" type="file" @change="onFileChange">
+          </label>
+          <img v-show="work.image_path" class="fileThumnail" :src="work.image_path" width="250">
           <p v-if="errorMessage">
             {{errorMessage}}
           </p>

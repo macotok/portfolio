@@ -54,6 +54,9 @@
         <td>
           <input type="file" @change="onFileChange">
           <img v-show="work.image_path" :src="work.image_path">
+          <p v-if="errorMessage">
+            {{errorMessage}}
+          </p>
         </td>
       </tr>
       <tr>
@@ -90,6 +93,7 @@ export default {
         image_path: '',
         url: '',
       },
+      errorMessage: false,
     };
   },
   computed: {
@@ -100,15 +104,20 @@ export default {
   },
   methods: {
     onFileChange(e) {
-      const files = e.target.files || e.dataTransfer.files;
-      this.createImage(files[0]);
+      this.createImage(e.target.files[0]);
     },
     createImage(file) {
       const reader = new FileReader();
       reader.onload = (e) => {
         this.work.image_path = e.target.result;
       };
-      reader.readAsDataURL(file);
+      reader.onerror = () => {
+        this.errorMessage = '読み込みに失敗しました';
+        reader.abort();
+      };
+      if (file) {
+        reader.readAsDataURL(file);
+      }
     },
     save() {
       const data = Object.assign({}, this.work, { tags: this.tagsList });

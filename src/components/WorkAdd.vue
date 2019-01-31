@@ -16,9 +16,6 @@
           border: 1px solid $gray-color-03;
           resize: none;
           box-sizing: border-box;
-          &:disabled {
-            border: none;
-          }
           &.fileInput {
             border: none;
             display: none;
@@ -51,15 +48,15 @@
     <table class="m-table-01">
       <tr>
         <th>
-          <label>タイトル</label>
+          タイトル
         </th>
         <td>
-          <input v-model="work.title">
+          <input-text :model=work.title></input-text>
         </td>
       </tr>
       <tr>
         <th>
-          <label>タグ</label>
+          タグ
         </th>
         <td>
           <input v-model="work.tags" placeholder="カンマ区切りで指定">
@@ -82,7 +79,7 @@
       </tr>
       <tr>
         <th>
-          <label>url</label>
+          url
         </th>
         <td>
           <input v-model="work.url">
@@ -90,7 +87,7 @@
       </tr>
       <tr>
         <th>
-          <label>内容</label>
+          内容
         </th>
         <td>
           <textarea v-model="work.text" rows="10"></textarea>
@@ -104,6 +101,8 @@
 </template>
 
 <script>
+import InputText from './form/InputText';
+
 export default {
   data() {
     return {
@@ -144,6 +143,9 @@ export default {
       const data = Object.assign({}, this.work, { tags: this.tagsList });
       this.$emit('workAdd', data);
     },
+  },
+  components: {
+    InputText,
   },
 };
 </script>

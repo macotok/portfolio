@@ -32,6 +32,7 @@ const mutations = {
     addWork.tags = state.addWork.tags;
     addWork.url = state.addWork.url;
     addWork.text = state.addWork.text;
+    addWork.image_path = state.addWork.image_path;
     state.works.push(addWork);
   },
   workTitle(data, value) {
@@ -42,6 +43,9 @@ const mutations = {
   },
   workUrl(data, value) {
     state.addWork.url = value;
+  },
+  workImage(data, value) {
+    state.addWork.image_path = value;
   },
   workText(data, value) {
     state.addWork.text = value;

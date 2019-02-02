@@ -7,34 +7,6 @@
         text-align: left;
         width: 15%;
       }
-      td {
-        input {
-          font-size: 110%;
-          width: 100%;
-          padding: 10px;
-          border: 1px solid $gray-color-03;
-          resize: none;
-          box-sizing: border-box;
-          &.fileInput {
-            border: none;
-            display: none;
-          }
-        }
-        .file {
-          color: $white-color;
-          background-color: $sub-color;
-          border-radius: $border-radius;
-          padding: $borderPadding;
-          display: inline-block;
-          &:hover {
-            cursor: pointer;
-          }
-        }
-        .fileThumnail {
-          display: block;
-          margin-top: 10px;
-        }
-      }
     }
     .m-button-01 {
       margin-top: 25px;
@@ -80,14 +52,15 @@
           画像
         </th>
         <td>
-          <label class="file">
-            選択
-            <input class="fileInput" type="file" @change="onFileChange">
-          </label>
-          <img v-show="work.image_path" class="fileThumnail" :src="work.image_path" width="250">
-          <p v-if="errorMessage">
-            {{errorMessage}}
-          </p>
+          <input-file
+            labelName="選択"
+            thumnailSize="250"
+            name="workImage"
+            :model="work.image_path"
+            eventName="workImage"
+            @workImage="image"
+          >
+          </input-file>
         </td>
       </tr>
       <tr>
@@ -131,6 +104,7 @@
 <script>
 import InputText from './form/InputText';
 import InputTextarea from './form/InputTextarea';
+import InputFile from './form/InputFile';
 
 export default {
   data() {
@@ -142,26 +116,9 @@ export default {
         image_path: '',
         url: '',
       },
-      errorMessage: false,
     };
   },
   methods: {
-    onFileChange(e) {
-      this.createImage(e.target.files[0]);
-    },
-    createImage(file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        this.work.image_path = e.target.result;
-      };
-      reader.onerror = () => {
-        this.errorMessage = '読み込みに失敗しました';
-        reader.abort();
-      };
-      if (file) {
-        reader.readAsDataURL(file);
-      }
-    },
     title(value) {
       this.$store.commit('workTitle', value);
     },
@@ -170,6 +127,9 @@ export default {
     },
     url(value) {
       this.$store.commit('workUrl', value);
+    },
+    image(value) {
+      this.$store.commit('workImage', value);
     },
     text(value) {
       this.$store.commit('workText', value);
@@ -182,6 +142,7 @@ export default {
   components: {
     InputText,
     InputTextarea,
+    InputFile,
   },
 };
 </script>

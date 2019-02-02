@@ -20,6 +20,16 @@ npm run build --report
 
 ## vue.jsでポートフォリオ
 
+Vue開発
+
+- VueClIを使用
+- VueRouterでRouting処理
+- Vuexで状態管理
+- Work/Skillの追加/更新/削除
+- formの各項目をcomponent化/valueをstoreで管理
+- fakerでstubデータ作成
+- ページネーション実装 
+
 実装したいこと
 
 - firebaseでログイン機能

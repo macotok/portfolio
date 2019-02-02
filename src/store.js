@@ -6,6 +6,13 @@ console.log(database);
 
 const state = {
   works: db.works,
+  addWork: {
+    title: '',
+    text: '',
+    tags: '',
+    image_path: '',
+    url: '',
+  },
   skill: db.skill,
   worksPaginationNUmber: WORKS_START_NUMBER,
 };
@@ -21,7 +28,11 @@ const mutations = {
   addWork(data, newWork) {
     const addWork = newWork;
     addWork.id = data.works.reduce((id, work) => (id < work.id ? work.id : id), 0) + 1;
+    addWork.title = state.addWork.title;
     state.works.push(addWork);
+  },
+  workTitle(data, value) {
+    state.addWork.title = value;
   },
   removeWork(data, id) {
     const index = util.findIndex(data.works, id);

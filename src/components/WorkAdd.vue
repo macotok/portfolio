@@ -51,7 +51,14 @@
           タイトル
         </th>
         <td>
-          <input-text :model=work.title></input-text>
+          <input-text
+            name="workTitle"
+            :model="work.title"
+            placeholder=""
+            eventName="workTitle"
+            @workTitle="title"
+          >
+          </input-text>
         </td>
       </tr>
       <tr>
@@ -138,6 +145,9 @@ export default {
       if (file) {
         reader.readAsDataURL(file);
       }
+    },
+    title(value) {
+      this.$store.commit('workTitle', value);
     },
     save() {
       const data = Object.assign({}, this.work, { tags: this.tagsList });

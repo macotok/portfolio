@@ -12,14 +12,28 @@
 
 <template>
   <div>
-    <input type="text" v-model=this.model value=this.model>
+    <input
+      type="text"
+      :name="name"
+      value="model"
+      :placeholder="placeholder"
+      @input="updateValue"
+    >
   </div>
 </template>
 
 <script>
 export default {
   props: {
+    name: String,
     model: String,
+    placeholder: String,
+    eventName: String,
+  },
+  methods: {
+    updateValue(e) {
+      this.$emit(this.eventName, e.target.value);
+    },
   },
 };
 </script>

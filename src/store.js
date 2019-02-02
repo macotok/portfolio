@@ -30,6 +30,8 @@ const mutations = {
     addWork.id = data.works.reduce((id, work) => (id < work.id ? work.id : id), 0) + 1;
     addWork.title = state.addWork.title;
     addWork.tags = state.addWork.tags;
+    addWork.url = state.addWork.url;
+    addWork.text = state.addWork.text;
     state.works.push(addWork);
   },
   workTitle(data, value) {
@@ -37,6 +39,12 @@ const mutations = {
   },
   workTags(data, value) {
     state.addWork.tags = value.trim() ? value.replace(/\s+/g, '').split(',') : [];
+  },
+  workUrl(data, value) {
+    state.addWork.url = value;
+  },
+  workText(data, value) {
+    state.addWork.text = value;
   },
   removeWork(data, id) {
     const index = util.findIndex(data.works, id);

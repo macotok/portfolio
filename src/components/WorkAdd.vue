@@ -8,8 +8,7 @@
         width: 15%;
       }
       td {
-        input,
-        textarea {
+        input {
           font-size: 110%;
           width: 100%;
           padding: 10px;
@@ -96,7 +95,14 @@
           url
         </th>
         <td>
-          <input v-model="work.url">
+          <input-text
+            name="workUrl"
+            :model="work.url"
+            placeholder=""
+            eventName="workUrl"
+            @workUrl="url"
+          >
+          </input-text>
         </td>
       </tr>
       <tr>
@@ -104,7 +110,15 @@
           内容
         </th>
         <td>
-          <textarea v-model="work.text" rows="10"></textarea>
+          <input-textarea
+            name="workText"
+            :model="work.text"
+            placeholder=""
+            eventName="workText"
+            rows="10"
+            @workText="text"
+          >
+          </input-textarea>
         </td>
       </tr>
     </table>
@@ -116,6 +130,7 @@
 
 <script>
 import InputText from './form/InputText';
+import InputTextarea from './form/InputTextarea';
 
 export default {
   data() {
@@ -153,6 +168,12 @@ export default {
     tags(value) {
       this.$store.commit('workTags', value);
     },
+    url(value) {
+      this.$store.commit('workUrl', value);
+    },
+    text(value) {
+      this.$store.commit('workText', value);
+    },
     save() {
       const data = Object.assign({}, this.work);
       this.$emit('workAdd', data);
@@ -160,6 +181,7 @@ export default {
   },
   components: {
     InputText,
+    InputTextarea,
   },
 };
 </script>

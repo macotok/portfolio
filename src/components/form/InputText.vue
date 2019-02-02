@@ -15,7 +15,7 @@
     <input
       type="text"
       :name="name"
-      value="model"
+      :value="model"
       :placeholder="placeholder"
       @input="updateValue"
     >

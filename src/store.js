@@ -29,10 +29,14 @@ const mutations = {
     const addWork = newWork;
     addWork.id = data.works.reduce((id, work) => (id < work.id ? work.id : id), 0) + 1;
     addWork.title = state.addWork.title;
+    addWork.tags = state.addWork.tags;
     state.works.push(addWork);
   },
   workTitle(data, value) {
     state.addWork.title = value;
+  },
+  workTags(data, value) {
+    state.addWork.tags = value.trim() ? value.replace(/\s+/g, '').split(',') : [];
   },
   removeWork(data, id) {
     const index = util.findIndex(data.works, id);

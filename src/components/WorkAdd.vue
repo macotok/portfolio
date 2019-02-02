@@ -66,7 +66,14 @@
           タグ
         </th>
         <td>
-          <input v-model="work.tags" placeholder="カンマ区切りで指定">
+          <input-text
+            name="workTags"
+            :model="work.tags"
+            placeholder="カンマ区切りで指定"
+            eventName="workTags"
+            @workTags="tags"
+          >
+          </input-text>
         </td>
       </tr>
       <tr>
@@ -123,12 +130,6 @@ export default {
       errorMessage: false,
     };
   },
-  computed: {
-    tagsList() {
-      const tags = this.work.tags;
-      return tags.trim() ? tags.replace(/\s+/g, '').split(',') : [];
-    },
-  },
   methods: {
     onFileChange(e) {
       this.createImage(e.target.files[0]);
@@ -149,8 +150,11 @@ export default {
     title(value) {
       this.$store.commit('workTitle', value);
     },
+    tags(value) {
+      this.$store.commit('workTags', value);
+    },
     save() {
-      const data = Object.assign({}, this.work, { tags: this.tagsList });
+      const data = Object.assign({}, this.work);
       this.$emit('workAdd', data);
     },
   },

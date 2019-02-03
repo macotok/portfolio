@@ -9,7 +9,7 @@
 </style>
 
 <template>
-  <div class="addWork">
+  <div>
     <table class="m-table-01">
       <tr>
         <th>
@@ -90,19 +90,19 @@
       </tr>
     </table>
     <submit-button
-      eventName="workAdd"
+      eventName="addWork"
       text="追加"
-      @workAdd="save"
+      @addWork="save"
     >
     </submit-button>
   </div>
 </template>
 
 <script>
-import InputText from './form/InputText';
-import InputTextarea from './form/InputTextarea';
-import InputFile from './form/InputFile';
-import SubmitButton from './button/SubmitButton';
+import InputText from '../form/InputText';
+import InputTextarea from '../form/InputTextarea';
+import InputFile from '../form/InputFile';
+import SubmitButton from '../button/SubmitButton';
 
 export default {
   data() {

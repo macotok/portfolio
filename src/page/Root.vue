@@ -8,9 +8,9 @@
     >
     </work-list>
     <more-button linkTo="works"></more-button>
-    <title-block title="Skill"></title-block>
+    <title-block title="Skills"></title-block>
     <skill :skill="sharedState.skill" page="top"></skill>
-    <more-button linkTo="skill"></more-button>
+    <more-button linkTo="skills"></more-button>
     <title-block title="Profile"></title-block>
     <Profile page="top"></Profile>
     <more-button linkTo="profile"></more-button>
@@ -21,8 +21,8 @@
 
 <script>
 import TitleBlock from '../components/TitleBlock';
-import WorkList from '../components/WorkList';
-import Skill from '../components/Skill';
+import WorkList from '../components/work/List';
+import Skill from '../components/skill/List';
 import MoreButton from '../components/button/MoreButton';
 import Profile from '../components/Profile';
 import About from '../components/About';

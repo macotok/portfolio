@@ -1,5 +1,5 @@
 <style scoped lang="scss">
-  @import "../assets/sass/styles.scss";
+  @import "../../assets/sass/styles";
   .workDetail {
     display: flex;
     .image {
@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import TitleBlock from './TitleBlock';
+import TitleBlock from '../TitleBlock';
 
 export default {
   props: {

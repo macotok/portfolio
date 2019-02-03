@@ -32,10 +32,10 @@
     <ul>
       <li><router-link :to="{name: 'root'}" exact>Top</router-link></li>
       <li><router-link :to="{name: 'works'}">Works</router-link></li>
-      <li><router-link :to="{name: 'skill'}">Skill</router-link></li>
+      <li><router-link :to="{name: 'skills'}">Skills</router-link></li>
       <li><router-link :to="{name: 'profile'}">Profile</router-link></li>
-      <li><router-link :to="{name: 'workAdd'}">Work Add</router-link></li>
-      <li><router-link :to="{name: 'skillAdd'}">Skill Add</router-link></li>
+      <li><router-link :to="{name: 'addWork'}">add Work</router-link></li>
+      <li><router-link :to="{name: 'addSkill'}">add Skill</router-link></li>
       <li><router-link :to="{name: 'login'}">Login</router-link></li>
     </ul>
   </nav>

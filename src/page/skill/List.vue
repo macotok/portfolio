@@ -6,9 +6,9 @@
 </template>
 
 <script>
-import TitleBlock from '../components/TitleBlock';
-import Skill from '../components/Skill';
-import { WORKS_START_NUMBER } from '../defines';
+import TitleBlock from '../../components/TitleBlock';
+import Skill from '../../components/skill/List';
+import { WORKS_START_NUMBER } from '../../defines';
 
 export default {
   computed: {

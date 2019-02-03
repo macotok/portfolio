@@ -1,5 +1,5 @@
 <style scoped lang="scss">
-  @import "../assets/sass/styles.scss";
+  @import "../../assets/sass/styles";
   .skillBlock {
     margin-bottom: 2.5%;
     ul {

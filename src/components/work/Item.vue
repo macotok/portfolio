@@ -1,5 +1,5 @@
 <style scoped lang="scss">
-  @import "../assets/sass/styles.scss";
+  @import "../../assets/sass/styles";
   .workList {
     width: 18%;
     margin: 0 2.5% 2.5% 0;
@@ -50,7 +50,7 @@
 
 <template>
   <li class="workList">
-    <router-link :to="'/works/' + work.id">
+    <router-link :to="'/work/' + work.id">
       <div class="image">
         <img :src="work.image_path" width="200" :alt="work.title" />
       </div>

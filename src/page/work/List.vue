@@ -12,10 +12,10 @@
 </template>
 
 <script>
-import TitleBlock from '../components/TitleBlock';
-import WorkList from '../components/WorkList';
-import Pagination from '../components/Pagination';
-import { WORKS_LIST_LENGTH } from '../defines';
+import TitleBlock from '../../components/TitleBlock';
+import WorkList from '../../components/work/List';
+import Pagination from '../../components/Pagination';
+import { WORKS_LIST_LENGTH } from '../../defines';
 
 export default {
   data() {

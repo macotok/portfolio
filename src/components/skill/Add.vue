@@ -60,19 +60,19 @@
       </tr>
     </table>
     <submit-button
-      eventName="skillAdd"
+      eventName="addSkill"
       text="追加"
-      @skillAdd="save"
+      @addSkill="save"
     >
     </submit-button>
   </div>
 </template>
 
 <script>
-import InputText from './form/InputText';
-import InputTextarea from './form/InputTextarea';
-import InputFile from './form/InputFile';
-import SubmitButton from './button/SubmitButton';
+import InputText from '../form/InputText';
+import InputTextarea from '../form/InputTextarea';
+import InputFile from '../form/InputFile';
+import SubmitButton from '../button/SubmitButton';
 
 export default {
   data() {

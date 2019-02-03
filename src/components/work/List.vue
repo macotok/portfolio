@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import WorkItem from './WorkItem';
+import WorkItem from './Item';
 
 export default {
   props: {

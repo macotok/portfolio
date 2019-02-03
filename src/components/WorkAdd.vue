@@ -1,17 +1,15 @@
 <style scoped lang="scss">
-  .workEditor {
-    table {
-      width: 100%;
-      th {
-        text-align: left;
-        width: 15%;
-      }
+  table {
+    width: 100%;
+    th {
+      text-align: left;
+      width: 15%;
     }
   }
 </style>
 
 <template>
-  <div class="workEditor">
+  <div class="addWork">
     <table class="m-table-01">
       <tr>
         <th>

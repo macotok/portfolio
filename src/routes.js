@@ -2,6 +2,7 @@ import Root from './page/Root';
 import WorkAdd from './page/WorkAdd';
 import Works from './page/Works';
 import Detail from './page/Detail';
+import SkillAdd from './page/SkillAdd';
 import Skill from './page/Skill';
 import Profile from './page/Profile';
 import Login from './page/Login';
@@ -28,6 +29,11 @@ export default {
       path: '/works/:id',
       component: Detail,
       name: 'detail',
+    },
+    {
+      path: '/skill_add',
+      component: SkillAdd,
+      name: 'skillAdd',
     },
     {
       path: 'skill',

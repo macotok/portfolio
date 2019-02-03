@@ -25,14 +25,9 @@ const util = {
 };
 
 const mutations = {
-  addWork(data, newWork) {
-    const addWork = newWork;
+  addWork(data, addData) {
+    const addWork = addData;
     addWork.id = data.works.reduce((id, work) => (id < work.id ? work.id : id), 0) + 1;
-    addWork.title = state.addWork.title;
-    addWork.tags = state.addWork.tags;
-    addWork.url = state.addWork.url;
-    addWork.text = state.addWork.text;
-    addWork.image_path = state.addWork.image_path;
     state.works.push(addWork);
   },
   workTitle(data, value) {

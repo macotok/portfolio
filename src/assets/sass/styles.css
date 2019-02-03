@@ -65,7 +65,7 @@ table {
     text-decoration: none;
     background-color: #1C93FA;
     color: #F6F9FF;
-    padding: $borderPadding;
+    padding: 10px 25px;
     text-align: center;
     border-radius: 3px;
     font-size: .9rem;

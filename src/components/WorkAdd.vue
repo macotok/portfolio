@@ -1,5 +1,4 @@
 <style scoped lang="scss">
-  @import "../assets/sass/styles.scss";
   .workEditor {
     table {
       width: 100%;
@@ -7,9 +6,6 @@
         text-align: left;
         width: 15%;
       }
-    }
-    .m-button-01 {
-      margin-top: 25px;
     }
   }
 </style>
@@ -95,9 +91,12 @@
         </td>
       </tr>
     </table>
-    <div class="m-button-01">
-      <button @click="save" type="submit" class="m-button-01-link">追加</button>
-    </div>
+    <submit-button
+      eventName="workAdd"
+      text="追加"
+      @workAdd="save"
+    >
+    </submit-button>
   </div>
 </template>
 
@@ -105,6 +104,7 @@
 import InputText from './form/InputText';
 import InputTextarea from './form/InputTextarea';
 import InputFile from './form/InputFile';
+import SubmitButton from './button/SubmitButton';
 
 export default {
   data() {
@@ -135,14 +135,15 @@ export default {
       this.$store.commit('workText', value);
     },
     save() {
-      const data = Object.assign({}, this.work);
-      this.$emit('workAdd', data);
+      this.$store.commit('addWork', this.$store.state.addWork);
+      this.$router.push({ name: 'root' });
     },
   },
   components: {
     InputText,
     InputTextarea,
     InputFile,
+    SubmitButton,
   },
 };
 </script>

@@ -26,9 +26,9 @@ Vue開発
 - VueRouterでRouting処理
 - Vuexで状態管理
 - Work/Skillの追加/更新/削除
-- formの各項目をcomponent化/valueをstoreで管理
+- formの各項目/ボタンをcomponent化/valueをstoreで管理
 - fakerでstubデータ作成
-- ページネーション実装 
+- ページネーション実装
 
 実装したいこと
 

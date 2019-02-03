@@ -1,6 +1,12 @@
 <template>
-  <div>
-    このPortfolioはView側は「Vue.js」。Server側は「Firebase」で作りました。<br>
-    ※レスポンシブ対応はしてません。
-  </div>
+  <dl class="m-list-01">
+    <dt>Vue開発</dt>
+    <dd>VueClIを使用</dd>
+    <dd>VueRouterでRouting処理</dd>
+    <dd>Vuexで状態管理</dd>
+    <dd>Work/Skillの追加/更新/削除</dd>
+    <dd>formの各項目/ボタンをcomponent化/valueをstoreで管理</dd>
+    <dd>fakerでstubデータ作成</dd>
+    <dd>ページネーション実装</dd>
+  </dl>
 </template>

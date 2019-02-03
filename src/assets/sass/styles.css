@@ -76,4 +76,13 @@ table {
       color: #1C93FA;
       cursor: pointer; }
 
+.m-list-01 dt {
+  margin: 0 0 1em; }
+  .m-list-01 dt:not(:first-child) {
+    margin-top: 2em; }
+.m-list-01 dd {
+  margin: 0 0 .5em 2em;
+  display: list-item;
+  list-style-type: circle; }
+
 /*# sourceMappingURL=styles.css.map */

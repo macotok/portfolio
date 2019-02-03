@@ -24,19 +24,6 @@
     }
     .profileList {
       margin-left: 50px;
-      dl {
-        dt {
-          margin: 0 0 1em;
-          &:not(:first-child) {
-            margin-top: 2em;
-          }
-        }
-        dd {
-          margin: 0 0 .5em 2em;
-          display: list-item;
-          list-style-type: circle;
-        }
-      }
     }
   }
 </style>
@@ -61,7 +48,7 @@
           </ul>
         </div>
         <div class="profileList">
-          <dl>
+          <dl class="m-list-01">
             <dt>今まででしてきたこと</dt>
             <dd>外注先とのディレクション業務</dd>
             <dd>チームリーダー</dd>

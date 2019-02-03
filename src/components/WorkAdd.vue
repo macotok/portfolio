@@ -135,7 +135,7 @@ export default {
       this.$store.commit('workText', value);
     },
     save() {
-      this.$store.commit('addWork', this.$store.state.addWork);
+      this.$store.commit('addWork', this.$store.state.addNewWork);
       this.$router.push({ name: 'root' });
     },
   },

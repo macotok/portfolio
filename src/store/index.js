@@ -1,19 +1,14 @@
-import db from './stub';
-import database from './database';
-import { WORKS_START_NUMBER } from './defines';
+import db from '../stub';
+import database from '../database';
+import { WORKS_START_NUMBER } from '../defines';
+import addNewWork from './addNewWork';
 
 console.log(database);
 
 const state = {
   works: db.works,
-  addWork: {
-    title: '',
-    text: '',
-    tags: '',
-    image_path: '',
-    url: '',
-  },
   skill: db.skill,
+  addNewWork,
   worksPaginationNUmber: WORKS_START_NUMBER,
 };
 
@@ -31,19 +26,19 @@ const mutations = {
     state.works.push(addWork);
   },
   workTitle(data, value) {
-    state.addWork.title = value;
+    state.addNewWork.title = value;
   },
   workTags(data, value) {
-    state.addWork.tags = value.trim() ? value.replace(/\s+/g, '').split(',') : [];
+    state.addNewWork.tags = value.trim() ? value.replace(/\s+/g, '').split(',') : [];
   },
   workUrl(data, value) {
-    state.addWork.url = value;
+    state.addNewWork.url = value;
   },
   workImage(data, value) {
-    state.addWork.image_path = value;
+    state.addNewWork.image_path = value;
   },
   workText(data, value) {
-    state.addWork.text = value;
+    state.addNewWork.text = value;
   },
   removeWork(data, id) {
     const index = util.findIndex(data.works, id);

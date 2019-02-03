@@ -25,20 +25,8 @@ const mutations = {
     addWork.id = data.works.reduce((id, work) => (id < work.id ? work.id : id), 0) + 1;
     state.works.push(addWork);
   },
-  workTitle(data, value) {
-    state.addNewWork.title = value;
-  },
-  workTags(data, value) {
-    state.addNewWork.tags = value.trim() ? value.replace(/\s+/g, '').split(',') : [];
-  },
-  workUrl(data, value) {
-    state.addNewWork.url = value;
-  },
-  workImage(data, value) {
-    state.addNewWork.image_path = value;
-  },
-  workText(data, value) {
-    state.addNewWork.text = value;
+  addWorkData(data, value) {
+    state.addNewWork = Object.assign({}, { ...data.addNewWork }, { ...value });
   },
   removeWork(data, id) {
     const index = util.findIndex(data.works, id);

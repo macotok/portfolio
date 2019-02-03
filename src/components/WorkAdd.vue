@@ -120,19 +120,25 @@ export default {
   },
   methods: {
     title(value) {
-      this.$store.commit('workTitle', value);
+      const data = { title: value };
+      this.$store.commit('addWorkData', data);
     },
     tags(value) {
-      this.$store.commit('workTags', value);
+      const tagList = value.trim() ? value.replace(/\s+/g, '').split(',') : [];
+      const data = { tags: tagList };
+      this.$store.commit('addWorkData', data);
     },
     url(value) {
-      this.$store.commit('workUrl', value);
+      const data = { url: value };
+      this.$store.commit('addWorkData', data);
     },
     image(value) {
-      this.$store.commit('workImage', value);
+      const data = { image_path: value };
+      this.$store.commit('addWorkData', data);
     },
     text(value) {
-      this.$store.commit('workText', value);
+      const data = { text: value };
+      this.$store.commit('addWorkData', data);
     },
     save() {
       this.$store.commit('addWork', this.$store.state.addNewWork);

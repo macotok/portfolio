@@ -27,6 +27,7 @@ Vue開発
 - Vuexで状態管理
 - Work/Skillの追加/更新/削除
 - formの各項目/ボタンをcomponent化/valueをstoreで管理
+- formの未入力バリデーションチェック
 - fakerでstubデータ作成
 - ページネーション実装
 

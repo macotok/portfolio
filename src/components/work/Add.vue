@@ -116,6 +116,13 @@ export default {
       },
     };
   },
+  computed: {
+    validationCheck() {
+      const inputData = this.$store.state.addNewWork;
+      const inputList = Object.keys(inputData).map(key => ({ [key]: inputData[key] }));
+      return inputList;
+    },
+  },
   methods: {
     title(value) {
       const data = { title: value };
@@ -139,6 +146,7 @@ export default {
       this.$store.commit('addWorkData', data);
     },
     save() {
+      this.validationCheck();
       this.$store.commit('addWork', this.$store.state.addNewWork);
       this.$router.push({ name: 'root' });
     },

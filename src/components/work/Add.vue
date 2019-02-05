@@ -10,6 +10,11 @@
 
 <template>
   <div>
+    <div v-if="!validate">
+      <div class="m-box-errorMessage">
+        <p class="m-text-errorMessage">未入力箇所があります</p>
+      </div>
+    </div>
     <table class="m-table-01">
       <tr>
         <th>
@@ -24,6 +29,7 @@
             @workTitle="title"
           >
           </input-text>
+          <p v-if="checkList.title" class="m-text-errorMessage">タイトルを記入してください</p>
         </td>
       </tr>
       <tr>
@@ -39,6 +45,7 @@
             @workTags="tags"
           >
           </input-text>
+          <p v-if="checkList.tags" class="m-text-errorMessage">タグを記入してください</p>
         </td>
       </tr>
       <tr>
@@ -55,11 +62,12 @@
             @workImage="image"
           >
           </input-file>
+          <p v-if="checkList.image_path" class="m-text-errorMessage">画像を選択してください</p>
         </td>
       </tr>
       <tr>
         <th>
-          url
+          URL
         </th>
         <td>
           <input-text
@@ -70,6 +78,7 @@
             @workUrl="url"
           >
           </input-text>
+          <p v-if="checkList.url" class="m-text-errorMessage">URLを記入してください</p>
         </td>
       </tr>
       <tr>
@@ -86,6 +95,7 @@
             @workText="text"
           >
           </input-textarea>
+          <p v-if="checkList.text" class="m-text-errorMessage">内容を記入してください</p>
         </td>
       </tr>
     </table>
@@ -114,13 +124,31 @@ export default {
         image_path: '',
         url: '',
       },
+      checkList: {
+        title: false,
+        text: false,
+        tags: false,
+        image_path: false,
+        url: false,
+      },
+      validate: true,
     };
   },
   computed: {
     validationCheck() {
       const inputData = this.$store.state.addNewWork;
-      const inputList = Object.keys(inputData).map(key => ({ [key]: inputData[key] }));
-      return inputList;
+      Object.keys(inputData).map((key) => {
+        this.checkList[key] = false;
+        if (!inputData[key]) {
+          Object.keys(this.checkList).find((c) => {
+            if (c === key) {
+              this.checkList[c] = true;
+            }
+          });
+          this.validate = false;
+        }
+      });
+      return false;
     },
   },
   methods: {
@@ -146,9 +174,13 @@ export default {
       this.$store.commit('addWorkData', data);
     },
     save() {
-      this.validationCheck();
-      this.$store.commit('addWork', this.$store.state.addNewWork);
-      this.$router.push({ name: 'root' });
+      this.validationCheck;
+      if (this.validate) {
+        this.$store.commit('addWork', this.$store.state.addNewWork);
+        this.$router.push({ name: 'root' });
+      } else {
+        window.scrollTo(0, 0);
+      }
     },
   },
   components: {

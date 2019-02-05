@@ -18,6 +18,9 @@
       vertical-align: middle;
       text-align: left;
       padding: 10px;
+      .m-text-errorMessage {
+        padding-top: 5px;
+      }
     }
   }
 }
@@ -57,4 +60,19 @@
     display: list-item;
     list-style-type: circle;
   }
+}
+
+.m-box-errorMessage {
+  background-color: $red-color;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  .m-text-errorMessage {
+    color: $white-color;
+  }
+}
+
+.m-text-errorMessage {
+  color: $red-color;
 }

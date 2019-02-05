@@ -55,6 +55,8 @@ table {
     vertical-align: middle;
     text-align: left;
     padding: 10px; }
+    .m-table-01 tr td .m-text-errorMessage {
+      padding-top: 5px; }
 
 .m-button-01 {
   margin-bottom: 2.5%;
@@ -84,5 +86,17 @@ table {
   margin: 0 0 .5em 2em;
   display: list-item;
   list-style-type: circle; }
+
+.m-box-errorMessage {
+  background-color: #B31F57;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 20px; }
+  .m-box-errorMessage .m-text-errorMessage {
+    color: #F6F9FF; }
+
+.m-text-errorMessage {
+  color: #B31F57; }
 
 /*# sourceMappingURL=styles.css.map */

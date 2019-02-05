@@ -134,23 +134,6 @@ export default {
       validate: true,
     };
   },
-  computed: {
-    validationCheck() {
-      const inputData = this.$store.state.addNewWork;
-      Object.keys(inputData).map((key) => {
-        this.checkList[key] = false;
-        if (!inputData[key]) {
-          Object.keys(this.checkList).find((c) => {
-            if (c === key) {
-              this.checkList[c] = true;
-            }
-          });
-          this.validate = false;
-        }
-      });
-      return false;
-    },
-  },
   methods: {
     title(value) {
       const data = { title: value };
@@ -174,7 +157,19 @@ export default {
       this.$store.commit('addWorkData', data);
     },
     save() {
-      this.validationCheck;
+      const inputData = this.$store.state.addNewWork;
+      this.validate = true;
+      Object.keys(inputData).map((key) => {
+        this.checkList[key] = false;
+        if (!inputData[key]) {
+          Object.keys(this.checkList).find((c) => {
+            if (c === key) {
+              this.checkList[c] = true;
+            }
+          });
+          this.validate = false;
+        }
+      });
       if (this.validate) {
         this.$store.commit('addWork', this.$store.state.addNewWork);
         this.$router.push({ name: 'root' });

@@ -29,7 +29,12 @@
             @workTitle="title"
           >
           </input-text>
-          <p v-if="checkList.title" class="m-text-errorMessage">タイトルを記入してください</p>
+          <div v-if="checkList.title">
+            <non-input
+              text="タイトル"
+            >
+            </non-input>
+          </div>
         </td>
       </tr>
       <tr>
@@ -45,7 +50,12 @@
             @workTags="tags"
           >
           </input-text>
-          <p v-if="checkList.tags" class="m-text-errorMessage">タグを記入してください</p>
+          <div v-if="checkList.tags">
+            <non-input
+              text="タグ"
+            >
+            </non-input>
+          </div>
         </td>
       </tr>
       <tr>
@@ -62,7 +72,12 @@
             @workImage="image"
           >
           </input-file>
-          <p v-if="checkList.image_path" class="m-text-errorMessage">画像を選択してください</p>
+          <div v-if="checkList.image_path">
+            <non-select
+              text="画像"
+            >
+            </non-select>
+          </div>
         </td>
       </tr>
       <tr>
@@ -78,7 +93,12 @@
             @workUrl="url"
           >
           </input-text>
-          <p v-if="checkList.url" class="m-text-errorMessage">URLを記入してください</p>
+          <div v-if="checkList.url">
+            <non-input
+              text="URL"
+            >
+            </non-input>
+          </div>
         </td>
       </tr>
       <tr>
@@ -95,7 +115,12 @@
             @workText="text"
           >
           </input-text-area>
-          <p v-if="checkList.text" class="m-text-errorMessage">内容を記入してください</p>
+          <div v-if="checkList.text">
+            <non-input
+              text="内容"
+            >
+            </non-input>
+          </div>
         </td>
       </tr>
     </table>
@@ -113,6 +138,8 @@ import InputText from '../form/InputText';
 import InputTextArea from '../form/InputTextArea';
 import InputFile from '../form/InputFile';
 import SubmitButton from '../button/SubmitButton';
+import NonInput from '../errorMessage/NonInput';
+import NonSelect from '../errorMessage/NonSelect';
 
 export default {
   data() {
@@ -181,6 +208,8 @@ export default {
     InputTextArea,
     InputFile,
     SubmitButton,
+    NonInput,
+    NonSelect,
   },
 };
 </script>

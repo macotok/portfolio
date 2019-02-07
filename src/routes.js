@@ -16,7 +16,7 @@ export default {
       name: 'root',
     },
     {
-      path: '/add_work',
+      path: '/work/add',
       component: AddWork,
       name: 'addWork',
     },
@@ -31,7 +31,7 @@ export default {
       name: 'workDetail',
     },
     {
-      path: '/add_skill',
+      path: '/skill/add',
       component: AddSkill,
       name: 'addSkill',
     },

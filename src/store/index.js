@@ -28,6 +28,7 @@ const mutations = {
     state.works.push(addWork);
   },
   addWorkData(data, value) {
+    console.log(value);
     state.addNewWork = Object.assign({}, { ...data.addNewWork }, { ...value });
   },
   addSkill(data, addData) {

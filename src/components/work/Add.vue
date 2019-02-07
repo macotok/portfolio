@@ -23,7 +23,7 @@
         <td>
           <input-text
             name="workTitle"
-            :model="work.title"
+            :model="addNewWork.title"
             placeholder=""
             eventName="workTitle"
             @workTitle="title"
@@ -39,7 +39,7 @@
         <td>
           <input-text
             name="workTags"
-            :model="work.tags"
+            :model="addNewWork.tags"
             placeholder="カンマ区切りで指定"
             eventName="workTags"
             @workTags="tags"
@@ -57,7 +57,7 @@
             labelName="選択"
             thumnailSize="250"
             name="workImage"
-            :model="work.image_path"
+            :model="addNewWork.image_path"
             eventName="workImage"
             @workImage="image"
           >
@@ -72,7 +72,7 @@
         <td>
           <input-text
             name="workUrl"
-            :model="work.url"
+            :model="addNewWork.url"
             placeholder=""
             eventName="workUrl"
             @workUrl="url"
@@ -86,15 +86,15 @@
           内容
         </th>
         <td>
-          <input-textarea
+          <input-text-area
             name="workText"
-            :model="work.text"
+            :model="addNewWork.text"
             placeholder=""
             eventName="workText"
             rows="10"
             @workText="text"
           >
-          </input-textarea>
+          </input-text-area>
           <p v-if="checkList.text" class="m-text-errorMessage">内容を記入してください</p>
         </td>
       </tr>
@@ -110,20 +110,13 @@
 
 <script>
 import InputText from '../form/InputText';
-import InputTextarea from '../form/InputTextarea';
+import InputTextArea from '../form/InputTextArea';
 import InputFile from '../form/InputFile';
 import SubmitButton from '../button/SubmitButton';
 
 export default {
   data() {
     return {
-      work: {
-        title: '',
-        text: '',
-        tags: '',
-        image_path: '',
-        url: '',
-      },
       checkList: {
         title: false,
         text: false,
@@ -133,6 +126,11 @@ export default {
       },
       validate: true,
     };
+  },
+  computed: {
+    addNewWork() {
+      return this.$store.state.addNewWork;
+    },
   },
   methods: {
     title(value) {
@@ -180,7 +178,7 @@ export default {
   },
   components: {
     InputText,
-    InputTextarea,
+    InputTextArea,
     InputFile,
     SubmitButton,
   },

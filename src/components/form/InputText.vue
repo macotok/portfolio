@@ -26,7 +26,7 @@
 export default {
   props: {
     name: String,
-    model: String,
+    model: [String, Array],
     placeholder: String,
     eventName: String,
   },

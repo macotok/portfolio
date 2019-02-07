@@ -47,7 +47,7 @@
           内容
         </th>
         <td>
-          <input-textarea
+          <input-text-area
             name="skillText"
             :model="skill.text"
             placeholder=""
@@ -55,7 +55,7 @@
             rows="10"
             @skillText="text"
           >
-          </input-textarea>
+          </input-text-area>
         </td>
       </tr>
     </table>
@@ -70,7 +70,7 @@
 
 <script>
 import InputText from '../form/InputText';
-import InputTextarea from '../form/InputTextarea';
+import InputTextArea from '../form/InputTextArea';
 import InputFile from '../form/InputFile';
 import SubmitButton from '../button/SubmitButton';
 
@@ -104,7 +104,7 @@ export default {
   },
   components: {
     InputText,
-    InputTextarea,
+    InputTextArea,
     InputFile,
     SubmitButton,
   },

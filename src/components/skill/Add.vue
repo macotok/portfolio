@@ -18,7 +18,7 @@
         <td>
           <input-text
             name="skillTitle"
-            :model="skill.title"
+            :model="addNewSkill.title"
             placeholder=""
             eventName="skillTitle"
             @skillTitle="title"
@@ -35,7 +35,7 @@
             labelName="選択"
             thumnailSize="250"
             name="skillImage"
-            :model="skill.image_path"
+            :model="addNewSkill.image_path"
             eventName="skillImage"
             @skillImage="image"
           >
@@ -49,7 +49,7 @@
         <td>
           <input-text-area
             name="skillText"
-            :model="skill.text"
+            :model="addNewSkill.text"
             placeholder=""
             eventName="skillText"
             rows="10"
@@ -75,14 +75,10 @@ import InputFile from '../form/InputFile';
 import SubmitButton from '../button/SubmitButton';
 
 export default {
-  data() {
-    return {
-      skill: {
-        title: '',
-        text: '',
-        image_path: '',
-      },
-    };
+  computed: {
+    addNewSkill() {
+      return this.$store.state.addNewSkill;
+    },
   },
   methods: {
     title(value) {

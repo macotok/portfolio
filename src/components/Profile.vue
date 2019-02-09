@@ -32,7 +32,7 @@
   <div>
     <div v-if="page === 'top'" class="profileTopBlock">
       <p>
-        今までのこと。これからのことを簡単に説明しました。
+        今までしてきたこと。これからしてきたいことを簡単に説明しました。
       </p>
     </div>
     <div v-else-if="page === 'detail'">
@@ -56,7 +56,7 @@
             <dd>MeteorでWebアプリケーション開発</dd>
             <dd>HTML5/CSS3/Javascriptでフロント開発</dd>
             <dd>ReactでCMS開発</dd>
-            <dd>KARTE(販促ツール)でサービス開発</dd>
+            <dd>KARTE(Web販促ツール)でサービス開発</dd>
             <dd>Vue.jsでPortfolio制作</dd>
             <dt>これからしてきたいこと</dt>
             <dd>React/Vue.jsでのフロント開発</dd>

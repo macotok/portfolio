@@ -17,16 +17,9 @@
           @include skill($margin: 0 .5rem .5rem 0);
         }
       }
-      .url {
-        text-align: right;
-        margin-bottom: .5rem;
-        a {
-          color: $link-color;
-          &:hover {
-            text-decoration: none;
-          }
-        }
-      }
+    }
+    .m-button-01 {
+      margin-top: 2rem;
     }
   }
 </style>
@@ -42,8 +35,10 @@
             {{tag}}
           </li>
         </ul>
-        <p class="url"><a :href="data.url" target="_blank">作品ページへ</a></p>
         <p class="text">{{data.text}}</p>
+        <div class="m-button-01">
+          <a class="m-button-01-link" :href="data.url" target="_blank">作品ページ</a>
+        </div>
       </div>
     </div>
     <edit-button

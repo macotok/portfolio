@@ -16,11 +16,6 @@ export default {
       name: 'root',
     },
     {
-      path: '/work/add',
-      component: AddWork,
-      name: 'addWork',
-    },
-    {
       path: '/works',
       component: WorkList,
       name: 'works',
@@ -29,6 +24,11 @@ export default {
       path: '/work/:id',
       component: WorkDetail,
       name: 'workDetail',
+    },
+    {
+      path: '/work/add',
+      component: AddWork,
+      name: 'addWork',
     },
     {
       path: '/skill/add',

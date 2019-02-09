@@ -31,7 +31,7 @@ Vue開発
 - fakerでstubデータ作成
 - ページネーション実装
 
-実装したいこと
+未開発
 
 - firebaseでログイン機能
 - DBはfirestore

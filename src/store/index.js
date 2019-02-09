@@ -26,6 +26,13 @@ const mutations = {
     const addWork = addData;
     addWork.id = data.works.reduce((id, work) => (id < work.id ? work.id : id), 0) + 1;
     state.works.push(addWork);
+    state.addNewWork = {
+      title: '',
+      tags: '',
+      image_path: '',
+      url: '',
+      text: '',
+    };
   },
   addWorkData(data, value) {
     state.addNewWork = Object.assign({}, { ...data.addNewWork }, { ...value });

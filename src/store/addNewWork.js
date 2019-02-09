@@ -1,9 +1,9 @@
 export default {
   title: '',
-  text: '',
   tags: '',
   image_path: '',
   url: '',
+  text: '',
   // updateAt: '',
   // createdAt: '',
 };

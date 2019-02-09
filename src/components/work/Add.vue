@@ -29,7 +29,7 @@
             @workTitle="title"
           >
           </input-text>
-          <div v-if="checkList.title">
+          <div v-if="inputCheck.indexOf('title') >= 0">
             <non-input
               text="タイトル"
             >
@@ -50,7 +50,7 @@
             @workTags="tags"
           >
           </input-text>
-          <div v-if="checkList.tags">
+          <div v-if="inputCheck.indexOf('tags') >= 0">
             <non-input
               text="タグ"
             >
@@ -72,7 +72,7 @@
             @workImage="image"
           >
           </input-file>
-          <div v-if="checkList.image_path">
+          <div v-if="inputCheck.indexOf('image_path') >= 0">
             <non-select
               text="画像"
             >
@@ -93,7 +93,7 @@
             @workUrl="url"
           >
           </input-text>
-          <div v-if="checkList.url">
+          <div v-if="inputCheck.indexOf('url') >= 0">
             <non-input
               text="URL"
             >
@@ -115,7 +115,7 @@
             @workText="text"
           >
           </input-text-area>
-          <div v-if="checkList.text">
+          <div v-if="inputCheck.indexOf('text') >= 0">
             <non-input
               text="内容"
             >
@@ -140,23 +140,22 @@ import InputFile from '../form/InputFile';
 import SubmitButton from '../button/SubmitButton';
 import NonInput from '../errorMessage/NonInput';
 import NonSelect from '../errorMessage/NonSelect';
+import NonInputValidate from '../../utils/NonInputValidate';
 
 export default {
   data() {
     return {
-      checkList: {
-        title: false,
-        text: false,
-        tags: false,
-        image_path: false,
-        url: false,
-      },
       validate: true,
     };
   },
   computed: {
     addNewWork() {
       return this.$store.state.addNewWork;
+    },
+    inputCheck() {
+      const inputData = this.$store.state.addNewWork;
+      const nonInputValidate = new NonInputValidate(inputData);
+      return nonInputValidate.inputCheck();
     },
   },
   methods: {
@@ -182,24 +181,12 @@ export default {
       this.$store.commit('addWorkData', data);
     },
     save() {
-      const inputData = this.$store.state.addNewWork;
-      this.validate = true;
-      Object.keys(inputData).map((key) => {
-        this.checkList[key] = false;
-        if (!inputData[key]) {
-          Object.keys(this.checkList).find((c) => {
-            if (c === key) {
-              this.checkList[c] = true;
-            }
-          });
-          this.validate = false;
-        }
-      });
-      if (this.validate) {
+      if (this.inputCheck.length) {
+        this.validate = false;
+        window.scrollTo(0, 0);
+      } else {
         this.$store.commit('addWork', this.$store.state.addNewWork);
         this.$router.push({ name: 'root' });
-      } else {
-        window.scrollTo(0, 0);
       }
     },
   },

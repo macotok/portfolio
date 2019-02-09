@@ -18,6 +18,14 @@
     <table class="m-table-01">
       <tr>
         <th>
+          ID
+        </th>
+        <td>
+          {{editWork.id}}
+        </td>
+      </tr>
+      <tr>
+        <th>
           タイトル
         </th>
         <td>
@@ -148,6 +156,9 @@ export default {
       validate: true,
     };
   },
+  created() {
+    this.$store.state.editWork = this.editWork;
+  },
   computed: {
     editWork() {
       const workList = this.$store.state.works;
@@ -157,11 +168,7 @@ export default {
       return editWork;
     },
     inputCheck() {
-      const workList = this.$store.state.works;
-      const editWork = workList.find(w => (
-        w.id === parseInt(this.$route.params.id, 10)
-      ));
-      const nonInputValidate = new NonInputValidate(editWork);
+      const nonInputValidate = new NonInputValidate(this.$store.state.editWork);
       return nonInputValidate.inputCheck();
     },
   },
@@ -170,8 +177,10 @@ export default {
       this.$store.commit('updateWorkData', { title: value, id: parseInt(this.$route.params.id, 10) });
     },
     tags(value) {
-      const data = { tags: value.trim() ? value.replace(/\s+/g, '').split(',') : [] };
-      this.$store.commit('updateWorkData', { data, id: parseInt(this.$route.params.id, 10) });
+      this.$store.commit('updateWorkData', {
+        tags: value.trim() ? value.replace(/\s+/g, '').split(',') : [],
+        id: parseInt(this.$route.params.id, 10),
+      });
     },
     url(value) {
       this.$store.commit('updateWorkData', { url: value, id: parseInt(this.$route.params.id, 10) });

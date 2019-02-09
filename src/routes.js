@@ -4,6 +4,7 @@ import WorkList from './page/work/List';
 import WorkDetail from './page/work/Detail';
 import EditWorkDetail from './page/work/Edit';
 import AddSkill from './page/skill/Add';
+import EditSkill from './page/skill/Edit';
 import SkillList from './page/skill/List';
 import Profile from './page/Profile';
 import Login from './page/Login';
@@ -40,6 +41,11 @@ export default {
       path: '/skill/add',
       component: AddSkill,
       name: 'addSkill',
+    },
+    {
+      path: '/skill/:id/edit',
+      component: EditSkill,
+      name: 'editSkill',
     },
     {
       path: '/skills',

@@ -35,6 +35,12 @@
             </th>
             <td>
               {{skill.text}}
+              <edit-button
+                text="編集"
+                :editId="skill.id"
+                type="skill"
+              >
+              </edit-button>
             </td>
           </tr>
         </table>
@@ -47,6 +53,8 @@
 </template>
 
 <script>
+import EditButton from '../button/EditButton';
+
 export default {
   props: {
     skill: Array,
@@ -56,6 +64,9 @@ export default {
     hasSkill() {
       return this.skill.length !== 0;
     },
+  },
+  components: {
+    EditButton,
   },
 };
 </script>

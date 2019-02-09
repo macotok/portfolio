@@ -1,18 +1,18 @@
 <template>
   <div>
-    <title-block title="edit Work"></title-block>
-    <edit-work></edit-work>
+    <title-block title="edit skill"></title-block>
+    <edit-skill></edit-skill>
   </div>
 </template>
 
 <script>
 import TitleBlock from '../../components/TitleBlock';
-import EditWork from '../../components/work/Edit';
+import EditSkill from '../../components/skill/Edit';
 
 export default {
   components: {
     TitleBlock,
-    EditWork,
+    EditSkill,
   },
 };
 </script>

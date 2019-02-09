@@ -10,6 +10,7 @@
     }
     .content {
       padding-left: 2.5%;
+      width: 100%;
       .tagList {
         display: flex;
         flex-wrap: wrap;

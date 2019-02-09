@@ -21,46 +21,25 @@
           ID
         </th>
         <td>
-          {{editWork.id}}
+          {{editSkill.id}}
         </td>
       </tr>
       <tr>
         <th>
-          タイトル
+          スキル名
         </th>
         <td>
           <input-text
-            name="workTitle"
-            :model="editWork.title"
+            name="skillTitle"
+            :model="editSkill.title"
             placeholder=""
-            eventName="workTitle"
-            @workTitle="title"
+            eventName="skillTitle"
+            @skillTitle="title"
           >
           </input-text>
           <div v-if="inputCheck.indexOf('title') >= 0">
             <non-input
-              text="タイトル"
-            >
-            </non-input>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <th>
-          タグ
-        </th>
-        <td>
-          <input-text
-            name="workTags"
-            :model="editWork.tags"
-            placeholder="カンマ区切りで指定"
-            eventName="workTags"
-            @workTags="tags"
-          >
-          </input-text>
-          <div v-if="inputCheck.indexOf('tags') >= 0">
-            <non-input
-              text="タグ"
+              text="スキル名"
             >
             </non-input>
           </div>
@@ -74,10 +53,10 @@
           <input-file
             labelName="選択"
             thumnailSize="250"
-            name="workImage"
-            :model="editWork.image_path"
-            eventName="workImage"
-            @workImage="image"
+            name="skillImage"
+            :model="editSkill.image_path"
+            eventName="skillImage"
+            @skillImage="image"
           >
           </input-file>
           <div v-if="inputCheck.indexOf('image_path') >= 0">
@@ -90,37 +69,16 @@
       </tr>
       <tr>
         <th>
-          URL
-        </th>
-        <td>
-          <input-text
-            name="workUrl"
-            :model="editWork.url"
-            placeholder=""
-            eventName="workUrl"
-            @workUrl="url"
-          >
-          </input-text>
-          <div v-if="inputCheck.indexOf('url') >= 0">
-            <non-input
-              text="URL"
-            >
-            </non-input>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <th>
           内容
         </th>
         <td>
           <input-text-area
-            name="workText"
-            :model="editWork.text"
+            name="skillText"
+            :model="editSkill.text"
             placeholder=""
-            eventName="workText"
+            eventName="skillText"
             rows="10"
-            @workText="text"
+            @skillText="text"
           >
           </input-text-area>
           <div v-if="inputCheck.indexOf('text') >= 0">
@@ -133,9 +91,9 @@
       </tr>
     </table>
     <submit-button
-      eventName="editWork"
+      eventName="editSkill"
       text="保存"
-      @editWork="save"
+      @editSkill="save"
     >
     </submit-button>
   </div>
@@ -157,46 +115,37 @@ export default {
     };
   },
   created() {
-    this.$store.state.editWork = this.editWork;
+    this.$store.state.editSkill = this.editSkill;
   },
   computed: {
-    editWork() {
-      const workList = this.$store.state.works;
-      const editWork = workList.find(w => (
-        w.id === parseInt(this.$route.params.id, 10)
+    editSkill() {
+      const skillList = this.$store.state.skill;
+      const editSkill = skillList.find(s => (
+        s.id === parseInt(this.$route.params.id, 10)
       ));
-      return editWork;
+      return editSkill;
     },
     inputCheck() {
-      const nonInputValidate = new NonInputValidate(this.$store.state.editWork);
+      const nonInputValidate = new NonInputValidate(this.$store.state.editSkill);
       return nonInputValidate.inputCheck();
     },
   },
   methods: {
     title(value) {
-      this.$store.commit('updateWorkData', { title: value, id: parseInt(this.$route.params.id, 10) });
-    },
-    tags(value) {
-      this.$store.commit('updateWorkData', {
-        tags: value.trim() ? value.replace(/\s+/g, '').split(',') : [],
-        id: parseInt(this.$route.params.id, 10),
-      });
-    },
-    url(value) {
-      this.$store.commit('updateWorkData', { url: value, id: parseInt(this.$route.params.id, 10) });
+      this.$store.commit('updateSkillData', { title: value, id: parseInt(this.$route.params.id, 10) });
     },
     image(value) {
-      this.$store.commit('updateWorkData', { image_path: value, id: parseInt(this.$route.params.id, 10) });
+      this.$store.commit('updateSkillData', { image_path: value, id: parseInt(this.$route.params.id, 10) });
     },
     text(value) {
-      this.$store.commit('updateWorkData', { text: value, id: parseInt(this.$route.params.id, 10) });
+      this.$store.commit('updateSkillData', { text: value, id: parseInt(this.$route.params.id, 10) });
     },
     save() {
       if (this.inputCheck.length) {
         this.validate = false;
         window.scrollTo(0, 0);
       } else {
-        this.$store.commit('updateWork', this.$store.state.editWork);
+        this.$store.commit('updateSkill', this.$store.state.editSkill);
         this.$router.push({ name: 'root' });
       }
     },

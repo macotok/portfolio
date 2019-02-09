@@ -15,7 +15,7 @@
 <script>
 export default {
   props: {
-    editId: String,
+    editId: [String, Number],
     text: String,
     type: String,
   },

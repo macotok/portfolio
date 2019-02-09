@@ -41,6 +41,11 @@ const mutations = {
     const addSkill = addData;
     addSkill.id = data.skill.reduce((id, skill) => (id < skill.id ? skill.id : id), 0) + 1;
     state.skill.push(addSkill);
+    state.addNewSkill = {
+      title: '',
+      image_path: '',
+      text: '',
+    };
   },
   addSkillData(data, value) {
     state.addNewSkill = Object.assign({}, { ...data.addNewSkill }, { ...value });

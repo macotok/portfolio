@@ -10,6 +10,11 @@
 
 <template>
   <div>
+    <div v-if="!validate">
+      <div class="m-box-errorMessage">
+        <p class="m-text-errorMessage">未入力箇所があります</p>
+      </div>
+    </div>
     <table class="m-table-01">
       <tr>
         <th>
@@ -24,6 +29,12 @@
             @skillTitle="title"
           >
           </input-text>
+          <div v-if="inputCheck.indexOf('title') >= 0">
+            <non-input
+              text="スキル名"
+            >
+            </non-input>
+          </div>
         </td>
       </tr>
       <tr>
@@ -40,6 +51,12 @@
             @skillImage="image"
           >
           </input-file>
+          <div v-if="inputCheck.indexOf('image_path') >= 0">
+            <non-select
+              text="画像"
+            >
+            </non-select>
+          </div>
         </td>
       </tr>
       <tr>
@@ -56,6 +73,12 @@
             @skillText="text"
           >
           </input-text-area>
+          <div v-if="inputCheck.indexOf('text') >= 0">
+            <non-input
+              text="内容"
+            >
+            </non-input>
+          </div>
         </td>
       </tr>
     </table>
@@ -73,29 +96,43 @@ import InputText from '../form/InputText';
 import InputTextArea from '../form/InputTextArea';
 import InputFile from '../form/InputFile';
 import SubmitButton from '../button/SubmitButton';
+import NonInput from '../errorMessage/NonInput';
+import NonSelect from '../errorMessage/NonSelect';
+import NonInputValidate from '../../utils/NonInputValidate';
 
 export default {
+  data() {
+    return {
+      validate: true,
+    };
+  },
   computed: {
     addNewSkill() {
       return this.$store.state.addNewSkill;
     },
+    inputCheck() {
+      const nonInputValidate = new NonInputValidate(this.$store.state.addNewSkill);
+      return nonInputValidate.inputCheck();
+    },
   },
   methods: {
     title(value) {
-      const data = { title: value };
-      this.$store.commit('addSkillData', data);
+      this.$store.commit('addSkillData', { title: value });
     },
     image(value) {
-      const data = { image_path: value };
-      this.$store.commit('addSkillData', data);
+      this.$store.commit('addSkillData', { image_path: value });
     },
     text(value) {
-      const data = { text: value };
-      this.$store.commit('addSkillData', data);
+      this.$store.commit('addSkillData', { text: value });
     },
     save() {
-      this.$store.commit('addSkill', this.$store.state.addNewSkill);
-      this.$router.push({ name: 'root' });
+      if (this.inputCheck.length) {
+        this.validate = false;
+        window.scrollTo(0, 0);
+      } else {
+        this.$store.commit('addSkill', this.$store.state.addNewSkill);
+        this.$router.push({ name: 'root' });
+      }
     },
   },
   components: {
@@ -103,6 +140,8 @@ export default {
     InputTextArea,
     InputFile,
     SubmitButton,
+    NonInput,
+    NonSelect,
   },
 };
 </script>

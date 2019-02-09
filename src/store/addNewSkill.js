@@ -1,7 +1,7 @@
 export default {
   title: '',
-  text: '',
   image_path: '',
+  text: '',
   // updateAt: '',
   // createdAt: '',
 };

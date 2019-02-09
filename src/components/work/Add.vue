@@ -153,32 +153,26 @@ export default {
       return this.$store.state.addNewWork;
     },
     inputCheck() {
-      const inputData = this.$store.state.addNewWork;
-      const nonInputValidate = new NonInputValidate(inputData);
+      const nonInputValidate = new NonInputValidate(this.$store.state.addNewWork);
       return nonInputValidate.inputCheck();
     },
   },
   methods: {
     title(value) {
-      const data = { title: value };
-      this.$store.commit('addWorkData', data);
+      this.$store.commit('addWorkData', { title: value });
     },
     tags(value) {
-      const tagList = value.trim() ? value.replace(/\s+/g, '').split(',') : [];
-      const data = { tags: tagList };
+      const data = { tags: value.trim() ? value.replace(/\s+/g, '').split(',') : [] };
       this.$store.commit('addWorkData', data);
     },
     url(value) {
-      const data = { url: value };
-      this.$store.commit('addWorkData', data);
+      this.$store.commit('addWorkData', { url: value });
     },
     image(value) {
-      const data = { image_path: value };
-      this.$store.commit('addWorkData', data);
+      this.$store.commit('addWorkData', { image_path: value });
     },
     text(value) {
-      const data = { text: value };
-      this.$store.commit('addWorkData', data);
+      this.$store.commit('addWorkData', { text: value });
     },
     save() {
       if (this.inputCheck.length) {

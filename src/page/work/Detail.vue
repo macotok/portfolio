@@ -13,9 +13,8 @@ import WorkDetail from '../../components/work/Detail';
 export default {
   computed: {
     workData() {
-      const dataId = parseInt(this.$route.params.id, 10);
       const data = this.$store.state.works.find(w => (
-        w.id === dataId
+        w.id === parseInt(this.$route.params.id, 10)
       ));
       return data;
     },

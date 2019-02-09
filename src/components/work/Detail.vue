@@ -46,24 +46,31 @@
         <p class="text">{{data.text}}</p>
       </div>
     </div>
-    <button @click="edit">編集</button>
+    <edit-button
+      text="編集"
+      :editId="getWorkId"
+      type="work"
+    >
+    </edit-button>
   </div>
 </template>
 
 <script>
 import TitleBlock from '../TitleBlock';
+import EditButton from '../button/EditButton';
 
 export default {
   props: {
     data: Object,
   },
-  methods: {
-    edit() {
-      this.$router.push({ name: 'root' });
+  computed: {
+    getWorkId() {
+      return this.$route.params.id;
     },
   },
   components: {
     TitleBlock,
+    EditButton,
   },
 };
 </script>

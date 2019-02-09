@@ -2,6 +2,7 @@ import Root from './page/Root';
 import AddWork from './page/work/Add';
 import WorkList from './page/work/List';
 import WorkDetail from './page/work/Detail';
+import EditWorkDetail from './page/work/Edit';
 import AddSkill from './page/skill/Add';
 import SkillList from './page/skill/List';
 import Profile from './page/Profile';
@@ -24,6 +25,11 @@ export default {
       path: '/work/:id',
       component: WorkDetail,
       name: 'workDetail',
+    },
+    {
+      path: '/work/:id/edit',
+      component: EditWorkDetail,
+      name: 'editWorkDetail',
     },
     {
       path: '/work/add',

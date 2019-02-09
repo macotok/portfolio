@@ -48,6 +48,28 @@
   }
 }
 
+.m-button-02 {
+  display: flex;
+  justify-content: flex-end;
+  &-link {
+    display: inline-block;
+    text-decoration: none;
+    background-color: $green-color;
+    color: $white-color;
+    padding: $borderPadding;
+    text-align: center;
+    border-radius: $border-radius;
+    font-size: .9rem;
+    transition: $transition;
+    border: 1px solid $green-color;
+    &:hover {
+      background-color: $white-color;
+      color: $green-color;
+      cursor: pointer;
+    }
+  }
+}
+
 .m-list-01 {
   dt {
     margin: 0 0 1em;

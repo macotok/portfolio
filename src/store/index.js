@@ -2,6 +2,7 @@ import db from '../stub';
 import database from '../database';
 import { WORKS_START_NUMBER } from '../defines';
 import addNewWork from './addNewWork';
+import editWork from './editWork';
 import addNewSkill from './addNewSkill';
 
 console.log(database);
@@ -10,6 +11,7 @@ const state = {
   works: db.works,
   skill: db.skill,
   addNewWork,
+  editWork,
   addNewSkill,
   worksPaginationNUmber: WORKS_START_NUMBER,
 };
@@ -54,9 +56,15 @@ const mutations = {
     const index = util.findIndex(data.works, id);
     state.works.splice(index, 1);
   },
-  updateWork(data, work) {
-    const index = util.findIndex(data.works, work.id);
-    state.works.splice(index, 1, work);
+  updateWork(data, updateWork) {
+    const index = util.findIndex(data.works, updateWork.id);
+    state.works.splice(index, 1, updateWork);
+  },
+  updateWorkData(data, value) {
+    const editWorkData = (data.works).find(w => (
+      w.id === value.id
+    ));
+    state.editWork = Object.assign({}, { ...editWorkData }, { ...value });
   },
 };
 

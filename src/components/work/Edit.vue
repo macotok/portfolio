@@ -157,33 +157,37 @@ export default {
       return editWork;
     },
     inputCheck() {
-      const nonInputValidate = new NonInputValidate(this.$store.state.addNewWork);
+      const workList = this.$store.state.works;
+      const editWork = workList.find(w => (
+        w.id === parseInt(this.$route.params.id, 10)
+      ));
+      const nonInputValidate = new NonInputValidate(editWork);
       return nonInputValidate.inputCheck();
     },
   },
   methods: {
     title(value) {
-      this.$store.commit('addWorkData', { title: value });
+      this.$store.commit('updateWorkData', { title: value, id: parseInt(this.$route.params.id, 10) });
     },
     tags(value) {
       const data = { tags: value.trim() ? value.replace(/\s+/g, '').split(',') : [] };
-      this.$store.commit('addWorkData', data);
+      this.$store.commit('updateWorkData', { data, id: parseInt(this.$route.params.id, 10) });
     },
     url(value) {
-      this.$store.commit('addWorkData', { url: value });
+      this.$store.commit('updateWorkData', { url: value, id: parseInt(this.$route.params.id, 10) });
     },
     image(value) {
-      this.$store.commit('addWorkData', { image_path: value });
+      this.$store.commit('updateWorkData', { image_path: value, id: parseInt(this.$route.params.id, 10) });
     },
     text(value) {
-      this.$store.commit('addWorkData', { text: value });
+      this.$store.commit('updateWorkData', { text: value, id: parseInt(this.$route.params.id, 10) });
     },
     save() {
       if (this.inputCheck.length) {
         this.validate = false;
         window.scrollTo(0, 0);
       } else {
-        this.$store.commit('addWork', this.$store.state.addNewWork);
+        this.$store.commit('updateWork', this.$store.state.editWork);
         this.$router.push({ name: 'root' });
       }
     },

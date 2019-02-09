@@ -3,15 +3,15 @@ class NonInputValidate {
     this.inputData = inputData;
   }
   inputCheck() {
-    const inputCkeck = [];
+    const inputCheck = [];
     Object.values(this.inputData).filter((value, index) => {
       if (!value) {
         const nonInputKey = Object.keys(this.inputData)[index];
-        inputCkeck.push(nonInputKey);
+        inputCheck.push(nonInputKey);
       }
       return false;
     });
-    return inputCkeck;
+    return inputCheck;
   }
 }
 

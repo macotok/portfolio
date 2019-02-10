@@ -97,6 +97,25 @@ table {
       color: #3698A1;
       cursor: pointer; }
 
+.m-button-03 {
+  display: flex;
+  justify-content: flex-end; }
+  .m-button-03-link {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #B31F57;
+    color: #F6F9FF;
+    padding: 10px 25px;
+    text-align: center;
+    border-radius: 3px;
+    font-size: .9rem;
+    transition: 0.1s ease-in-out;
+    border: 1px solid #B31F57; }
+    .m-button-03-link:hover {
+      background-color: #F6F9FF;
+      color: #B31F57;
+      cursor: pointer; }
+
 .m-list-01 dt {
   margin: 0 0 1em; }
   .m-list-01 dt:not(:first-child) {

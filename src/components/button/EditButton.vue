@@ -1,6 +1,6 @@
 <style scoped lang="scss">
-  .m-button-01 {
-    margin-top: 25px;
+  .m-button-02 {
+    margin-top: 1rem;
   }
 </style>
 

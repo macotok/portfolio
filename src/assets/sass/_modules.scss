@@ -27,47 +27,15 @@
 
 .m-button-01 {
   margin-bottom: 2.5%;
-  display: flex;
-  justify-content: flex-end;
-  &-link {
-    display: inline-block;
-    text-decoration: none;
-    background-color: $link-color;
-    color: $white-color;
-    padding: $borderPadding;
-    text-align: center;
-    border-radius: $border-radius;
-    font-size: .9rem;
-    transition: $transition;
-    border: 1px solid $link-color;
-    &:hover {
-      background-color: $white-color;
-      color: $link-color;
-      cursor: pointer;
-    }
-  }
+  @include button-01();
 }
 
 .m-button-02 {
-  display: flex;
-  justify-content: flex-end;
-  &-link {
-    display: inline-block;
-    text-decoration: none;
-    background-color: $green-color;
-    color: $white-color;
-    padding: $borderPadding;
-    text-align: center;
-    border-radius: $border-radius;
-    font-size: .9rem;
-    transition: $transition;
-    border: 1px solid $green-color;
-    &:hover {
-      background-color: $white-color;
-      color: $green-color;
-      cursor: pointer;
-    }
-  }
+  @include button-01($green-color);
+}
+
+.m-button-03 {
+  @include button-01($red-color);
 }
 
 .m-list-01 {

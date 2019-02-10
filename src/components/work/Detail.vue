@@ -23,6 +23,13 @@
       margin-top: 2rem;
     }
   }
+  .buttonBlock {
+    display: flex;
+    flex-direction: row-reverse;
+    div {
+      margin-left: 1rem;
+    }
+  }
 </style>
 
 <template>
@@ -42,18 +49,25 @@
         </div>
       </div>
     </div>
-    <edit-button
-      text="編集"
-      :editId="getWorkId"
-      type="work"
-    >
-    </edit-button>
+    <div class="buttonBlock">
+      <edit-button
+        text="編集"
+        :editId="getWorkId"
+        type="work"
+      >
+      </edit-button>
+      <delete-button
+        text="削除"
+      >
+      </delete-button>
+    </div>
   </div>
 </template>
 
 <script>
 import TitleBlock from '../TitleBlock';
 import EditButton from '../button/EditButton';
+import DeleteButton from '../button/DeleteButton';
 
 export default {
   props: {
@@ -67,6 +81,7 @@ export default {
   components: {
     TitleBlock,
     EditButton,
+    DeleteButton,
   },
 };
 </script>

@@ -35,12 +35,18 @@
             </th>
             <td>
               {{skill.text}}
-              <edit-button
-                text="編集"
-                :editId="skill.id"
-                type="skill"
-              >
-              </edit-button>
+              <div class="m-buttonBlock-01">
+                <edit-button
+                  text="編集"
+                  :editId="skill.id"
+                  type="skill"
+                >
+                </edit-button>
+                <delete-button
+                  text="削除"
+                >
+                </delete-button>
+              </div>
             </td>
           </tr>
         </table>
@@ -54,6 +60,7 @@
 
 <script>
 import EditButton from '../button/EditButton';
+import DeleteButton from '../button/DeleteButton';
 
 export default {
   props: {
@@ -67,6 +74,7 @@ export default {
   },
   components: {
     EditButton,
+    DeleteButton,
   },
 };
 </script>

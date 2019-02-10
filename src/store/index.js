@@ -19,9 +19,8 @@ const state = {
 };
 
 const util = {
-  findIndex(works, id) {
-    const targetId = parseInt(id, 10);
-    return works.findIndex(work => work.id === targetId);
+  findIndex(data, id) {
+    return data.findIndex(d => d.id === parseInt(id, 10));
   },
 };
 
@@ -71,6 +70,10 @@ const mutations = {
   removeWork(data, id) {
     const index = util.findIndex(data.works, id);
     state.works.splice(index, 1);
+  },
+  removeSkill(data, id) {
+    const index = util.findIndex(data.skill, id);
+    state.skill.splice(index, 1);
   },
 };
 

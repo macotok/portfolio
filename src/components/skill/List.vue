@@ -44,12 +44,23 @@
                 </edit-button>
                 <delete-button
                   text="削除"
+                  eventName="openModal"
+                  @openModal="openModal"
+                  :id="skill.id"
+                  :title="skill.title"
                 >
                 </delete-button>
               </div>
             </td>
           </tr>
         </table>
+        <delete-permission
+          :deleteTitle="title"
+          type="skill"
+          :deleteId="id"
+          commitName="removeSkill"
+        >
+        </delete-permission>
       </div>
       <div v-else>
         表示するSkillがありません。
@@ -61,8 +72,15 @@
 <script>
 import EditButton from '../button/EditButton';
 import DeleteButton from '../button/DeleteButton';
+import DeletePermission from '../modal/DeletePermission';
 
 export default {
+  data() {
+    return {
+      id: '',
+      title: '',
+    };
+  },
   props: {
     skill: Array,
     page: String,
@@ -72,9 +90,17 @@ export default {
       return this.skill.length !== 0;
     },
   },
+  methods: {
+    openModal(eventTarget) {
+      this.id = eventTarget.dataset.id;
+      this.title = eventTarget.dataset.title;
+      this.$modal.show('deletePermission');
+    },
+  },
   components: {
     EditButton,
     DeleteButton,
+    DeletePermission,
   },
 };
 </script>

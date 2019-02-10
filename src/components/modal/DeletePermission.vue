@@ -50,7 +50,7 @@ export default {
   props: {
     deleteTitle: String,
     type: String,
-    deleteId: String,
+    deleteId: [String, Number],
     commitName: String,
   },
   methods: {

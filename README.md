@@ -18,7 +18,7 @@ yarn build
 yarn build --report
 ```
 
-## vue.jsでポートフォリオ
+## Vue/Firebase
 
 ### Vue開発
 

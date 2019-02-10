@@ -1,9 +1,3 @@
-<style scoped lang="scss">
-  .m-button-02 {
-    margin-top: 1rem;
-  }
-</style>
-
 <template>
   <div class="m-button-02">
     <router-link :to="`/${type}/${editId}/edit`">

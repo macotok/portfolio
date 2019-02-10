@@ -90,12 +90,19 @@
         </td>
       </tr>
     </table>
-    <submit-button
-      eventName="editSkill"
-      text="保存"
-      @editSkill="save"
-    >
-    </submit-button>
+    <div class="m-buttonBlock-01">
+      <submit-button
+        eventName="editSkill"
+        text="保存"
+        @editSkill="save"
+      >
+      </submit-button>
+      <back-button
+        text="戻る"
+        linkTo="/skills"
+      >
+      </back-button>
+    </div>
   </div>
 </template>
 
@@ -107,6 +114,7 @@ import SubmitButton from '../button/SubmitButton';
 import NonInput from '../errorMessage/NonInput';
 import NonSelect from '../errorMessage/NonSelect';
 import NonInputValidate from '../../utils/NonInputValidate';
+import BackButton from '../button/BackButton';
 
 export default {
   data() {
@@ -157,6 +165,7 @@ export default {
     SubmitButton,
     NonInput,
     NonSelect,
+    BackButton,
   },
 };
 </script>

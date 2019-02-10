@@ -23,13 +23,6 @@
       margin-top: 2rem;
     }
   }
-  .buttonBlock {
-    display: flex;
-    flex-direction: row-reverse;
-    div {
-      margin-left: 1rem;
-    }
-  }
 </style>
 
 <template>
@@ -49,7 +42,7 @@
         </div>
       </div>
     </div>
-    <div class="buttonBlock">
+    <div class="m-buttonBlock-01">
       <edit-button
         text="編集"
         :editId="getWorkId"

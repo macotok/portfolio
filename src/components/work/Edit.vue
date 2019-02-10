@@ -132,12 +132,19 @@
         </td>
       </tr>
     </table>
-    <submit-button
-      eventName="editWork"
-      text="保存"
-      @editWork="save"
-    >
-    </submit-button>
+    <div class="m-buttonBlock-01">
+      <submit-button
+        eventName="editWork"
+        text="保存"
+        @editWork="save"
+      >
+      </submit-button>
+      <back-button
+        text="戻る"
+        :linkTo="`/work/${getWorkId}`"
+      >
+      </back-button>
+    </div>
   </div>
 </template>
 
@@ -149,6 +156,7 @@ import SubmitButton from '../button/SubmitButton';
 import NonInput from '../errorMessage/NonInput';
 import NonSelect from '../errorMessage/NonSelect';
 import NonInputValidate from '../../utils/NonInputValidate';
+import BackButton from '../button/BackButton';
 
 export default {
   data() {
@@ -170,6 +178,9 @@ export default {
     inputCheck() {
       const nonInputValidate = new NonInputValidate(this.$store.state.editWork);
       return nonInputValidate.inputCheck();
+    },
+    getWorkId() {
+      return this.$route.params.id;
     },
   },
   methods: {
@@ -208,6 +219,7 @@ export default {
     SubmitButton,
     NonInput,
     NonSelect,
+    BackButton,
   },
 };
 </script>

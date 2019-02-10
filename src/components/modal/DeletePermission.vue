@@ -18,7 +18,7 @@
 
 <template>
   <modal
-    name="hello-world"
+    name="deletePermission"
     width="80%"
     height="80%"
   >
@@ -34,7 +34,7 @@
         <delete-permission-button
           text="削除する"
           eventName="deleteId"
-          @deleteId="deleteId"
+          @deleteId="deletedId"
         >
         </delete-permission-button>
       </div>
@@ -50,13 +50,17 @@ export default {
   props: {
     deleteTitle: String,
     type: String,
+    deleteId: String,
+    commitName: String,
   },
   methods: {
     closeModal() {
-      this.$modal.hide('hello-world');
+      this.$modal.hide('deletePermission');
     },
-    deleteId() {
-      this.$modal.hide('hello-world');
+    deletedId() {
+      this.$store.commit(this.commitName, this.deleteId);
+      this.$modal.hide('deletePermission');
+      this.$router.push({ name: 'root' });
     },
   },
   components: {

@@ -59,6 +59,8 @@
     <delete-permission
       :deleteTitle="getTitle"
       type="work"
+      :deleteId="getWorkId"
+      commitName="removeWork"
     >
     </delete-permission>
   </div>
@@ -87,7 +89,7 @@ export default {
   },
   methods: {
     openModal() {
-      this.$modal.show('hello-world');
+      this.$modal.show('deletePermission');
     },
   },
   components: {

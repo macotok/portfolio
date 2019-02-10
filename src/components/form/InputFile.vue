@@ -23,6 +23,7 @@
     }
   }
   .fileThumnail {
+    display: block;
     margin-top: 10px;
   }
 </style>
@@ -33,10 +34,8 @@
       {{labelName}}
       <input class="fileInput" type="file" @change="onFileChange">
     </label>
-    <div class="fileThumnail">
-      <img v-if="image_path" :src="image_path" :width="thumnailSize">
-      <img v-else :src="model" :width="thumnailSize">
-    </div>
+    <img v-if="image_path" :src="image_path" :width="thumnailSize" class="fileThumnail">
+    <img v-else-if="model" :src="model" :width="thumnailSize" class="fileThumnail">
     <p v-if="errorMessage">
       {{errorMessage}}
     </p>

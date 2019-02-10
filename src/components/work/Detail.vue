@@ -51,9 +51,12 @@
       </edit-button>
       <delete-button
         text="削除"
+        eventName="openModal"
+        @openModal="openModal"
       >
       </delete-button>
     </div>
+    <delete-permission></delete-permission>
   </div>
 </template>
 
@@ -61,6 +64,7 @@
 import TitleBlock from '../TitleBlock';
 import EditButton from '../button/EditButton';
 import DeleteButton from '../button/DeleteButton';
+import DeletePermission from '../modal/DeletePermission';
 
 export default {
   props: {
@@ -71,10 +75,16 @@ export default {
       return this.$route.params.id;
     },
   },
+  methods: {
+    openModal() {
+      this.$modal.show('hello-world');
+    },
+  },
   components: {
     TitleBlock,
     EditButton,
     DeleteButton,
+    DeletePermission,
   },
 };
 </script>

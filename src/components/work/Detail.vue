@@ -56,7 +56,11 @@
       >
       </delete-button>
     </div>
-    <delete-permission></delete-permission>
+    <delete-permission
+      :deleteTitle="getTitle"
+      type="work"
+    >
+    </delete-permission>
   </div>
 </template>
 
@@ -73,6 +77,12 @@ export default {
   computed: {
     getWorkId() {
       return this.$route.params.id;
+    },
+    getTitle() {
+      const workList = (this.$store.state.works).find(w => (
+        w.id === parseInt(this.getWorkId, 10)
+      ));
+      return workList.title;
     },
   },
   methods: {

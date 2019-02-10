@@ -26,6 +26,7 @@ yarn build --report
 - VueRouterでRouting処理
 - Vuexで状態管理
 - Work/Skillの追加/更新/削除
+- 削除の確認で「vue-js-modal」モーダル実装
 - formの各項目/ボタンをcomponent化/valueをstoreで管理
 - formの未入力バリデーションチェック
 - fakerでstubデータ作成

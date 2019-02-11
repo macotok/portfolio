@@ -60,7 +60,6 @@
           {{tag}}
         </li>
       </ul>
-      <p>{{work.updatedAt}}</p>
     </router-link>
   </li>
 </template>

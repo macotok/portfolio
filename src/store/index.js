@@ -21,8 +21,12 @@ const state = {
 
 const mutations = {
   addWork(data, addData) {
-    const addWork = addData;
-    addWork.id = data.works.reduce((id, work) => (id < work.id ? work.id : id), 0) + 1;
+    const addOtherData = {
+      id: data.works.reduce((id, work) => (id < work.id ? work.id : id), 0) + 1,
+      updatedAt: new Date(),
+      createdAt: new Date(),
+    };
+    const addWork = Object.assign({}, { ...addData }, { ...addOtherData });
     state.works.push(addWork);
     state.addNewWork = {
       title: '',
@@ -36,8 +40,12 @@ const mutations = {
     state.addNewWork = Object.assign({}, { ...data.addNewWork }, { ...value });
   },
   addSkill(data, addData) {
-    const addSkill = addData;
-    addSkill.id = data.skill.reduce((id, skill) => (id < skill.id ? skill.id : id), 0) + 1;
+    const addOtherData = {
+      id: data.skill.reduce((id, skill) => (id < skill.id ? skill.id : id), 0) + 1,
+      updatedAt: new Date(),
+      createdAt: new Date(),
+    };
+    const addSkill = Object.assign({}, { ...addData }, { ...addOtherData });
     state.skill.push(addSkill);
     state.addNewSkill = {
       title: '',
@@ -49,13 +57,21 @@ const mutations = {
     state.addNewSkill = Object.assign({}, { ...data.addNewSkill }, { ...value });
   },
   updateWork(data, updateWork) {
-    state.works.splice(findIndex(data.works, updateWork.id), 1, updateWork);
+    const updateOtherData = {
+      updatedAt: new Date(),
+    };
+    const updateData = Object.assign({}, { ...updateWork }, { ...updateOtherData });
+    state.works.splice(findIndex(data.works, updateWork.id), 1, updateData);
   },
   updateWorkData(data, value) {
     state.editWork = Object.assign({}, { ...data.editWork }, { ...value });
   },
   updateSkill(data, updateSkill) {
-    state.skill.splice(findIndex(data.skill, updateSkill.id), 1, updateSkill);
+    const updateOtherData = {
+      updatedAt: new Date(),
+    };
+    const updateData = Object.assign({}, { ...updateSkill }, { ...updateOtherData });
+    state.skill.splice(findIndex(data.skill, updateSkill.id), 1, updateData);
   },
   updateSkillData(data, value) {
     state.editSkill = Object.assign({}, { ...data.editSkill }, { ...value });

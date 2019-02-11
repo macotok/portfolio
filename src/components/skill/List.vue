@@ -50,7 +50,6 @@
                   :title="skill.title"
                 >
                 </delete-button>
-                <p>{{skill.updatedAt}}</p>
               </div>
             </td>
           </tr>

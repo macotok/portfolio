@@ -4,6 +4,4 @@ export default {
   image_path: '',
   url: '',
   text: '',
-  // updatedAt: '',
-  // createdAt: '',
 };

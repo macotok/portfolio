@@ -10,5 +10,7 @@
     <dd>formの未入力バリデーションチェック</dd>
     <dd>fakerでstubデータ作成</dd>
     <dd>ページネーション実装</dd>
+    <dt>Firebase開発</dt>
+    <dd>Firestoreでデータ登録/取得/更新/削除</dd>
   </dl>
 </template>

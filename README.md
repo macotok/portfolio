@@ -32,10 +32,13 @@ yarn build --report
 - fakerでstubデータ作成
 - ページネーション実装
 
+### Firebase開発
+
+- Firestoreでデータ登録/取得/更新/削除
+
 ### 未開発
 
 - firebaseでログイン機能
-- DBはfirestore
 - hostsはfirebase
 - 画像管理はfirebaseのcloud storage
 - googleアナリティクスでどこまでスクロールしたかを取得。firebaseに連携

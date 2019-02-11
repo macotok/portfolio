@@ -5,6 +5,7 @@ import addNewWork from './addNewWork';
 import editWork from './editWork';
 import addNewSkill from './addNewSkill';
 import editSkill from './editSkill';
+import findIndex from '../utils/findIndex';
 
 console.log(database);
 
@@ -16,12 +17,6 @@ const state = {
   addNewSkill,
   editSkill,
   worksPaginationNUmber: WORKS_START_NUMBER,
-};
-
-const util = {
-  findIndex(data, id) {
-    return data.findIndex(d => d.id === parseInt(id, 10));
-  },
 };
 
 const mutations = {
@@ -54,26 +49,22 @@ const mutations = {
     state.addNewSkill = Object.assign({}, { ...data.addNewSkill }, { ...value });
   },
   updateWork(data, updateWork) {
-    const index = util.findIndex(data.works, updateWork.id);
-    state.works.splice(index, 1, updateWork);
+    state.works.splice(findIndex(data.works, updateWork.id), 1, updateWork);
   },
   updateWorkData(data, value) {
     state.editWork = Object.assign({}, { ...data.editWork }, { ...value });
   },
   updateSkill(data, updateSkill) {
-    const index = util.findIndex(data.skill, updateSkill.id);
-    state.skill.splice(index, 1, updateSkill);
+    state.skill.splice(findIndex(data.skill, updateSkill.id), 1, updateSkill);
   },
   updateSkillData(data, value) {
     state.editSkill = Object.assign({}, { ...data.editSkill }, { ...value });
   },
   removeWork(data, id) {
-    const index = util.findIndex(data.works, id);
-    state.works.splice(index, 1);
+    state.works.splice(findIndex(data.works, id), 1);
   },
   removeSkill(data, id) {
-    const index = util.findIndex(data.skill, id);
-    state.skill.splice(index, 1);
+    state.skill.splice(findIndex(data.skill, id), 1);
   },
 };
 

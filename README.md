@@ -22,7 +22,7 @@ yarn build --report
 
 ### Vue開発
 
-- VueClIを使用
+- VueCLIを使用
 - VueRouterでRouting処理
 - Vuexで状態管理
 - Work/Skillの追加/更新/削除

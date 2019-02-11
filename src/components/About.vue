@@ -1,7 +1,7 @@
 <template>
   <dl class="m-list-01">
     <dt>Vue開発</dt>
-    <dd>VueClIを使用</dd>
+    <dd>VueCLIを使用</dd>
     <dd>VueRouterでRouting処理</dd>
     <dd>Vuexで状態管理</dd>
     <dd>Work/Skillの追加/更新/削除</dd>

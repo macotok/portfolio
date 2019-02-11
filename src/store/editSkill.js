@@ -2,6 +2,6 @@ export default {
   title: '',
   image_path: '',
   text: '',
-  // updateAt: '',
+  // updatedAt: '',
   // createdAt: '',
 };

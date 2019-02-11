@@ -2,7 +2,7 @@
   <div>
     <title-block title="Works"></title-block>
     <work-list
-      :works="sharedState.works"
+      :works="worksData"
       :start="listStart"
       :count="worksLength"
     >
@@ -16,6 +16,7 @@ import TitleBlock from '../../components/TitleBlock';
 import WorkList from '../../components/work/List';
 import Pagination from '../../components/Pagination';
 import { WORKS_LIST_LENGTH } from '../../defines';
+import sortUpdatedAt from '../../utils/sortUpdatedAt';
 
 export default {
   data() {
@@ -24,8 +25,8 @@ export default {
     };
   },
   computed: {
-    sharedState() {
-      return this.$store.state;
+    worksData() {
+      return sortUpdatedAt(this.$store.state.works);
     },
     listStart() {
       return WORKS_LIST_LENGTH * (this.$store.state.worksPaginationNUmber - 1);

@@ -1,7 +1,7 @@
 <template>
   <div>
     <title-block title="Skills"></title-block>
-    <skill :skill="sharedState.skill" page="list"></skill>
+    <skill :skill="skillData" page="list"></skill>
   </div>
 </template>
 
@@ -9,11 +9,12 @@
 import TitleBlock from '../../components/TitleBlock';
 import Skill from '../../components/skill/List';
 import { WORKS_START_NUMBER } from '../../defines';
+import sortUpdatedAt from '../../utils/sortUpdatedAt';
 
 export default {
   computed: {
-    sharedState() {
-      return this.$store.state;
+    skillData() {
+      return sortUpdatedAt(this.$store.state.skill);
     },
   },
   created() {

@@ -2,14 +2,14 @@
   <div>
     <title-block title="Works"></title-block>
     <work-list
-      :works="sharedState.works"
+      :works="worksData"
       :start="privateState.worksStart"
       :count="privateState.worksCount"
     >
     </work-list>
     <more-button linkTo="works"></more-button>
     <title-block title="Skills"></title-block>
-    <skill :skill="sharedState.skill" page="top"></skill>
+    <skill :skill="skillData" page="top"></skill>
     <more-button linkTo="skills"></more-button>
     <title-block title="Profile"></title-block>
     <Profile page="top"></Profile>
@@ -27,6 +27,7 @@ import MoreButton from '../components/button/More';
 import Profile from '../components/Profile';
 import About from '../components/About';
 import { WORKS_LIST_TOP_LENGTH, WORKS_START_NUMBER } from '../defines';
+import sortUpdatedAt from '../utils/sortUpdatedAt';
 
 export default {
   data() {
@@ -38,8 +39,11 @@ export default {
     };
   },
   computed: {
-    sharedState() {
-      return this.$store.state;
+    worksData() {
+      return sortUpdatedAt(this.$store.state.works);
+    },
+    skillData() {
+      return sortUpdatedAt(this.$store.state.skill);
     },
   },
   created() {

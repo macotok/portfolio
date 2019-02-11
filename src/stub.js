@@ -16,8 +16,8 @@ for (let i = 0; i < 50; i += 1) {
     tags: [Vue.faker().lorem.word(), Vue.faker().lorem.word()],
     image_path: Vue.faker().image.avatar(),
     url: Vue.faker().image.avatar(),
+    updatedAt: Vue.faker().date.past(),
     createdAt: Vue.faker().date.past(),
-    updateAt: Vue.faker().date.future(),
   });
 }
 
@@ -27,8 +27,8 @@ for (let i = 0; i < 20; i += 1) {
     title: Vue.faker().name.title(),
     text: Vue.faker().lorem.sentences(),
     image_path: Vue.faker().image.avatar(),
+    updatedAt: Vue.faker().date.past(),
     createdAt: Vue.faker().date.past(),
-    updateAt: Vue.faker().date.future(),
   });
 }
 

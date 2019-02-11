@@ -11,19 +11,24 @@ const config = {
 firebase.initializeApp(config);
 
 const db = firebase.firestore();
-const settings = { timestampsInSnapshots: true };
-db.settings(settings);
 
 let worksData = {};
-db.collection('works').get().then((querySnapshot) => {
-  querySnapshot.forEach((doc) => {
-    console.log(doc.data());
+db.collection('works').get().then((snapshot) => {
+  snapshot.forEach((doc) => {
     worksData = doc.data();
+  });
+});
+
+let skillData = {};
+db.collection('skill').get().then((querySnapshot) => {
+  querySnapshot.forEach((doc) => {
+    skillData = Object.assign({}, { ...skillData }, { ...doc.data() });
   });
 });
 
 const database = {
   works: worksData,
+  skill: skillData,
 };
 
 export default database;

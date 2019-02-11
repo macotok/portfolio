@@ -68,8 +68,8 @@
 
 <script>
 import TitleBlock from '../TitleBlock';
-import EditButton from '../button/EditButton';
-import DeleteButton from '../button/DeleteButton';
+import EditButton from '../button/Edit';
+import DeleteButton from '../button/Delete';
 import DeletePermission from '../modal/DeletePermission';
 
 export default {

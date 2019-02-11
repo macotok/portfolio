@@ -23,7 +23,7 @@
 import TitleBlock from '../components/TitleBlock';
 import WorkList from '../components/work/List';
 import Skill from '../components/skill/List';
-import MoreButton from '../components/button/MoreButton';
+import MoreButton from '../components/button/More';
 import Profile from '../components/Profile';
 import About from '../components/About';
 import { WORKS_LIST_TOP_LENGTH, WORKS_START_NUMBER } from '../defines';

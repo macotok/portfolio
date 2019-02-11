@@ -110,11 +110,11 @@
 import InputText from '../form/InputText';
 import InputTextArea from '../form/InputTextArea';
 import InputFile from '../form/InputFile';
-import SubmitButton from '../button/SubmitButton';
+import SubmitButton from '../button/Submit';
 import NonInput from '../errorMessage/NonInput';
 import NonSelect from '../errorMessage/NonSelect';
 import NonInputValidate from '../../utils/NonInputValidate';
-import BackButton from '../button/BackButton';
+import BackButton from '../button/Back';
 
 export default {
   data() {

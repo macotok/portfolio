@@ -7,11 +7,9 @@ import addNewSkill from './addNewSkill';
 import editSkill from './editSkill';
 import findIndex from '../utils/findIndex';
 
-console.log(database);
-
 const state = {
-  works: db.works,
-  skill: db.skill,
+  works: database.works,
+  skill: database.skill,
   addNewWork,
   editWork,
   addNewSkill,

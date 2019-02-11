@@ -12,17 +12,17 @@ firebase.initializeApp(config);
 
 const db = firebase.firestore();
 
-let worksData = {};
-db.collection('works').get().then((snapshot) => {
-  snapshot.forEach((doc) => {
-    worksData = doc.data();
+const worksData = [];
+db.collection('works').get().then((querySnapshot) => {
+  querySnapshot.forEach((doc) => {
+    worksData.push(doc.data());
   });
 });
 
-let skillData = {};
+const skillData = [];
 db.collection('skill').get().then((querySnapshot) => {
   querySnapshot.forEach((doc) => {
-    skillData = Object.assign({}, { ...skillData }, { ...doc.data() });
+    skillData.push(doc.data());
   });
 });
 

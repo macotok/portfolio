@@ -35,7 +35,7 @@
     :next-text=null
     :click-handler="clickCallback"
     :container-class="'pagination'"
-    :page-class="'page-item'">
+    :page-class="'pages-item'">
   </paginate>
 </template>
 

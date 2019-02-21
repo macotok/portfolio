@@ -26,9 +26,9 @@ db.collection('skill').get().then((querySnapshot) => {
   });
 });
 
-const database = {
+const firestore = {
   works: worksData,
   skill: skillData,
 };
 
-export default database;
+export default firestore;

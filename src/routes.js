@@ -1,13 +1,13 @@
-import Root from './page/Root';
-import AddWork from './page/work/Add';
-import WorkList from './page/work/List';
-import WorkDetail from './page/work/Detail';
-import EditWorkDetail from './page/work/Edit';
-import AddSkill from './page/skill/Add';
-import EditSkill from './page/skill/Edit';
-import SkillList from './page/skill/List';
-import Profile from './page/Profile';
-import Login from './page/Login';
+import Root from './pages/Root';
+import AddWork from './pages/work/Add';
+import WorkList from './pages/work/List';
+import WorkDetail from './pages/work/Detail';
+import EditWorkDetail from './pages/work/Edit';
+import AddSkill from './pages/skill/Add';
+import EditSkill from './pages/skill/Edit';
+import SkillList from './pages/skill/List';
+import Profile from './pages/Profile';
+import Login from './pages/Login';
 
 export default {
   mode: 'history',

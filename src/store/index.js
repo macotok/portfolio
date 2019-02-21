@@ -1,5 +1,5 @@
-import db from '../stub';
-import database from '../database';
+// import db from '../stub';
+import firestore from '../server/firestore';
 import { WORKS_START_NUMBER } from '../defines';
 import addNewWork from './addNewWork';
 import editWork from './editWork';
@@ -8,8 +8,8 @@ import editSkill from './editSkill';
 import findIndex from '../utils/findIndex';
 
 const state = {
-  works: database.works,
-  skill: database.skill,
+  works: firestore.works,
+  skill: firestore.skill,
   addNewWork,
   editWork,
   addNewSkill,

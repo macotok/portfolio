@@ -1,6 +1,7 @@
 // import db from '../stub';
 import firestore from '../server/firestore';
-import database from '../server/database';
+import serverWorks from '../server/works';
+import serverSkill from '../server/skill';
 import { WORKS_START_NUMBER } from '../defines';
 import addNewWork from './addNewWork';
 import editWork from './editWork';
@@ -9,8 +10,8 @@ import editSkill from './editSkill';
 import findIndex from '../utils/findIndex';
 
 const state = {
-  works: database.works,
-  skill: database.skill,
+  works: serverWorks(),
+  skill: serverSkill(),
   addNewWork,
   editWork,
   addNewSkill,
@@ -28,15 +29,9 @@ const mutations = {
     };
     const addWork = Object.assign({}, { ...addData }, { ...addOtherData });
     firestore.collection('works').add(addWork)
-      .then(() => {
-        const worksData = [];
-        firestore.collection('works').get().then((querySnapshot) => {
-          querySnapshot.forEach((doc) => {
-            worksData.push(doc.data());
-          });
-        }).then(() => {
-          state.works = worksData;
-        });
+      .then(() => (serverWorks()))
+      .then((worksData) => {
+        state.works = worksData;
       });
     state.addNewWork = {
       title: '',
@@ -58,15 +53,9 @@ const mutations = {
     };
     const addSkill = Object.assign({}, { ...addData }, { ...addOtherData });
     firestore.collection('skill').add(addSkill)
-      .then(() => {
-        const skillData = [];
-        firestore.collection('skill').get().then((querySnapshot) => {
-          querySnapshot.forEach((doc) => {
-            skillData.push(doc.data());
-          });
-        }).then(() => {
-          state.skill = skillData;
-        });
+      .then(() => (serverSkill()))
+      .then((skillData) => {
+        state.skill = skillData;
       });
     state.addNewSkill = {
       title: '',

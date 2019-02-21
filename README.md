@@ -1,6 +1,6 @@
 # portfolio
 
-> A Vue.js project
+Vue/Firebaseで開発
 
 ## Build Setup
 
@@ -18,9 +18,7 @@ yarn build
 yarn build --report
 ```
 
-## Vue/Firebase
-
-### Vue開発
+## Vue開発
 
 - VueCLIを使用
 - VueRouterでRouting処理
@@ -32,11 +30,11 @@ yarn build --report
 - fakerでstubデータ作成
 - ページネーション実装
 
-### Firebase開発
+## Firebase開発
 
 - Firestoreでデータ登録/取得/更新/削除
 
-### 未開発
+## 未開発
 
 - firebaseでログイン機能
 - hostsはfirebase

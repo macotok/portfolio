@@ -28,7 +28,7 @@ const mutations = {
       createdAt: new Date(),
     };
     const addWork = Object.assign({}, { ...addData }, { ...addOtherData });
-    firestore.collection('works').add(addWork)
+    firestore.collection('works').doc((addWork.id).toString(10)).set(addWork)
       .then(() => (serverWorks()))
       .then((worksData) => {
         state.works = worksData;
@@ -44,6 +44,23 @@ const mutations = {
   addWorkData(data, value) {
     state.addNewWork = Object.assign({}, { ...data.addNewWork }, { ...value });
   },
+  updateWork(data, updateWork) {
+    const updateOtherData = {
+      updatedAt: new Date(),
+    };
+    const updateData = Object.assign({}, { ...updateWork }, { ...updateOtherData });
+    firestore.collection('works').doc((updateWork.id).toString(10)).update(updateData)
+      .then(() => (serverWorks()))
+      .then((worksData) => {
+        state.works = worksData;
+      });
+  },
+  updateWorkData(data, value) {
+    state.editWork = Object.assign({}, { ...data.editWork }, { ...value });
+  },
+  removeWork(data, id) {
+    state.works.splice(findIndex(data.works, id), 1);
+  },
   addSkill(data, addData) {
     const addOtherData = {
       id: data.skill.reduce((id, skill) => (id < skill.id ? skill.id : id), 0) + 1,
@@ -52,7 +69,7 @@ const mutations = {
       createdAt: new Date(),
     };
     const addSkill = Object.assign({}, { ...addData }, { ...addOtherData });
-    firestore.collection('skill').add(addSkill)
+    firestore.collection('skill').doc((addSkill.id).toString(10)).set(addSkill)
       .then(() => (serverSkill()))
       .then((skillData) => {
         state.skill = skillData;
@@ -66,28 +83,19 @@ const mutations = {
   addSkillData(data, value) {
     state.addNewSkill = Object.assign({}, { ...data.addNewSkill }, { ...value });
   },
-  updateWork(data, updateWork) {
-    const updateOtherData = {
-      updatedAt: new Date(),
-    };
-    const updateData = Object.assign({}, { ...updateWork }, { ...updateOtherData });
-    state.works.splice(findIndex(data.works, updateWork.id), 1, updateData);
-  },
-  updateWorkData(data, value) {
-    state.editWork = Object.assign({}, { ...data.editWork }, { ...value });
-  },
   updateSkill(data, updateSkill) {
     const updateOtherData = {
       updatedAt: new Date(),
     };
     const updateData = Object.assign({}, { ...updateSkill }, { ...updateOtherData });
-    state.skill.splice(findIndex(data.skill, updateSkill.id), 1, updateData);
+    firestore.collection('skill').doc((updateSkill.id).toString(10)).update(updateData)
+      .then(() => (serverSkill()))
+      .then((skillData) => {
+        state.skill = skillData;
+      });
   },
   updateSkillData(data, value) {
     state.editSkill = Object.assign({}, { ...data.editSkill }, { ...value });
-  },
-  removeWork(data, id) {
-    state.works.splice(findIndex(data.works, id), 1);
   },
   removeSkill(data, id) {
     state.skill.splice(findIndex(data.skill, id), 1);

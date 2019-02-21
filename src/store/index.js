@@ -1,4 +1,5 @@
 // import db from '../stub';
+import firestore from '../server/firestore';
 import database from '../server/database';
 import { WORKS_START_NUMBER } from '../defines';
 import addNewWork from './addNewWork';
@@ -21,11 +22,22 @@ const mutations = {
   addWork(data, addData) {
     const addOtherData = {
       id: data.works.reduce((id, work) => (id < work.id ? work.id : id), 0) + 1,
+      image_path: 'https://the-ans.jp/wp-content/uploads/2019/02/20190220_ichiro_gi.jpg',
       updatedAt: new Date(),
       createdAt: new Date(),
     };
     const addWork = Object.assign({}, { ...addData }, { ...addOtherData });
-    state.works.push(addWork);
+    firestore.collection('works').add(addWork)
+      .then(() => {
+        const worksData = [];
+        firestore.collection('works').get().then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            worksData.push(doc.data());
+          });
+        }).then(() => {
+          state.works = worksData;
+        });
+      });
     state.addNewWork = {
       title: '',
       tags: '',
@@ -40,11 +52,22 @@ const mutations = {
   addSkill(data, addData) {
     const addOtherData = {
       id: data.skill.reduce((id, skill) => (id < skill.id ? skill.id : id), 0) + 1,
+      image_path: 'https://the-ans.jp/wp-content/uploads/2019/02/20190220_ichiro_gi.jpg',
       updatedAt: new Date(),
       createdAt: new Date(),
     };
     const addSkill = Object.assign({}, { ...addData }, { ...addOtherData });
-    state.skill.push(addSkill);
+    firestore.collection('skill').add(addSkill)
+      .then(() => {
+        const skillData = [];
+        firestore.collection('skill').get().then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            skillData.push(doc.data());
+          });
+        }).then(() => {
+          state.skill = skillData;
+        });
+      });
     state.addNewSkill = {
       title: '',
       image_path: '',

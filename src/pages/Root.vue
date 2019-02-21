@@ -9,7 +9,11 @@
     </work-list>
     <more-button linkTo="works"></more-button>
     <title-block title="Skills"></title-block>
-    <skill :skill="skillData" page="top"></skill>
+    <skill-list
+      :skill="skillData"
+      page="top"
+    >
+    </skill-list>
     <more-button linkTo="skills"></more-button>
     <title-block title="Profile"></title-block>
     <Profile page="top"></Profile>
@@ -22,7 +26,7 @@
 <script>
 import TitleBlock from '../components/TitleBlock';
 import WorkList from '../components/work/List';
-import Skill from '../components/skill/List';
+import SkillList from '../components/skill/List';
 import MoreButton from '../components/button/More';
 import Profile from '../components/Profile';
 import About from '../components/About';
@@ -53,7 +57,7 @@ export default {
     TitleBlock,
     WorkList,
     MoreButton,
-    Skill,
+    SkillList,
     Profile,
     About,
   },

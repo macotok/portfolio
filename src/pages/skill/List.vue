@@ -1,13 +1,17 @@
 <template>
   <div>
     <title-block title="Skills"></title-block>
-    <skill :skill="skillData" page="list"></skill>
+    <skill-list
+      :skill="skillData"
+      page="list"
+    >
+    </skill-list>
   </div>
 </template>
 
 <script>
 import TitleBlock from '../../components/TitleBlock';
-import Skill from '../../components/skill/List';
+import SkillList from '../../components/skill/List';
 import { WORKS_START_NUMBER } from '../../defines';
 import sortUpdatedAt from '../../utils/sortUpdatedAt';
 
@@ -22,7 +26,7 @@ export default {
   },
   components: {
     TitleBlock,
-    Skill,
+    SkillList,
   },
 };
 </script>

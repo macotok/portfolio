@@ -10,25 +10,6 @@ const config = {
 };
 firebase.initializeApp(config);
 
-const db = firebase.firestore();
-
-const worksData = [];
-db.collection('works').get().then((querySnapshot) => {
-  querySnapshot.forEach((doc) => {
-    worksData.push(doc.data());
-  });
-});
-
-const skillData = [];
-db.collection('skill').get().then((querySnapshot) => {
-  querySnapshot.forEach((doc) => {
-    skillData.push(doc.data());
-  });
-});
-
-const firestore = {
-  works: worksData,
-  skill: skillData,
-};
+const firestore = firebase.firestore();
 
 export default firestore;

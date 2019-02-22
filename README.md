@@ -20,7 +20,7 @@ yarn build --report
 
 ## Vue開発
 
-- VueCLIを使用
+- VueCLIで開発環境構築
 - VueRouterでRouting処理
 - Vuexで状態管理
 - Work/Skillの追加/更新/削除
@@ -33,11 +33,11 @@ yarn build --report
 ## Firebase開発
 
 - Firestoreでデータ登録/取得/更新/削除
+- Hosting
 
 ## 未開発
 
 - firebaseでログイン機能
-- hostsはfirebase
 - 画像管理はfirebaseのcloud storage
 - googleアナリティクスでどこまでスクロールしたかを取得。firebaseに連携
 - deploy機能　github -> gcp source repository -> cloud build -> firebase hostingへのdeploy

@@ -55,9 +55,11 @@
             <dd>開発の要件定義/工数見積もり/設計/進行管理/検証</dd>
             <dd>MeteorでWebアプリケーション開発</dd>
             <dd>HTML5/CSS3/Javascriptでフロント開発</dd>
+            <dd>WordPressでコーポレートサイト制作</dd>
             <dd>ReactでCMS開発</dd>
             <dd>KARTE(Web販促ツール)でサービス開発</dd>
             <dd>Vue.jsでPortfolio制作</dd>
+            <dd>Vue.jsでCMS開発</dd>
             <dt>これからしてきたいこと</dt>
             <dd>React/Vue.jsでのフロント開発</dd>
             <dd>RubyOnRails/Firebaseでのサーバー開発</dd>

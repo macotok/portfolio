@@ -106,17 +106,17 @@
   dependencies:
     "@firebase/auth-types" "0.5.1"
 
-"@firebase/firestore-types@0.3.4":
+"@firebase/database-types@0.3.4":
   version "0.3.4"
-  resolved "https://registry.yarnpkg.com/@firebase/firestore-types/-/firestore-types-0.3.4.tgz#ca2ab19b9e8dec89d41804867f2359c457b0c504"
+  resolved "https://registry.yarnpkg.com/@firebase/database-types/-/database-types-0.3.4.tgz#ca2ab19b9e8dec89d41804867f2359c457b0c504"
   integrity sha512-Kctjvr72c6pv4ZHVEmUE8rpGNeh846PO90aiC2h+vXNCOUdIz9lja7Z79An+aoRN00t1yzHuP0Qr+C3/KWlS+A==
 
-"@firebase/firestore@0.3.11":
+"@firebase/database@0.3.11":
   version "0.3.11"
-  resolved "https://registry.yarnpkg.com/@firebase/firestore/-/firestore-0.3.11.tgz#038c10a22bf4b84f9336b6639e0f6b02165d3f79"
+  resolved "https://registry.yarnpkg.com/@firebase/database/-/database-0.3.11.tgz#038c10a22bf4b84f9336b6639e0f6b02165d3f79"
   integrity sha512-hKqvFEJta1mvY3DIyYOgRQ+CoEZtdJIQT0fw8oyIath8kfpqOdCdnW4/AIQCAXGo5Ov1A5YXHxcNSnW7MuWHAw==
   dependencies:
-    "@firebase/firestore-types" "0.3.4"
+    "@firebase/database-types" "0.3.4"
     "@firebase/logger" "0.1.5"
     "@firebase/util" "0.2.6"
     faye-websocket "0.11.1"
@@ -2770,6 +2770,7 @@ fastparse@^1.1.1:
 faye-websocket@0.11.1, faye-websocket@~0.11.0:
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/faye-websocket/-/faye-websocket-0.11.1.tgz#f0efe18c4f56e4f40afc7e06c719fd5ee6188f38"
+  integrity sha1-8O/hjE9W5PQK/H4Gxxn9XuYYjzg=
   dependencies:
     websocket-driver ">=0.5.1"
 
@@ -2878,7 +2879,7 @@ firebase@^5.8.1:
   dependencies:
     "@firebase/app" "0.3.8"
     "@firebase/auth" "0.9.2"
-    "@firebase/firestore" "0.3.11"
+    "@firebase/database" "0.3.11"
     "@firebase/firestore" "1.0.2"
     "@firebase/functions" "0.3.6"
     "@firebase/messaging" "0.3.10"

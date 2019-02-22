@@ -7,7 +7,6 @@ import addNewWork from './addNewWork';
 import editWork from './editWork';
 import addNewSkill from './addNewSkill';
 import editSkill from './editSkill';
-import findIndex from '../utils/findIndex';
 
 const state = {
   works: serverWorks(),
@@ -59,7 +58,11 @@ const mutations = {
     state.editWork = Object.assign({}, { ...data.editWork }, { ...value });
   },
   removeWork(data, id) {
-    state.works.splice(findIndex(data.works, id), 1);
+    firestore.collection('works').doc(id.toString(10)).delete()
+      .then(() => (serverWorks()))
+      .then((worksData) => {
+        state.works = worksData;
+      });
   },
   addSkill(data, addData) {
     const addOtherData = {
@@ -98,7 +101,11 @@ const mutations = {
     state.editSkill = Object.assign({}, { ...data.editSkill }, { ...value });
   },
   removeSkill(data, id) {
-    state.skill.splice(findIndex(data.skill, id), 1);
+    firestore.collection('skill').doc(id.toString(10)).delete()
+      .then(() => (serverSkill()))
+      .then((skillData) => {
+        state.skill = skillData;
+      });
   },
 };
 

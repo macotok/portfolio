@@ -23,7 +23,7 @@
         </ul>
       </div>
       <div v-else>
-        表示するSkillがありません。
+        {{nonSkillData}}
       </div>
     </div>
     <div v-else-if="page === 'list'">
@@ -63,7 +63,7 @@
         </delete-permission>
       </div>
       <div v-else>
-        表示するSkillがありません。
+        {{nonSkillData}}
       </div>
     </div>
   </div>
@@ -73,6 +73,7 @@
 import EditButton from '../button/Edit';
 import DeleteButton from '../button/Delete';
 import DeletePermission from '../modal/DeletePermission';
+import { NON_SKILL_DATA } from '../../defines/';
 
 export default {
   data() {
@@ -88,6 +89,9 @@ export default {
   computed: {
     hasSkill() {
       return this.skill.length !== 0;
+    },
+    nonSkillData() {
+      return NON_SKILL_DATA;
     },
   },
   methods: {

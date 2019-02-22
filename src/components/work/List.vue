@@ -20,13 +20,14 @@
       </ul>
     </div>
     <div v-else>
-      表示する作品がありません
+      {{nonWorksData}}
     </div>
   </div>
 </template>
 
 <script>
 import WorkItem from './Item';
+import { NON_WORKS_DATA } from '../../defines/';
 
 export default {
   props: {
@@ -44,6 +45,9 @@ export default {
         works = works.splice(this.start, this.count);
       }
       return works;
+    },
+    nonWorksData() {
+      return NON_WORKS_DATA;
     },
   },
   methods: {

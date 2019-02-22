@@ -3,7 +3,7 @@ import VueRouter from 'vue-router';
 import Vuex from 'vuex';
 import VModal from 'vue-js-modal';
 import App from './App';
-import routes from './routes';
+import routes from './routes/';
 import _store from './store/';
 
 Vue.use(VueRouter);

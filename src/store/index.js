@@ -1,4 +1,4 @@
-// import db from '../stub';
+// import db from './stub';
 import firestore from '../server/firestore';
 import serverWorks from '../server/works';
 import serverSkill from '../server/skill';

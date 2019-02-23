@@ -92,11 +92,16 @@ const mutations = {
     state.editWork = Object.assign({}, { ...data.editWork }, { ...value });
   },
   removeWork(data, id) {
-    firestore.collection('works').doc(id.toString(10)).delete()
-      .then(() => (serverWorks()))
-      .then((worksData) => {
-        state.works = worksData;
-      });
+    const getData = (data.works).find(w => (w.id === parseInt(id, 10)));
+    const storageRef = storage.ref();
+    const imagesRef = storageRef.child(`images/works/${id}_${getData.image_name}`);
+    imagesRef.delete().then(() => {
+      firestore.collection('works').doc(id.toString(10)).delete()
+        .then(() => (serverWorks()))
+        .then((worksData) => {
+          state.works = worksData;
+        });
+    });
   },
   addSkill(data, addData) {
     const createId = data.skill.reduce((id, skill) => (id < skill.id ? skill.id : id), 0) + 1;
@@ -169,11 +174,16 @@ const mutations = {
     state.editSkill = Object.assign({}, { ...data.editSkill }, { ...value });
   },
   removeSkill(data, id) {
-    firestore.collection('skill').doc(id.toString(10)).delete()
-      .then(() => (serverSkill()))
-      .then((skillData) => {
-        state.skill = skillData;
-      });
+    const getData = (data.skill).find(s => (s.id === parseInt(id, 10)));
+    const storageRef = storage.ref();
+    const imagesRef = storageRef.child(`images/skill/${id}_${getData.image_name}`);
+    imagesRef.delete().then(() => {
+      firestore.collection('skill').doc(id.toString(10)).delete()
+        .then(() => (serverSkill()))
+        .then((skillData) => {
+          state.skill = skillData;
+        });
+    });
   },
 };
 

@@ -146,7 +146,6 @@ export default {
   data() {
     return {
       validate: true,
-      fileName: '',
     };
   },
   computed: {
@@ -170,7 +169,6 @@ export default {
       this.$store.commit('addWorkData', { url: value });
     },
     image(value, fileName) {
-      this.fileName = fileName;
       this.$store.commit('addWorkData', { image_path: value, image_name: fileName });
     },
     text(value) {

@@ -142,8 +142,8 @@ export default {
     title(value) {
       this.$store.commit('updateSkillData', { title: value, id: parseInt(this.$route.params.id, 10) });
     },
-    image(value) {
-      this.$store.commit('updateSkillData', { image_path: value, id: parseInt(this.$route.params.id, 10) });
+    image(value, fileName) {
+      this.$store.commit('updateSkillData', { image_path: value, image_name: fileName, id: parseInt(this.$route.params.id, 10) });
     },
     text(value) {
       this.$store.commit('updateSkillData', { text: value, id: parseInt(this.$route.params.id, 10) });

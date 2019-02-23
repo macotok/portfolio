@@ -22,7 +22,7 @@ const mutations = {
   addWork(data, addData) {
     const createId = data.works.reduce((id, work) => (id < work.id ? work.id : id), 0) + 1;
     const storageRef = storage.ref();
-    const imagesRef = storageRef.child(`images/${createId}_${addData.image_name}`);
+    const imagesRef = storageRef.child(`images/works/${createId}_${addData.image_name}`);
     imagesRef.putString(addData.image_path, 'data_url')
       .then((snapshot) => {
         const starsRef = storageRef.child(snapshot.metadata.fullPath);
@@ -54,16 +54,39 @@ const mutations = {
   addWorkData(data, value) {
     state.addNewWork = Object.assign({}, { ...data.addNewWork }, { ...value });
   },
-  updateWork(data, updateWork) {
-    const updateOtherData = {
-      updatedAt: new Date(),
-    };
-    const updateData = Object.assign({}, { ...updateWork }, { ...updateOtherData });
-    firestore.collection('works').doc((updateWork.id).toString(10)).update(updateData)
-      .then(() => (serverWorks()))
-      .then((worksData) => {
-        state.works = worksData;
-      });
+  updateWork(data, updateData) {
+    const getData = (data.works).find(w => (w.id === updateData.id));
+    if (getData.image_path !== updateData.image_path) {
+      const storageRef = storage.ref();
+      const imagesRef = storageRef.child(`images/works/${updateData.id}_${updateData.image_name}`);
+      imagesRef.putString(updateData.image_path, 'data_url')
+        .then((snapshot) => {
+          const starsRef = storageRef.child(snapshot.metadata.fullPath);
+          starsRef.getDownloadURL()
+            .then((url) => {
+              const updateOtherData = {
+                image_path: url,
+                updatedAt: new Date(),
+              };
+              const updateNewData = Object.assign({}, { ...updateData }, { ...updateOtherData });
+              firestore.collection('works').doc((updateData.id).toString(10)).update(updateNewData)
+                .then(() => (serverWorks()))
+                .then((worksData) => {
+                  state.works = worksData;
+                });
+            });
+        });
+    } else {
+      const updateOtherData = {
+        updatedAt: new Date(),
+      };
+      const updateNewData = Object.assign({}, { ...updateData }, { ...updateOtherData });
+      firestore.collection('works').doc((updateData.id).toString(10)).update(updateNewData)
+        .then(() => (serverWorks()))
+        .then((worksData) => {
+          state.works = worksData;
+        });
+    }
   },
   updateWorkData(data, value) {
     state.editWork = Object.assign({}, { ...data.editWork }, { ...value });
@@ -76,17 +99,27 @@ const mutations = {
       });
   },
   addSkill(data, addData) {
-    const addOtherData = {
-      id: data.skill.reduce((id, skill) => (id < skill.id ? skill.id : id), 0) + 1,
-      image_path: 'https://the-ans.jp/wp-content/uploads/2019/02/20190220_ichiro_gi.jpg',
-      updatedAt: new Date(),
-      createdAt: new Date(),
-    };
-    const addSkill = Object.assign({}, { ...addData }, { ...addOtherData });
-    firestore.collection('skill').doc((addSkill.id).toString(10)).set(addSkill)
-      .then(() => (serverSkill()))
-      .then((skillData) => {
-        state.skill = skillData;
+    const createId = data.skill.reduce((id, skill) => (id < skill.id ? skill.id : id), 0) + 1;
+    const storageRef = storage.ref();
+    const imagesRef = storageRef.child(`images/skill/${createId}_${addData.image_name}`);
+    imagesRef.putString(addData.image_path, 'data_url')
+      .then((snapshot) => {
+        const starsRef = storageRef.child(snapshot.metadata.fullPath);
+        starsRef.getDownloadURL()
+          .then((url) => {
+            const addOtherData = {
+              id: createId,
+              image_path: url,
+              updatedAt: new Date(),
+              createdAt: new Date(),
+            };
+            const addSkill = Object.assign({}, { ...addData }, { ...addOtherData });
+            firestore.collection('skill').doc((addSkill.id).toString(10)).set(addSkill)
+              .then(() => (serverSkill()))
+              .then((skillData) => {
+                state.skill = skillData;
+              });
+          });
       });
     state.addNewSkill = {
       title: '',
@@ -98,16 +131,39 @@ const mutations = {
   addSkillData(data, value) {
     state.addNewSkill = Object.assign({}, { ...data.addNewSkill }, { ...value });
   },
-  updateSkill(data, updateSkill) {
-    const updateOtherData = {
-      updatedAt: new Date(),
-    };
-    const updateData = Object.assign({}, { ...updateSkill }, { ...updateOtherData });
-    firestore.collection('skill').doc((updateSkill.id).toString(10)).update(updateData)
-      .then(() => (serverSkill()))
-      .then((skillData) => {
-        state.skill = skillData;
-      });
+  updateSkill(data, updateData) {
+    const getData = (data.skill).find(s => (s.id === updateData.id));
+    if (getData.image_path !== updateData.image_path) {
+      const storageRef = storage.ref();
+      const imagesRef = storageRef.child(`images/skill/${updateData.id}_${updateData.image_name}`);
+      imagesRef.putString(updateData.image_path, 'data_url')
+        .then((snapshot) => {
+          const starsRef = storageRef.child(snapshot.metadata.fullPath);
+          starsRef.getDownloadURL()
+            .then((url) => {
+              const updateOtherData = {
+                image_path: url,
+                updatedAt: new Date(),
+              };
+              const updateNewData = Object.assign({}, { ...updateData }, { ...updateOtherData });
+              firestore.collection('skill').doc((updateData.id).toString(10)).update(updateNewData)
+                .then(() => (serverSkill()))
+                .then((skillData) => {
+                  state.skill = skillData;
+                });
+            });
+        });
+    } else {
+      const updateOtherData = {
+        updatedAt: new Date(),
+      };
+      const updateNewData = Object.assign({}, { ...updateData }, { ...updateOtherData });
+      firestore.collection('skill').doc((updateNewData.id).toString(10)).update(updateNewData)
+        .then(() => (serverSkill()))
+        .then((skillData) => {
+          state.skill = skillData;
+        });
+    }
   },
   updateSkillData(data, value) {
     state.editSkill = Object.assign({}, { ...data.editSkill }, { ...value });

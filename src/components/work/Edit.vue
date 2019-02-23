@@ -196,8 +196,8 @@ export default {
     url(value) {
       this.$store.commit('updateWorkData', { url: value, id: parseInt(this.$route.params.id, 10) });
     },
-    image(value) {
-      this.$store.commit('updateWorkData', { image_path: value, id: parseInt(this.$route.params.id, 10) });
+    image(value, fileName) {
+      this.$store.commit('updateWorkData', { image_path: value, image_name: fileName, id: parseInt(this.$route.params.id, 10) });
     },
     text(value) {
       this.$store.commit('updateWorkData', { text: value, id: parseInt(this.$route.params.id, 10) });

@@ -119,8 +119,8 @@ export default {
     title(value) {
       this.$store.commit('addSkillData', { title: value });
     },
-    image(value) {
-      this.$store.commit('addSkillData', { image_path: value });
+    image(value, fileName) {
+      this.$store.commit('addSkillData', { image_path: value, image_name: fileName });
     },
     text(value) {
       this.$store.commit('addSkillData', { text: value });

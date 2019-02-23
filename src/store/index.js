@@ -1,5 +1,5 @@
 // import db from './stub';
-import { firestore } from '../server/firebase';
+import { firestore, storage } from '../server/firebase';
 import serverWorks from '../server/works';
 import serverSkill from '../server/skill';
 import { WORKS_START_NUMBER } from '../defines';
@@ -20,22 +20,33 @@ const state = {
 
 const mutations = {
   addWork(data, addData) {
-    const addOtherData = {
-      id: data.works.reduce((id, work) => (id < work.id ? work.id : id), 0) + 1,
-      image_path: 'https://the-ans.jp/wp-content/uploads/2019/02/20190220_ichiro_gi.jpg',
-      updatedAt: new Date(),
-      createdAt: new Date(),
-    };
-    const addWork = Object.assign({}, { ...addData }, { ...addOtherData });
-    firestore.collection('works').doc((addWork.id).toString(10)).set(addWork)
-      .then(() => (serverWorks()))
-      .then((worksData) => {
-        state.works = worksData;
+    const createId = data.works.reduce((id, work) => (id < work.id ? work.id : id), 0) + 1;
+    const storageRef = storage.ref();
+    const imagesRef = storageRef.child(`images/${createId}_${addData.image_name}`);
+    imagesRef.putString(addData.image_path, 'data_url')
+      .then((snapshot) => {
+        const starsRef = storageRef.child(snapshot.metadata.fullPath);
+        starsRef.getDownloadURL()
+          .then((url) => {
+            const addOtherData = {
+              id: createId,
+              image_path: url,
+              updatedAt: new Date(),
+              createdAt: new Date(),
+            };
+            const addWork = Object.assign({}, { ...addData }, { ...addOtherData });
+            firestore.collection('works').doc((addWork.id).toString(10)).set(addWork)
+              .then(() => (serverWorks()))
+              .then((worksData) => {
+                state.works = worksData;
+              });
+          });
       });
     state.addNewWork = {
       title: '',
       tags: '',
       image_path: '',
+      image_name: '',
       url: '',
       text: '',
     };
@@ -80,6 +91,7 @@ const mutations = {
     state.addNewSkill = {
       title: '',
       image_path: '',
+      image_name: '',
       text: '',
     };
   },

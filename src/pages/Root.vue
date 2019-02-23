@@ -1,6 +1,5 @@
 <template>
   <div>
-    <p><img :src="url" width="100"></p>
     <title-block title="Works"></title-block>
     <work-list
       :works="worksData"
@@ -33,7 +32,6 @@ import Profile from '../components/Profile';
 import About from '../components/About';
 import { WORKS_LIST_TOP_LENGTH, WORKS_START_NUMBER } from '../defines';
 import sortUpdatedAt from '../utils/sortUpdatedAt';
-import { storage } from '../server/firebase';
 
 export default {
   data() {
@@ -42,7 +40,6 @@ export default {
         worksCount: WORKS_LIST_TOP_LENGTH,
         worksStart: 0,
       },
-      url: '',
     };
   },
   computed: {
@@ -55,11 +52,6 @@ export default {
   },
   created() {
     this.$store.state.worksPaginationNUmber = WORKS_START_NUMBER;
-    const storageRef = storage.ref();
-    const starsRef = storageRef.child('image_paso-jewelry_top1.jpg');
-    starsRef.getDownloadURL().then((url) => {
-      this.url = url;
-    });
   },
   components: {
     TitleBlock,

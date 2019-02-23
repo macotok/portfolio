@@ -59,13 +59,13 @@ export default {
   },
   methods: {
     onFileChange(e) {
-      this.createImage(e.target.files[0]);
+      this.createImage(e.target.files[0], e.target.files[0].name);
     },
-    createImage(file) {
+    createImage(file, fileName) {
       const reader = new FileReader();
       reader.onload = (e) => {
         this.image_path = e.target.result;
-        this.$emit(this.eventName, e.target.result);
+        this.$emit(this.eventName, e.target.result, fileName);
       };
       reader.onerror = () => {
         this.errorMessage = '読み込みに失敗しました';

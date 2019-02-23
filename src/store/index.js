@@ -1,5 +1,5 @@
 // import db from './stub';
-import firestore from '../server/firestore';
+import { firestore } from '../server/firebase';
 import serverWorks from '../server/works';
 import serverSkill from '../server/skill';
 import { WORKS_START_NUMBER } from '../defines';

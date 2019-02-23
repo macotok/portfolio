@@ -131,17 +131,17 @@
     faye-websocket "0.11.1"
     tslib "1.9.0"
 
-"@firebase/firestore-types@1.0.2":
+"@firebase/firebase-types@1.0.2":
   version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@firebase/firestore-types/-/firestore-types-1.0.2.tgz#e1f11afb1c33cdef09da734948b26334e2dd470d"
+  resolved "https://registry.yarnpkg.com/@firebase/firebase-types/-/firebase-types-1.0.2.tgz#e1f11afb1c33cdef09da734948b26334e2dd470d"
   integrity sha512-VJFxX3gC8hRm+UiKFk4rniQro3hRzeN9jFmmc2qq0qOO2KXrArc49tl7mj2c9pNPT+8la2xnmNXZ3g7ddJyd8Q==
 
-"@firebase/firestore@1.0.4":
+"@firebase/firebase@1.0.4":
   version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@firebase/firestore/-/firestore-1.0.4.tgz#22ac1640792f17a36ce545c06230e67d4f9e9a6a"
+  resolved "https://registry.yarnpkg.com/@firebase/firebase/-/firebase-1.0.4.tgz#22ac1640792f17a36ce545c06230e67d4f9e9a6a"
   integrity sha512-WgeCEeCNcqOHMJmvAoyo18wfuuJR1+O7zbi7Myt/oaIBWQSC5z4+vt6b/xJiqhMkjDJgMddP567kcsiV/nYvsw==
   dependencies:
-    "@firebase/firestore-types" "1.0.2"
+    "@firebase/firebase-types" "1.0.2"
     "@firebase/logger" "0.1.6"
     "@firebase/webchannel-wrapper" "0.2.13"
     grpc "1.18.0"
@@ -3203,7 +3203,7 @@ firebase@^5.8.1:
     "@firebase/app" "0.3.9"
     "@firebase/auth" "0.9.3"
     "@firebase/database" "0.3.12"
-    "@firebase/firestore" "1.0.4"
+    "@firebase/firebase" "1.0.4"
     "@firebase/functions" "0.3.7"
     "@firebase/messaging" "0.3.11"
     "@firebase/polyfill" "0.3.6"

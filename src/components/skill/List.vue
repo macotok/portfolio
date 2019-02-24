@@ -34,7 +34,7 @@
               <img :src="skill.image_path" width="75" :alt="skill.title">
             </th>
             <td>
-              {{skill.text}}
+              <nl2br tag="p" :text="skill.text" />
               <div class="m-buttonBlock-01">
                 <edit-button
                   text="編集"
@@ -70,6 +70,7 @@
 </template>
 
 <script>
+import Nl2br from 'vue-nl2br';
 import EditButton from '../button/Edit';
 import DeleteButton from '../button/Delete';
 import DeletePermission from '../modal/DeletePermission';
@@ -105,6 +106,7 @@ export default {
     EditButton,
     DeleteButton,
     DeletePermission,
+    Nl2br,
   },
 };
 </script>

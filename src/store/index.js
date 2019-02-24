@@ -18,10 +18,10 @@ const state = {
   worksPaginationNUmber: WORKS_START_NUMBER,
 };
 
+const storageRef = storage.ref();
 const mutations = {
   addWork(data, addData) {
     const createId = data.works.reduce((id, work) => (id < work.id ? work.id : id), 0) + 1;
-    const storageRef = storage.ref();
     const imagesRef = storageRef.child(`images/works/${createId}_${addData.image_name}`);
     imagesRef.putString(addData.image_path, 'data_url')
       .then((snapshot) => {
@@ -57,7 +57,6 @@ const mutations = {
   updateWork(data, updateData) {
     const getData = (data.works).find(w => (w.id === updateData.id));
     if (getData.image_path !== updateData.image_path) {
-      const storageRef = storage.ref();
       const imagesRef = storageRef.child(`images/works/${updateData.id}_${updateData.image_name}`);
       imagesRef.putString(updateData.image_path, 'data_url')
         .then((snapshot) => {
@@ -93,7 +92,6 @@ const mutations = {
   },
   removeWork(data, id) {
     const getData = (data.works).find(w => (w.id === parseInt(id, 10)));
-    const storageRef = storage.ref();
     const imagesRef = storageRef.child(`images/works/${id}_${getData.image_name}`);
     imagesRef.delete().then(() => {
       firestore.collection('works').doc(id.toString(10)).delete()
@@ -105,7 +103,6 @@ const mutations = {
   },
   addSkill(data, addData) {
     const createId = data.skill.reduce((id, skill) => (id < skill.id ? skill.id : id), 0) + 1;
-    const storageRef = storage.ref();
     const imagesRef = storageRef.child(`images/skill/${createId}_${addData.image_name}`);
     imagesRef.putString(addData.image_path, 'data_url')
       .then((snapshot) => {
@@ -139,7 +136,6 @@ const mutations = {
   updateSkill(data, updateData) {
     const getData = (data.skill).find(s => (s.id === updateData.id));
     if (getData.image_path !== updateData.image_path) {
-      const storageRef = storage.ref();
       const imagesRef = storageRef.child(`images/skill/${updateData.id}_${updateData.image_name}`);
       imagesRef.putString(updateData.image_path, 'data_url')
         .then((snapshot) => {
@@ -175,7 +171,6 @@ const mutations = {
   },
   removeSkill(data, id) {
     const getData = (data.skill).find(s => (s.id === parseInt(id, 10)));
-    const storageRef = storage.ref();
     const imagesRef = storageRef.child(`images/skill/${id}_${getData.image_name}`);
     imagesRef.delete().then(() => {
       firestore.collection('skill').doc(id.toString(10)).delete()

@@ -36,7 +36,7 @@
             {{tag}}
           </li>
         </ul>
-        <p class="text">{{data.text}}</p>
+        <nl2br tag="p" :text="data.text" className="text" />
         <div class="m-button-01">
           <a class="m-button-01-link" :href="data.url" target="_blank">作品ページ</a>
         </div>
@@ -67,6 +67,7 @@
 </template>
 
 <script>
+import Nl2br from 'vue-nl2br';
 import TitleBlock from '../TitleBlock';
 import EditButton from '../button/Edit';
 import DeleteButton from '../button/Delete';
@@ -97,6 +98,7 @@ export default {
     EditButton,
     DeleteButton,
     DeletePermission,
+    Nl2br,
   },
 };
 </script>

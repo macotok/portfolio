@@ -18,7 +18,7 @@
     <title-block title="Profile"></title-block>
     <Profile page="top"></Profile>
     <more-button linkTo="profile"></more-button>
-    <title-block title="About this portfolio"></title-block>
+    <title-block title="About this Portfolio"></title-block>
     <About></About>
   </div>
 </template>

@@ -34,9 +34,19 @@
       <li><router-link :to="{name: 'works'}">Works</router-link></li>
       <li><router-link :to="{name: 'skills'}">Skills</router-link></li>
       <li><router-link :to="{name: 'profile'}">Profile</router-link></li>
-      <li><router-link :to="{name: 'addWork'}">add Work</router-link></li>
-      <li><router-link :to="{name: 'addSkill'}">add Skill</router-link></li>
-      <li><router-link :to="{name: 'login'}">Login</router-link></li>
+      <li v-if="isAdmin"><router-link :to="{name: 'addWork'}">add Work</router-link></li>
+      <li v-if="isAdmin"><router-link :to="{name: 'addSkill'}">add Skill</router-link></li>
+      <li v-if="isAdmin"><router-link :to="{name: 'login'}">Login</router-link></li>
     </ul>
   </nav>
 </template>
+
+<script>
+export default {
+  computed: {
+    isAdmin() {
+      return this.$store.state.admin;
+    },
+  },
+};
+</script>

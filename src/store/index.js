@@ -16,6 +16,7 @@ const state = {
   addNewSkill,
   editSkill,
   worksPaginationNUmber: WORKS_START_NUMBER,
+  admin: false,
 };
 
 const storageRef = storage.ref();

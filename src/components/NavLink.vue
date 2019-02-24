@@ -36,7 +36,7 @@
       <li><router-link :to="{name: 'profile'}">Profile</router-link></li>
       <li v-if="isAdmin"><router-link :to="{name: 'addWork'}">add Work</router-link></li>
       <li v-if="isAdmin"><router-link :to="{name: 'addSkill'}">add Skill</router-link></li>
-      <li v-if="isAdmin"><router-link :to="{name: 'login'}">Login</router-link></li>
+      <li v-if="isAdmin"><router-link :to="{name: 'admin'}">Admin</router-link></li>
     </ul>
   </nav>
 </template>

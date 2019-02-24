@@ -42,7 +42,7 @@
         </div>
       </div>
     </div>
-    <div class="m-buttonBlock-01">
+    <div v-if="isAdmin" class="m-buttonBlock-01">
       <edit-button
         text="編集"
         :editId="getWorkId"
@@ -86,6 +86,9 @@ export default {
         w.id === parseInt(this.getWorkId, 10)
       ));
       return workList.title;
+    },
+    isAdmin() {
+      return this.$store.state.admin;
     },
   },
   methods: {

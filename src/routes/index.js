@@ -7,7 +7,7 @@ import AddSkill from '../pages/skill/Add';
 import EditSkill from '../pages/skill/Edit';
 import SkillList from '../pages/skill/List';
 import Profile from '../pages/Profile';
-import Login from '../pages/Login';
+import Admin from '../pages/Admin';
 
 export default {
   mode: 'history',
@@ -58,9 +58,9 @@ export default {
       name: 'profile',
     },
     {
-      path: '/login',
-      component: Login,
-      name: 'login',
+      path: '/admin',
+      component: Admin,
+      name: 'admin',
     },
   ],
   scrollBehavior() {

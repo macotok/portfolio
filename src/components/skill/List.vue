@@ -35,7 +35,7 @@
             </th>
             <td>
               <nl2br tag="p" :text="skill.text" />
-              <div class="m-buttonBlock-01">
+              <div v-if="isAdmin" class="m-buttonBlock-01">
                 <edit-button
                   text="編集"
                   :editId="skill.id"
@@ -93,6 +93,9 @@ export default {
     },
     nonSkillData() {
       return NON_SKILL_DATA;
+    },
+    isAdmin() {
+      return this.$store.state.admin;
     },
   },
   methods: {

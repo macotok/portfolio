@@ -10,6 +10,11 @@ import TitleBlock from '../../components/TitleBlock';
 import WorkAdd from '../../components/work/Add';
 
 export default {
+  created() {
+    if (!this.$store.state.admin) {
+      this.$router.push({ name: 'root' });
+    }
+  },
   components: {
     TitleBlock,
     WorkAdd,

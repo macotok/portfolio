@@ -34,11 +34,11 @@ yarn build --report
 
 - Firestoreでデータ登録/取得/更新/削除
 - Hosting
+- 画像をStorageで管理
 
 ## 未開発
 
 - firebaseでログイン機能
-- 画像管理はfirebaseのcloud storage
 - googleアナリティクスでどこまでスクロールしたかを取得。firebaseに連携
 - deploy機能　github -> gcp source repository -> cloud build -> firebase hostingへのdeploy
 - jsのエラー通知はslackで受け取る

@@ -38,7 +38,7 @@
         </ul>
         <nl2br tag="p" :text="data.text" className="text" />
         <div class="m-button-01">
-          <a class="m-button-01-link" :href="data.url" target="_blank">作品ページ</a>
+          <a class="m-button-01-link" :href="data.url" target="_blank">To page</a>
         </div>
       </div>
     </div>

@@ -18,6 +18,13 @@ yarn build
 yarn build --report
 ```
 
+## deploy to firebase
+
+```
+$ yarn build
+$ firebase deploy
+```
+
 ## Vue開発
 
 - VueCLIで開発環境構築
@@ -39,6 +46,7 @@ yarn build --report
 
 ## 未開発
 
+- レスポンシブ
 - googleアナリティクスでどこまでスクロールしたかを取得。firebaseに連携
 - deploy機能　github -> gcp source repository -> cloud build -> firebase hostingへのdeploy
 - jsのエラー通知はslackで受け取る

@@ -43,8 +43,6 @@ table {
 .m-table-01 {
   border-left: solid 1px #F6F9FF;
   border-top: solid 1px #F6F9FF; }
-  .m-table-01 tr:nth-child(even) th, .m-table-01 tr:nth-child(even) td {
-    background-color: #F6F9FF; }
   .m-table-01 tr th {
     border-bottom: solid 1px #F6F9FF;
     vertical-align: middle;

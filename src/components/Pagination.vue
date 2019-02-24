@@ -5,21 +5,21 @@
     align-items: center;
     margin-top: 2.5%;
   }
-  .pagination .page-item {
-    margin-right: .5%;
+  .pagination .pages-item {
+    margin-right: 1%;
   }
   .pagination li:last-of-type {
     margin-right: 0;
   }
-  .page-item a {
+  .pagination .pages-item a {
     background-color: #F6F9FF;
     color: #4B4D52;
     display: inline-block;
     padding: 10px 16px;
     border: 1px solid #1C93FA;
   }
-  .page-item.active a,
-  .page-item a:hover {
+  .pagination .pages-item.active a,
+  .pagination .pages-item a:hover {
     background-color: #1C93FA;
     color: #F6F9FF;
   }

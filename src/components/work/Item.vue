@@ -10,21 +10,12 @@
       text-decoration: none;
       display: block;
       .image {
-        overflow: hidden;
         img {
           display: block;
-          transform: scale(1);
-          transition: $transition;
           border-radius: $border-radius;
-          width: 100%;
         }
       }
       &:hover {
-        .image {
-          img {
-            transform: scale(1.05);
-          }
-        }
         .tagList {
           li {
             background-color: $white-color;

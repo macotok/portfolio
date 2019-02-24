@@ -2,10 +2,6 @@
   border-left: solid 1px $white-color;
   border-top: solid 1px $white-color;
   tr {
-    &:nth-child(even) th,
-    &:nth-child(even) td {
-      background-color: $white-color;
-    }
     th {
       border-bottom: solid 1px $white-color;
       vertical-align: middle;

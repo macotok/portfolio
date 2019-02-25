@@ -1,9 +1,9 @@
 <style scoped lang="scss">
   @import "../../assets/sass/styles";
   .workList {
-    width: 18%;
+    width: 23.125%;
     margin: 0 2.5% 2.5% 0;
-    &:nth-child(5n) {
+    &:nth-child(4n) {
       margin-right: 0;
     }
     a {
@@ -13,6 +13,7 @@
         img {
           display: block;
           border-radius: $border-radius;
+          margin: 0 auto;
         }
       }
       &:hover {

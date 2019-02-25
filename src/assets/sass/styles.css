@@ -38,7 +38,10 @@ table {
   border-spacing: 0; }
 
 .l-container {
-  padding: 2.5%; }
+  width: 1200px;
+  margin: 0 auto;
+  padding: 2.5%;
+  box-sizing: border-box; }
 
 .m-table-01 {
   border-left: solid 1px #F6F9FF;
@@ -169,5 +172,33 @@ table {
 
 .m-text-errorMessage {
   color: #B31F57; }
+
+@media screen and (max-width: 1200px) {
+  .l-container {
+    width: 100%; } }
+@media screen and (max-width: 1000px) {
+  ul > > > .workList {
+    width: 30.833333%; }
+    ul > > > .workList:nth-child(3n) {
+      margin-right: 0; }
+    ul > > > .workList:nth-child(5n) {
+      margin-right: 2.5%; } }
+@media screen and (max-width: 768px) {
+  ul > > > .workList {
+    width: 45%;
+    margin: 0 5% 5% 0; }
+    ul > > > .workList:nth-child(2n) {
+      margin-right: 0; } }
+@media screen and (max-width: 479px) {
+  ul > > > .workList {
+    width: 100%;
+    margin: 0 0% 5% 0; }
+
+  .m-table-01 {
+    width: 100%; }
+    .m-table-01 th,
+    .m-table-01 td {
+      display: block;
+      width: 100%; } }
 
 /*# sourceMappingURL=styles.css.map */

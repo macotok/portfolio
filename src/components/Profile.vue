@@ -32,7 +32,7 @@
   <div>
     <div v-if="page === 'top'" class="profileTopBlock">
       <p>
-        今までしてきたこと。これからしてきたいことを簡単に説明しました。
+        今までしてきたこと。これからしたいこと。
       </p>
     </div>
     <div v-else-if="page === 'detail'">
@@ -49,7 +49,7 @@
         </div>
         <div class="profileList">
           <dl class="m-list-01">
-            <dt>今まででしてきたこと</dt>
+            <dt>今までしてきたこと</dt>
             <dd>外注先とのディレクション業務</dd>
             <dd>チームリーダー</dd>
             <dd>開発の要件定義/工数見積もり/設計/進行管理/検証</dd>
@@ -60,9 +60,9 @@
             <dd>KARTE(Web販促ツール)でサービス開発</dd>
             <dd>Vue.jsでPortfolio制作</dd>
             <dd>Vue.jsでCMS開発</dd>
-            <dt>これからしてきたいこと</dt>
-            <dd>React/Vue.jsでのフロント開発</dd>
-            <dd>RubyOnRails/Firebaseでのサーバー開発</dd>
+            <dt>これからしたいこと</dt>
+            <dd>React/Vue.jsでフロント開発</dd>
+            <dd>RubyOnRails/Firebaseでサーバー開発</dd>
             <dd>Google Cloud Platformでアプリケーション開発</dd>
             <dd>Github/Qiitaの更新</dd>
             <dd>Webマーケティングの学習</dd>

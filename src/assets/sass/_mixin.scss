@@ -1,8 +1,8 @@
-@mixin skill($margin: 0 2.5% 2.5% 0) {
+@mixin skill($margin: 0 2% 2% 0) {
   background-color: $sub-color;
-  padding: 5px 8px;
+  padding: 3px 6px;
   margin: $margin;
-  font-size: .8rem;
+  font-size: .7rem;
   color: $white-color;
   border-radius: $border-radius;
   transition: $transition;

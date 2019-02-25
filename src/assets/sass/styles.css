@@ -175,7 +175,8 @@ table {
 
 @media screen and (max-width: 1200px) {
   .l-container {
-    width: 100%; } }
+    width: 100%;
+    margin: 0; } }
 @media screen and (max-width: 1000px) {
   ul > > > .workList {
     width: 30.833333%; }
@@ -184,21 +185,64 @@ table {
     ul > > > .workList:nth-child(5n) {
       margin-right: 2.5%; } }
 @media screen and (max-width: 768px) {
+  .m-nav-01 {
+    display: none; }
+
   ul > > > .workList {
     width: 45%;
     margin: 0 5% 5% 0; }
     ul > > > .workList:nth-child(2n) {
-      margin-right: 0; } }
+      margin-right: 0; }
+
+  div > > > .workDetail {
+    display: block; }
+    div > > > .workDetail .image {
+      margin-bottom: 5%; }
+      div > > > .workDetail .image img {
+        margin: 0 auto; }
+    div > > > .workDetail > > > .content {
+      padding-left: 0; }
+
+  div > > > .profileBlock {
+    display: block; }
+    div > > > .profileBlock .profile {
+      text-align: center;
+      margin-bottom: 5%; }
+      div > > > .profileBlock .profile .photo img {
+        margin: 0 auto; }
+      div > > > .profileBlock .profile > > > .profileIcon {
+        display: block; }
+        div > > > .profileBlock .profile > > > .profileIcon li {
+          display: inline-block; }
+          div > > > .profileBlock .profile > > > .profileIcon li:last-child {
+            padding-right: 0; }
+    div > > > .profileBlock > > > .profileList {
+      margin-left: 0; } }
 @media screen and (max-width: 479px) {
+  .l-container {
+    padding: 0 5%; }
+
+  div > > > .title {
+    margin: 10% 0 5%; }
+
   ul > > > .workList {
     width: 100%;
-    margin: 0 0% 5% 0; }
+    margin: 0 0 10% 0; }
 
   .m-table-01 {
     width: 100%; }
     .m-table-01 th,
     .m-table-01 td {
       display: block;
-      width: 100%; } }
+      width: 100%;
+      box-sizing: border-box; }
+    .m-table-01 tr > > > th {
+      padding: 15px 15px 10px;
+      border-bottom: none; }
+    .m-table-01 tr > > > td {
+      padding: 0 15px 20px; }
+
+  #app > > > footer {
+    padding: 10% 0 5%; } }
 
 /*# sourceMappingURL=styles.css.map */

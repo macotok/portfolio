@@ -20,6 +20,8 @@
     <more-button linkTo="profile"></more-button>
     <title-block title="About this Portfolio"></title-block>
     <About></About>
+    <title-block title="Admin"></title-block>
+    <more-button linkTo="admin"></more-button>
   </div>
 </template>
 

@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import TitleBlock from '../../components/TitleBlock';
-import EditWork from '../../components/work/Edit';
+import TitleBlock from '@/components/TitleBlock';
+import EditWork from '@/components/work/Edit';
 
 export default {
   created() {

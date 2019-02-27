@@ -107,14 +107,14 @@
 </template>
 
 <script>
-import InputText from '../form/InputText';
-import InputTextArea from '../form/InputTextArea';
-import InputFile from '../form/InputFile';
-import SubmitButton from '../button/Submit';
-import NonInput from '../errorMessage/NonInput';
-import NonSelect from '../errorMessage/NonSelect';
-import NonInputValidate from '../../utils/NonInputValidate';
-import BackButton from '../button/Back';
+import InputText from '@/components/form/InputText';
+import InputTextArea from '@/components/form/InputTextArea';
+import InputFile from '@/components/form/InputFile';
+import SubmitButton from '@/components/button/Submit';
+import NonInput from '@/components/errorMessage/NonInput';
+import NonSelect from '@/components/errorMessage/NonSelect';
+import BackButton from '@/components/button/Back';
+import NonInputValidate from '@/utils/NonInputValidate';
 
 export default {
   data() {

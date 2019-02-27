@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import WorkDetail from '../../components/work/Detail';
+import WorkDetail from '@/components/work/Detail';
 
 export default {
   computed: {

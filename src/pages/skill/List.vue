@@ -10,10 +10,10 @@
 </template>
 
 <script>
-import TitleBlock from '../../components/TitleBlock';
-import SkillList from '../../components/skill/List';
-import { WORKS_START_NUMBER } from '../../defines';
-import sortUpdatedAt from '../../utils/sortUpdatedAt';
+import TitleBlock from '@/components/TitleBlock';
+import SkillList from '@/components/skill/List';
+import { WORKS_START_NUMBER } from '@/defines';
+import sortUpdatedAt from '@/utils/sortUpdatedAt';
 
 export default {
   computed: {

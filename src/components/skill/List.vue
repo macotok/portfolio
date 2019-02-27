@@ -71,10 +71,10 @@
 
 <script>
 import Nl2br from 'vue-nl2br';
-import EditButton from '../button/Edit';
-import DeleteButton from '../button/Delete';
-import DeletePermission from '../modal/DeletePermission';
-import { NON_SKILL_DATA } from '../../defines/';
+import EditButton from '@/components/button/Edit';
+import DeleteButton from '@/components/button/Delete';
+import DeletePermission from '@/components/modal/DeletePermission';
+import { NON_SKILL_DATA } from '@/defines/';
 
 export default {
   data() {

@@ -26,8 +26,8 @@
 </template>
 
 <script>
-import WorkItem from './Item';
-import { NON_WORKS_DATA } from '../../defines/';
+import WorkItem from '@/components/work/Item';
+import { NON_WORKS_DATA } from '@/defines/';
 
 export default {
   props: {

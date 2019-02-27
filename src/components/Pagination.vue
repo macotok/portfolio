@@ -42,7 +42,7 @@
 <script>
 import Vue from 'vue';
 import Paginate from 'vuejs-paginate';
-import { WORKS_LIST_LENGTH } from '../defines';
+import { WORKS_LIST_LENGTH } from '@/defines';
 
 Vue.component('paginate', Paginate);
 

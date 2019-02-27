@@ -12,11 +12,11 @@
 </template>
 
 <script>
-import TitleBlock from '../../components/TitleBlock';
-import WorkList from '../../components/work/List';
-import Pagination from '../../components/Pagination';
-import { WORKS_LIST_LENGTH } from '../../defines';
-import sortUpdatedAt from '../../utils/sortUpdatedAt';
+import TitleBlock from '@/components/TitleBlock';
+import WorkList from '@/components/work/List';
+import Pagination from '@/components/Pagination';
+import { WORKS_LIST_LENGTH } from '@/defines';
+import sortUpdatedAt from '@/utils/sortUpdatedAt';
 
 export default {
   data() {

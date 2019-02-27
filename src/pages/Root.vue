@@ -24,14 +24,14 @@
 </template>
 
 <script>
-import TitleBlock from '../components/TitleBlock';
-import WorkList from '../components/work/List';
-import SkillList from '../components/skill/List';
-import MoreButton from '../components/button/More';
-import Profile from '../components/Profile';
-import About from '../components/About';
-import { WORKS_LIST_TOP_LENGTH, WORKS_START_NUMBER } from '../defines';
-import sortUpdatedAt from '../utils/sortUpdatedAt';
+import TitleBlock from '@/components/TitleBlock';
+import WorkList from '@/components/work/List';
+import SkillList from '@/components/skill/List';
+import MoreButton from '@/components/button/More';
+import Profile from '@/components/Profile';
+import About from '@/components/About';
+import { WORKS_LIST_TOP_LENGTH, WORKS_START_NUMBER } from '@/defines';
+import sortUpdatedAt from '@/utils/sortUpdatedAt';
 
 export default {
   data() {

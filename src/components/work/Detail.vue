@@ -68,10 +68,10 @@
 
 <script>
 import Nl2br from 'vue-nl2br';
-import TitleBlock from '../TitleBlock';
-import EditButton from '../button/Edit';
-import DeleteButton from '../button/Delete';
-import DeletePermission from '../modal/DeletePermission';
+import TitleBlock from '@/components/TitleBlock';
+import EditButton from '@/components/button/Edit';
+import DeleteButton from '@/components/button/Delete';
+import DeletePermission from '@/components/modal/DeletePermission';
 
 export default {
   props: {

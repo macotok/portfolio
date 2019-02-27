@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import TitleBlock from '../../components/TitleBlock';
-import AddSkill from '../../components/skill/Add';
+import TitleBlock from '@/components/TitleBlock';
+import AddSkill from '@/components/skill/Add';
 
 export default {
   created() {

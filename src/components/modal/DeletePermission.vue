@@ -43,8 +43,8 @@
 </template>
 
 <script>
-import CloseModalButton from '../button/CloseModal';
-import DeletePermissionButton from '../button/DeletePermission';
+import CloseModalButton from '@/components/button/CloseModal';
+import DeletePermissionButton from '@/components/button/DeletePermission';
 
 export default {
   props: {

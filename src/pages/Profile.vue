@@ -6,9 +6,9 @@
 </template>
 
 <script>
-import TitleBlock from '../components/TitleBlock';
-import Profile from '../components/Profile';
-import { WORKS_START_NUMBER } from '../defines';
+import TitleBlock from '@/components/TitleBlock';
+import Profile from '@/components/Profile';
+import { WORKS_START_NUMBER } from '@/defines';
 
 export default {
   created() {

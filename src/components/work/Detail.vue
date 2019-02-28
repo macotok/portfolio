@@ -27,7 +27,9 @@
 
 <template>
   <div>
-    <title-block :title=data.title></title-block>
+    <title-block>
+      {{data.title}}
+    </title-block>
     <div class="workDetail">
       <div class="image"><img :src="data.image_path" :alt="data.title" width="300"></div>
       <div class="content">

@@ -12,7 +12,9 @@
   <div>
     <div v-if="!validate">
       <div class="m-box-errorMessage">
-        <p class="m-text-errorMessage">未入力箇所があります</p>
+        <p class="m-text-errorMessage">
+          {{nonInputMessage}}
+        </p>
       </div>
     </div>
     <table class="m-table-01">
@@ -99,6 +101,7 @@ import SubmitButton from '@/components/button/Submit';
 import NonInput from '@/components/errorMessage/NonInput';
 import NonSelect from '@/components/errorMessage/NonSelect';
 import NonInputValidate from '@/utils/NonInputValidate';
+import { NON_INPUT_MESSAGE } from '@/defines/';
 
 export default {
   data() {
@@ -113,6 +116,9 @@ export default {
     inputCheck() {
       const nonInputValidate = new NonInputValidate(this.$store.state.addNewSkill);
       return nonInputValidate.inputCheck();
+    },
+    nonInputMessage() {
+      return NON_INPUT_MESSAGE;
     },
   },
   methods: {

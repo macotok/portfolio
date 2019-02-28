@@ -31,9 +31,12 @@
       More
     </more-button>
     <title-block>
-      About this Portfolio
+      About
     </title-block>
-    <About></About>
+    <About page="top"></About>
+    <more-button linkTo="about">
+      More
+    </more-button>
     <title-block>
       Admin
     </title-block>

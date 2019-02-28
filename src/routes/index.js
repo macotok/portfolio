@@ -8,6 +8,7 @@ import EditSkill from '../pages/skill/Edit';
 import SkillList from '../pages/skill/List';
 import Profile from '../pages/Profile';
 import Admin from '../pages/Admin';
+import About from '../pages/About';
 
 export default {
   mode: 'history',
@@ -61,6 +62,11 @@ export default {
       path: '/admin',
       component: Admin,
       name: 'admin',
+    },
+    {
+      path: '/about',
+      component: About,
+      name: 'about',
     },
   ],
   scrollBehavior(to, from, savedPosition) {

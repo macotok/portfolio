@@ -84,9 +84,9 @@
     </table>
     <submit-button
       eventName="addSkill"
-      text="追加"
       @addSkill="save"
     >
+      追加
     </submit-button>
   </div>
 </template>

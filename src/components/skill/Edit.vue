@@ -93,14 +93,14 @@
     <div class="m-buttonBlock-01">
       <submit-button
         eventName="editSkill"
-        text="保存"
         @editSkill="save"
       >
+        保存
       </submit-button>
       <back-button
-        text="戻る"
         linkTo="/skills"
       >
+        戻る
       </back-button>
     </div>
   </div>

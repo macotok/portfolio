@@ -126,9 +126,9 @@
     </table>
     <submit-button
       eventName="addWork"
-      text="追加"
       @addWork="save"
     >
+      追加
     </submit-button>
   </div>
 </template>

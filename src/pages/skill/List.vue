@@ -1,6 +1,8 @@
 <template>
   <div>
-    <title-block title="Skills"></title-block>
+    <title-block>
+      Skills
+    </title-block>
     <skill-list
       :skill="skillData"
       page="list"

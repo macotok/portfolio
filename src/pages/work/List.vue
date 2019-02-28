@@ -1,6 +1,8 @@
 <template>
   <div>
-    <title-block title="Works"></title-block>
+    <title-block>
+      Works
+    </title-block>
     <work-list
       :works="worksData"
       :start="listStart"

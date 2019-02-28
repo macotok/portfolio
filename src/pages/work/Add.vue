@@ -1,6 +1,8 @@
 <template>
   <div>
-    <title-block title="add Work"></title-block>
+    <title-block>
+      add Work
+    </title-block>
     <work-add></work-add>
   </div>
 </template>

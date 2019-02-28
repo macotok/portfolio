@@ -1,6 +1,8 @@
 <template>
   <div class="m-button-03">
-    <button @click="deleteId" type="button" class="m-button-03-link">{{text}}</button>
+    <button @click="deleteId" type="button" class="m-button-03-link">
+      <slot></slot>
+    </button>
   </div>
 </template>
 

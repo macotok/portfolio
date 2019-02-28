@@ -7,7 +7,7 @@
       :data-id="id"
       :data-title="title"
     >
-      {{text}}
+      <slot></slot>
     </button>
   </div>
 </template>
@@ -16,7 +16,6 @@
 export default {
   props: {
     eventName: String,
-    text: String,
     id: Number,
     title: String,
   },

@@ -37,18 +37,18 @@
               <nl2br tag="p" :text="skill.text" />
               <div v-if="isAdmin" class="m-buttonBlock-01">
                 <edit-button
-                  text="編集"
                   :editId="skill.id"
                   type="skill"
                 >
+                  編集
                 </edit-button>
                 <delete-button
-                  text="削除"
                   eventName="openModal"
                   @openModal="openModal"
                   :id="skill.id"
                   :title="skill.title"
                 >
+                  削除
                 </delete-button>
               </div>
             </td>

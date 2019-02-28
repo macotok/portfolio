@@ -1,6 +1,8 @@
 <template>
   <div>
-    <title-block title="Profile"></title-block>
+    <title-block>
+      Profile
+    </title-block>
     <profile page="detail"></profile>
   </div>
 </template>

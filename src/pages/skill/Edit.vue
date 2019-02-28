@@ -1,6 +1,8 @@
 <template>
   <div>
-    <title-block title="edit skill"></title-block>
+    <title-block>
+      edit skill
+    </title-block>
     <edit-skill></edit-skill>
   </div>
 </template>

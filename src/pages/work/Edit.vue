@@ -1,6 +1,8 @@
 <template>
   <div>
-    <title-block title="edit Work"></title-block>
+    <title-block>
+      edit Work
+    </title-block>
     <edit-work></edit-work>
   </div>
 </template>

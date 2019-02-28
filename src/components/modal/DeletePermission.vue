@@ -26,16 +26,16 @@
       <p class="title">{{type}}「{{deleteTitle}}」を削除しますか？</p>
       <div class="m-buttonBlock-02">
         <close-modal-button
-          text="閉じる"
           eventName="closeModal"
           @closeModal="closeModal"
         >
+          閉じる
         </close-modal-button>
         <delete-permission-button
-          text="削除する"
           eventName="deleteId"
           @deleteId="deletedId"
         >
+          削除する
         </delete-permission-button>
       </div>
     </div>

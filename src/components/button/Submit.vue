@@ -1,6 +1,8 @@
 <template>
   <div class="m-button-01">
-    <button @click="save" type="submit" class="m-button-01-link">{{text}}</button>
+    <button @click="save" type="submit" class="m-button-01-link">
+      <slot></slot>
+    </button>
   </div>
 </template>
 
@@ -8,7 +10,6 @@
 export default {
   props: {
     eventName: String,
-    text: String,
   },
   methods: {
     save() {

@@ -135,14 +135,14 @@
     <div class="m-buttonBlock-01">
       <submit-button
         eventName="editWork"
-        text="保存"
         @editWork="save"
       >
+        保存
       </submit-button>
       <back-button
-        text="戻る"
         :linkTo="`/work/${getWorkId}`"
       >
+        戻る
       </back-button>
     </div>
   </div>

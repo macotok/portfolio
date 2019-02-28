@@ -1,13 +1,14 @@
 <template>
   <div class="m-button-04">
-    <button @click="close" type="button" class="m-button-04-link">{{text}}</button>
+    <button @click="close" type="button" class="m-button-04-link">
+      <slot></slot>
+    </button>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    text: String,
     eventName: String,
   },
   methods: {

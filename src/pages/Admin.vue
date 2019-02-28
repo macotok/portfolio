@@ -9,7 +9,9 @@
 
 <template>
   <div>
-    <title-block title="Admin"></title-block>
+    <title-block>
+      Admin
+    </title-block>
     <p v-if="privateState.notLogin" class="text">ログインに失敗しました。</p>
     <p v-else class="text">
       管理者用アカウントのみ<span v-if="!isAdmin">ログイン</span><span v-else>ログアウト</span>できます。

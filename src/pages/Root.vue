@@ -1,27 +1,45 @@
 <template>
   <div>
-    <title-block title="Works"></title-block>
+    <title-block>
+      Works
+    </title-block>
     <work-list
       :works="worksData"
       :start="privateState.worksStart"
       :count="privateState.worksCount"
     >
     </work-list>
-    <more-button linkTo="works"></more-button>
-    <title-block title="Skills"></title-block>
+    <more-button linkTo="works">
+      More
+    </more-button>
+    <title-block>
+      Skills
+    </title-block>
     <skill-list
       :skill="skillData"
       page="top"
     >
     </skill-list>
-    <more-button linkTo="skills"></more-button>
-    <title-block title="Profile"></title-block>
+    <more-button linkTo="skills">
+      More
+    </more-button>
+    <title-block>
+      Profile
+    </title-block>
     <Profile page="top"></Profile>
-    <more-button linkTo="profile"></more-button>
-    <title-block title="About this Portfolio"></title-block>
+    <more-button linkTo="profile">
+      More
+    </more-button>
+    <title-block>
+      About this Portfolio
+    </title-block>
     <About></About>
-    <title-block title="Admin"></title-block>
-    <more-button linkTo="admin"></more-button>
+    <title-block>
+      Admin
+    </title-block>
+    <more-button linkTo="admin">
+      More
+    </more-button>
   </div>
 </template>
 

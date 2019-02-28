@@ -44,16 +44,16 @@
     </div>
     <div v-if="isAdmin" class="m-buttonBlock-01">
       <edit-button
-        text="編集"
         :editId="getWorkId"
         type="work"
       >
+        編集
       </edit-button>
       <delete-button
-        text="削除"
         eventName="openModal"
         @openModal="openModal"
       >
+        削除
       </delete-button>
     </div>
     <delete-permission

@@ -16,30 +16,25 @@
   }
 </style>
 
-<template>
-  <modal
-    name="deletePermission"
-    width="80%"
+<template lang="pug">
+  modal(
+    name="deletePermission",
+    width="80%",
     height="80%"
-  >
-    <div class="modalBlock">
-      <p class="title">{{type}}「{{deleteTitle}}」を削除しますか？</p>
-      <div class="m-buttonBlock-02">
-        <close-modal-button
-          eventName="closeModal"
+  )
+    div.modalBlock
+      p.title {{type}}「{{deleteTitle}}」を削除しますか？
+      div.m-buttonBlock-02
+        close-modal-button(
+          eventName="closeModal",
           @closeModal="closeModal"
-        >
-          閉じる
-        </close-modal-button>
-        <delete-permission-button
-          eventName="deleteId"
+        )
+          | 閉じる
+        delete-permission-button(
+          eventName="deleteId",
           @deleteId="deletedId"
-        >
-          削除する
-        </delete-permission-button>
-      </div>
-    </div>
-  </modal>
+        )
+          | 削除する
 </template>
 
 <script>

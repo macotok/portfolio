@@ -10,16 +10,15 @@
   }
 </style>
 
-<template>
-  <div>
-    <input
-      type="text"
-      :name="name"
-      :value="model"
-      :placeholder="placeholder"
+<template lang="pug">
+  div
+    input(
+      type="text",
+      :name="name",
+      :value="model",
+      :placeholder="placeholder",
       @input="updateValue"
-    >
-  </div>
+    )
 </template>
 
 <script>

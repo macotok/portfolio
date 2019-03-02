@@ -28,18 +28,13 @@
   }
 </style>
 
-<template>
-  <div>
-    <label class="file">
-      {{labelName}}
-      <input class="fileInput" type="file" @change="onFileChange">
-    </label>
-    <img v-if="image_path" :src="image_path" :width="thumnailSize" class="fileThumnail">
-    <img v-else-if="model" :src="model" :width="thumnailSize" class="fileThumnail">
-    <p v-if="errorMessage">
-      {{errorMessage}}
-    </p>
-  </div>
+<template lang="pug">
+  div
+    label.file {{labelName}}
+      input.fileInput(type="file", @change="onFileChange")
+    img.fileThumnail(v-if="image_path", :src="image_path", :width="thumnailSize")
+    img.fileThumnail(v-else-if="model", :src="model", :width="thumnailSize")
+    p(v-if="errorMessage") {{errorMessage}}
 </template>
 
 <script>

@@ -1,9 +1,7 @@
-<template>
-  <div class="m-button-04">
-    <button @click="close" type="button" class="m-button-04-link">
-      <slot></slot>
-    </button>
-  </div>
+<template lang="pug">
+  div.m-button-04
+    button.m-button-04-link(@click="close", type="button")
+      slot
 </template>
 
 <script>

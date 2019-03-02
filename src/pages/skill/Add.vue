@@ -1,10 +1,7 @@
-<template>
-  <div>
-    <title-block>
-      add Skill
-    </title-block>
-    <add-skill></add-skill>
-  </div>
+<template lang="pug">
+  div
+    title-block add Skill
+    add-skill
 </template>
 
 <script>

@@ -7,22 +7,19 @@
   }
 </style>
 
-<template>
-  <div>
-    <title-block>
-      Admin
-    </title-block>
-    <p v-if="privateState.notLogin" class="text">ログインに失敗しました。</p>
-    <p v-else class="text">
-      管理者用アカウントのみ<span v-if="!isAdmin">ログイン</span><span v-else>ログアウト</span>できます。
-    </p>
-    <div v-if="!isAdmin" class="button">
-      <button @click="login" type="button" class="m-button-02-link">ログインする</button>
-    </div>
-    <div v-else class="button">
-      <button @click="logout" type="button" class="m-button-03-link">ログアウトする</button>
-    </div>
-  </div>
+<template lang="pug">
+  div
+    title-block Admin
+    p.text(v-if="privateState.notLogin") ログインに失敗しました。
+    p.text(v-else)
+      | 管理者用アカウントのみ
+      span(v-if="!isAdmin") ログイン
+      span(v-else) ログアウト
+      | できます。
+    div.button(v-if="!isAdmin")
+      button.m-button-02-link(@click="login", type="button") ログインする
+    div.button(v-else)
+      button.m-button-03-link(@click="logout", type="button") ログアウトする
 </template>
 
 <script>

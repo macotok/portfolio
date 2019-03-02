@@ -1,7 +1,6 @@
-<template>
-  <p class="m-text-errorMessage">
-    {{text}}を選択してください
-  </p>
+<template lang="pug">
+  p.m-text-errorMessage
+    | {{text}}を選択してください
 </template>
 
 <script>

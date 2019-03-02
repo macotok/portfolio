@@ -1,15 +1,12 @@
-<template>
-  <div>
-    <title-block>
-      Profile
-    </title-block>
-    <profile></profile>
-  </div>
+<template lang="pug">
+  div
+    title-block Profile
+    profile-detail
 </template>
 
 <script>
 import TitleBlock from '@/components/TitleBlock';
-import Profile from '@/components/profile/Detail';
+import ProfileDetail from '@/components/profile/Detail';
 import { WORKS_START_NUMBER } from '@/defines';
 
 export default {
@@ -18,7 +15,7 @@ export default {
   },
   components: {
     TitleBlock,
-    Profile,
+    ProfileDetail,
   },
 };
 </script>

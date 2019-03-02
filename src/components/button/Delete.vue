@@ -1,15 +1,13 @@
-<template>
-  <div class="m-button-03">
-    <button
-      @click="openModal"
-      type="button"
-      class="m-button-03-link"
-      :data-id="id"
+<template lang="pug">
+  div.m-button-03
+    button(
+      @click="openModal",
+      type="button",
+      class="m-button-03-link",
+      :data-id="id",
       :data-title="title"
-    >
-      <slot></slot>
-    </button>
-  </div>
+    )
+      slot
 </template>
 
 <script>

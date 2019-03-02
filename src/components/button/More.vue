@@ -1,9 +1,7 @@
-<template>
-  <div class="m-button-01">
-    <router-link :to="{name: linkTo}" class="m-button-01-link">
-      <slot></slot>
-    </router-link>
-  </div>
+<template lang="pug">
+  div.m-button-01
+    router-link.m-button-01-link(:to="{name: linkTo}")
+      slot
 </template>
 
 <script>

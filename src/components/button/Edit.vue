@@ -1,11 +1,8 @@
-<template>
-  <div class="m-button-02">
-    <router-link :to="`/${type}/${editId}/edit`">
-      <button type="button" class="m-button-02-link">
-        <slot></slot>
-      </button>
-    </router-link>
-  </div>
+<template lang="pug">
+  div.m-button-02
+    router-link(:to="`/${type}/${editId}/edit`")
+      button.m-button-02-link(type="button")
+        slot
 </template>
 
 <script>

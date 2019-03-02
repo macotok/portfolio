@@ -4,11 +4,10 @@
   }
 </style>
 
-<template>
-  <div class="aboutTop">
-    <p>
-      このPortfolioはVue/Firebaseで開発しました。<br>
-      その開発項目について記載しました。
-    </p>
-  </div>
+<template lang="pug">
+  div.aboutTop
+    p
+      | このPortfolioはVue/Firebaseで開発しました。
+      br
+      | その開発項目について記載しました。
 </template>

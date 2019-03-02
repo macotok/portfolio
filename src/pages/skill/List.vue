@@ -1,14 +1,7 @@
-<template>
-  <div>
-    <title-block>
-      Skills
-    </title-block>
-    <skill-list
-      :skill="skillData"
-      page="list"
-    >
-    </skill-list>
-  </div>
+<template lang="pug">
+  div
+    title-block Skills
+    skill-list(:skill="skillData", page="list")
 </template>
 
 <script>

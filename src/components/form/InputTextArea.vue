@@ -10,17 +10,15 @@
   }
 </style>
 
-<template>
-  <div>
-    <textarea
-      :name="name"
-      :value="model"
-      :rows="rows"
-      :placeholder="placeholder"
+<template lang="pug">
+  div
+    textarea(
+      :name="name",
+      :value="model",
+      :rows="rows",
+      :placeholder="placeholder",
       @input="updateValue"
-    >
-    </textarea>
-  </div>
+    )
 </template>
 
 <script>

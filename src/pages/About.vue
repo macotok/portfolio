@@ -1,15 +1,12 @@
-<template>
-  <div>
-    <title-block>
-      About
-    </title-block>
-    <about></about>
-  </div>
+<template lang="pug">
+  div
+    title-block About
+    about-detail
 </template>
 
 <script>
 import TitleBlock from '@/components/TitleBlock';
-import About from '@/components/about/Detail';
+import AboutDetail from '@/components/about/Detail';
 import { WORKS_START_NUMBER } from '@/defines';
 
 export default {
@@ -18,7 +15,7 @@ export default {
   },
   components: {
     TitleBlock,
-    About,
+    AboutDetail,
   },
 };
 </script>

@@ -1,16 +1,12 @@
-<template>
-  <div>
-    <title-block>
-      Works
-    </title-block>
-    <work-list
-      :works="worksData"
-      :start="listStart"
+<template lang="pug">
+  div
+    title-block Works
+    work-list(
+      :works="worksData",
+      :start="listStart",
       :count="worksLength"
-    >
-    </work-list>
-    <pagination></pagination>
-  </div>
+    )
+    pagination
 </template>
 
 <script>

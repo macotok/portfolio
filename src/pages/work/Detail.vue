@@ -1,10 +1,6 @@
-<template>
-  <div>
-    <work-detail
-      :data="workData"
-    >
-    </work-detail>
-  </div>
+<template lang="pug">
+  div
+    work-detail(:data="workData")
 </template>
 
 <script>

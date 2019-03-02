@@ -4,11 +4,10 @@
   }
 </style>
 
-<template>
-  <div class="profileTop">
-    <p>
-      GitHub/Qiitaアカウントのリンク先、<br>
-      今までしてきたこと、これからしたいことを記載しました。
-    </p>
-  </div>
+<template lang="pug">
+  div.profileTop
+    p
+      | GitHub/Qiitaアカウントのリンク先、
+      br
+      | 今までしてきたこと、これからしたいことを記載しました。
 </template>

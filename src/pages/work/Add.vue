@@ -1,10 +1,7 @@
-<template>
-  <div>
-    <title-block>
-      add Work
-    </title-block>
-    <work-add></work-add>
-  </div>
+<template lang="pug">
+  div
+    title-block add Work2
+    work-add
 </template>
 
 <script>

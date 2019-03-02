@@ -1,9 +1,7 @@
-<template>
-  <div class="m-button-01">
-    <a :href="linkTo" class="m-button-01-link">
-      <slot></slot>
-    </a>
-  </div>
+<template lang="pug">
+  div.m-button-01
+    a.m-button-01-link(:href="linkTo")
+      slot
 </template>
 
 <script>

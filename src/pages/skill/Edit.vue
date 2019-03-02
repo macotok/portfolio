@@ -1,10 +1,7 @@
-<template>
-  <div>
-    <title-block>
-      edit skill
-    </title-block>
-    <edit-skill></edit-skill>
-  </div>
+<template lang="pug">
+  div
+    title-block edit skill
+    edit-skill
 </template>
 
 <script>

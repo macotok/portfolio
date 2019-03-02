@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    title-block About
+    title-block About this Portfolio
     about-detail
 </template>
 

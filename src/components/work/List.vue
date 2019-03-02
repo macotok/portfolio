@@ -7,22 +7,17 @@
 }
 </style>
 
-<template>
-  <div>
-    <div v-if="hasWork" class="workBlock">
-      <ul>
-        <work-item
-          v-for="(work, index) in filteredWorks" :key="index"
-          :work="work"
+<template lang="pug">
+  div
+    div.workBlock(v-if="hasWork")
+      ul
+        work-item(
+          v-for="(work, index) in filteredWorks",
+          :key="index",
+          :work="work",
           @select="select"
-        >
-        </work-item>
-      </ul>
-    </div>
-    <div v-else>
-      {{nonWorksData}}
-    </div>
-  </div>
+        )
+    div(v-else) {{nonWorksData}}
 </template>
 
 <script>

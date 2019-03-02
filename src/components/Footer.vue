@@ -8,8 +8,6 @@
   }
 </style>
 
-<template>
-  <footer>
-    @portfolio-205d8.firebaseapp.com
-  </footer>
+<template lang="pug">
+  footer @portfolio-205d8.firebaseapp.com
 </template>

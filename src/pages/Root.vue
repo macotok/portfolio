@@ -13,7 +13,7 @@
     title-block Profile
     Profile(page="top")
     more-button(linkTo="profile") More
-    title-block About
+    title-block About this Portfolio
     About
     more-button(linkTo="about") More
 </template>

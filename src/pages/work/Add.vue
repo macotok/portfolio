@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    title-block add Work2
+    title-block add Work
     work-add
 </template>
 

@@ -23,10 +23,8 @@
   }
 </style>
 
-<template>
-  <div class="title">
-    <h2>
-      <slot></slot>
-    </h2>
-  </div>
+<template lang="pug">
+  div.title
+    h2
+      slot
 </template>

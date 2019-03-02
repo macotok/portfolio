@@ -29,7 +29,7 @@
         | このサイトはGitHubで管理しています。
         br
         | そのリポジトリはこちらになります。
-      link-button(linkTo="https://github.com/macotok/portfolio")
+      link-button(linkTo="https://github.com/macotok/portfolio", :targetBlank="true")
         | To GitHub
 </template>
 

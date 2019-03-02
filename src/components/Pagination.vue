@@ -25,18 +25,18 @@
   }
 </style>
 
-<template>
-  <paginate
-    v-model="page"
-    :page-count="paginationNumber"
-    :page-range="worksLength"
-    :margin-pages="0"
-    :prev-text=null
-    :next-text=null
-    :click-handler="clickCallback"
-    :container-class="'pagination'"
-    :page-class="'pages-item'">
-  </paginate>
+<template lang="pug">
+  paginate(
+    v-model="page",
+    :page-count="paginationNumber",
+    :page-range="worksLength",
+    :margin-pages="0",
+    :prev-text=null,
+    :next-text=null,
+    :click-handler="clickCallback",
+    :container-class="'pagination'",
+    :page-class="'pages-item'"
+  )
 </template>
 
 <script>

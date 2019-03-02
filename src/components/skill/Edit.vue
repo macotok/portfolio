@@ -8,104 +8,56 @@
   }
 </style>
 
-<template>
-  <div>
-    <div v-if="!validate">
-      <div class="m-box-errorMessage">
-        <p class="m-text-errorMessage">
-          {{nonInputMessage}}
-        </p>
-      </div>
-    </div>
-    <table class="m-table-01">
-      <tr>
-        <th>
-          ID
-        </th>
-        <td>
-          {{editSkill.id}}
-        </td>
-      </tr>
-      <tr>
-        <th>
-          スキル名
-        </th>
-        <td>
-          <input-text
-            name="skillTitle"
-            :model="editSkill.title"
-            placeholder=""
-            eventName="skillTitle"
+<template lang="pug">
+  div
+    div(v-if="!validate")
+      div.m-box-errorMessage
+        p.m-text-errorMessage {{nonInputMessage}}
+    table.m-table-01
+      tr
+        th ID
+        td {{editSkill.id}}
+      tr
+        th スキル名
+        td
+          input-text(
+            name="skillTitle",
+            :model="editSkill.title",
+            placeholder="",
+            eventName="skillTitle",
             @skillTitle="title"
-          >
-          </input-text>
-          <div v-if="inputCheck.indexOf('title') >= 0">
-            <non-input
-              text="スキル名"
-            >
-            </non-input>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <th>
-          画像
-        </th>
-        <td>
-          <input-file
-            labelName="選択"
-            thumnailSize="250"
-            name="skillImage"
-            :model="editSkill.image_path"
-            eventName="skillImage"
+          )
+          div(v-if="inputCheck.indexOf('title') >= 0")
+            non-input(text="スキル名")
+      tr
+        th 画像
+        td
+          input-file(
+            labelName="選択",
+            thumnailSize="250",
+            name="skillImage",
+            :model="editSkill.image_path",
+            eventName="skillImage",
             @skillImage="image"
-          >
-          </input-file>
-          <div v-if="inputCheck.indexOf('image_path') >= 0">
-            <non-select
-              text="画像"
-            >
-            </non-select>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <th>
-          内容
-        </th>
-        <td>
-          <input-text-area
-            name="skillText"
-            :model="editSkill.text"
-            placeholder=""
-            eventName="skillText"
-            rows="10"
+          )
+          div(v-if="inputCheck.indexOf('image_path') >= 0")
+            non-select(text="画像")
+      tr
+        th 内容
+        td
+          input-text-area(
+            name="skillText",
+            :model="editSkill.text",
+            placeholder="",
+            eventName="skillText",
+            rows="10",
             @skillText="text"
-          >
-          </input-text-area>
-          <div v-if="inputCheck.indexOf('text') >= 0">
-            <non-input
-              text="内容"
-            >
-            </non-input>
-          </div>
-        </td>
-      </tr>
-    </table>
-    <div class="m-buttonBlock-01">
-      <submit-button
-        eventName="editSkill"
-        @editSkill="save"
-      >
-        保存
-      </submit-button>
-      <back-button
-        linkTo="/skills"
-      >
-        戻る
-      </back-button>
-    </div>
-  </div>
+          )
+          div(v-if="inputCheck.indexOf('text') >= 0")
+            non-input(text="内容")
+    div.m-buttonBlock-01
+      submit-button(eventName="editSkill", @editSkill="save") 保存
+      back-button(linkTo="/skills") 戻る
 </template>
 
 <script>

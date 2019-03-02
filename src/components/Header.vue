@@ -12,8 +12,7 @@
   }
 </style>
 
-<template>
-  <header>
-    <h1>Portfolio</h1>
-  </header>
+<template lang="pug">
+  header
+    h1 Portfolio
 </template>

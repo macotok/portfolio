@@ -40,20 +40,14 @@
   }
 </style>
 
-<template>
-  <li class="workList">
-    <router-link :to="'/work/' + work.id">
-      <div class="image">
-        <img :src="work.image_path" width="200" :alt="work.title" />
-      </div>
-      <p class="title">{{work.title}}</p>
-      <ul class="tagList">
-        <li v-for="(tag, index) in work.tags" :key="index">
-          {{tag}}
-        </li>
-      </ul>
-    </router-link>
-  </li>
+<template lang="pug">
+  li.workList
+    router-link(:to="'/work/' + work.id")
+      div.image
+        img(:src="work.image_path", width="200", :alt="work.title")
+      p.title {{work.title}}
+      ul.tagList
+        li(v-for="(tag, index) in work.tags", :key="index") {{tag}}
 </template>
 
 <script>

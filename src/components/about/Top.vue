@@ -7,7 +7,7 @@
 <template lang="pug">
   div.aboutTop
     p
-      | このPortfolioはVue/Firebaseで開発しました。
+      | このPortfolioはVue/Firebaseで開発、
       br
       | その開発項目について記載しました。
 </template>

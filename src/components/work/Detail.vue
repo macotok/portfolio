@@ -25,47 +25,26 @@
   }
 </style>
 
-<template>
-  <div>
-    <title-block>
-      {{data.title}}
-    </title-block>
-    <div class="workDetail">
-      <div class="image"><img :src="data.image_path" :alt="data.title" width="300"></div>
-      <div class="content">
-        <ul class="tagList">
-          <li v-for="(tag, index) in data.tags" :key="index">
-            {{tag}}
-          </li>
-        </ul>
-        <nl2br tag="p" :text="data.text" className="text" />
-        <div class="m-button-01">
-          <a class="m-button-01-link" :href="data.url" target="_blank">To page</a>
-        </div>
-      </div>
-    </div>
-    <div v-if="isAdmin" class="m-buttonBlock-01">
-      <edit-button
-        :editId="getWorkId"
-        type="work"
-      >
-        編集
-      </edit-button>
-      <delete-button
-        eventName="openModal"
-        @openModal="openModal"
-      >
-        削除
-      </delete-button>
-    </div>
-    <delete-permission
-      :deleteTitle="getTitle"
-      type="work"
-      :deleteId="getWorkId"
-      commitName="removeWork"
-    >
-    </delete-permission>
-  </div>
+<template lang="pug">
+  div
+    title-block {{data.title}}
+    div.workDetail
+      div.image
+        img(:src="data.image_path", :alt="data.title", width="300")
+      div.content
+        ul.tagList
+          li(v-for="(tag, index) in data.tags", :key="index") {{tag}}
+        nl2br(tag="p", :text="data.text", className="text")
+        link-button(:linkTo="data.url", :targetBlank="true") To page
+    div.m-buttonBlock-01(v-if="isAdmin")
+      edit-button(:editId="getWorkId", type="work") 編集
+      delete-button(eventName="openModal", @openModal="openModal") 削除
+    delete-permission(
+      :deleteTitle="getTitle",
+      type="work",
+      :deleteId="getWorkId",
+      commitName="removeWork",
+    )
 </template>
 
 <script>
@@ -73,6 +52,7 @@ import Nl2br from 'vue-nl2br';
 import TitleBlock from '@/components/TitleBlock';
 import EditButton from '@/components/button/Edit';
 import DeleteButton from '@/components/button/Delete';
+import LinkButton from '@/components/button/Link';
 import DeletePermission from '@/components/modal/DeletePermission';
 
 export default {
@@ -102,6 +82,7 @@ export default {
     TitleBlock,
     EditButton,
     DeleteButton,
+    LinkButton,
     DeletePermission,
     Nl2br,
   },

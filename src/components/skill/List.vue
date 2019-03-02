@@ -12,61 +12,36 @@
   }
 </style>
 
-<template>
-  <div>
-    <div v-if="page === 'top'">
-      <div v-if="hasSkill" class="skillBlock">
-        <ul>
-          <li v-for="(skill, index) in this.skill" :key="index">
-            {{skill.title}}
-          </li>
-        </ul>
-      </div>
-      <div v-else>
-        {{nonSkillData}}
-      </div>
-    </div>
-    <div v-else-if="page === 'list'">
-      <div v-if="hasSkill" class="skillList">
-        <table class="m-table-01">
-          <tr v-for="(skill, index) in this.skill" :key="index">
-            <th>
-              <img :src="skill.image_path" width="75" :alt="skill.title">
-            </th>
-            <td>
-              <nl2br tag="p" :text="skill.text" />
-              <div v-if="isAdmin" class="m-buttonBlock-01">
-                <edit-button
-                  :editId="skill.id"
-                  type="skill"
-                >
-                  編集
-                </edit-button>
-                <delete-button
-                  eventName="openModal"
-                  @openModal="openModal"
-                  :id="skill.id"
+<template lang="pug">
+  div
+    div(v-if="page === 'top'")
+      div.skillBlock(v-if="hasSkill")
+        ul
+          li(v-for="(skill, index) in this.skill", :key="index") {{skill.title}}
+      div(v-else) {{nonSkillData}}
+    div(v-else-if="page === 'list'")
+      div.skillList(v-if="hasSkill")
+        table.m-table-01
+          tr(v-for="(skill, index) in this.skill", :key="index")
+            th
+              img(:src="skill.image_path", width="75", :alt="skill.title")
+            td
+              nl2br(tag="p", :text="skill.text")
+              div.m-buttonBlock-01(v-if="isAdmin")
+                edit-button(:editId="skill.id", type="skill") 編集
+                delete-button(
+                  eventName="openModal",
+                  @openModal="openModal",
+                  :id="skill.id",
                   :title="skill.title"
-                >
-                  削除
-                </delete-button>
-              </div>
-            </td>
-          </tr>
-        </table>
-        <delete-permission
-          :deleteTitle="title"
-          type="skill"
-          :deleteId="id"
+                ) 削除
+        delete-permission(
+          :deleteTitle="title",
+          type="skill",
+          :deleteId="id",
           commitName="removeSkill"
-        >
-        </delete-permission>
-      </div>
-      <div v-else>
-        {{nonSkillData}}
-      </div>
-    </div>
-  </div>
+        )
+      div(v-else) {{nonSkillData}}
 </template>
 
 <script>

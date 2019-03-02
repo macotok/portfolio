@@ -27,21 +27,26 @@
   }
 </style>
 
-<template>
-  <div class="m-nav-01">
-    <nav>
-      <ul>
-        <li><router-link :to="{name: 'root'}" exact>Top</router-link></li>
-        <li><router-link :to="{name: 'works'}">Works</router-link></li>
-        <li><router-link :to="{name: 'skills'}">Skills</router-link></li>
-        <li><router-link :to="{name: 'profile'}">Profile</router-link></li>
-        <li><router-link :to="{name: 'about'}">About</router-link></li>
-        <li v-if="isAdmin"><router-link :to="{name: 'addWork'}">add Work</router-link></li>
-        <li v-if="isAdmin"><router-link :to="{name: 'addSkill'}">add Skill</router-link></li>
-        <li v-if="isAdmin"><router-link :to="{name: 'admin'}">Admin</router-link></li>
-      </ul>
-    </nav>
-  </div>
+<template lang="pug">
+  div.m-nav-01
+    nav
+      ul
+        li
+          router-link(:to="{name: 'root'}", exact) Top
+        li
+          router-link(:to="{name: 'works'}") Works
+        li
+          router-link(:to="{name: 'skills'}") Skills
+        li
+          router-link(:to="{name: 'profile'}") Profile
+        li
+          router-link(:to="{name: 'about'}") About
+        li(v-if="isAdmin")
+          router-link(:to="{name: 'addWork'}") add Work
+        li(v-if="isAdmin")
+          router-link(:to="{name: 'addSkill'}") add Skill
+        li(v-if="isAdmin")
+          router-link(:to="{name: 'admin'}") Admin
 </template>
 
 <script>

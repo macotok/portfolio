@@ -8,7 +8,7 @@
   .pagination .pages-item {
     margin-right: 1%;
   }
-  .pagination li:last-of-type {
+  .pagination li:nth-last-child(2) {
     margin-right: 0;
   }
   .pagination .pages-item a {
@@ -23,6 +23,9 @@
     background-color: #1C93FA;
     color: #F6F9FF;
   }
+  .pagination .displayNone {
+    display: none;
+  }
 </style>
 
 <template lang="pug">
@@ -32,7 +35,9 @@
     :page-range="worksLength",
     :margin-pages="0",
     :prev-text=null,
+    :prev-class="'displayNone'",
     :next-text=null,
+    :next-class="'displayNone'",
     :click-handler="clickCallback",
     :container-class="'pagination'",
     :page-class="'pages-item'"

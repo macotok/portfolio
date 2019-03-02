@@ -59,6 +59,7 @@
 .m-list-01 {
   dt {
     margin: 0 0 1em;
+    font-weight: bold;
     &:not(:first-child) {
       margin-top: 2em;
     }

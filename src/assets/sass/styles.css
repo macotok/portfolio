@@ -153,7 +153,8 @@ table {
       cursor: pointer; }
 
 .m-list-01 dt {
-  margin: 0 0 1em; }
+  margin: 0 0 1em;
+  font-weight: bold; }
   .m-list-01 dt:not(:first-child) {
     margin-top: 2em; }
 .m-list-01 dd {

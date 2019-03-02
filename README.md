@@ -47,6 +47,7 @@ $ firebase deploy
 ## Other
 
  - レスポンシブ対応
+ - PugでHTMLコーディング
  
 ## 未開発
 

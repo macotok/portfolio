@@ -24,6 +24,7 @@
       dd Authenticationでログイン/ログアウト処理
       dt Other
       dd レスポンシブ対応
+      dd PugでHTMLコーディング
     div
       p.about
         | このサイトはGitHubで管理しています。

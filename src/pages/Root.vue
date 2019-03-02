@@ -1,43 +1,21 @@
-<template>
-  <div>
-    <title-block>
-      Works
-    </title-block>
-    <work-list
-      :works="worksData"
-      :start="privateState.worksStart"
+<template lang="pug">
+  div
+    title-block Works
+    work-list(
+      :works="worksData",
+      :start="privateState.worksStart",
       :count="privateState.worksCount"
-    >
-    </work-list>
-    <more-button linkTo="works">
-      More
-    </more-button>
-    <title-block>
-      Skills
-    </title-block>
-    <skill-list
-      :skill="skillData"
-      page="top"
-    >
-    </skill-list>
-    <more-button linkTo="skills">
-      More
-    </more-button>
-    <title-block>
-      Profile
-    </title-block>
-    <Profile page="top"></Profile>
-    <more-button linkTo="profile">
-      More
-    </more-button>
-    <title-block>
-      About
-    </title-block>
-    <About></About>
-    <more-button linkTo="about">
-      More
-    </more-button>
-  </div>
+    )
+    more-button(linkTo="works") More
+    title-block Skills
+    skill-list(:skill="skillData", page="top")
+    more-button(linkTo="skills") More
+    title-block Profile
+    Profile(page="top")
+    more-button(linkTo="profile") More
+    title-block About
+    About
+    more-button(linkTo="about") More
 </template>
 
 <script>

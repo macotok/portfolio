@@ -21,7 +21,7 @@
       <dd>Firestoreでデータ登録/取得/更新/削除</dd>
       <dd>Hosting</dd>
       <dd>画像をStorageで管理</dd>
-      <dd>Authenticationでログイン/ログアウト</dd>
+      <dd>Authenticationでログイン/ログアウト処理</dd>
       <dt>Other</dt>
       <dd>レスポンシブ対応</dd>
     </dl>

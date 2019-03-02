@@ -1,11 +1,8 @@
-/*
 module.exports = {
-  css: {
-    loaderOptions: {
-      sass: {
-        data: `@import "@/assets/sass/styles.scss";`
-      }
+  pages: {
+    index: {
+      entry: './src/main.js',
+      template: './src/index.pug'
     }
   }
 };
-*/

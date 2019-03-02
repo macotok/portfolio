@@ -3,13 +3,13 @@
     <title-block>
       About
     </title-block>
-    <about page="detail"></about>
+    <about></about>
   </div>
 </template>
 
 <script>
 import TitleBlock from '@/components/TitleBlock';
-import About from '@/components/About';
+import About from '@/components/about/Detail';
 import { WORKS_START_NUMBER } from '@/defines';
 
 export default {

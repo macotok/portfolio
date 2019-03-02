@@ -3,13 +3,13 @@
     <title-block>
       Profile
     </title-block>
-    <profile page="detail"></profile>
+    <profile></profile>
   </div>
 </template>
 
 <script>
 import TitleBlock from '@/components/TitleBlock';
-import Profile from '@/components/Profile';
+import Profile from '@/components/profile/Detail';
 import { WORKS_START_NUMBER } from '@/defines';
 
 export default {

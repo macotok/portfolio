@@ -25,7 +25,7 @@ $ yarn build
 $ firebase deploy
 ```
 
-## Vue開発
+## Vue
 
 - VueCLIで開発環境構築
 - VueRouterでRouting処理
@@ -37,16 +37,19 @@ $ firebase deploy
 - fakerでstubデータ作成
 - ページネーション実装
 
-## Firebase開発
+## Firebase
 
 - Firestoreでデータ登録/取得/更新/削除
 - Hosting
 - 画像をStorageで管理
 - Authenticationでログイン/ログアウト
 
+## Other
+
+ - レスポンシブ対応
+ 
 ## 未開発
 
-- レスポンシブ
 - googleアナリティクスでどこまでスクロールしたかを取得。firebaseに連携
 - deploy機能　github -> gcp source repository -> cloud build -> firebase hostingへのdeploy
 - jsのエラー通知はslackで受け取る

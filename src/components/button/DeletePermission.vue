@@ -10,7 +10,6 @@
 export default {
   props: {
     eventName: String,
-    text: String,
   },
   methods: {
     deleteId() {

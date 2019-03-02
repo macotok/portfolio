@@ -1,8 +1,13 @@
+<style lang="scss" scoped>
+  .about {
+    margin: 5% 0 2.5%;
+  }
+</style>
+
 <template>
   <div>
-    <p v-if="page === 'top'">このPortfolioはVue/Firebaseで開発しました。</p>
-    <dl v-if="page === 'detail'" class="m-list-01">
-      <dt>Vue開発</dt>
+    <dl class="m-list-01">
+      <dt>Vue</dt>
       <dd>VueCLIで開発環境構築</dd>
       <dd>VueRouterでRouting処理</dd>
       <dd>Vuexで状態管理</dd>
@@ -12,19 +17,34 @@
       <dd>formの未入力バリデーションチェック</dd>
       <dd>fakerでstubデータ作成</dd>
       <dd>ページネーション実装</dd>
-      <dt>Firebase開発</dt>
+      <dt>Firebase</dt>
       <dd>Firestoreでデータ登録/取得/更新/削除</dd>
       <dd>Hosting</dd>
       <dd>画像をStorageで管理</dd>
       <dd>Authenticationでログイン/ログアウト</dd>
+      <dt>Other</dt>
+      <dd>レスポンシブ対応</dd>
     </dl>
+    <div>
+      <p class="about">
+        このサイトはGitHubで管理しています。<br>
+        そのリポジトリはこちらになります。
+      </p>
+      <link-button
+        linkTo="https://github.com/macotok/portfolio"
+      >
+        To GitHub
+      </link-button>
+    </div>
   </div>
 </template>
 
 <script>
+import LinkButton from '@/components/button/Link';
+
 export default {
-  props: {
-    page: String,
+  components: {
+    LinkButton,
   },
 };
 </script>

@@ -12,7 +12,6 @@
 export default {
   props: {
     editId: [String, Number],
-    text: String,
     type: String,
   },
 };

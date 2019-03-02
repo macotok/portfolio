@@ -33,14 +33,8 @@
     <title-block>
       About
     </title-block>
-    <About page="top"></About>
+    <About></About>
     <more-button linkTo="about">
-      More
-    </more-button>
-    <title-block>
-      Admin
-    </title-block>
-    <more-button linkTo="admin">
       More
     </more-button>
   </div>
@@ -51,8 +45,8 @@ import TitleBlock from '@/components/TitleBlock';
 import WorkList from '@/components/work/List';
 import SkillList from '@/components/skill/List';
 import MoreButton from '@/components/button/More';
-import Profile from '@/components/Profile';
-import About from '@/components/About';
+import Profile from '@/components/profile/Top';
+import About from '@/components/about/Top';
 import { WORKS_LIST_TOP_LENGTH, WORKS_START_NUMBER } from '@/defines';
 import sortUpdatedAt from '@/utils/sortUpdatedAt';
 

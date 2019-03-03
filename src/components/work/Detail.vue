@@ -41,9 +41,9 @@
       delete-button(eventName="openModal", @openModal="openModal") 削除
     delete-permission(
       :deleteTitle="getTitle",
-      type="work",
+      type="works",
       :deleteId="getWorkId",
-      commitName="removeWork",
+      actionName="removeData",
     )
 </template>
 

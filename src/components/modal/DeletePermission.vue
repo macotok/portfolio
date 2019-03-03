@@ -46,14 +46,17 @@ export default {
     deleteTitle: String,
     type: String,
     deleteId: [String, Number],
-    commitName: String,
+    actionName: String,
   },
   methods: {
     closeModal() {
       this.$modal.hide('deletePermission');
     },
     deletedId() {
-      this.$store.commit(this.commitName, this.deleteId);
+      this.$store.dispatch(this.actionName, {
+        type: this.type,
+        id: this.deleteId,
+      });
       this.$modal.hide('deletePermission');
       this.$router.push({ name: 'root' });
     },

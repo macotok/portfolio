@@ -19,7 +19,6 @@ const state = {
   admin: false,
 };
 
-const storageRef = storage.ref();
 const mutations = {
   addWork(data, addData) {
     state.works = addData;
@@ -59,30 +58,9 @@ const mutations = {
   updateSkillData(data, value) {
     state.editSkill = Object.assign({}, { ...data.editSkill }, { ...value });
   },
-  removeWork(data, id) {
-    const getData = (data.works).find(w => (w.id === parseInt(id, 10)));
-    const imagesRef = storageRef.child(`images/works/${id}_${getData.image_name}`);
-    imagesRef.delete().then(() => {
-      firestore.collection('works').doc(id.toString(10)).delete()
-        .then(() => (serverWorks()))
-        .then((worksData) => {
-          state.works = worksData;
-        });
-    });
-  },
-  removeSkill(data, id) {
-    const getData = (data.skill).find(s => (s.id === parseInt(id, 10)));
-    const imagesRef = storageRef.child(`images/skill/${id}_${getData.image_name}`);
-    imagesRef.delete().then(() => {
-      firestore.collection('skill').doc(id.toString(10)).delete()
-        .then(() => (serverSkill()))
-        .then((skillData) => {
-          state.skill = skillData;
-        });
-    });
-  },
 };
 
+const storageRef = storage.ref();
 const actions = {
   addData(context, payload) {
     const type = payload.type;
@@ -187,6 +165,34 @@ const actions = {
           break;
       }
     }
+  },
+  removeData(context, payload) {
+    const type = payload.type;
+    const id = payload.id;
+    const getData = context.state[type].find(d => (d.id === parseInt(id, 10)));
+    const imagesRef = storageRef.child(`images/${type}/${id}_${getData.image_name}`);
+    imagesRef.delete().then(() => {
+      switch (type) {
+        case
+          'works':
+          firestore.collection(type).doc(id.toString(10)).delete()
+            .then(() => (serverWorks()))
+            .then((data) => {
+              context.commit('updateWork', data);
+            });
+          break;
+        case
+          'skill':
+          firestore.collection(type).doc(id.toString(10)).delete()
+            .then(() => (serverSkill()))
+            .then((data) => {
+              context.commit('updateSkill', data);
+            });
+          break;
+        default:
+          break;
+      }
+    });
   },
 };
 

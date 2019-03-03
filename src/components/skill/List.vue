@@ -39,7 +39,7 @@
           :deleteTitle="title",
           type="skill",
           :deleteId="id",
-          commitName="removeSkill"
+          actionName="removeData"
         )
       div(v-else) {{nonSkillData}}
 </template>

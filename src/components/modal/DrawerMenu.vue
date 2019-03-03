@@ -32,7 +32,7 @@
         width: 95%;
         height: 5%;
         margin: -8% 0 0 -42%;
-        background: $key-color;
+        background: $gray-color-01;
       }
       &-icon::before {
         transform: rotate(-45deg);

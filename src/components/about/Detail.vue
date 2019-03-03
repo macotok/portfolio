@@ -7,7 +7,7 @@
 <template lang="pug">
   div
     dl.m-list-01
-      dt Vue
+      dt Vue.js
       dd VueCLIで開発環境構築
       dd VueRouterでRouting処理
       dd Vuexで状態管理

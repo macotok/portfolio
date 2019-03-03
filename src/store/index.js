@@ -35,6 +35,18 @@ const mutations = {
   addWorkData(data, value) {
     state.addNewWork = Object.assign({}, { ...data.addNewWork }, { ...value });
   },
+  addSkill(data, addData) {
+    state.skill = addData;
+    state.addNewSkill = {
+      title: '',
+      image_path: '',
+      image_name: '',
+      text: '',
+    };
+  },
+  addSkillData(data, value) {
+    state.addNewSkill = Object.assign({}, { ...data.addNewSkill }, { ...value });
+  },
   updateWork(data, updateData) {
     const getData = (data.works).find(w => (w.id === updateData.id));
     if (getData.image_path !== updateData.image_path) {
@@ -81,38 +93,6 @@ const mutations = {
           state.works = worksData;
         });
     });
-  },
-  addSkill(data, addData) {
-    const createId = data.skill.reduce((id, skill) => (id < skill.id ? skill.id : id), 0) + 1;
-    const imagesRef = storageRef.child(`images/skill/${createId}_${addData.image_name}`);
-    imagesRef.putString(addData.image_path, 'data_url')
-      .then((snapshot) => {
-        const starsRef = storageRef.child(snapshot.metadata.fullPath);
-        starsRef.getDownloadURL()
-          .then((url) => {
-            const addOtherData = {
-              id: createId,
-              image_path: url,
-              updatedAt: new Date(),
-              createdAt: new Date(),
-            };
-            const addSkill = Object.assign({}, { ...addData }, { ...addOtherData });
-            firestore.collection('skill').doc((addSkill.id).toString(10)).set(addSkill)
-              .then(() => (serverSkill()))
-              .then((skillData) => {
-                state.skill = skillData;
-              });
-          });
-      });
-    state.addNewSkill = {
-      title: '',
-      image_path: '',
-      image_name: '',
-      text: '',
-    };
-  },
-  addSkillData(data, value) {
-    state.addNewSkill = Object.assign({}, { ...data.addNewSkill }, { ...value });
   },
   updateSkill(data, updateData) {
     const getData = (data.skill).find(s => (s.id === updateData.id));
@@ -187,6 +167,14 @@ const actions = {
                   .then(() => (serverWorks()))
                   .then((data) => {
                     context.commit('addWork', data);
+                  });
+                break;
+              case
+                'skill':
+                firestore.collection(type).doc((concatData.id).toString(10)).set(concatData)
+                  .then(() => (serverSkill()))
+                  .then((data) => {
+                    context.commit('addSkill', data);
                   });
                 break;
               default:

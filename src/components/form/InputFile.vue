@@ -32,17 +32,23 @@
   div
     label.file {{labelName}}
       input.fileInput(type="file", @change="onFileChange")
-    img.fileThumnail(v-if="image_path", :src="image_path", :width="thumnailSize")
+    img.fileThumnail(
+      v-if="privateState.image_path",
+      :src="privateState.image_path",
+      :width="thumnailSize"
+    )
     img.fileThumnail(v-else-if="model", :src="model", :width="thumnailSize")
-    p(v-if="errorMessage") {{errorMessage}}
+    p(v-if="privateState.errorMessage") {{privateState.errorMessage}}
 </template>
 
 <script>
 export default {
   data() {
     return {
-      image_path: '',
-      errorMessage: '',
+      privateState: {
+        image_path: '',
+        errorMessage: '',
+      },
     };
   },
   props: {
@@ -59,11 +65,11 @@ export default {
     createImage(file, fileName) {
       const reader = new FileReader();
       reader.onload = (e) => {
-        this.image_path = e.target.result;
+        this.privateState.image_path = e.target.result;
         this.$emit(this.eventName, e.target.result, fileName);
       };
       reader.onerror = () => {
-        this.errorMessage = '読み込みに失敗しました';
+        this.privateState.errorMessage = '読み込みに失敗しました';
         reader.abort();
       };
       if (file) {

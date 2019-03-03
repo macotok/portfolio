@@ -36,9 +36,9 @@
                   :title="skill.title"
                 ) 削除
         delete-permission(
-          :deleteTitle="title",
+          :deleteTitle="privateState.title",
           type="skill",
-          :deleteId="id",
+          :deleteId="privateState.id",
           actionName="removeData"
         )
       div(v-else) {{nonSkillData}}
@@ -54,8 +54,10 @@ import { NON_SKILL_DATA } from '@/defines/';
 export default {
   data() {
     return {
-      id: '',
-      title: '',
+      privateState: {
+        id: '',
+        title: '',
+      },
     };
   },
   props: {
@@ -75,8 +77,8 @@ export default {
   },
   methods: {
     openModal(eventTarget) {
-      this.id = eventTarget.dataset.id;
-      this.title = eventTarget.dataset.title;
+      this.privateState.id = eventTarget.dataset.id;
+      this.privateState.title = eventTarget.dataset.title;
       this.$modal.show('deletePermission');
     },
   },

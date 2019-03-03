@@ -4,7 +4,7 @@
     work-list(
       :works="worksData",
       :start="listStart",
-      :count="worksLength"
+      :count="privateState.worksLength"
     )
     pagination
 </template>
@@ -19,7 +19,9 @@ import sortUpdatedAt from '@/utils/sortUpdatedAt';
 export default {
   data() {
     return {
-      worksLength: WORKS_LIST_LENGTH,
+      privateState: {
+        worksLength: WORKS_LIST_LENGTH,
+      },
     };
   },
   computed: {

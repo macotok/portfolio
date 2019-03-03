@@ -10,7 +10,7 @@
 
 <template lang="pug">
   div
-    div(v-if="!validate")
+    div(v-if="!privateState.validate")
       div.m-box-errorMessage
         p.m-text-errorMessage {{nonInputMessage}}
     table.m-table-01
@@ -92,7 +92,9 @@ import { NON_INPUT_MESSAGE } from '@/defines/';
 export default {
   data() {
     return {
-      validate: true,
+      privateState: {
+        validate: true,
+      },
     };
   },
   computed: {
@@ -126,7 +128,7 @@ export default {
     },
     save() {
       if (this.inputCheck.length) {
-        this.validate = false;
+        this.privateState.validate = false;
         window.scrollTo(0, 0);
       } else {
         this.$store.dispatch('addData', {

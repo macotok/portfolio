@@ -22,27 +22,7 @@ const state = {
 const storageRef = storage.ref();
 const mutations = {
   addWork(data, addData) {
-    const createId = data.works.reduce((id, work) => (id < work.id ? work.id : id), 0) + 1;
-    const imagesRef = storageRef.child(`images/works/${createId}_${addData.image_name}`);
-    imagesRef.putString(addData.image_path, 'data_url')
-      .then((snapshot) => {
-        const starsRef = storageRef.child(snapshot.metadata.fullPath);
-        starsRef.getDownloadURL()
-          .then((url) => {
-            const addOtherData = {
-              id: createId,
-              image_path: url,
-              updatedAt: new Date(),
-              createdAt: new Date(),
-            };
-            const addWork = Object.assign({}, { ...addData }, { ...addOtherData });
-            firestore.collection('works').doc((addWork.id).toString(10)).set(addWork)
-              .then(() => (serverWorks()))
-              .then((worksData) => {
-                state.works = worksData;
-              });
-          });
-      });
+    state.works = addData;
     state.addNewWork = {
       title: '',
       tags: '',
@@ -183,8 +163,43 @@ const mutations = {
   },
 };
 
+const actions = {
+  addData(context, payload) {
+    const type = payload.type;
+    const createId = context.state[type].reduce((id, data) => (id < data.id ? data.id : id), 0) + 1;
+    const imagesRef = storageRef.child(`images/${type}/${createId}_${payload.addData.image_name}`);
+    imagesRef.putString(payload.addData.image_path, 'data_url')
+      .then((snapshot) => {
+        const starsRef = storageRef.child(snapshot.metadata.fullPath);
+        starsRef.getDownloadURL()
+          .then((url) => {
+            const addOtherData = {
+              id: createId,
+              image_path: url,
+              updatedAt: new Date(),
+              createdAt: new Date(),
+            };
+            const concatData = Object.assign({}, { ...payload.addData }, { ...addOtherData });
+            switch (type) {
+              case
+                'works':
+                firestore.collection(type).doc((concatData.id).toString(10)).set(concatData)
+                  .then(() => (serverWorks()))
+                  .then((data) => {
+                    context.commit('addWork', data);
+                  });
+                break;
+              default:
+                break;
+            }
+          });
+      });
+  },
+};
+
 export default {
   state,
   mutations,
+  actions,
 };
 

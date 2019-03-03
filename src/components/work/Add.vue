@@ -129,7 +129,10 @@ export default {
         this.validate = false;
         window.scrollTo(0, 0);
       } else {
-        this.$store.commit('addWork', this.$store.state.addNewWork);
+        this.$store.dispatch('addData', {
+          type: 'works',
+          addData: this.$store.state.addNewWork,
+        });
         this.$router.push({ name: 'root' });
       }
     },

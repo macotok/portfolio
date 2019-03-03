@@ -174,27 +174,6 @@ table {
 .m-text-errorMessage {
   color: #B31F57; }
 
-.m-nav-02 {
-  position: absolute;
-  top: 29px;
-  left: 2.5%;
-  z-index: 1; }
-  .m-nav-02-icon {
-    position: relative;
-    height: 30px;
-    width: 42px; }
-    .m-nav-02-icon div {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 1px;
-      width: 30px;
-      background-color: #4B4D52;
-      border-radius: 3px; }
-      .m-nav-02-icon div:nth-of-type(2) {
-        width: 20px;
-        top: 10px; }
-
 .is-sp {
   display: none; }
 
@@ -250,7 +229,8 @@ table {
   .l-container {
     padding: 0 5%; }
 
-  .m-nav-02 {
+  .m-nav-02,
+  .menu .close {
     left: 5%; }
 
   div > > > .title {

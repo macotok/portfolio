@@ -65,6 +65,9 @@ export default {
     worksLength() {
       return WORKS_LIST_LENGTH;
     },
+    page() {
+      return this.$store.state.worksPaginationNUmber;
+    },
   },
 };
 </script>

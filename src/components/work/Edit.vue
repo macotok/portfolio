@@ -147,7 +147,10 @@ export default {
         this.validate = false;
         window.scrollTo(0, 0);
       } else {
-        this.$store.commit('updateWork', this.$store.state.editWork);
+        this.$store.dispatch('updateData', {
+          type: 'works',
+          updateData: this.$store.state.editWork,
+        });
         this.$router.push({ name: 'root' });
       }
     },

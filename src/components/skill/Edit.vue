@@ -111,7 +111,10 @@ export default {
         this.validate = false;
         window.scrollTo(0, 0);
       } else {
-        this.$store.commit('updateSkill', this.$store.state.editSkill);
+        this.$store.dispatch('updateData', {
+          type: 'skill',
+          updateData: this.$store.state.editSkill,
+        });
         this.$router.push({ name: 'root' });
       }
     },

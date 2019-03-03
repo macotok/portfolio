@@ -48,40 +48,16 @@ const mutations = {
     state.addNewSkill = Object.assign({}, { ...data.addNewSkill }, { ...value });
   },
   updateWork(data, updateData) {
-    const getData = (data.works).find(w => (w.id === updateData.id));
-    if (getData.image_path !== updateData.image_path) {
-      const imagesRef = storageRef.child(`images/works/${updateData.id}_${updateData.image_name}`);
-      imagesRef.putString(updateData.image_path, 'data_url')
-        .then((snapshot) => {
-          const starsRef = storageRef.child(snapshot.metadata.fullPath);
-          starsRef.getDownloadURL()
-            .then((url) => {
-              const updateOtherData = {
-                image_path: url,
-                updatedAt: new Date(),
-              };
-              const updateNewData = Object.assign({}, { ...updateData }, { ...updateOtherData });
-              firestore.collection('works').doc((updateData.id).toString(10)).update(updateNewData)
-                .then(() => (serverWorks()))
-                .then((worksData) => {
-                  state.works = worksData;
-                });
-            });
-        });
-    } else {
-      const updateOtherData = {
-        updatedAt: new Date(),
-      };
-      const updateNewData = Object.assign({}, { ...updateData }, { ...updateOtherData });
-      firestore.collection('works').doc((updateData.id).toString(10)).update(updateNewData)
-        .then(() => (serverWorks()))
-        .then((worksData) => {
-          state.works = worksData;
-        });
-    }
+    state.works = updateData;
   },
   updateWorkData(data, value) {
     state.editWork = Object.assign({}, { ...data.editWork }, { ...value });
+  },
+  updateSkill(data, updateData) {
+    state.skill = updateData;
+  },
+  updateSkillData(data, value) {
+    state.editSkill = Object.assign({}, { ...data.editSkill }, { ...value });
   },
   removeWork(data, id) {
     const getData = (data.works).find(w => (w.id === parseInt(id, 10)));
@@ -93,42 +69,6 @@ const mutations = {
           state.works = worksData;
         });
     });
-  },
-  updateSkill(data, updateData) {
-    const getData = (data.skill).find(s => (s.id === updateData.id));
-    if (getData.image_path !== updateData.image_path) {
-      const imagesRef = storageRef.child(`images/skill/${updateData.id}_${updateData.image_name}`);
-      imagesRef.putString(updateData.image_path, 'data_url')
-        .then((snapshot) => {
-          const starsRef = storageRef.child(snapshot.metadata.fullPath);
-          starsRef.getDownloadURL()
-            .then((url) => {
-              const updateOtherData = {
-                image_path: url,
-                updatedAt: new Date(),
-              };
-              const updateNewData = Object.assign({}, { ...updateData }, { ...updateOtherData });
-              firestore.collection('skill').doc((updateData.id).toString(10)).update(updateNewData)
-                .then(() => (serverSkill()))
-                .then((skillData) => {
-                  state.skill = skillData;
-                });
-            });
-        });
-    } else {
-      const updateOtherData = {
-        updatedAt: new Date(),
-      };
-      const updateNewData = Object.assign({}, { ...updateData }, { ...updateOtherData });
-      firestore.collection('skill').doc((updateNewData.id).toString(10)).update(updateNewData)
-        .then(() => (serverSkill()))
-        .then((skillData) => {
-          state.skill = skillData;
-        });
-    }
-  },
-  updateSkillData(data, value) {
-    state.editSkill = Object.assign({}, { ...data.editSkill }, { ...value });
   },
   removeSkill(data, id) {
     const getData = (data.skill).find(s => (s.id === parseInt(id, 10)));
@@ -182,6 +122,71 @@ const actions = {
             }
           });
       });
+  },
+  updateData(context, payload) {
+    const type = payload.type;
+    const updateData = payload.updateData;
+    const getData = context.state[type].find(d => (d.id === updateData.id));
+    if (getData.image_path !== updateData.image_path) {
+      const imagesRef = storageRef.child(`images/${type}/${updateData.id}_${updateData.image_name}`);
+      imagesRef.putString(updateData.image_path, 'data_url')
+        .then((snapshot) => {
+          const starsRef = storageRef.child(snapshot.metadata.fullPath);
+          starsRef.getDownloadURL()
+            .then((url) => {
+              const updateOtherData = {
+                image_path: url,
+                updatedAt: new Date(),
+              };
+              const updateNewData = Object.assign({}, { ...updateData }, { ...updateOtherData });
+              switch (type) {
+                case
+                  'works':
+                  firestore.collection(type).doc((updateData.id).toString(10)).update(updateNewData)
+                    .then(() => (serverWorks()))
+                    .then((data) => {
+                      context.commit('updateWork', data);
+                    });
+                  break;
+                case
+                  'skill':
+                  firestore.collection(type).doc((updateData.id).toString(10)).update(updateNewData)
+                    .then(() => (serverSkill()))
+                    .then((data) => {
+                      context.commit('updateSkill', data);
+                    });
+                  break;
+                default:
+                  break;
+              }
+            });
+        });
+    } else {
+      const updateOtherData = {
+        updatedAt: new Date(),
+      };
+      const updateNewData = Object.assign({}, { ...updateData }, { ...updateOtherData });
+      switch (type) {
+        case
+          'works':
+          firestore.collection(type).doc((updateData.id).toString(10)).update(updateNewData)
+            .then(() => (serverWorks()))
+            .then((data) => {
+              context.commit('updateWork', data);
+            });
+          break;
+        case
+          'skill':
+          firestore.collection(type).doc((updateData.id).toString(10)).update(updateNewData)
+            .then(() => (serverSkill()))
+            .then((data) => {
+              context.commit('updateSkill', data);
+            });
+          break;
+        default:
+          break;
+      }
+    }
   },
 };
 

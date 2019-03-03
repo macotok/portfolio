@@ -25,7 +25,7 @@ $ yarn build
 $ firebase deploy
 ```
 
-## Vue
+## Vue.js
 
 - VueCLIで開発環境構築
 - VueRouterでRouting処理

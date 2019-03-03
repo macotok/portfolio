@@ -21,6 +21,9 @@
   .m-nav-01 {
     display: none;
   }
+  .is-sp {
+    display: block;
+  }
   ul >>> .workList {
     width: 45%;
     margin: 0 5% 5% 0;
@@ -69,6 +72,9 @@
 @media screen and (max-width: 479px) {
   .l-container {
     padding: 0 5%;
+  }
+  .m-nav-02 {
+    left: 5%;
   }
   div >>> .title {
     margin: 10% 0 5%;

@@ -3,8 +3,8 @@
     title-block Works
     work-list(
       :works="worksData",
-      :start="privateState.worksStart",
-      :count="privateState.worksCount"
+      :start="0",
+      :count="worksCount"
     )
     more-button(linkTo="works") More
     title-block Skills
@@ -29,13 +29,8 @@ import { WORKS_LIST_TOP_LENGTH, WORKS_START_NUMBER } from '@/defines';
 import sortUpdatedAt from '@/utils/sortUpdatedAt';
 
 export default {
-  data() {
-    return {
-      privateState: {
-        worksCount: WORKS_LIST_TOP_LENGTH,
-        worksStart: 0,
-      },
-    };
+  created() {
+    this.$store.state.worksPaginationNUmber = WORKS_START_NUMBER;
   },
   computed: {
     worksData() {
@@ -44,9 +39,9 @@ export default {
     skillData() {
       return sortUpdatedAt(this.$store.state.skill);
     },
-  },
-  created() {
-    this.$store.state.worksPaginationNUmber = WORKS_START_NUMBER;
+    worksCount() {
+      return WORKS_LIST_TOP_LENGTH;
+    },
   },
   components: {
     TitleBlock,

@@ -4,7 +4,7 @@
     work-list(
       :works="worksData",
       :start="listStart",
-      :count="privateState.worksLength"
+      :count="worksLength"
     )
     pagination
 </template>
@@ -17,19 +17,15 @@ import { WORKS_LIST_LENGTH } from '@/defines';
 import sortUpdatedAt from '@/utils/sortUpdatedAt';
 
 export default {
-  data() {
-    return {
-      privateState: {
-        worksLength: WORKS_LIST_LENGTH,
-      },
-    };
-  },
   computed: {
     worksData() {
       return sortUpdatedAt(this.$store.state.works);
     },
     listStart() {
       return WORKS_LIST_LENGTH * (this.$store.state.worksPaginationNUmber - 1);
+    },
+    worksLength() {
+      return WORKS_LIST_LENGTH;
     },
   },
   components: {

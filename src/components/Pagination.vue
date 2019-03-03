@@ -32,7 +32,7 @@
   paginate(
     v-model="page",
     :page-count="paginationNumber",
-    :page-range="privateState.worksLength",
+    :page-range="worksLength",
     :margin-pages="0",
     :prev-text=null,
     :prev-class="'displayNone'",
@@ -52,13 +52,6 @@ import { WORKS_LIST_LENGTH } from '@/defines';
 Vue.component('paginate', Paginate);
 
 export default {
-  data() {
-    return {
-      privateState: {
-        worksLength: WORKS_LIST_LENGTH,
-      },
-    };
-  },
   methods: {
     clickCallback(pageNum) {
       this.$store.state.worksPaginationNUmber = pageNum;
@@ -68,6 +61,9 @@ export default {
   computed: {
     paginationNumber() {
       return this.$store.state.works.length / WORKS_LIST_LENGTH;
+    },
+    worksLength() {
+      return WORKS_LIST_LENGTH;
     },
   },
 };

@@ -31,8 +31,8 @@ const mutations = {
       text: '',
     };
   },
-  addWorkData(data, value) {
-    state.addNewWork = Object.assign({}, { ...data.addNewWork }, { ...value });
+  addWorkData(data, values) {
+    state.addNewWork = values;
   },
   addSkill(data, addData) {
     state.skill = addData;
@@ -62,6 +62,12 @@ const mutations = {
 
 const storageRef = storage.ref();
 const actions = {
+  addValue(context, payload) {
+    context.commit(
+      payload.mutationName,
+      Object.assign({}, { ...context.state[payload.type] }, { ...payload.value }),
+    );
+  },
   addData(context, payload) {
     const type = payload.type;
     const createId = context.state[type].reduce((id, data) => (id < data.id ? data.id : id), 0) + 1;

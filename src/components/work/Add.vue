@@ -111,20 +111,49 @@ export default {
   },
   methods: {
     title(value) {
-      this.$store.commit('addWorkData', { title: value });
+      this.$store.dispatch('addValue', {
+        type: 'addNewWork',
+        mutationName: 'addWorkData',
+        value: {
+          title: value,
+        },
+      });
     },
     tags(value) {
       const data = { tags: value.trim() ? value.replace(/\s+/g, '').split(',') : [] };
-      this.$store.commit('addWorkData', data);
+      this.$store.dispatch('addValue', {
+        type: 'addNewWork',
+        mutationName: 'addWorkData',
+        value: data,
+      });
     },
     url(value) {
-      this.$store.commit('addWorkData', { url: value });
+      this.$store.dispatch('addValue', {
+        type: 'addNewWork',
+        mutationName: 'addWorkData',
+        value: {
+          url: value,
+        },
+      });
     },
     image(value, fileName) {
-      this.$store.commit('addWorkData', { image_path: value, image_name: fileName });
+      this.$store.dispatch('addValue', {
+        type: 'addNewWork',
+        mutationName: 'addWorkData',
+        value: {
+          image_path: value,
+          image_name: fileName,
+        },
+      });
     },
     text(value) {
-      this.$store.commit('addWorkData', { text: value });
+      this.$store.dispatch('addValue', {
+        type: 'addNewWork',
+        mutationName: 'addWorkData',
+        value: {
+          text: value,
+        },
+      });
     },
     save() {
       if (this.inputCheck.length) {

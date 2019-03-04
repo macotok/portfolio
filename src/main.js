@@ -11,7 +11,10 @@ Vue.use(Vuex);
 Vue.use(VModal);
 
 const router = new VueRouter(routes);
-const store = new Vuex.Store(_store);
+const storeObj = Object.assign({}, _store, {
+  strict: process.env.NODE_ENV !== 'production',
+});
+const store = new Vuex.Store(storeObj);
 
 new Vue({ // eslint-disable-line no-new
   el: '#app',

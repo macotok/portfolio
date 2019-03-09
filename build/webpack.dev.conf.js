@@ -73,9 +73,10 @@ const devWebpackConfig = merge(baseWebpackConfig, {
           formatter: require('eslint-friendly-formatter'),
           emitWarning: !config.dev.showEslintErrorsInOverlay
         }
-      } }),
+      }
+    }),
   ]
-})
+});
 
 module.exports = new Promise((resolve, reject) => {
   portfinder.basePort = process.env.PORT || config.dev.port

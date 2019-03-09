@@ -80,6 +80,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import InputText from '@/components/form/InputText';
 import InputTextArea from '@/components/form/InputTextArea';
 import InputFile from '@/components/form/InputFile';
@@ -98,9 +99,9 @@ export default {
     };
   },
   computed: {
-    addNewWork() {
-      return this.$store.state.addNewWork;
-    },
+    ...mapState({
+      addNewWork: 'addNewWork',
+    }),
     inputCheck() {
       const nonInputValidate = new NonInputValidate(this.$store.state.addNewWork);
       return nonInputValidate.inputCheck();

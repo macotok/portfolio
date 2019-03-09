@@ -23,7 +23,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "autoprefixer": "^7.1.2",
     "babel-eslint": "^8.2.1",
@@ -35,6 +34,7 @@
     "eslint": "^5.15.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-friendly-formatter": "^4.0.1",
+    "eslint-import-resolver-webpack": "^0.11.0",
     "eslint-loader": "^2.1.2",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-vue": "^5.2.2",

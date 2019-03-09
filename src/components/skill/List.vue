@@ -45,6 +45,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import Nl2br from 'vue-nl2br';
 import EditButton from '@/components/button/Edit';
 import DeleteButton from '@/components/button/Delete';
@@ -65,14 +66,14 @@ export default {
     page: String,
   },
   computed: {
+    ...mapState({
+      isAdmin: 'admin',
+    }),
     hasSkill() {
       return this.skill.length !== 0;
     },
     nonSkillData() {
       return NON_SKILL_DATA;
-    },
-    isAdmin() {
-      return this.$store.state.admin;
     },
   },
   methods: {

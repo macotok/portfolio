@@ -47,7 +47,6 @@ module.exports = {
               }
             ]
           ],
-          plugins: ['@babel/plugin-proposal-object-rest-spread']
         },
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },

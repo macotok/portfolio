@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import firebase from 'firebase';
 import TitleBlock from '@/components/TitleBlock';
 
@@ -35,16 +36,15 @@ export default {
     };
   },
   computed: {
-    isAdmin() {
-      return this.$store.state.admin;
-    },
+    ...mapState({
+      isAdmin: 'admin',
+    }),
   },
   methods: {
     login() {
       const provider = new firebase.auth.GoogleAuthProvider();
       firebase.auth().signInWithPopup(provider).then((result) => {
-        const user = result.user;
-        if (user.uid === process.env.FIRE_BASE.UID) {
+        if (result.user.uid === process.env.FIRE_BASE.UID) {
           this.$store.state.admin = true;
           this.$router.push({ name: 'root' });
         } else {

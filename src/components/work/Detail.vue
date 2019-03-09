@@ -48,6 +48,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import Nl2br from 'vue-nl2br';
 import TitleBlock from '@/components/TitleBlock';
 import EditButton from '@/components/button/Edit';
@@ -60,6 +61,9 @@ export default {
     data: Object,
   },
   computed: {
+    ...mapState({
+      isAdmin: 'admin',
+    }),
     getWorkId() {
       return this.$route.params.id;
     },
@@ -68,9 +72,6 @@ export default {
         w.id === parseInt(this.getWorkId, 10)
       ));
       return workList.title;
-    },
-    isAdmin() {
-      return this.$store.state.admin;
     },
   },
   methods: {

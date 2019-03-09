@@ -46,6 +46,7 @@
 
 <script>
 import Vue from 'vue';
+import { mapState } from 'vuex';
 import Paginate from 'vuejs-paginate';
 import { WORKS_LIST_LENGTH } from '@/defines';
 
@@ -59,14 +60,14 @@ export default {
     },
   },
   computed: {
+    ...mapState({
+      page: 'worksPaginationNUmber',
+    }),
     paginationNumber() {
       return this.$store.state.works.length / WORKS_LIST_LENGTH;
     },
     worksLength() {
       return WORKS_LIST_LENGTH;
-    },
-    page() {
-      return this.$store.state.worksPaginationNUmber;
     },
   },
 };

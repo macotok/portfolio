@@ -56,6 +56,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import InputText from '@/components/form/InputText';
 import InputTextArea from '@/components/form/InputTextArea';
 import InputFile from '@/components/form/InputFile';
@@ -74,9 +75,9 @@ export default {
     };
   },
   computed: {
-    addNewSkill() {
-      return this.$store.state.addNewSkill;
-    },
+    ...mapState({
+      addNewSkill: 'addNewSkill',
+    }),
     inputCheck() {
       const nonInputValidate = new NonInputValidate(this.$store.state.addNewSkill);
       return nonInputValidate.inputCheck();

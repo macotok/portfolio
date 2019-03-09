@@ -67,11 +67,13 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   computed: {
-    isAdmin() {
-      return this.$store.state.admin;
-    },
+    ...mapState({
+      isAdmin: 'admin',
+    }),
     currentRouteName() {
       return this.$route.name;
     },

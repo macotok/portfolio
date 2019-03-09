@@ -8,17 +8,6 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-const createLintingRule = () => ({
-  test: /\.(js|vue)$/,
-  loader: 'eslint-loader',
-  enforce: 'pre',
-  include: [resolve('src'), resolve('test')],
-  options: {
-    formatter: require('eslint-friendly-formatter'),
-    emitWarning: !config.dev.showEslintErrorsInOverlay
-  }
-});
-
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
@@ -40,7 +29,6 @@ module.exports = {
   },
   module: {
     rules: [
-      ...(config.dev.useEslint ? [createLintingRule()] : []),
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -48,18 +36,18 @@ module.exports = {
       },
       {
         test: /\.js$/,
+        exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          'presets': [
-            ['env', {
-              'modules': false,
-              'targets': {
-                'browsers': ['> 1%', 'last 2 versions', 'not ie <= 8']
+          presets: [
+            [
+              "@babel/preset-env",
+              {
+                "useBuiltIns": "usage"
               }
-            }],
-            'stage-2'
+            ]
           ],
-          'plugins': ['transform-vue-jsx', 'transform-runtime']
+          plugins: ['@babel/plugin-proposal-object-rest-spread']
         },
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },

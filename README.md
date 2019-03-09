@@ -48,6 +48,7 @@ $ firebase deploy
 
  - レスポンシブ対応
  - PugでHTMLコーディング
+ - Webpack/babelのversionを上げてスプレット演算子対応
  
 ## 未開発
 

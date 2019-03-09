@@ -25,6 +25,7 @@
       dt Other
       dd レスポンシブ対応
       dd PugでHTMLコーディング
+      dd Webpack/babelのversionを上げてスプレット演算子対応
     div
       p.about
         | このサイトはGitHubで管理しています。

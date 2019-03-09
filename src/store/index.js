@@ -43,26 +43,26 @@ const mutations = {
       text: '',
     };
   },
-  addSkillData(data, value) {
-    state.addNewSkill = Object.assign({}, { ...data.addNewSkill }, { ...value });
+  addSkillData(data, values) {
+    state.addNewSkill = values;
   },
   updateWork(data, updateData) {
     state.works = updateData;
   },
-  updateWorkData(data, value) {
-    state.editWork = Object.assign({}, { ...data.editWork }, { ...value });
+  updateWorkData(data, values) {
+    state.editWork = values;
   },
   updateSkill(data, updateData) {
     state.skill = updateData;
   },
-  updateSkillData(data, value) {
-    state.editSkill = Object.assign({}, { ...data.editSkill }, { ...value });
+  updateSkillData(data, values) {
+    state.editSkill = values;
   },
 };
 
 const storageRef = storage.ref();
 const actions = {
-  addValue(context, payload) {
+  updateFormValue(context, payload) {
     context.commit(
       payload.mutationName,
       Object.assign({}, { ...context.state[payload.type] }, { ...payload.value }),

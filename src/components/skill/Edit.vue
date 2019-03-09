@@ -100,13 +100,35 @@ export default {
   },
   methods: {
     title(value) {
-      this.$store.commit('updateSkillData', { title: value, id: parseInt(this.$route.params.id, 10) });
+      this.$store.dispatch('updateFormValue', {
+        type: 'editSkill',
+        mutationName: 'updateSkillData',
+        value: {
+          title: value,
+          id: parseInt(this.$route.params.id, 10),
+        },
+      });
     },
     image(value, fileName) {
-      this.$store.commit('updateSkillData', { image_path: value, image_name: fileName, id: parseInt(this.$route.params.id, 10) });
+      this.$store.dispatch('updateFormValue', {
+        type: 'editSkill',
+        mutationName: 'updateSkillData',
+        value: {
+          image_path: value,
+          image_name: fileName,
+          id: parseInt(this.$route.params.id, 10),
+        },
+      });
     },
     text(value) {
-      this.$store.commit('updateSkillData', { text: value, id: parseInt(this.$route.params.id, 10) });
+      this.$store.dispatch('updateFormValue', {
+        type: 'editSkill',
+        mutationName: 'updateSkillData',
+        value: {
+          text: value,
+          id: parseInt(this.$route.params.id, 10),
+        },
+      });
     },
     save() {
       if (this.inputCheck.length) {

@@ -87,7 +87,7 @@ export default {
   },
   methods: {
     title(value) {
-      this.$store.dispatch('addValue', {
+      this.$store.dispatch('updateFormValue', {
         type: 'addNewSkill',
         mutationName: 'addSkillData',
         value: {
@@ -96,7 +96,7 @@ export default {
       });
     },
     image(value, fileName) {
-      this.$store.dispatch('addValue', {
+      this.$store.dispatch('updateFormValue', {
         type: 'addNewSkill',
         mutationName: 'addSkillData',
         value: {
@@ -106,7 +106,7 @@ export default {
       });
     },
     text(value) {
-      this.$store.dispatch('addValue', {
+      this.$store.dispatch('updateFormValue', {
         type: 'addNewSkill',
         mutationName: 'addSkillData',
         value: {

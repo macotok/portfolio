@@ -111,7 +111,7 @@ export default {
   },
   methods: {
     title(value) {
-      this.$store.dispatch('addValue', {
+      this.$store.dispatch('updateFormValue', {
         type: 'addNewWork',
         mutationName: 'addWorkData',
         value: {
@@ -121,14 +121,14 @@ export default {
     },
     tags(value) {
       const data = { tags: value.trim() ? value.replace(/\s+/g, '').split(',') : [] };
-      this.$store.dispatch('addValue', {
+      this.$store.dispatch('updateFormValue', {
         type: 'addNewWork',
         mutationName: 'addWorkData',
         value: data,
       });
     },
     url(value) {
-      this.$store.dispatch('addValue', {
+      this.$store.dispatch('updateFormValue', {
         type: 'addNewWork',
         mutationName: 'addWorkData',
         value: {
@@ -137,7 +137,7 @@ export default {
       });
     },
     image(value, fileName) {
-      this.$store.dispatch('addValue', {
+      this.$store.dispatch('updateFormValue', {
         type: 'addNewWork',
         mutationName: 'addWorkData',
         value: {
@@ -147,7 +147,7 @@ export default {
       });
     },
     text(value) {
-      this.$store.dispatch('addValue', {
+      this.$store.dispatch('updateFormValue', {
         type: 'addNewWork',
         mutationName: 'addWorkData',
         value: {

@@ -127,22 +127,55 @@ export default {
   },
   methods: {
     title(value) {
-      this.$store.commit('updateWorkData', { title: value, id: parseInt(this.$route.params.id, 10) });
+      this.$store.dispatch('updateFormValue', {
+        type: 'editWork',
+        mutationName: 'updateWorkData',
+        value: {
+          title: value,
+          id: parseInt(this.$route.params.id, 10),
+        },
+      });
     },
     tags(value) {
-      this.$store.commit('updateWorkData', {
-        tags: value.trim() ? value.replace(/\s+/g, '').split(',') : [],
-        id: parseInt(this.$route.params.id, 10),
+      this.$store.dispatch('updateFormValue', {
+        type: 'editWork',
+        mutationName: 'updateWorkData',
+        value: {
+          tags: value.trim() ? value.replace(/\s+/g, '').split(',') : [],
+          id: parseInt(this.$route.params.id, 10),
+        },
       });
     },
     url(value) {
-      this.$store.commit('updateWorkData', { url: value, id: parseInt(this.$route.params.id, 10) });
+      this.$store.dispatch('updateFormValue', {
+        type: 'editWork',
+        mutationName: 'updateWorkData',
+        value: {
+          url: value,
+          id: parseInt(this.$route.params.id, 10),
+        },
+      });
     },
     image(value, fileName) {
-      this.$store.commit('updateWorkData', { image_path: value, image_name: fileName, id: parseInt(this.$route.params.id, 10) });
+      this.$store.dispatch('updateFormValue', {
+        type: 'editWork',
+        mutationName: 'updateWorkData',
+        value: {
+          image_path: value,
+          image_name: fileName,
+          id: parseInt(this.$route.params.id, 10),
+        },
+      });
     },
     text(value) {
-      this.$store.commit('updateWorkData', { text: value, id: parseInt(this.$route.params.id, 10) });
+      this.$store.dispatch('updateFormValue', {
+        type: 'editWork',
+        mutationName: 'updateWorkData',
+        value: {
+          text: value,
+          id: parseInt(this.$route.params.id, 10),
+        },
+      });
     },
     save() {
       if (this.inputCheck.length) {

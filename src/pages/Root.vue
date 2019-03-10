@@ -30,7 +30,9 @@ import sortUpdatedAt from '@/utils/sortUpdatedAt';
 
 export default {
   created() {
-    this.$store.state.worksPaginationNUmber = WORKS_START_NUMBER;
+    this.$store.dispatch('worksPaginationNUmber', {
+      pagerNumber: WORKS_START_NUMBER,
+    });
   },
   computed: {
     worksData() {

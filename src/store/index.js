@@ -58,6 +58,9 @@ const mutations = {
   updateSkillData(data, values) {
     state.editSkill = values;
   },
+  worksPaginationNUmber(data, pagerNumber) {
+    state.worksPaginationNUmber = pagerNumber;
+  },
 };
 
 const storageRef = storage.ref();
@@ -197,6 +200,10 @@ const actions = {
           break;
       }
     });
+  },
+  worksPaginationNUmber(context, payload) {
+    const { pagerNumber } = payload;
+    context.commit('worksPaginationNUmber', pagerNumber);
   },
 };
 

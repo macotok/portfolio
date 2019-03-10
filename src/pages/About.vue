@@ -11,7 +11,9 @@ import { WORKS_START_NUMBER } from '@/defines';
 
 export default {
   created() {
-    this.$store.state.worksPaginationNUmber = WORKS_START_NUMBER;
+    this.$store.dispatch('worksPaginationNUmber', {
+      pagerNumber: WORKS_START_NUMBER,
+    });
   },
   components: {
     TitleBlock,

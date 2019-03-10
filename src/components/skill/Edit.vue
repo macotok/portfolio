@@ -80,7 +80,10 @@ export default {
     };
   },
   created() {
-    this.$store.state.editSkill = this.editSkill;
+    this.$store.dispatch('getEditData', {
+      type: 'skill',
+      editData: this.editSkill,
+    });
   },
   computed: {
     editSkill() {

@@ -45,7 +45,9 @@ export default {
       const provider = new firebase.auth.GoogleAuthProvider();
       firebase.auth().signInWithPopup(provider).then((result) => {
         if (result.user.uid === process.env.FIRE_BASE.UID) {
-          this.$store.state.admin = true;
+          this.$store.dispatch('admin', {
+            isAdmin: true,
+          });
           this.$router.push({ name: 'root' });
         } else {
           this.privateState.notLogin = true;
@@ -55,7 +57,9 @@ export default {
     },
     logout() {
       firebase.auth().signOut().then(() => {
-        this.$store.state.admin = false;
+        this.$store.dispatch('admin', {
+          isAdmin: false,
+        });
         this.$router.push({ name: 'root' });
       }).catch(() => {
       });

@@ -55,7 +55,9 @@ Vue.component('paginate', Paginate);
 export default {
   methods: {
     clickCallback(pageNum) {
-      this.$store.state.worksPaginationNUmber = pageNum;
+      this.$store.dispatch('worksPaginationNUmber', {
+        pagerNumber: pageNum,
+      });
       window.scrollTo(0, 0);
     },
   },

@@ -61,6 +61,22 @@ const mutations = {
   worksPaginationNUmber(data, pagerNumber) {
     state.worksPaginationNUmber = pagerNumber;
   },
+  admin(data, isAdmin) {
+    state.admin = isAdmin;
+  },
+  getEditData(data, payload) {
+    const { type, editData } = payload;
+    switch (type) {
+      case 'works':
+        state.editWork = editData;
+        break;
+      case 'skill':
+        state.editSkill = editData;
+        break;
+      default:
+        break;
+    }
+  },
 };
 
 const storageRef = storage.ref();
@@ -204,6 +220,13 @@ const actions = {
   worksPaginationNUmber(context, payload) {
     const { pagerNumber } = payload;
     context.commit('worksPaginationNUmber', pagerNumber);
+  },
+  admin(context, payload) {
+    const { isAdmin } = payload;
+    context.commit('admin', isAdmin);
+  },
+  getEditData(context, payload) {
+    context.commit('getEditData', payload);
   },
 };
 

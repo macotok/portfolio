@@ -104,7 +104,10 @@ export default {
     };
   },
   created() {
-    this.$store.state.editWork = this.editWork;
+    this.$store.dispatch('getEditData', {
+      type: 'works',
+      editData: this.editWork,
+    });
   },
   computed: {
     editWork() {

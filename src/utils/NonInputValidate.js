@@ -2,6 +2,7 @@ class NonInputValidate {
   constructor(inputData) {
     this.inputData = inputData;
   }
+
   inputCheck() {
     const inputCheck = [];
     Object.values(this.inputData).filter((value, index) => {

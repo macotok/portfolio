@@ -69,7 +69,7 @@ const actions = {
     );
   },
   addData(context, payload) {
-    const type = payload.type;
+    const { type } = payload;
     const createId = context.state[type].reduce((id, data) => (id < data.id ? data.id : id), 0) + 1;
     const imagesRef = storageRef.child(`images/${type}/${createId}_${payload.addData.image_name}`);
     imagesRef.putString(payload.addData.image_path, 'data_url')
@@ -108,8 +108,7 @@ const actions = {
       });
   },
   updateData(context, payload) {
-    const type = payload.type;
-    const updateData = payload.updateData;
+    const { type, updateData } = payload;
     const getData = context.state[type].find(d => (d.id === updateData.id));
     if (getData.image_path !== updateData.image_path) {
       const imagesRef = storageRef.child(`images/${type}/${updateData.id}_${updateData.image_name}`);
@@ -173,8 +172,7 @@ const actions = {
     }
   },
   removeData(context, payload) {
-    const type = payload.type;
-    const id = payload.id;
+    const { type, id } = payload;
     const getData = context.state[type].find(d => (d.id === parseInt(id, 10)));
     const imagesRef = storageRef.child(`images/${type}/${id}_${getData.image_name}`);
     imagesRef.delete().then(() => {
@@ -207,4 +205,3 @@ export default {
   mutations,
   actions,
 };
-

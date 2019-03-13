@@ -28,7 +28,7 @@
       dd Webpack/babelのversionを上げてスプレット演算子対応
     div
       p.about
-        | このサイトはGitHubで管理しています。
+        | このサイトはGitHubで管理、
         br
         | そのリポジトリはこちらになります。
       link-button(linkTo="https://github.com/macotok/portfolio", :targetBlank="true")

@@ -61,6 +61,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import InputText from '@/components/form/InputText';
 import InputTextArea from '@/components/form/InputTextArea';
 import InputFile from '@/components/form/InputFile';
@@ -70,6 +71,7 @@ import NonSelect from '@/components/errorMessage/NonSelect';
 import BackButton from '@/components/button/Back';
 import NonInputValidate from '@/utils/NonInputValidate';
 import { NON_INPUT_MESSAGE } from '@/defines/';
+import editSkill from '../../store/editSkill';
 
 export default {
   data() {
@@ -86,17 +88,18 @@ export default {
     });
   },
   computed: {
-    editSkill() {
-      const skillList = this.$store.state.skill;
-      const editSkill = skillList.find(s => (
-        s.id === parseInt(this.$route.params.id, 10)
-      ));
-      return editSkill;
-    },
-    inputCheck() {
-      const nonInputValidate = new NonInputValidate(this.$store.state.editSkill);
-      return nonInputValidate.inputCheck();
-    },
+    ...mapState({
+      editSkill(state) {
+        return state.skill.find(s => (
+          s.id === parseInt(this.$route.params.id, 10)
+        ));
+      },
+      inputCheck(state) {
+        const nonInputValidate = new NonInputValidate(state.editSkill);
+        return nonInputValidate.inputCheck();
+      },
+      editSkillData: 'editSkill',
+    }),
     nonInputMessage() {
       return NON_INPUT_MESSAGE;
     },
@@ -140,7 +143,7 @@ export default {
       } else {
         this.$store.dispatch('updateData', {
           type: 'skill',
-          updateData: this.$store.state.editSkill,
+          updateData: this.editSkillData,
         });
         this.$router.push({ name: 'root' });
       }

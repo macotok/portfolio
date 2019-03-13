@@ -4,16 +4,18 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import WorkDetail from '@/components/work/Detail';
 
 export default {
   computed: {
-    workData() {
-      const data = this.$store.state.works.find(w => (
-        w.id === parseInt(this.$route.params.id, 10)
-      ));
-      return data;
-    },
+    ...mapState({
+      workData(state) {
+        return state.works.find(w => (
+          w.id === parseInt(this.$route.params.id, 10)
+        ));
+      },
+    }),
   },
   components: {
     WorkDetail,

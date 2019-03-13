@@ -64,10 +64,10 @@ export default {
   computed: {
     ...mapState({
       page: 'worksPaginationNUmber',
+      paginationNumber(state) {
+        return state.works.length / WORKS_LIST_LENGTH;
+      },
     }),
-    paginationNumber() {
-      return this.$store.state.works.length / WORKS_LIST_LENGTH;
-    },
     worksLength() {
       return WORKS_LIST_LENGTH;
     },

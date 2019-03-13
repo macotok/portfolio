@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import TitleBlock from '@/components/TitleBlock';
 import WorkList from '@/components/work/List';
 import Pagination from '@/components/Pagination';
@@ -18,12 +19,14 @@ import sortUpdatedAt from '@/utils/sortUpdatedAt';
 
 export default {
   computed: {
-    worksData() {
-      return sortUpdatedAt(this.$store.state.works);
-    },
-    listStart() {
-      return WORKS_LIST_LENGTH * (this.$store.state.worksPaginationNUmber - 1);
-    },
+    ...mapState({
+      worksData(state) {
+        return sortUpdatedAt(state.works);
+      },
+      listStart(state) {
+        return WORKS_LIST_LENGTH * (state.worksPaginationNUmber - 1);
+      },
+    }),
     worksLength() {
       return WORKS_LIST_LENGTH;
     },

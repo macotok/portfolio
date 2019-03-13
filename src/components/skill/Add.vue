@@ -77,11 +77,11 @@ export default {
   computed: {
     ...mapState({
       addNewSkill: 'addNewSkill',
+      inputCheck(state) {
+        const nonInputValidate = new NonInputValidate(state.addNewSkill);
+        return nonInputValidate.inputCheck();
+      },
     }),
-    inputCheck() {
-      const nonInputValidate = new NonInputValidate(this.$store.state.addNewSkill);
-      return nonInputValidate.inputCheck();
-    },
     nonInputMessage() {
       return NON_INPUT_MESSAGE;
     },
@@ -122,7 +122,7 @@ export default {
       } else {
         this.$store.dispatch('addData', {
           type: 'skill',
-          addData: this.$store.state.addNewSkill,
+          addData: this.addNewSkill,
         });
         this.$router.push({ name: 'root' });
       }

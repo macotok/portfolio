@@ -5,14 +5,20 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import TitleBlock from '@/components/TitleBlock';
 import WorkAdd from '@/components/work/Add';
 
 export default {
-  created() {
-    if (!this.$store.state.admin) {
+  mounted() {
+    if (!this.isAdmin) {
       this.$router.push({ name: 'root' });
     }
+  },
+  computed: {
+    ...mapState({
+      isAdmin: 'admin',
+    }),
   },
   components: {
     TitleBlock,

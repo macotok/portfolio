@@ -63,15 +63,14 @@ export default {
   computed: {
     ...mapState({
       isAdmin: 'admin',
+      getTitle(state) {
+        return state.works.find(w => (
+          w.id === parseInt(this.getWorkId, 10)
+        )).title;
+      },
     }),
     getWorkId() {
       return this.$route.params.id;
-    },
-    getTitle() {
-      const workList = (this.$store.state.works).find(w => (
-        w.id === parseInt(this.getWorkId, 10)
-      ));
-      return workList.title;
     },
   },
   methods: {

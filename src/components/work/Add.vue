@@ -101,11 +101,11 @@ export default {
   computed: {
     ...mapState({
       addNewWork: 'addNewWork',
+      inputCheck(state) {
+        const nonInputValidate = new NonInputValidate(state.addNewWork);
+        return nonInputValidate.inputCheck();
+      },
     }),
-    inputCheck() {
-      const nonInputValidate = new NonInputValidate(this.$store.state.addNewWork);
-      return nonInputValidate.inputCheck();
-    },
     nonInputMessage() {
       return NON_INPUT_MESSAGE;
     },
@@ -163,7 +163,7 @@ export default {
       } else {
         this.$store.dispatch('addData', {
           type: 'works',
-          addData: this.$store.state.addNewWork,
+          addData: this.addNewWork,
         });
         this.$router.push({ name: 'root' });
       }

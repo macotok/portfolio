@@ -85,6 +85,7 @@
 </template>
 
 <script>
+import { mapState} from 'vuex';
 import InputText from '@/components/form/InputText';
 import InputTextArea from '@/components/form/InputTextArea';
 import InputFile from '@/components/form/InputFile';
@@ -110,17 +111,18 @@ export default {
     });
   },
   computed: {
-    editWork() {
-      const workList = this.$store.state.works;
-      const editWork = workList.find(w => (
-        w.id === parseInt(this.$route.params.id, 10)
-      ));
-      return editWork;
-    },
-    inputCheck() {
-      const nonInputValidate = new NonInputValidate(this.$store.state.editWork);
-      return nonInputValidate.inputCheck();
-    },
+    ...mapState({
+      editWork(state) {
+        return state.works.find(w => (
+          w.id === parseInt(this.$route.params.id, 10)
+        ));
+      },
+      inputCheck(state) {
+        const nonInputValidate = new NonInputValidate(state.editWork);
+        return nonInputValidate.inputCheck();
+      },
+      editWorkData: 'editWork',
+    }),
     getWorkId() {
       return this.$route.params.id;
     },
@@ -187,7 +189,7 @@ export default {
       } else {
         this.$store.dispatch('updateData', {
           type: 'works',
-          updateData: this.$store.state.editWork,
+          updateData: this.editWorkData,
         });
         this.$router.push({ name: 'root' });
       }

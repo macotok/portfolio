@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import TitleBlock from '@/components/TitleBlock';
 import WorkList from '@/components/work/List';
 import SkillList from '@/components/skill/List';
@@ -35,12 +36,14 @@ export default {
     });
   },
   computed: {
-    worksData() {
-      return sortUpdatedAt(this.$store.state.works);
-    },
-    skillData() {
-      return sortUpdatedAt(this.$store.state.skill);
-    },
+    ...mapState({
+      worksData(state) {
+        return sortUpdatedAt(state.works);
+      },
+      skillData(state) {
+        return sortUpdatedAt(state.skill);
+      },
+    }),
     worksCount() {
       return WORKS_LIST_TOP_LENGTH;
     },

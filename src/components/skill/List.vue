@@ -39,7 +39,6 @@
           :deleteTitle="privateState.title",
           type="skill",
           :deleteId="privateState.id",
-          actionName="removeData"
         )
       div(v-else) {{nonSkillData}}
 </template>

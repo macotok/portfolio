@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 import firebase from 'firebase';
 import TitleBlock from '@/components/TitleBlock';
 
@@ -41,13 +41,12 @@ export default {
     }),
   },
   methods: {
+    ...mapActions(['admin']),
     login() {
       const provider = new firebase.auth.GoogleAuthProvider();
       firebase.auth().signInWithPopup(provider).then((result) => {
         if (result.user.uid === process.env.FIRE_BASE.UID) {
-          this.$store.dispatch('admin', {
-            isAdmin: true,
-          });
+          this.admin({ isAdmin: true });
           this.$router.push({ name: 'root' });
         } else {
           this.privateState.notLogin = true;
@@ -57,9 +56,7 @@ export default {
     },
     logout() {
       firebase.auth().signOut().then(() => {
-        this.$store.dispatch('admin', {
-          isAdmin: false,
-        });
+        this.admin({ isAdmin: false });
         this.$router.push({ name: 'root' });
       }).catch(() => {
       });

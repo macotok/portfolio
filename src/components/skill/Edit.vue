@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 import InputText from '@/components/form/InputText';
 import InputTextArea from '@/components/form/InputTextArea';
 import InputFile from '@/components/form/InputFile';
@@ -71,7 +71,6 @@ import NonSelect from '@/components/errorMessage/NonSelect';
 import BackButton from '@/components/button/Back';
 import NonInputValidate from '@/utils/NonInputValidate';
 import { NON_INPUT_MESSAGE } from '@/defines/';
-import editSkill from '../../store/editSkill';
 
 export default {
   data() {
@@ -82,7 +81,7 @@ export default {
     };
   },
   created() {
-    this.$store.dispatch('getEditData', {
+    this.getEditData({
       type: 'skill',
       editData: this.editSkill,
     });
@@ -105,8 +104,9 @@ export default {
     },
   },
   methods: {
+    ...mapActions(['getEditData', 'updateFormValue', 'updateData']),
     title(value) {
-      this.$store.dispatch('updateFormValue', {
+      this.updateFormValue({
         type: 'editSkill',
         mutationName: 'updateSkillData',
         value: {
@@ -116,7 +116,7 @@ export default {
       });
     },
     image(value, fileName) {
-      this.$store.dispatch('updateFormValue', {
+      this.updateFormValue({
         type: 'editSkill',
         mutationName: 'updateSkillData',
         value: {
@@ -127,7 +127,7 @@ export default {
       });
     },
     text(value) {
-      this.$store.dispatch('updateFormValue', {
+      this.updateFormValue({
         type: 'editSkill',
         mutationName: 'updateSkillData',
         value: {
@@ -141,7 +141,7 @@ export default {
         this.privateState.validate = false;
         window.scrollTo(0, 0);
       } else {
-        this.$store.dispatch('updateData', {
+        this.updateData({
           type: 'skill',
           updateData: this.editSkillData,
         });

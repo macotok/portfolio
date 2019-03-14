@@ -38,6 +38,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import CloseModalButton from '@/components/button/CloseModal';
 import DeletePermissionButton from '@/components/button/DeletePermission';
 
@@ -46,14 +47,14 @@ export default {
     deleteTitle: String,
     type: String,
     deleteId: [String, Number],
-    actionName: String,
   },
   methods: {
+    ...mapActions(['removeData']),
     closeModal() {
       this.$modal.hide('deletePermission');
     },
     deletedId() {
-      this.$store.dispatch(this.actionName, {
+      this.removeData({
         type: this.type,
         id: this.deleteId,
       });

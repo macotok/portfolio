@@ -56,7 +56,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 import InputText from '@/components/form/InputText';
 import InputTextArea from '@/components/form/InputTextArea';
 import InputFile from '@/components/form/InputFile';
@@ -87,8 +87,9 @@ export default {
     },
   },
   methods: {
+    ...mapActions(['updateFormValue', 'addData']),
     title(value) {
-      this.$store.dispatch('updateFormValue', {
+      this.updateFormValue({
         type: 'addNewSkill',
         mutationName: 'addSkillData',
         value: {
@@ -97,7 +98,7 @@ export default {
       });
     },
     image(value, fileName) {
-      this.$store.dispatch('updateFormValue', {
+      this.updateFormValue({
         type: 'addNewSkill',
         mutationName: 'addSkillData',
         value: {
@@ -107,7 +108,7 @@ export default {
       });
     },
     text(value) {
-      this.$store.dispatch('updateFormValue', {
+      this.updateFormValue({
         type: 'addNewSkill',
         mutationName: 'addSkillData',
         value: {
@@ -120,7 +121,7 @@ export default {
         this.privateState.validate = false;
         window.scrollTo(0, 0);
       } else {
-        this.$store.dispatch('addData', {
+        this.addData({
           type: 'skill',
           addData: this.addNewSkill,
         });

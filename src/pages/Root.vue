@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 import TitleBlock from '@/components/TitleBlock';
 import WorkList from '@/components/work/List';
 import SkillList from '@/components/skill/List';
@@ -31,9 +31,7 @@ import sortUpdatedAt from '@/utils/sortUpdatedAt';
 
 export default {
   created() {
-    this.$store.dispatch('worksPaginationNUmber', {
-      pagerNumber: WORKS_START_NUMBER,
-    });
+    this.worksPaginationNUmber({ pagerNumber: WORKS_START_NUMBER });
   },
   computed: {
     ...mapState({
@@ -47,6 +45,9 @@ export default {
     worksCount() {
       return WORKS_LIST_TOP_LENGTH;
     },
+  },
+  methods: {
+    ...mapActions(['worksPaginationNUmber']),
   },
   components: {
     TitleBlock,

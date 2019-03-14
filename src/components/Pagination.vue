@@ -46,7 +46,7 @@
 
 <script>
 import Vue from 'vue';
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 import Paginate from 'vuejs-paginate';
 import { WORKS_LIST_LENGTH } from '@/defines';
 
@@ -54,10 +54,9 @@ Vue.component('paginate', Paginate);
 
 export default {
   methods: {
+    ...mapActions(['worksPaginationNUmber']),
     clickCallback(pageNum) {
-      this.$store.dispatch('worksPaginationNUmber', {
-        pagerNumber: pageNum,
-      });
+      this.worksPaginationNUmber({ pagerNumber: pageNum });
       window.scrollTo(0, 0);
     },
   },

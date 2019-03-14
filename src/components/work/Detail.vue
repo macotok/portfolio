@@ -43,7 +43,6 @@
       :deleteTitle="getTitle",
       type="works",
       :deleteId="getWorkId",
-      actionName="removeData",
     )
 </template>
 

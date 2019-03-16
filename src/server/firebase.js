@@ -1,4 +1,6 @@
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+import 'firebase/storage';
 
 const config = {
   apiKey: process.env.FIRE_BASE.API_KEY,
@@ -10,5 +12,7 @@ const config = {
 };
 firebase.initializeApp(config);
 
-export const firestore = firebase.firestore();
-export const storage = firebase.storage();
+const firestore = firebase.firestore();
+const storage = firebase.storage();
+
+export { firestore, storage };

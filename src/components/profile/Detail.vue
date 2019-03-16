@@ -60,8 +60,9 @@
           dd Github/Qiitaの更新
           dd Webマーケティングの学習
           dt 続けていること
-          dd 英会話を学ぶこと
-          dd スポーツジムで身体を動かすこと
+          dd アプリケーション制作
+          dd 英会話
+          dd スポーツジムで身体を動かす
           dt 好きなもの
           dd UKバンドRadiohead
           dd ダウンタウンのお笑い

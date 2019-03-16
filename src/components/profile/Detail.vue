@@ -59,4 +59,11 @@
           dd Google Cloud Platformでアプリケーション開発
           dd Github/Qiitaの更新
           dd Webマーケティングの学習
+          dt 続けていること
+          dd 英会話を学ぶこと
+          dd スポーツジムで身体を動かすこと
+          dt 好きなもの
+          dd UKバンドRadiohead
+          dd ダウンタウンのお笑い
+          dd 犬
 </template>

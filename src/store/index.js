@@ -1,4 +1,5 @@
 // import db from './stub';
+import moment from 'moment';
 import { firestore, storage } from '../server/firebase';
 import serverWorks from '../server/works';
 import serverSkill from '../server/skill';
@@ -99,8 +100,8 @@ const actions = {
             const addOtherData = {
               id: createId,
               image_path: url,
-              updatedAt: new Date(),
-              createdAt: new Date(),
+              updatedAt: moment().format(),
+              createdAt: moment().format(),
             };
             const concatData = Object.assign({}, { ...payload.addData }, { ...addOtherData });
             switch (type) {
@@ -138,7 +139,7 @@ const actions = {
             .then((url) => {
               const updateOtherData = {
                 image_path: url,
-                updatedAt: new Date(),
+                updatedAt: moment().format(),
               };
               const updateNewData = Object.assign({}, { ...updateData }, { ...updateOtherData });
               switch (type) {
@@ -165,7 +166,7 @@ const actions = {
         });
     } else {
       const updateOtherData = {
-        updatedAt: new Date(),
+        updatedAt: moment().format(),
       };
       const updateNewData = Object.assign({}, { ...updateData }, { ...updateOtherData });
       switch (type) {

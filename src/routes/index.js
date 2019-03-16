@@ -9,6 +9,7 @@ import SkillList from '../pages/skill/List';
 import Profile from '../pages/Profile';
 import Admin from '../pages/Admin';
 import About from '../pages/About';
+import NotFound from '../pages/NotFound';
 
 export default {
   mode: 'history',
@@ -67,6 +68,10 @@ export default {
       path: '/about',
       component: About,
       name: 'about',
+    },
+    {
+      path: '*',
+      component: NotFound,
     },
   ],
   scrollBehavior(to, from, savedPosition) {

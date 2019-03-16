@@ -1,13 +1,13 @@
 <template lang="pug">
   div
-    title-block Works
+    title-block Work
     work-list(
       :works="worksData",
       :start="0",
       :count="worksCount"
     )
     more-button(linkTo="works") More
-    title-block Skills
+    title-block Skill
     skill-list(:skill="skillData", page="top")
     more-button(linkTo="skills") More
     title-block Profile
@@ -16,6 +16,11 @@
     title-block About this Portfolio
     About
     more-button(linkTo="about") More
+    div(v-if="isAdmin")
+      title-block Add work
+      more-button(linkTo="addWork") Add
+      title-block Add skill
+      more-button(linkTo="addSkill") Add
 </template>
 
 <script>
@@ -41,6 +46,7 @@ export default {
       skillData(state) {
         return sortUpdatedAt(state.skill);
       },
+      isAdmin: 'admin',
     }),
     worksCount() {
       return WORKS_LIST_TOP_LENGTH;

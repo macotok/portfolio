@@ -1,4 +1,5 @@
 import Root from '../pages/Root';
+import Parent from '../pages/Parent';
 import AddWork from '../pages/work/Add';
 import WorkList from '../pages/work/List';
 import WorkDetail from '../pages/work/Detail';
@@ -20,39 +21,51 @@ export default {
       name: 'root',
     },
     {
-      path: '/works',
-      component: WorkList,
-      name: 'works',
+      path: '/work',
+      component: Parent,
+      children: [
+        {
+          path: '',
+          component: WorkList,
+          name: 'works',
+        },
+        {
+          path: ':id',
+          component: WorkDetail,
+          name: 'workDetail',
+        },
+        {
+          path: ':id/edit',
+          component: EditWorkDetail,
+          name: 'editWorkDetail',
+        },
+        {
+          path: 'add',
+          component: AddWork,
+          name: 'addWork',
+        },
+      ],
     },
     {
-      path: '/work/:id',
-      component: WorkDetail,
-      name: 'workDetail',
-    },
-    {
-      path: '/work/:id/edit',
-      component: EditWorkDetail,
-      name: 'editWorkDetail',
-    },
-    {
-      path: '/work/add',
-      component: AddWork,
-      name: 'addWork',
-    },
-    {
-      path: '/skill/add',
-      component: AddSkill,
-      name: 'addSkill',
-    },
-    {
-      path: '/skill/:id/edit',
-      component: EditSkill,
-      name: 'editSkill',
-    },
-    {
-      path: '/skills',
-      component: SkillList,
-      name: 'skills',
+      path: '/skill',
+      component: Parent,
+      children: [
+        {
+          path: '',
+          component: SkillList,
+          name: 'skills',
+        },
+        {
+          path: 'add',
+          component: AddSkill,
+          name: 'addSkill',
+        },
+        {
+          path: ':id/edit',
+          component: EditSkill,
+          name: 'editSkill',
+        },
+      ],
     },
     {
       path: '/profile',

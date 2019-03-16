@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    title-block Skills
+    title-block Skill
     skill-list(:skill="skillData", page="list")
 </template>
 

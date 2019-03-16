@@ -1,12 +1,13 @@
 <template lang="pug">
   div
-    title-block Works
+    title-block Work
     work-list(
       :works="worksData",
       :start="listStart",
       :count="worksLength"
     )
     pagination
+    router-view
 </template>
 
 <script>

@@ -2,15 +2,13 @@
   @import 'assets/sass/styles';
 </style>
 
-<template>
-  <div id="app">
-    <header-block></header-block>
-    <nav-link></nav-link>
-    <div class="l-container">
-      <router-view/>
-    </div>
-    <footer-block></footer-block>
-  </div>
+<template lang="pug">
+  div#app
+    header-block
+    nav-link
+    div.l-container
+      router-view
+    footer-block
 </template>
 
 <script>

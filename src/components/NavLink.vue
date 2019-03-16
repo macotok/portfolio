@@ -34,17 +34,13 @@
         li
           router-link(:to="{name: 'root'}", exact) Top
         li
-          router-link(:to="{name: 'works'}") Works
+          router-link(:to="{name: 'works'}") Work
         li
-          router-link(:to="{name: 'skills'}") Skills
+          router-link(:to="{name: 'skills'}") Skill
         li
           router-link(:to="{name: 'profile'}") Profile
         li
           router-link(:to="{name: 'about'}") About
-        li(v-if="isAdmin")
-          router-link(:to="{name: 'addWork'}") add Work
-        li(v-if="isAdmin")
-          router-link(:to="{name: 'addSkill'}") add Skill
         li(v-if="isAdmin")
           router-link(:to="{name: 'admin'}") Admin
 </template>

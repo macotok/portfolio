@@ -15,7 +15,7 @@ const state = {
   editWork,
   inputSkillData,
   worksPaginationNUmber: WORKS_START_NUMBER,
-  admin: true,
+  admin: false,
 };
 
 const mutations = {

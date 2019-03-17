@@ -6,18 +6,16 @@ import serverSkill from '../server/skill';
 import { WORKS_START_NUMBER } from '../defines';
 import addNewWork from './addNewWork';
 import editWork from './editWork';
-import addNewSkill from './addNewSkill';
-import editSkill from './editSkill';
+import inputSkillData from './inputSkillData';
 
 const state = {
   works: serverWorks(),
   skill: serverSkill(),
   addNewWork,
   editWork,
-  addNewSkill,
-  editSkill,
+  inputSkillData,
   worksPaginationNUmber: WORKS_START_NUMBER,
-  admin: false,
+  admin: true,
 };
 
 const mutations = {
@@ -37,7 +35,7 @@ const mutations = {
   },
   addSkill(data, addData) {
     state.skill = addData;
-    state.addNewSkill = {
+    state.inputSkillData = {
       title: '',
       image_path: '',
       image_name: '',
@@ -45,7 +43,7 @@ const mutations = {
     };
   },
   addSkillData(data, values) {
-    state.addNewSkill = values;
+    state.inputSkillData = values;
   },
   updateWork(data, updateData) {
     state.works = updateData;
@@ -55,9 +53,15 @@ const mutations = {
   },
   updateSkill(data, updateData) {
     state.skill = updateData;
+    state.inputSkillData = {
+      title: '',
+      image_path: '',
+      image_name: '',
+      text: '',
+    };
   },
   updateSkillData(data, values) {
-    state.editSkill = values;
+    state.inputSkillData = values;
   },
   worksPaginationNUmber(data, pagerNumber) {
     state.worksPaginationNUmber = pagerNumber;
@@ -72,7 +76,7 @@ const mutations = {
         state.editWork = editData;
         break;
       case 'skill':
-        state.editSkill = editData;
+        state.inputSkillData = editData;
         break;
       default:
         break;

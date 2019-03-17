@@ -94,10 +94,10 @@ export default {
         ));
       },
       inputCheck(state) {
-        const nonInputValidate = new NonInputValidate(state.editSkill);
+        const nonInputValidate = new NonInputValidate(state.inputSkillData);
         return nonInputValidate.inputCheck();
       },
-      editSkillData: 'editSkill',
+      inputSkillData: 'inputSkillData',
     }),
     nonInputMessage() {
       return NON_INPUT_MESSAGE;
@@ -107,7 +107,7 @@ export default {
     ...mapActions(['getEditData', 'updateFormValue', 'updateData']),
     title(value) {
       this.updateFormValue({
-        type: 'editSkill',
+        type: 'inputSkillData',
         mutationName: 'updateSkillData',
         value: {
           title: value,
@@ -117,7 +117,7 @@ export default {
     },
     image(value, fileName) {
       this.updateFormValue({
-        type: 'editSkill',
+        type: 'inputSkillData',
         mutationName: 'updateSkillData',
         value: {
           image_path: value,
@@ -128,7 +128,7 @@ export default {
     },
     text(value) {
       this.updateFormValue({
-        type: 'editSkill',
+        type: 'inputSkillData',
         mutationName: 'updateSkillData',
         value: {
           text: value,
@@ -143,7 +143,7 @@ export default {
       } else {
         this.updateData({
           type: 'skill',
-          updateData: this.editSkillData,
+          updateData: this.inputSkillData,
         });
         this.$router.push({ name: 'root' });
       }

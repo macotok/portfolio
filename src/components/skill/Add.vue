@@ -19,7 +19,7 @@
         td
           input-text(
             name="skillTitle",
-            :model="addNewSkill.title",
+            :model="inputSkillData.title",
             placeholder="",
             eventName="skillTitle",
             @skillTitle="title"
@@ -33,7 +33,7 @@
             labelName="選択",
             thumnailSize="250",
             name="skillImage",
-            :model="addNewSkill.image_path",
+            :model="inputSkillData.image_path",
             eventName="skillImage",
             @skillImage="image"
           )
@@ -44,7 +44,7 @@
         td
           input-text-area(
             name="skillText",
-            :model="addNewSkill.text",
+            :model="inputSkillData.text",
             placeholder="",
             eventName="skillText",
             rows="10",
@@ -76,9 +76,9 @@ export default {
   },
   computed: {
     ...mapState({
-      addNewSkill: 'addNewSkill',
+      inputSkillData: 'inputSkillData',
       inputCheck(state) {
-        const nonInputValidate = new NonInputValidate(state.addNewSkill);
+        const nonInputValidate = new NonInputValidate(state.inputSkillData);
         return nonInputValidate.inputCheck();
       },
     }),
@@ -90,7 +90,7 @@ export default {
     ...mapActions(['updateFormValue', 'addData']),
     title(value) {
       this.updateFormValue({
-        type: 'addNewSkill',
+        type: 'inputSkillData',
         mutationName: 'addSkillData',
         value: {
           title: value,
@@ -99,7 +99,7 @@ export default {
     },
     image(value, fileName) {
       this.updateFormValue({
-        type: 'addNewSkill',
+        type: 'inputSkillData',
         mutationName: 'addSkillData',
         value: {
           image_path: value,
@@ -109,7 +109,7 @@ export default {
     },
     text(value) {
       this.updateFormValue({
-        type: 'addNewSkill',
+        type: 'inputSkillData',
         mutationName: 'addSkillData',
         value: {
           text: value,
@@ -123,7 +123,7 @@ export default {
       } else {
         this.addData({
           type: 'skill',
-          addData: this.addNewSkill,
+          addData: this.inputSkillData,
         });
         this.$router.push({ name: 'root' });
       }

@@ -14,7 +14,7 @@ const router = new VueRouter(routes);
 const storeObj = Object.assign({}, _store, {
   strict: process.env.NODE_ENV !== 'production',
 });
-const store = new Vuex.Store(storeObj);
+const store = new Vuex.Store(_store);
 
 new Vue({ // eslint-disable-line no-new
   el: '#app',

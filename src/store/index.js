@@ -4,34 +4,22 @@ import { firestore, storage } from '../server/firebase';
 import serverWorks from '../server/works';
 import serverSkill from '../server/skill';
 import { WORKS_START_NUMBER } from '../defines';
-import addNewWork from './addNewWork';
-import editWork from './editWork';
+import inputWorkData from './inputWorkData';
 import inputSkillData from './inputSkillData';
 
 const state = {
   works: serverWorks(),
   skill: serverSkill(),
-  addNewWork,
-  editWork,
+  inputWorkData,
   inputSkillData,
   worksPaginationNUmber: WORKS_START_NUMBER,
-  admin: true,
+  admin: false,
 };
 
 const mutations = {
   addWork(data, addData) {
     state.works = addData;
-    state.addNewWork = {
-      title: '',
-      tags: '',
-      image_path: '',
-      image_name: '',
-      url: '',
-      text: '',
-    };
-  },
-  addWorkData(data, values) {
-    state.addNewWork = values;
+    state.inputWorkData = inputWorkData;
   },
   addSkill(data, addData) {
     state.skill = addData;
@@ -39,9 +27,10 @@ const mutations = {
   },
   updateWork(data, updateData) {
     state.works = updateData;
+    state.inputWorkData = inputWorkData;
   },
   updateWorkData(data, values) {
-    state.editWork = values;
+    state.inputWorkData = values;
   },
   updateSkill(data, updateData) {
     state.skill = updateData;
@@ -56,24 +45,11 @@ const mutations = {
   admin(data, isAdmin) {
     state.admin = isAdmin;
   },
-  getEditData(data, payload) {
-    const { type, editData } = payload;
-    switch (type) {
-      case 'works':
-        state.editWork = editData;
-        break;
-      case 'skill':
-        state.inputSkillData = editData;
-        break;
-      default:
-        break;
-    }
-  },
   checkHasData(data, payload) {
     const { type, targetData } = payload;
     switch (type) {
       case 'works':
-        state.editWork = targetData;
+        state.inputWorkData = targetData;
         break;
       case 'skill':
         state.inputSkillData = targetData;
@@ -229,9 +205,6 @@ const actions = {
   admin(context, payload) {
     const { isAdmin } = payload;
     context.commit('admin', isAdmin);
-  },
-  getEditData(context, payload) {
-    context.commit('getEditData', payload);
   },
   checkHasData(context, payload) {
     context.commit('checkHasData', payload);

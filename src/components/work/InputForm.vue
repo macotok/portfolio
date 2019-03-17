@@ -14,12 +14,15 @@
       div.m-box-errorMessage
         p.m-text-errorMessage {{nonInputMessage}}
     table.m-table-01
+      tr(v-if="workData.title")
+        th ID
+        td {{workData.id}}
       tr
         th タイトル
         td
           input-text(
             name="workTitle",
-            :model="addNewWork.title",
+            :model="workData.title",
             placeholder="",
             eventName="workTitle",
             @workTitle="title"
@@ -31,7 +34,7 @@
         td
           input-text(
             name="workTags",
-            :model="addNewWork.tags",
+            :model="workData.tags",
             placeholder="カンマ区切りで指定",
             eventName="workTags",
             @workTags="tags"
@@ -45,7 +48,7 @@
             labelName="選択",
             thumnailSize="250",
             name="workImage",
-            :model="addNewWork.image_path",
+            :model="workData.image_path",
             eventName="workImage",
             @workImage="image"
           )
@@ -56,7 +59,7 @@
         td
           input-text(
             name="workUrl",
-            :model="addNewWork.url",
+            :model="workData.url",
             placeholder="",
             eventName="workUrl",
             @workUrl="url"
@@ -68,7 +71,7 @@
         td
           input-text-area(
             name="workText",
-            :model="addNewWork.text",
+            :model="workData.text",
             placeholder="",
             eventName="workText",
             rows="10",
@@ -76,7 +79,10 @@
           )
           div(v-if="inputCheck.indexOf('text') >= 0")
             non-input(text="内容")
-    submit-button(eventName="addWork", @addWork="save") 追加
+    div.m-buttonBlock-01(v-if="workData.title")
+      submit-button(eventName="editWork", @editWork="save") 保存
+      back-button(:linkTo="`/work/${getWorkId}`") 戻る
+    submit-button(v-else, eventName="addWork", @addWork="save") 追加
 </template>
 
 <script>
@@ -88,7 +94,9 @@ import SubmitButton from '@/components/button/Submit';
 import NonInput from '@/components/errorMessage/NonInput';
 import NonSelect from '@/components/errorMessage/NonSelect';
 import NonInputValidate from '@/utils/NonInputValidate';
+import BackButton from '@/components/button/Back';
 import { NON_INPUT_MESSAGE } from '@/defines/';
+import inputWorkData from '@/store/inputWorkData';
 
 export default {
   data() {
@@ -98,41 +106,64 @@ export default {
       },
     };
   },
+  created() {
+    this.checkHasData({
+      type: 'works',
+      targetData: this.workData,
+    });
+  },
   computed: {
     ...mapState({
-      addNewWork: 'addNewWork',
+      hasData(state) {
+        return state.works.find(w => (
+          w.id === parseInt(this.$route.params.id, 10)
+        ));
+      },
+      workData(state) {
+        let findData = this.hasData;
+        if (!findData) {
+          const createId = state.works.reduce((id, data) => (id < data.id ? data.id : id), 0) + 1;
+          findData = Object.assign({}, inputWorkData, { id: createId });
+        }
+        return findData;
+      },
       inputCheck(state) {
-        const nonInputValidate = new NonInputValidate(state.addNewWork);
+        const nonInputValidate = new NonInputValidate(state.inputWorkData);
         return nonInputValidate.inputCheck();
       },
+      inputWorkData: 'inputWorkData',
     }),
+    getWorkId() {
+      return this.$route.params.id;
+    },
     nonInputMessage() {
       return NON_INPUT_MESSAGE;
     },
   },
   methods: {
-    ...mapActions(['updateFormValue', 'addData']),
+    ...mapActions(['checkHasData', 'updateFormValue', 'updateData', 'addData']),
     title(value) {
       this.updateFormValue({
-        type: 'addNewWork',
-        mutationName: 'addWorkData',
+        type: 'inputWorkData',
+        mutationName: 'updateWorkData',
         value: {
           title: value,
         },
       });
     },
     tags(value) {
-      const data = { tags: value.trim() ? value.replace(/\s+/g, '').split(',') : [] };
       this.updateFormValue({
-        type: 'addNewWork',
-        mutationName: 'addWorkData',
-        value: data,
+        type: 'inputWorkData',
+        mutationName: 'updateWorkData',
+        value: {
+          tags: value.trim() ? value.replace(/\s+/g, '').split(',') : [],
+        },
       });
     },
     url(value) {
       this.updateFormValue({
-        type: 'addNewWork',
-        mutationName: 'addWorkData',
+        type: 'inputWorkData',
+        mutationName: 'updateWorkData',
         value: {
           url: value,
         },
@@ -140,8 +171,8 @@ export default {
     },
     image(value, fileName) {
       this.updateFormValue({
-        type: 'addNewWork',
-        mutationName: 'addWorkData',
+        type: 'inputWorkData',
+        mutationName: 'updateWorkData',
         value: {
           image_path: value,
           image_name: fileName,
@@ -150,8 +181,8 @@ export default {
     },
     text(value) {
       this.updateFormValue({
-        type: 'addNewWork',
-        mutationName: 'addWorkData',
+        type: 'inputWorkData',
+        mutationName: 'updateWorkData',
         value: {
           text: value,
         },
@@ -162,10 +193,17 @@ export default {
         this.privateState.validate = false;
         window.scrollTo(0, 0);
       } else {
-        this.addData({
-          type: 'works',
-          addData: this.addNewWork,
-        });
+        if (this.hasData) {
+          this.updateData({
+            type: 'works',
+            updateData: this.inputWorkData,
+          });
+        } else {
+          this.addData({
+            type: 'works',
+            addData: this.inputWorkData,
+          });
+        }
         this.$router.push({ name: 'root' });
       }
     },
@@ -177,6 +215,7 @@ export default {
     SubmitButton,
     NonInput,
     NonSelect,
+    BackButton,
   },
 };
 </script>

@@ -1,4 +1,5 @@
 export default {
+  id: '',
   title: '',
   tags: '',
   image_path: '',

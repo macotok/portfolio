@@ -30,7 +30,6 @@
 
 <template lang="pug">
   paginate(
-    v-model="page",
     :page-count="paginationNumber",
     :page-range="worksLength",
     :margin-pages="0",
@@ -62,7 +61,6 @@ export default {
   },
   computed: {
     ...mapState({
-      page: 'worksPaginationNUmber',
       paginationNumber(state) {
         return state.works.length / WORKS_LIST_LENGTH;
       },

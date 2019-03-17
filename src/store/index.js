@@ -35,12 +35,7 @@ const mutations = {
   },
   addSkill(data, addData) {
     state.skill = addData;
-    state.inputSkillData = {
-      title: '',
-      image_path: '',
-      image_name: '',
-      text: '',
-    };
+    state.inputSkillData = inputSkillData;
   },
   addSkillData(data, values) {
     state.inputSkillData = values;
@@ -53,12 +48,7 @@ const mutations = {
   },
   updateSkill(data, updateData) {
     state.skill = updateData;
-    state.inputSkillData = {
-      title: '',
-      image_path: '',
-      image_name: '',
-      text: '',
-    };
+    state.inputSkillData = inputSkillData;
   },
   updateSkillData(data, values) {
     state.inputSkillData = values;
@@ -77,6 +67,23 @@ const mutations = {
         break;
       case 'skill':
         state.inputSkillData = editData;
+        break;
+      default:
+        break;
+    }
+  },
+  checkHasData(data, payload) {
+    const { type, findData } = payload;
+    switch (type) {
+      case 'works':
+        state.editWork = findData;
+        break;
+      case 'skill':
+        if (findData) {
+          state.inputSkillData = findData;
+        } else {
+          state.inputSkillData = inputSkillData;
+        }
         break;
       default:
         break;
@@ -232,6 +239,9 @@ const actions = {
   },
   getEditData(context, payload) {
     context.commit('getEditData', payload);
+  },
+  checkHasData(context, payload) {
+    context.commit('checkHasData', payload);
   },
 };
 

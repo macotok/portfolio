@@ -66,5 +66,5 @@
           dt 好きなもの
           dd UKバンドRadiohead
           dd ダウンタウンのお笑い
-          dd 犬
+          dd サッカー日本代表
 </template>

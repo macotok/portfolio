@@ -74,8 +74,19 @@ export default {
       },
     };
   },
+  created() {
+    this.checkHasData({
+      type: 'skill',
+      findData: this.findData,
+    });
+  },
   computed: {
     ...mapState({
+      findData(state) {
+        return state.skill.find(s => (
+          s.id === parseInt(this.$route.params.id, 10)
+        ));
+      },
       inputSkillData: 'inputSkillData',
       inputCheck(state) {
         const nonInputValidate = new NonInputValidate(state.inputSkillData);
@@ -87,7 +98,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions(['updateFormValue', 'addData']),
+    ...mapActions(['checkHasData', 'updateFormValue', 'addData']),
     title(value) {
       this.updateFormValue({
         type: 'inputSkillData',

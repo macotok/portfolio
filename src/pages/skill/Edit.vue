@@ -1,13 +1,13 @@
 <template lang="pug">
   div
     title-block edit skill
-    edit-skill
+    input-form
 </template>
 
 <script>
 import { mapState } from 'vuex';
 import TitleBlock from '@/components/TitleBlock';
-import EditSkill from '@/components/skill/Edit';
+import InputForm from '@/components/skill/InputForm';
 
 export default {
   mounted() {
@@ -22,7 +22,7 @@ export default {
   },
   components: {
     TitleBlock,
-    EditSkill,
+    InputForm,
   },
 };
 </script>

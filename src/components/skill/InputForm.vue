@@ -14,12 +14,15 @@
       div.m-box-errorMessage
         p.m-text-errorMessage {{nonInputMessage}}
     table.m-table-01
+      tr(v-if="skillData.title")
+        th ID
+        td {{skillData.id}}
       tr
         th スキル名
         td
           input-text(
             name="skillTitle",
-            :model="inputSkillData.title",
+            :model="skillData.title",
             placeholder="",
             eventName="skillTitle",
             @skillTitle="title"
@@ -33,7 +36,7 @@
             labelName="選択",
             thumnailSize="250",
             name="skillImage",
-            :model="inputSkillData.image_path",
+            :model="skillData.image_path",
             eventName="skillImage",
             @skillImage="image"
           )
@@ -44,7 +47,7 @@
         td
           input-text-area(
             name="skillText",
-            :model="inputSkillData.text",
+            :model="skillData.text",
             placeholder="",
             eventName="skillText",
             rows="10",
@@ -52,7 +55,10 @@
           )
           div(v-if="inputCheck.indexOf('text') >= 0")
             non-input(text="内容")
-    submit-button(eventName="addSkill", @addSkill="save") 追加
+    div.m-buttonBlock-01(v-if="skillData.title")
+      submit-button(eventName="editSkill", @editSkill="save") 保存
+      back-button(linkTo="/skills") 戻る
+    submit-button(v-else, eventName="addSkill", @addSkill="save") 追加
 </template>
 
 <script>
@@ -63,8 +69,10 @@ import InputFile from '@/components/form/InputFile';
 import SubmitButton from '@/components/button/Submit';
 import NonInput from '@/components/errorMessage/NonInput';
 import NonSelect from '@/components/errorMessage/NonSelect';
+import BackButton from '@/components/button/Back';
 import NonInputValidate from '@/utils/NonInputValidate';
 import { NON_INPUT_MESSAGE } from '@/defines/';
+import inputSkillData from '@/store/inputSkillData';
 
 export default {
   data() {
@@ -77,32 +85,40 @@ export default {
   created() {
     this.checkHasData({
       type: 'skill',
-      findData: this.findData,
+      targetData: this.skillData,
     });
   },
   computed: {
     ...mapState({
-      findData(state) {
+      hasData(state) {
         return state.skill.find(s => (
           s.id === parseInt(this.$route.params.id, 10)
         ));
       },
-      inputSkillData: 'inputSkillData',
+      skillData(state) {
+        let findData = this.hasData;
+        if (!findData) {
+          const createId = state.skill.reduce((id, data) => (id < data.id ? data.id : id), 0) + 1;
+          findData = Object.assign({}, inputSkillData, { id: createId });
+        }
+        return findData;
+      },
       inputCheck(state) {
         const nonInputValidate = new NonInputValidate(state.inputSkillData);
         return nonInputValidate.inputCheck();
       },
+      inputSkillData: 'inputSkillData',
     }),
     nonInputMessage() {
       return NON_INPUT_MESSAGE;
     },
   },
   methods: {
-    ...mapActions(['checkHasData', 'updateFormValue', 'addData']),
+    ...mapActions(['checkHasData', 'updateFormValue', 'updateData', 'addData']),
     title(value) {
       this.updateFormValue({
         type: 'inputSkillData',
-        mutationName: 'addSkillData',
+        mutationName: 'updateSkillData',
         value: {
           title: value,
         },
@@ -111,7 +127,7 @@ export default {
     image(value, fileName) {
       this.updateFormValue({
         type: 'inputSkillData',
-        mutationName: 'addSkillData',
+        mutationName: 'updateSkillData',
         value: {
           image_path: value,
           image_name: fileName,
@@ -121,7 +137,7 @@ export default {
     text(value) {
       this.updateFormValue({
         type: 'inputSkillData',
-        mutationName: 'addSkillData',
+        mutationName: 'updateSkillData',
         value: {
           text: value,
         },
@@ -132,10 +148,17 @@ export default {
         this.privateState.validate = false;
         window.scrollTo(0, 0);
       } else {
-        this.addData({
-          type: 'skill',
-          addData: this.inputSkillData,
-        });
+        if (this.hasData) {
+          this.updateData({
+            type: 'skill',
+            updateData: this.inputSkillData,
+          });
+        } else {
+          this.addData({
+            type: 'skill',
+            addData: this.inputSkillData,
+          });
+        }
         this.$router.push({ name: 'root' });
       }
     },
@@ -147,6 +170,7 @@ export default {
     SubmitButton,
     NonInput,
     NonSelect,
+    BackButton,
   },
 };
 </script>

@@ -15,7 +15,7 @@ const state = {
   editWork,
   inputSkillData,
   worksPaginationNUmber: WORKS_START_NUMBER,
-  admin: false,
+  admin: true,
 };
 
 const mutations = {
@@ -36,9 +36,6 @@ const mutations = {
   addSkill(data, addData) {
     state.skill = addData;
     state.inputSkillData = inputSkillData;
-  },
-  addSkillData(data, values) {
-    state.inputSkillData = values;
   },
   updateWork(data, updateData) {
     state.works = updateData;
@@ -73,17 +70,13 @@ const mutations = {
     }
   },
   checkHasData(data, payload) {
-    const { type, findData } = payload;
+    const { type, targetData } = payload;
     switch (type) {
       case 'works':
-        state.editWork = findData;
+        state.editWork = targetData;
         break;
       case 'skill':
-        if (findData) {
-          state.inputSkillData = findData;
-        } else {
-          state.inputSkillData = inputSkillData;
-        }
+        state.inputSkillData = targetData;
         break;
       default:
         break;

@@ -17,4 +17,3 @@ steps:
   args: ['install']
 - name: 'gcr.io/${_PROJECT_ID}/firebase'
   args: [ 'deploy', '--project', '${_PROJECT_ID}']
-  secretEnv: ['${_FIREBASE_TOKEN}']

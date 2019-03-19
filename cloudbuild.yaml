@@ -14,4 +14,6 @@ steps:
 - name: 'gcr.io/cloud-builders/yarn'
   args: ['build']
 - name: 'gcr.io/cloud-builders/yarn'
+  args: ['add firebase-tools']
+- name: 'gcr.io/cloud-builders/yarn'
   args: ['deploy']

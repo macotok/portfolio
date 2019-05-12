@@ -1,5 +1,7 @@
 <template lang="pug">
   te-sample(
+    pageTitle="Portfolio"
+    :title="['Work', 'Skill', 'Profile', 'About this Portfolio']"
     :label01="label01"
     :label02="label02"
   )

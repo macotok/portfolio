@@ -24,7 +24,7 @@ export default {
   .or-header {
     text-align: center;
     padding: 20px 0;
-    background-color: $white-color;
+    background-color: $gray-color-04;
     position: relative;
   }
 </style>

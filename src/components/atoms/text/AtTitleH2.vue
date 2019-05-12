@@ -1,14 +1,15 @@
 <template lang="pug">
-  h2.atTitleH2-title
-    slot
+  .atTitleH2
+    h2.atTitleH2-title
+      slot
 </template>
 
 <style lang="scss">
   .atTitleH2 {
     position: relative;
-    margin-bottom: 2.5%;
-    &:before {
-      content: "";
+    margin-bottom: 2.5rem;
+    &::before {
+      content: '';
       width: 3%;
       position: absolute;
       display: block;
@@ -19,7 +20,7 @@
       margin: -1px 0 0 0;
     }
     &-title {
-      background-color: #fff;
+      background-color: $white-color;
       position: relative;
       margin-left: 4%;
       font-size: 1.2rem;

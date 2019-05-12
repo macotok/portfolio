@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     or-header(
-      title="大見出し"
+      title="Portfolio"
     )
     mo-title-block
     or-form(

@@ -3,16 +3,13 @@ import OrHeader from '@/components/organisms/OrHeader';
 
 describe('OrHeader test', () => {
   let wrapper;
+  const propsData = { title: 'hello title' };
   beforeEach(() => {
-    const requiredProps = { title: 'hello title' };
-    wrapper = shallowMount(OrHeader, { propsData: requiredProps });
+    wrapper = shallowMount(OrHeader, { propsData });
   });
   describe('props', () => {
     test('propsが受け取れること', () => {
-      wrapper.setProps({
-        title: 'hello title',
-      });
-      expect(wrapper.vm.$props.title).toBe('hello title');
+      expect(wrapper.vm.$props.title).toBe(propsData.title);
     });
     test('requiredがtrueになっていること', () => {
       expect(wrapper.vm.$options.props.title.required).toBe(true);

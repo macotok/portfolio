@@ -1,10 +1,15 @@
 <template lang="pug">
-  h1
-    slot
+  .atTitleH1
+    h1.atTitleH1-title
+      slot
 </template>
 
 <style lang="scss">
-  h1 {
-    color: $black-color-01;
+  .atTitleH1 {
+    &-title {
+     letter-spacing: 10px;
+     font-weight: normal;
+     font-size: 1.4rem;
+    }
   }
 </style>

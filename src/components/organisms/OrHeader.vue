@@ -1,5 +1,5 @@
 <template lang="pug">
-  header
+  header.or-header
     at-title-h1(
     ) {{ title }}
 </template>
@@ -14,9 +14,17 @@ export default {
   props: {
     title: {
       type: String,
-      default: '',
       required: true,
     },
   },
 };
 </script>
+
+<style lang="scss">
+  .or-header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: $white-color;
+    position: relative;
+  }
+</style>

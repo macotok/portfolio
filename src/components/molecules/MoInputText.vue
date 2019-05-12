@@ -9,6 +9,7 @@
         :name="name"
       )
         at-text-input(
+          :name="name"
           slot-scope="{inputText}"
           @input-text="inputText"
         )
@@ -28,12 +29,10 @@ export default {
   props: {
     actionType: {
       type: String,
-      default: '',
       required: true,
     },
     name: {
       type: String,
-      default: '',
       required: true,
     },
   },

@@ -3,8 +3,29 @@ import AtTextInput from '@/components/atoms/form/AtTextInput';
 
 describe('AtTextInput', () => {
   let wrapper;
+  const propsData = {
+    name: 'test name',
+  };
   beforeEach(() => {
-    wrapper = shallowMount(AtTextInput);
+    wrapper = shallowMount(AtTextInput, {
+      propsData,
+    });
+  });
+  describe('props', () => {
+    test('propsを受け取れること', () => {
+      wrapper.setProps({
+        placeholder: 'test placeholder',
+      });
+      expect(wrapper.vm.$props.name).toBe(propsData.name);
+      expect(wrapper.vm.$props.placeholder).toBe('test placeholder');
+    });
+    test('型が期待しているとおりか', () => {
+      expect(typeof wrapper.vm.$props.name).toBe('string');
+      expect(typeof wrapper.vm.$props.placeholder).toBe('string');
+    });
+    test('requiredがtrueになっていること', () => {
+      expect(wrapper.vm.$options.props.name.required).toBe(true);
+    });
   });
   describe('template', () => {
     describe('v-on', () => {

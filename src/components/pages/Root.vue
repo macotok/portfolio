@@ -1,7 +1,5 @@
 <template lang="pug">
-  te-sample(
-    pageTitle="Portfolio"
-    :title="['Work', 'Skill', 'Profile', 'About this Portfolio']"
+  te-root(
     :label01="label01"
     :label02="label02"
   )
@@ -9,11 +7,11 @@
 
 <script>
 import { mapState } from 'vuex';
-import TeSample from '@/components/templates/TeSample';
+import TeRoot from '@/components/templates/TeRoot';
 
 export default {
   components: {
-    TeSample,
+    TeRoot,
   },
   computed: {
     ...mapState({

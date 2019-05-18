@@ -1,7 +1,7 @@
 import Vuex from 'vuex';
 import { shallowMount, createLocalVue } from '@vue/test-utils';
-import Sample from '@/components/pages/Sample';
-import TeSample from '@/components/templates/TeSample';
+import Root from '@/components/pages/Root';
+import TeRoot from '@/components/templates/TeRoot';
 
 const localVue = createLocalVue();
 localVue.use(Vuex);
@@ -15,14 +15,14 @@ const store = new Vuex.Store({
 describe('Sample test', () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = shallowMount(Sample, {
+    wrapper = shallowMount(Root, {
       store,
       localVue,
     });
   });
   describe('mount', () => {
     test('TeSampleにstateの値をpropsで渡せているかどうか', () => {
-      expect(wrapper.find(TeSample).props().label01).toBe('test label01');
+      expect(wrapper.find(TeRoot).props().label01).toBe('test label01');
     });
   });
 });

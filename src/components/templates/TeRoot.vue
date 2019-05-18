@@ -1,16 +1,14 @@
 <template lang="pug">
   div
-    or-header(
-      :title="pageTitle"
-    )
-    at-title-h2 {{ title[0] }}
+    or-header Portfolio
+    at-title-h2 Work
     or-form(
       :label01="label01"
       :label02="label02"
     )
-    at-title-h2 {{ title[1] }}
-    at-title-h2 {{ title[2] }}
-    at-title-h2 {{ title[3] }}
+    at-title-h2 Skill
+    at-title-h2 Profile
+    at-title-h2 About this Portfolio
 </template>
 
 <script>
@@ -31,14 +29,6 @@ export default {
     },
     label02: {
       type: String,
-      required: true,
-    },
-    pageTitle: {
-      type: String,
-      required: true,
-    },
-    title: {
-      type: Array,
       required: true,
     },
   },

@@ -1,4 +1,4 @@
-import Sample from '../components/pages/Sample';
+import Sample from '../components/pages/Root';
 
 export default {
   mode: 'history',

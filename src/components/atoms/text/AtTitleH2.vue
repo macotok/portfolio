@@ -7,7 +7,7 @@
 <style lang="scss">
   .atTitleH2 {
     position: relative;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
     &::before {
       content: '';
       width: 3%;

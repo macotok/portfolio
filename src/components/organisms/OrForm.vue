@@ -10,7 +10,7 @@
           name='label02'
           actionType='action01'
         ) ラベル2
-      at-button
+      at-submit
     at-text(
     ) ラベル1: {{ label01 }}
     at-text(
@@ -18,13 +18,13 @@
 </template>
 
 <script>
-import AtButton from '@/components/atoms/form/AtButton';
+import AtSubmit from '@/components/atoms/form/AtSubmit';
 import AtText from '@/components/atoms/text/AtText';
 import MoInputText from '@/components/molecules/MoInputText';
 
 export default {
   components: {
-    AtButton,
+    AtSubmit,
     AtText,
     MoInputText,
   },

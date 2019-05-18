@@ -7,36 +7,16 @@
 
 <script>
 import MoNavList from '@/components/molecules/MoNavList';
+import NAV_LIST from '@/defines/navList';
 
 export default {
   components: {
     MoNavList,
   },
-  data() {
-    return {
-      navList: [
-        {
-          name: 'Top',
-          route: 'root',
-        },
-        {
-          name: 'Work',
-          route: 'root',
-        },
-        {
-          name: 'Skill',
-          route: 'root',
-        },
-        {
-          name: 'Profile',
-          route: 'root',
-        },
-        {
-          name: 'About',
-          route: 'root',
-        },
-      ],
-    };
+  computed: {
+    navList() {
+      return NAV_LIST;
+    },
   },
 };
 </script>

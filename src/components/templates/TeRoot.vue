@@ -1,6 +1,7 @@
 <template lang="pug">
   div
     or-header Portfolio
+    or-header-nav
     .l-container
       at-title-h2 Work
       or-form(
@@ -38,9 +39,11 @@ import AtText from '@/components/atoms/text/AtText';
 import AtTitleH2 from '@/components/atoms/text/AtTitleH2';
 import OrForm from '@/components/organisms/OrForm';
 import OrHeader from '@/components/organisms/OrHeader';
+import OrHeaderNav from '@/components/organisms/OrHeaderNav';
 
 export default {
   components: {
+    OrHeaderNav,
     AtButton,
     AtText,
     AtTitleH2,

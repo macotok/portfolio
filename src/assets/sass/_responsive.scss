@@ -1,1 +1,12 @@
-@media screen and (max-width: 479px) {}
+@media screen and (max-width: 1200px) {
+  .l-container {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .l-container {
+    padding: 1rem;
+  }
+}

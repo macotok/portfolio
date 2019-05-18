@@ -24,17 +24,17 @@ export default {
     &-link {
       display: inline-block;
       text-decoration: none;
-      background-color: #1c93fa;
-      color: #f6f9ff;
+      background-color: $link-color;
+      color: $gray-color-04;
       padding: 10px 25px;
       text-align: center;
       border-radius: 3px;
       font-size: .9rem;
       transition: .1s ease-in-out;
-      border: 1px solid #1c93fa;
+      border: 1px solid $link-color;
       &:hover {
-        background-color: #f6f9ff;
-        color: #1c93fa;
+        background-color: $gray-color-04;
+        color: $link-color;
       }
     }
   }

@@ -1,25 +1,35 @@
 <template lang="pug">
   div
     or-header Portfolio
-    at-title-h2 Work
-    or-form(
-      :label01="label01"
-      :label02="label02"
-    )
-    at-button(
-      linkTo="root"
-    ) More
-    at-title-h2 Skill
-    at-title-h2 Profile
-    at-text
-      | GitHub/Qiitaアカウントのリンク先、
-      br
-      | 今までしてきたこと、これからしたいことを記載しました。
-    at-title-h2 About this Portfolio
-    at-text
-      | このPortfolioはVue/Firebaseで開発、
-      br
-      | その開発項目について記載しました。
+    .l-container
+      at-title-h2 Work
+      or-form(
+        :label01="label01"
+        :label02="label02"
+      )
+      at-button(
+        linkTo="root"
+      ) More
+      at-title-h2 Skill
+      at-button(
+        linkTo="root"
+      ) More
+      at-title-h2 Profile
+      at-text
+        | GitHub/Qiitaアカウントのリンク先、
+        br
+        | 今までしてきたこと、これからしたいことを記載しました。
+      at-button(
+        linkTo="root"
+      ) More
+      at-title-h2 About this Portfolio
+      at-text
+        | このPortfolioはVue/Firebaseで開発、
+        br
+        | その開発項目について記載しました。
+      at-button(
+        linkTo="root"
+      ) More
 </template>
 
 <script>

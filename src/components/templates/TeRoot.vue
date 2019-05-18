@@ -6,6 +6,9 @@
       :label01="label01"
       :label02="label02"
     )
+    at-button(
+      linkTo="root"
+    ) More
     at-title-h2 Skill
     at-title-h2 Profile
     at-text
@@ -20,6 +23,7 @@
 </template>
 
 <script>
+import AtButton from '@/components/atoms/button/AtButton';
 import AtText from '@/components/atoms/text/AtText';
 import AtTitleH2 from '@/components/atoms/text/AtTitleH2';
 import OrForm from '@/components/organisms/OrForm';
@@ -27,6 +31,7 @@ import OrHeader from '@/components/organisms/OrHeader';
 
 export default {
   components: {
+    AtButton,
     AtText,
     AtTitleH2,
     OrForm,

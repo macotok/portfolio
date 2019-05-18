@@ -1,12 +1,12 @@
-import Sample from '../components/pages/Root';
+import Root from '../components/pages/Root';
 
 export default {
   mode: 'history',
   routes: [
     {
       path: '/',
-      component: Sample,
-      name: 'sample',
+      component: Root,
+      name: 'root',
     },
   ],
   // ページを開くとScrollTopが0の位置で表示

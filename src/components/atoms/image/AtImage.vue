@@ -1,5 +1,6 @@
 <template lang="pug">
   img(
+    :style="styles"
     :src="src"
     :alt="alt"
     :width="width"
@@ -25,6 +26,10 @@ export default {
     height: {
       type: [String, Number],
       default: 'auto',
+    },
+    styles: {
+      type: Object,
+      default: null,
     },
   },
 };

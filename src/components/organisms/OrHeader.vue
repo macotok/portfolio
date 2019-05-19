@@ -1,5 +1,5 @@
 <template lang="pug">
-  header.or-header
+  header.orHeader
     at-title-h1
       slot
 </template>
@@ -15,7 +15,7 @@ export default {
 </script>
 
 <style lang="scss">
-  .or-header {
+  .orHeader {
     text-align: center;
     padding: 20px 0;
     background-color: $gray-color-04;

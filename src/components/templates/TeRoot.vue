@@ -31,24 +31,27 @@
       at-button(
         linkTo="root"
       ) More
+    or-footer @portfolio-205d8.firebaseapp.com
 </template>
 
 <script>
 import AtButton from '@/components/atoms/button/AtButton';
 import AtText from '@/components/atoms/text/AtText';
 import AtTitleH2 from '@/components/atoms/text/AtTitleH2';
+import OrFooter from '@/components/organisms/OrFooter'
 import OrForm from '@/components/organisms/OrForm';
 import OrHeader from '@/components/organisms/OrHeader';
 import OrHeaderNav from '@/components/organisms/OrHeaderNav';
 
 export default {
   components: {
-    OrHeaderNav,
     AtButton,
     AtText,
     AtTitleH2,
+    OrFooter,
     OrForm,
     OrHeader,
+    OrHeaderNav,
   },
   props: {
     label01: {

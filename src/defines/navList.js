@@ -13,7 +13,7 @@ const NAV_LIST = [
   },
   {
     name: 'Profile',
-    route: 'root',
+    route: 'profile',
   },
   {
     name: 'About',

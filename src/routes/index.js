@@ -1,4 +1,5 @@
 import Root from '../components/pages/Root';
+import Profile from '../components/pages/Profile';
 
 export default {
   mode: 'history',
@@ -7,6 +8,11 @@ export default {
       path: '/',
       component: Root,
       name: 'root',
+    },
+    {
+      path: '/profile',
+      component: Profile,
+      name: 'profile',
     },
   ],
   // ページを開くとScrollTopが0の位置で表示

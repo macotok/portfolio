@@ -11,6 +11,7 @@ module.exports = merge(common, {
     watchContentBase: true,
     port: 3000,
     open: true,
+    historyApiFallback: true,
   },
   plugins: [
     new CopyWebpackPlugin([

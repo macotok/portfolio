@@ -6,31 +6,35 @@
       width="200"
     )
     at-text @macotok
-    at-link-image(
+    at-link(
       href="https://github.com/macotok"
       target="_blank"
-      src="/images/github.svg"
-      alt="github"
-      width="20"
     )
-    at-link-image(
+      at-image(
+        src="/images/github.svg"
+        alt="github"
+        width="20"
+      )
+    at-link(
       href="https://qiita.com/macotok"
       target="_blank"
-      src="/images/qiita.svg"
-      alt="qiita"
-      width="20"
     )
+      at-image(
+        src="/images/qiita.svg"
+        alt="qiita"
+        width="20"
+      )
 </template>
 
 <script>
 import AtImage from '@/components/atoms/image/AtImage';
-import AtLinkImage from '@/components/atoms/image/AtLinkImage';
+import AtLink from '@/components/atoms/text/AtLink';
 import AtText from '@/components/atoms/text/AtText';
 
 export default {
   components: {
     AtImage,
-    AtLinkImage,
+    AtLink,
     AtText,
   },
 };

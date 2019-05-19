@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import AtNav from '@/components/atoms/list/AtNav';
+import AtNav from '@/components/atoms/text/AtNav';
 
 export default {
   components: {

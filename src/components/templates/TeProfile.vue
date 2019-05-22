@@ -10,6 +10,18 @@
           title="今までしてきたこと"
           :list="list.can"
         )
+        at-dl-dt-dd(
+          title="これからしたいこと"
+          :list="list.will"
+        )
+        at-dl-dt-dd(
+          title="続けていること"
+          :list="list.routine"
+        )
+        at-dl-dt-dd(
+          title="好きなもの"
+          :list="list.like"
+        )
     or-footer @portfolio-205d8.firebaseapp.com
 </template>
 
@@ -20,7 +32,9 @@ import OrFooter from '@/components/organisms/OrFooter';
 import OrHeader from '@/components/organisms/OrHeader';
 import OrHeaderNav from '@/components/organisms/OrHeaderNav';
 import OrSideBlock from '@/components/organisms/Profile/OrSideBlock';
-import CAN_LIST from '@/defines/profile';
+import {
+  CAN_LIST, WILL_LIST, ROUTINE_LIST, LIKE_LIST,
+} from '@/defines/profile';
 
 export default {
   components: {
@@ -35,6 +49,9 @@ export default {
     list() {
       return {
         can: CAN_LIST,
+        will: WILL_LIST,
+        routine: ROUTINE_LIST,
+        like: LIKE_LIST,
       };
     },
   },

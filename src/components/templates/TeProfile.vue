@@ -4,24 +4,29 @@
     or-header-nav
     .l-container
       at-title-h2 Profile
-      or-side-block
-      div
-        at-dl-dt-dd(
-          title="今までしてきたこと"
-          :list="list.can"
-        )
-        at-dl-dt-dd(
-          title="これからしたいこと"
-          :list="list.will"
-        )
-        at-dl-dt-dd(
-          title="続けていること"
-          :list="list.routine"
-        )
-        at-dl-dt-dd(
-          title="好きなもの"
-          :list="list.like"
-        )
+      .teProfile
+        or-side-block
+        div.teProfile-list
+          at-dl-dt-dd(
+            title="今までしてきたこと"
+            :list="list.can"
+            :styles="styles"
+          )
+          at-dl-dt-dd(
+            title="これからしたいこと"
+            :list="list.will"
+            :styles="styles"
+          )
+          at-dl-dt-dd(
+            title="続けていること"
+            :list="list.routine"
+            :styles="styles"
+          )
+          at-dl-dt-dd(
+            title="好きなもの"
+            :list="list.like"
+            :styles="styles"
+          )
     or-footer @portfolio-205d8.firebaseapp.com
 </template>
 
@@ -54,6 +59,31 @@ export default {
         like: LIKE_LIST,
       };
     },
+    styles() {
+      return {
+        dl: {
+          marginBottom: '2rem',
+        },
+        dt: {
+          fontWeight: 'bold',
+          marginBottom: '1rem',
+        },
+        dd: {
+          margin: '0 0 .5em 2em',
+          display: 'list-item',
+          listStyleType: 'circle',
+        },
+      };
+    },
   },
 };
 </script>
+
+<style lang="scss">
+.teProfile {
+  display: flex;
+  &-list {
+    margin-left: 5rem;
+  }
+}
+</style>

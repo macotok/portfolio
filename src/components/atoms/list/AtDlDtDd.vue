@@ -1,7 +1,10 @@
 <template lang="pug">
-  dl
-    dt {{ title }}
+  dl(:style="styles.dl")
+    dt(
+      :style="styles.dt"
+    ) {{ title }}
     dd(
+      :style="styles.dd"
       v-for="text in list"
     ) {{ text }}
 </template>
@@ -16,6 +19,14 @@ export default {
     list: {
       type: Array,
       required: true,
+    },
+    styles: {
+      type: Object,
+      default: () => ({
+        dl: null,
+        dt: null,
+        dd: null,
+      }),
     },
   },
 };

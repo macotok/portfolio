@@ -18,7 +18,7 @@ import AtTitleH2 from '@/components/atoms/text/AtTitleH2';
 import OrFooter from '@/components/organisms/OrFooter';
 import OrHeader from '@/components/organisms/OrHeader';
 import OrHeaderNav from '@/components/organisms/OrHeaderNav';
-import { TITLE, LIST } from '@/defines/profile';
+import { TITLE, LIST } from '@/defines/about';
 
 export default {
   components: {

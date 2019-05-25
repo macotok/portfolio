@@ -2,7 +2,7 @@
   div
     or-header Portfolio
     or-header-nav
-    .l-container
+    div.l-container
       at-title-h2 Work
       or-form(
         :label01="label01"

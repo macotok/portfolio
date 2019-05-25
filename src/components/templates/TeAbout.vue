@@ -3,15 +3,12 @@
     or-header Portfolio
     or-header-nav
     div.l-container
-      at-title-h2 Profile
-      div.teProfile
-        or-side-block
-        div.teProfile-list
-          at-dl-dt-dd(
-            :titleList="profileList.title"
-            :list="profileList.list"
-            :styles="styles"
-          )
+      at-title-h2 About this Portfolio
+      at-dl-dt-dd(
+        :titleList="profileList.title"
+        :list="profileList.list"
+        :styles="styles"
+      )
     or-footer @portfolio-205d8.firebaseapp.com
 </template>
 
@@ -21,7 +18,6 @@ import AtTitleH2 from '@/components/atoms/text/AtTitleH2';
 import OrFooter from '@/components/organisms/OrFooter';
 import OrHeader from '@/components/organisms/OrHeader';
 import OrHeaderNav from '@/components/organisms/OrHeaderNav';
-import OrSideBlock from '@/components/organisms/Profile/OrSideBlock';
 import { TITLE, LIST } from '@/defines/profile';
 
 export default {
@@ -31,7 +27,6 @@ export default {
     OrFooter,
     OrHeader,
     OrHeaderNav,
-    OrSideBlock,
   },
   computed: {
     profileList() {
@@ -59,12 +54,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-.teProfile {
-  display: flex;
-  &-list {
-    margin-left: 5rem;
-  }
-}
-</style>

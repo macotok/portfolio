@@ -17,7 +17,7 @@ const NAV_LIST = [
   },
   {
     name: 'About',
-    route: 'root',
+    route: 'about',
   },
 ];
 

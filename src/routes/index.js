@@ -1,5 +1,6 @@
-import Root from '../components/pages/Root';
-import Profile from '../components/pages/Profile';
+import Root from '@/components/pages/Root';
+import Profile from '@/components/pages/Profile';
+import About from '@/components/pages/About';
 
 export default {
   mode: 'history',
@@ -13,6 +14,11 @@ export default {
       path: '/profile',
       component: Profile,
       name: 'profile',
+    },
+    {
+      path: '/about',
+      component: About,
+      name: 'about',
     },
   ],
   // ページを開くとScrollTopが0の位置で表示

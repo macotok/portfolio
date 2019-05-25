@@ -23,6 +23,7 @@ export const LIST = [
   ],
   [
     'Webpackで環境構築',
+    'Atomic Designの概念で構築',
     'Jestと@vue/test-utilsでテストコード記述',
     'レスポンシブ対応',
     'PugでHTMLコーディング',

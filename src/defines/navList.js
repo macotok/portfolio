@@ -9,7 +9,7 @@ const NAV_LIST = [
   },
   {
     name: 'Skill',
-    route: 'root',
+    route: 'skill',
   },
   {
     name: 'Profile',

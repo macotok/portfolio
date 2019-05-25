@@ -7,9 +7,11 @@
       at-dl-dt-dd(
         :titleList="profileList.title"
         :list="profileList.list"
-        :styles="styles"
+        :styles="styles.dl"
       )
-      at-text
+      at-text(
+        :styles="styles.text"
+      )
         | このサイトはGitHubで管理しています。
         br
         | そのリポジトリはこちらになります。
@@ -49,17 +51,22 @@ export default {
     },
     styles() {
       return {
-        dt: {
-          fontWeight: 'bold',
-          margin: '2rem 0 1rem',
+        dl: {
+          dt: {
+            fontWeight: 'bold',
+            margin: '2rem 0 1rem',
+          },
+          dtFirstChild: {
+            margin: '0 0 1rem',
+          },
+          dd: {
+            margin: '0 0 .5em 2em',
+            display: 'list-item',
+            listStyleType: 'circle',
+          },
         },
-        dtFirstChild: {
-          margin: '0 0 1rem',
-        },
-        dd: {
-          margin: '0 0 .5em 2em',
-          display: 'list-item',
-          listStyleType: 'circle',
+        text: {
+          margin: '4rem 0 1rem',
         },
       };
     },

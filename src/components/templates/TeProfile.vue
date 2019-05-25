@@ -8,23 +8,8 @@
         or-side-block
         div.teProfile-list
           at-dl-dt-dd(
-            title="今までしてきたこと"
-            :list="list.can"
-            :styles="styles"
-          )
-          at-dl-dt-dd(
-            title="これからしたいこと"
-            :list="list.will"
-            :styles="styles"
-          )
-          at-dl-dt-dd(
-            title="続けていること"
-            :list="list.routine"
-            :styles="styles"
-          )
-          at-dl-dt-dd(
-            title="好きなもの"
-            :list="list.like"
+            :titleList="profileList.title"
+            :list="profileList.list"
             :styles="styles"
           )
     or-footer @portfolio-205d8.firebaseapp.com
@@ -37,9 +22,7 @@ import OrFooter from '@/components/organisms/OrFooter';
 import OrHeader from '@/components/organisms/OrHeader';
 import OrHeaderNav from '@/components/organisms/OrHeaderNav';
 import OrSideBlock from '@/components/organisms/Profile/OrSideBlock';
-import {
-  CAN_LIST, WILL_LIST, ROUTINE_LIST, LIKE_LIST,
-} from '@/defines/profile';
+import { TITLE, LIST } from '@/defines/profile';
 
 export default {
   components: {
@@ -51,22 +34,20 @@ export default {
     OrSideBlock,
   },
   computed: {
-    list() {
+    profileList() {
       return {
-        can: CAN_LIST,
-        will: WILL_LIST,
-        routine: ROUTINE_LIST,
-        like: LIKE_LIST,
+        title: TITLE,
+        list: LIST,
       };
     },
     styles() {
       return {
-        dl: {
-          marginBottom: '2rem',
-        },
         dt: {
           fontWeight: 'bold',
-          marginBottom: '1rem',
+          margin: '2rem 0 1rem',
+        },
+        dtFirstChild: {
+          margin: '0 0 1rem',
         },
         dd: {
           margin: '0 0 .5em 2em',

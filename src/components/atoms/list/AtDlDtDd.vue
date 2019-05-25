@@ -1,20 +1,26 @@
 <template lang="pug">
   dl(:style="styles.dl")
-    dt(
-      :style="styles.dt"
-    ) {{ title }}
-    dd(
-      :style="styles.dd"
-      v-for="text in list"
-    ) {{ text }}
+    div(v-for="(title, index) in titleList")
+      dt(
+        v-if="index === 0"
+        :style="styles.dtFirstChild"
+      ) {{ title }}
+      dt(
+        v-else
+        :style="styles.dt"
+      ) {{ title }}
+      dd(
+        v-for="text in list[index]"
+        :style="styles.dd"
+      ) {{ text }}
 </template>
 
 <script>
 export default {
   props: {
-    title: {
-      type: String,
-      default: null,
+    titleList: {
+      type: Array,
+      required: true,
     },
     list: {
       type: Array,
@@ -25,6 +31,7 @@ export default {
       default: () => ({
         dl: null,
         dt: null,
+        dtFirstChild: null,
         dd: null,
       }),
     },

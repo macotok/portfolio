@@ -1,6 +1,6 @@
 <template lang="pug">
   dl(:style="styles.dl")
-    div(v-for="(title, index) in titleList")
+    template(v-for="(title, index) in titleList")
       dt(
         v-if="index === 0"
         :style="styles.dtFirstChild"

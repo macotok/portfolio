@@ -14,7 +14,7 @@
       ) More
       at-title-h2 Skill
       at-button(
-        linkTo="root"
+        linkTo="skill"
         routerLink
       ) More
       at-title-h2 Profile

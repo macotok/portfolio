@@ -10,10 +10,12 @@
       )
       at-button(
         linkTo="root"
+        routerLink
       ) More
       at-title-h2 Skill
       at-button(
         linkTo="root"
+        routerLink
       ) More
       at-title-h2 Profile
       at-text
@@ -21,7 +23,8 @@
         br
         | 今までしてきたこと、これからしたいことを記載しました。
       at-button(
-        linkTo="root"
+        linkTo="profile"
+        routerLink
       ) More
       at-title-h2 About this Portfolio
       at-text
@@ -29,7 +32,8 @@
         br
         | その開発項目について記載しました。
       at-button(
-        linkTo="root"
+        linkTo="about"
+        routerLink
       ) More
     or-footer @portfolio-205d8.firebaseapp.com
 </template>

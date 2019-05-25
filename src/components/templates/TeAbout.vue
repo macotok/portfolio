@@ -9,12 +9,22 @@
         :list="profileList.list"
         :styles="styles"
       )
+      at-text
+        | このサイトはGitHubで管理しています。
+        br
+        | そのリポジトリはこちらになります。
+      at-button(
+        href="https://github.com/macotok/portfolio"
+        target="_blank"
+      ) To GitHub
     or-footer @portfolio-205d8.firebaseapp.com
 </template>
 
 <script>
+import AtButton from '@/components/atoms/button/AtButton';
 import AtDlDtDd from '@/components/atoms/list/AtDlDtDd';
 import AtTitleH2 from '@/components/atoms/text/AtTitleH2';
+import AtText from '@/components/atoms/text/AtText';
 import OrFooter from '@/components/organisms/OrFooter';
 import OrHeader from '@/components/organisms/OrHeader';
 import OrHeaderNav from '@/components/organisms/OrHeaderNav';
@@ -22,8 +32,10 @@ import { TITLE, LIST } from '@/defines/about';
 
 export default {
   components: {
+    AtButton,
     AtDlDtDd,
     AtTitleH2,
+    AtText,
     OrFooter,
     OrHeader,
     OrHeaderNav,

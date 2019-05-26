@@ -1,7 +1,7 @@
 <template lang="pug">
-  ul(:style="styles.ul")
+  ul.atUlLi(:style="styles.ul")
     template(v-for="text in list")
-      li(
+      li.atUlLi-item(
         :style="styles.li"
       ) {{ text }}
 </template>

@@ -1,7 +1,7 @@
 <template lang="pug">
   table.atTable
     tr(v-for="(data) in dataList")
-      th.atTable-hader
+      th.atTable-header
         slot(
           :data="data"
           name="header"
@@ -32,14 +32,14 @@ export default {
       border-bottom: 1px solid $gray-color-04;
       vertical-align: middle;
       text-align: center;
-      padding: 10px;
+      padding: .5rem;
     }
     &-data {
       border-right: 1px solid $gray-color-04;
       border-bottom: 1px solid $gray-color-04;
       vertical-align: middle;
       text-align: left;
-      padding: 10px;
+      padding: .5rem;
       width: 100%;
       box-sizing: border-box;
     }

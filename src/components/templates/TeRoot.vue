@@ -4,15 +4,14 @@
     or-header-nav
     div.l-container
       at-title-h2 Work
-      or-form(
-        :label01="label01"
-        :label02="label02"
-      )
       at-button(
         linkTo="root"
         routerLink
       ) More
       at-title-h2 Skill
+      at-ul-li(
+        :list="skillTitle"
+      )
       at-button(
         linkTo="skill"
         routerLink
@@ -42,6 +41,7 @@
 import AtButton from '@/components/atoms/button/AtButton';
 import AtText from '@/components/atoms/text/AtText';
 import AtTitleH2 from '@/components/atoms/text/AtTitleH2';
+import AtUlLi from '@/components/atoms/list/AtUlLi';
 import OrFooter from '@/components/organisms/OrFooter';
 import OrForm from '@/components/organisms/OrForm';
 import OrHeader from '@/components/organisms/OrHeader';
@@ -52,19 +52,25 @@ export default {
     AtButton,
     AtText,
     AtTitleH2,
+    AtUlLi,
     OrFooter,
     OrForm,
     OrHeader,
     OrHeaderNav,
   },
   props: {
-    label01: {
-      type: String,
+    skillList: {
+      type: Array,
       required: true,
     },
-    label02: {
-      type: String,
-      required: true,
+  },
+  computed: {
+    skillTitle() {
+      const titleList = [];
+      this.skillList.forEach((s) => {
+        titleList.push(s.title);
+      });
+      return titleList;
     },
   },
 };

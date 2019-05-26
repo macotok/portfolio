@@ -1,0 +1,25 @@
+<template lang="pug">
+  ul(:style="styles.ul")
+    template(v-for="text in list")
+      li(
+        :style="styles.li"
+      ) {{ text }}
+</template>
+
+<script>
+export default {
+  props: {
+    list: {
+      type: Array,
+      required: true,
+    },
+    styles: {
+      type: Object,
+      default: () => ({
+        ul: null,
+        li: null,
+      }),
+    },
+  },
+};
+</script>

@@ -1,7 +1,6 @@
 <template lang="pug">
   te-root(
-    :label01="label01"
-    :label02="label02"
+    :skillList="skillList"
   )
 </template>
 
@@ -14,12 +13,9 @@ export default {
     TeRoot,
   },
   computed: {
-    ...mapState({
-      label01(state) {
-        return state.label01;
-      },
-      label02(state) {
-        return state.label02;
+    ...mapState('skill', {
+      skillList(state) {
+        return state.skill;
       },
     }),
   },

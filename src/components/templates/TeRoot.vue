@@ -4,7 +4,7 @@
     or-header-nav
     div.l-container
       at-title-h2 Work
-      mo-list(
+      mo-image-list(
         :list="workList"
       )
       at-button(
@@ -12,7 +12,7 @@
         routerLink
       ) More
       at-title-h2 Skill
-      OrTopSkillList(
+      mo-text-list(
         :list="skillTitle"
       )
       at-button(
@@ -48,24 +48,26 @@
 import AtButton from '@/components/atoms/button/AtButton';
 import AtText from '@/components/atoms/text/AtText';
 import AtTitleH2 from '@/components/atoms/text/AtTitleH2';
-import MoList from '@/components/molecules/MoList';
+import AtUlLi from '@/components/atoms/list/AtUlLi';
+import MoImageList from '@/components/molecules/MoImageList';
+import MoTextList from '@/components/molecules/MoTextList';
 import OrFooter from '@/components/organisms/OrFooter';
 import OrForm from '@/components/organisms/OrForm';
 import OrHeader from '@/components/organisms/OrHeader';
 import OrHeaderNav from '@/components/organisms/OrHeaderNav';
-import OrTopSkillList from '@/components/organisms/Skill/OrTopSkillList';
 
 export default {
   components: {
     AtButton,
     AtText,
     AtTitleH2,
-    MoList,
+    AtUlLi,
+    MoImageList,
+    MoTextList,
     OrFooter,
     OrForm,
     OrHeader,
     OrHeaderNav,
-    OrTopSkillList,
   },
   props: {
     workList: {

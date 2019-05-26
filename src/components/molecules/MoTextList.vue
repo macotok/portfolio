@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.orTopSkillList
+  div.moTextList
     at-ul-li(
       :list="list"
     )

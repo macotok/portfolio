@@ -13,7 +13,7 @@ export default {
     TeSkill,
   },
   computed: {
-    ...mapState({
+    ...mapState('skill', {
       skill(state) {
         return state.skill;
       },

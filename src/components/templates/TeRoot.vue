@@ -9,7 +9,7 @@
         routerLink
       ) More
       at-title-h2 Skill
-      at-ul-li(
+      OrTopSkillList(
         :list="skillTitle"
       )
       at-button(
@@ -41,27 +41,27 @@
 import AtButton from '@/components/atoms/button/AtButton';
 import AtText from '@/components/atoms/text/AtText';
 import AtTitleH2 from '@/components/atoms/text/AtTitleH2';
-import AtUlLi from '@/components/atoms/list/AtUlLi';
 import OrFooter from '@/components/organisms/OrFooter';
 import OrForm from '@/components/organisms/OrForm';
 import OrHeader from '@/components/organisms/OrHeader';
 import OrHeaderNav from '@/components/organisms/OrHeaderNav';
+import OrTopSkillList from '@/components/organisms/Skill/OrTopSkillList';
 
 export default {
   components: {
     AtButton,
     AtText,
     AtTitleH2,
-    AtUlLi,
     OrFooter,
     OrForm,
     OrHeader,
     OrHeaderNav,
+    OrTopSkillList,
   },
   props: {
     skillList: {
       type: Array,
-      required: true,
+      default: () => [],
     },
   },
   computed: {

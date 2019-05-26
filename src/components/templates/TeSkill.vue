@@ -7,6 +7,8 @@
       at-table(
         :dataList="skillList"
       )
+        template(v-slot:header="slotProps") {{ slotProps.data.title }}
+        template(v-slot:data="slotProps") {{ slotProps.data.text }}
     or-footer @portfolio-205d8.firebaseapp.com
 </template>
 

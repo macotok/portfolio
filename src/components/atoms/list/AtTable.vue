@@ -1,8 +1,16 @@
 <template lang="pug">
   table.atTable
     tr(v-for="(data) in dataList")
-      th.atTable-hader {{ data.title }}
-      td.atTable-data {{ data.text }}
+      th.atTable-hader
+        slot(
+          :data="data"
+          name="header"
+        )
+      td.atTable-data
+        slot(
+          :data="data"
+          name="data"
+        )
 </template>
 
 <script>

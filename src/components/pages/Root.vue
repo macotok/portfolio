@@ -1,5 +1,6 @@
 <template lang="pug">
   te-root(
+    :workList="workList"
     :skillList="skillList"
   )
 </template>
@@ -13,6 +14,11 @@ export default {
     TeRoot,
   },
   computed: {
+    ...mapState('works', {
+      workList(state) {
+        return state.works;
+      },
+    }),
     ...mapState('skill', {
       skillList(state) {
         return state.skill;

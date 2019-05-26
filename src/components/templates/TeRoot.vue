@@ -17,7 +17,9 @@
         routerLink
       ) More
       at-title-h2 Profile
-      at-text
+      at-text(
+        :styles="styles.atText"
+      )
         | GitHub/Qiitaアカウントのリンク先、
         br
         | 今までしてきたこと、これからしたいことを記載しました。
@@ -26,7 +28,9 @@
         routerLink
       ) More
       at-title-h2 About this Portfolio
-      at-text
+      at-text(
+        :styles="styles.atText"
+      )
         | このPortfolioはVue/Firebaseで開発、
         br
         | その開発項目について記載しました。
@@ -71,6 +75,13 @@ export default {
         titleList.push(s.title);
       });
       return titleList;
+    },
+    styles() {
+      return {
+        atText: {
+          marginBottom: '1rem',
+        },
+      };
     },
   },
 };

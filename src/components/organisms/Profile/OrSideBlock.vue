@@ -60,14 +60,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-  .OrSideBlock {
-    &-list {
-      display: flex;
-    }
-    &-item {
-      margin-right: .5rem;
-    }
-  }
-</style>

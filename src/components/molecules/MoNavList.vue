@@ -23,11 +23,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-  .moNavList {
-    display: flex;
-    justify-content: center;
-    background-color: $gray-color-01;
-  }
-</style>

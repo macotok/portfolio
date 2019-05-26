@@ -1,3 +1,26 @@
+.orFooter {
+  text-align: center;
+  font-size: .8rem;
+  color: $gray-color-02;
+  padding: 1rem 0;
+}
+
+.orHeader {
+  text-align: center;
+  padding: 20px 0;
+  background-color: $gray-color-04;
+  position: relative;
+}
+
+.OrSideBlock {
+  &-list {
+    display: flex;
+  }
+  &-item {
+    margin-right: .5rem;
+  }
+}
+
 .orTopSkillList {
   margin-bottom: $block-padding;
   .atUlLi {

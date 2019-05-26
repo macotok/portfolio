@@ -13,12 +13,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-  .orHeader {
-    text-align: center;
-    padding: 20px 0;
-    background-color: $gray-color-04;
-    position: relative;
-  }
-</style>

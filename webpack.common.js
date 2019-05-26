@@ -12,7 +12,7 @@ module.exports = {
   entry: {
     app: [
       './src/main.js',
-      './src/assets/sass/_style.scss',
+      './src/assets/sass/style.scss',
     ],
   },
   output: {

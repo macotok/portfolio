@@ -1,0 +1,89 @@
+.atButton {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: $block-margin;
+  &-link {
+    display: inline-block;
+    text-decoration: none;
+    background-color: $link-color;
+    color: $gray-color-04;
+    padding: 10px 25px;
+    text-align: center;
+    border-radius: 3px;
+    font-size: .9rem;
+    transition: .1s ease-in-out;
+    border: 1px solid $link-color;
+    &:hover {
+      background-color: $gray-color-04;
+      color: $link-color;
+    }
+  }
+}
+
+.atNav {
+  text-decoration: none;
+  display: block;
+  padding: 15px 30px;
+  background-color: $gray-color-01;
+  color: $black-color-01;
+  &:hover {
+    color: $white-color;
+    background-color: $key-color;
+  }
+  &.router-link-active {
+    text-decoration: none;
+    pointer-events: none;
+    color: $white-color;
+    background-color: $key-color;
+  }
+}
+
+.atTable {
+  border-left: 1px solid $gray-color-04;
+  border-top: 1px solid $gray-color-04;
+  &-header {
+    border-bottom: 1px solid $gray-color-04;
+    vertical-align: middle;
+    text-align: center;
+    padding: .5rem;
+  }
+  &-data {
+    border-right: 1px solid $gray-color-04;
+    border-bottom: 1px solid $gray-color-04;
+    vertical-align: middle;
+    text-align: left;
+    padding: .5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+.atTitleH1 {
+  &-title {
+   letter-spacing: 10px;
+   font-weight: normal;
+   font-size: 1.4rem;
+  }
+}
+
+.atTitleH2 {
+  position: relative;
+  margin-bottom: 1rem;
+  &::before {
+    content: '';
+    width: 3%;
+    position: absolute;
+    display: block;
+    height: 2px;
+    background: $key-color;
+    left: 0;
+    top: 50%;
+    margin: -1px 0 0 0;
+  }
+  &-title {
+    background-color: $white-color;
+    position: relative;
+    margin-left: 4%;
+    font-size: 1.2rem;
+  }
+}

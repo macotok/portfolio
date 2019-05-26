@@ -1,7 +1,7 @@
 <template lang="pug">
   ul.moImageList
     li.moImageList-item(
-      v-for="data in list"
+      v-for="data in displayList"
     )
       at-image(
         :src="data.image_path"
@@ -29,12 +29,23 @@ export default {
     MoTextList,
   },
   props: {
+    length: {
+      type: Number,
+      required: true,
+    },
     list: {
       type: Array,
       default: () => [],
     },
+    listStart: {
+      type: Number,
+      required: true,
+    },
   },
   computed: {
+    displayList() {
+      return [...this.list].splice(this.listStart, this.length);
+    },
     styles() {
       return {
         atImage: {

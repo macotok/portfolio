@@ -20,11 +20,11 @@ export default {
   props: {
     titleList: {
       type: Array,
-      required: true,
+      default: () => [],
     },
     list: {
       type: Array,
-      required: true,
+      default: () => [],
     },
     styles: {
       type: Object,

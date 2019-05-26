@@ -6,6 +6,8 @@
       at-title-h2 Work
       mo-image-list(
         :list="workList"
+        :listStart="worksListStart"
+        :length="worksLength"
       )
       at-button(
         linkTo="root"
@@ -70,9 +72,17 @@ export default {
     OrHeaderNav,
   },
   props: {
+    worksLength: {
+      type: Number,
+      required: true,
+    },
     workList: {
       type: Array,
       default: () => [],
+    },
+    worksListStart: {
+      type: Number,
+      required: true,
     },
     skillList: {
       type: Array,

@@ -10,7 +10,7 @@
         :length="workLength"
       )
       at-button(
-        linkTo="root"
+        linkTo="work"
         routerLink
       ) More
       at-title-h2 Skill

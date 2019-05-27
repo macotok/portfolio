@@ -1,5 +1,7 @@
 import Root from '@/components/pages/Root';
-import Work from '@/components/pages/Work';
+import Parent from '@/components/pages/Parent';
+import WorkIndex from '@/components/pages/Work/Index';
+import WorkDetail from '@/components/pages/Work/Detail';
 import Skill from '@/components/pages/Skill';
 import Profile from '@/components/pages/Profile';
 import About from '@/components/pages/About';
@@ -14,8 +16,19 @@ export default {
     },
     {
       path: '/work',
-      component: Work,
-      name: 'work',
+      component: Parent,
+      children: [
+        {
+          path: '',
+          component: WorkIndex,
+          name: 'work',
+        },
+        {
+          path: ':id',
+          component: WorkDetail,
+          name: 'workDetail',
+        },
+      ],
     },
     {
       path: '/skill',

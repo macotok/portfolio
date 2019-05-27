@@ -1,7 +1,7 @@
 import db from './stub';
 
 const state = {
-  works: db.works,
+  work: db.work,
   label01: '',
   label02: '',
 };

@@ -1,8 +1,8 @@
 <template lang="pug">
   te-root(
     :workList="workList"
-    :worksLength="worksLength"
-    :worksListStart="worksListStart"
+    :workLength="workLength"
+    :workListStart="workListStart"
     :skillList="skillList"
   )
 </template>
@@ -10,16 +10,16 @@
 <script>
 import { mapState } from 'vuex';
 import TeRoot from '@/components/templates/TeRoot';
-import { WORKS_LIST_TOP_LENGTH, LIST_START } from '@/defines';
+import { WORK_LIST_TOP_LENGTH, LIST_START } from '@/defines';
 
 export default {
   components: {
     TeRoot,
   },
   computed: {
-    ...mapState('works', {
+    ...mapState('work', {
       workList(state) {
-        return state.works;
+        return state.work;
       },
     }),
     ...mapState('skill', {
@@ -27,10 +27,10 @@ export default {
         return state.skill;
       },
     }),
-    worksLength() {
-      return WORKS_LIST_TOP_LENGTH;
+    workLength() {
+      return WORK_LIST_TOP_LENGTH;
     },
-    worksListStart() {
+    workListStart() {
       return LIST_START;
     },
   },

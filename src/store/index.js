@@ -1,12 +1,12 @@
 import actions from './actions';
 import mutations from './mutations';
 import state from './state';
-import works from './works';
+import work from './work';
 import skill from './skill';
 
 export default {
   modules: {
-    works,
+    work,
     skill,
   },
 };

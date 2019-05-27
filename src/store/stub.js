@@ -4,12 +4,12 @@ import VueFaker from 'vue-faker';
 Vue.use(VueFaker);
 
 const db = {
-  works: [],
+  work: [],
   skill: [],
 };
 
 for (let i = 0; i < 50; i += 1) {
-  db.works.push({
+  db.work.push({
     id: i + 1,
     title: Vue.faker().name.title(),
     text: Vue.faker().lorem.sentences(),

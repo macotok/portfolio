@@ -1,8 +1,8 @@
 import state from './state';
 
-const works = {
+const work = {
   namespaced: true,
   state,
 };
 
-export default works;
+export default work;

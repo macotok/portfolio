@@ -1,7 +1,7 @@
 import db from '@/store/stub';
 
 const state = {
-  works: db.works,
+  work: db.work,
 };
 
 export default state;

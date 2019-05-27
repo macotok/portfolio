@@ -20,6 +20,39 @@
   }
 }
 
+.atPagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5%;
+}
+
+.atPagination .atPagination-item {
+  margin-right: 1%;
+}
+
+.atPagination li:nth-last-child(2) {
+  margin-right: 0;
+}
+
+.atPagination .atPagination-item a {
+  background-color: #F6F9FF;
+  color: #4B4D52;
+  display: inline-block;
+  padding: 10px 16px;
+  border: 1px solid #1C93FA;
+}
+
+.atPagination .atPagination-item.active a,
+.atPagination .atPagination-item a:hover {
+  background-color: #1C93FA;
+  color: #F6F9FF;
+}
+
+.atPagination .displayNone {
+  display: none;
+}
+
 .atNav {
   text-decoration: none;
   display: block;

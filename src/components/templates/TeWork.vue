@@ -9,10 +9,12 @@
         :listStart="workListStart"
         :length="workLength"
       )
+      at-pagination
     or-footer @portfolio-205d8.firebaseapp.com
 </template>
 
 <script>
+import AtPagination from '@/components/atoms/pagination/AtPagination';
 import AtTitleH2 from '@/components/atoms/text/AtTitleH2';
 import MoImageList from '@/components/molecules/MoImageList';
 import OrFooter from '@/components/organisms/OrFooter';
@@ -21,6 +23,7 @@ import OrHeaderNav from '@/components/organisms/OrHeaderNav';
 
 export default {
   components: {
+    AtPagination,
     AtTitleH2,
     MoImageList,
     OrFooter,

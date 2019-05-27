@@ -10941,6 +10941,11 @@ vue-jest@^3.0.4:
     tsconfig "^7.0.0"
     vue-template-es2015-compiler "^1.6.0"
 
+vue-js-modal@^1.3.31:
+  version "1.3.31"
+  resolved "https://registry.yarnpkg.com/vue-js-modal/-/vue-js-modal-1.3.31.tgz#fdece823d4f2816c8b1075c1fd8f667df11f5a42"
+  integrity sha512-gwt2904sWbMUuUcHwKQ510IEs4G7S3bqVWLYeTOc2eEyWMmmnT9UmojDsXIexFnPVM7cZTua37z3Jm/h0i0y8Q==
+
 vue-loader@^15.7.0:
   version "15.7.0"
   resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-15.7.0.tgz#27275aa5a3ef4958c5379c006dd1436ad04b25b3"
@@ -10951,6 +10956,11 @@ vue-loader@^15.7.0:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-nl2br@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/vue-nl2br/-/vue-nl2br-0.1.1.tgz#19e118cccb1eef48bc5ff6e7fb83610476ce1bbb"
+  integrity sha512-DwiJlfi8hU73QDvNRYpKHmpvYw4U1SZPZkCzjSeelp0dCTJsSgyxZLpPGADRbx0+jkw9DUn7x44mAuusCOoq/Q==
 
 vue-router@^3.0.6:
   version "3.0.6"
@@ -10982,6 +10992,11 @@ vue@^2.6.10:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
   integrity sha512-ImThpeNU9HbdZL3utgMCq0oiMzAkt1mcgy3/E6zWC/G6AaQoeuFdsl9nDhTDU3X1R6FK7nsIUuRACVcjI+A2GQ==
+
+vuejs-paginate@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/vuejs-paginate/-/vuejs-paginate-2.1.0.tgz#93e1ad1539b713a688c7a2d3080bda60fcc6c77d"
+  integrity sha512-gnwyXlmCiDOu9MLWxN5UJ4PGijKGNOMpHG8ujsrynCzTJljn/rp7Jq0WiDGDAMi5/u0AHuYIHhced+tUW4jblA==
 
 vuex@^3.1.0:
   version "3.1.0"

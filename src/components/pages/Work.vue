@@ -9,7 +9,7 @@
 <script>
 import { mapState } from 'vuex';
 import TeWork from '@/components/templates/TeWork';
-import { WORK_LIST_TOP_LENGTH, LIST_START } from '@/defines';
+import { WORK_LIST_LENGTH, LIST_START } from '@/defines';
 
 export default {
   components: {
@@ -22,7 +22,7 @@ export default {
       },
     }),
     workLength() {
-      return WORK_LIST_TOP_LENGTH;
+      return WORK_LIST_LENGTH;
     },
     workListStart() {
       return LIST_START;

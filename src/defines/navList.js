@@ -5,7 +5,7 @@ const NAV_LIST = [
   },
   {
     name: 'Work',
-    route: 'root',
+    route: 'work',
   },
   {
     name: 'Skill',

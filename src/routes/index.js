@@ -1,4 +1,5 @@
 import Root from '@/components/pages/Root';
+import Work from '@/components/pages/Work';
 import Skill from '@/components/pages/Skill';
 import Profile from '@/components/pages/Profile';
 import About from '@/components/pages/About';
@@ -10,6 +11,11 @@ export default {
       path: '/',
       component: Root,
       name: 'root',
+    },
+    {
+      path: '/work',
+      component: Work,
+      name: 'work',
     },
     {
       path: '/skill',

@@ -9,7 +9,10 @@
         :listStart="workListStart"
         :length="workLength"
       )
-      at-pagination
+      at-pagination(
+        :length="workLength"
+        pageType="work"
+      )
     or-footer @portfolio-205d8.firebaseapp.com
 </template>
 

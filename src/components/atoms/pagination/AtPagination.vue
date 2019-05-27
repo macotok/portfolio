@@ -1,7 +1,7 @@
 <template lang="pug">
-  paginate(
+  at-pagination(
     :page-count="paginationNumber",
-    :page-range="workLength",
+    :page-range="length",
     :margin-pages="0",
     :prev-text=null,
     :prev-class="'displayNone'",
@@ -17,20 +17,26 @@
 import Vue from 'vue';
 import { mapState, mapActions } from 'vuex';
 import Paginate from 'vuejs-paginate';
-import { WORK_LIST_LENGTH } from '@/defines';
 
-Vue.component('paginate', Paginate);
+Vue.component('at-pagination', Paginate);
 
 export default {
+  props: {
+    length: {
+      type: Number,
+      required: true,
+    },
+    pageType: {
+      type: String,
+      required: true,
+    },
+  },
   computed: {
     ...mapState({
       paginationNumber(state) {
-        return state.works.length / WORK_LIST_LENGTH;
+        return state[this.pageType][this.pageType].length / this.length;
       },
     }),
-    workLength() {
-      return WORK_LIST_LENGTH;
-    },
   },
   methods: {
     ...mapActions(['worksPaginationNUmber']),

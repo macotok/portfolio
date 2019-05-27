@@ -3,18 +3,22 @@
     li.moImageList-item(
       v-for="data in displayList"
     )
-      at-image(
-        :src="data.image_path"
-        :alt="data.title"
-        :style="styles.atImage"
-        :width="200"
+      router-link(
+        class="moImageList-link"
+        :to="`/${pageType}/${data.id}`"
       )
-      at-text(
-        :styles="styles.atText"
-      ) {{ data.title }}
-      mo-text-list(
-        :list="data.tags"
-      )
+        at-image(
+          :src="data.image_path"
+          :alt="data.title"
+          :style="styles.atImage"
+          :width="200"
+        )
+        at-text(
+          :styles="styles.atText"
+        ) {{ data.title }}
+        mo-text-list(
+          :list="data.tags"
+        )
 </template>
 
 <script>
@@ -29,6 +33,10 @@ export default {
     MoTextList,
   },
   props: {
+    pageType: {
+      type: String,
+      required: true,
+    },
     length: {
       type: Number,
       required: true,
@@ -54,6 +62,7 @@ export default {
           margin: '0 auto',
         },
         atText: {
+          color: '#333',
           fontWeight: 'bold',
           margin: '.5em 0',
         },

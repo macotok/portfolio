@@ -8,6 +8,18 @@
       margin-right: 0;
     }
   }
+  &-link {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+      .atUlLi {
+        &-item {
+          background-color: $white-color;
+          color: $sub-color;
+        }
+      }
+    }
+  }
 }
 
 .moNavList {

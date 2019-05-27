@@ -5,6 +5,7 @@
     div.l-container
       at-title-h2 Work
       mo-image-list(
+        pageType="work"
         :list="workList"
         :listStart="workListStart"
         :length="workLength"

@@ -2,7 +2,9 @@ import Root from '@/components/pages/Root';
 import Parent from '@/components/pages/Parent';
 import WorkIndex from '@/components/pages/Work/Index';
 import WorkDetail from '@/components/pages/Work/Detail';
-import Skill from '@/components/pages/Skill';
+import WorkAdd from '@/components/pages/Work/Add';
+import SkillIndex from '@/components/pages/Skill/Index';
+import SkillAdd from '@/components/pages/Skill/Add';
 import Profile from '@/components/pages/Profile';
 import About from '@/components/pages/About';
 
@@ -28,12 +30,28 @@ export default {
           component: WorkDetail,
           name: 'workDetail',
         },
+        {
+          path: 'add',
+          component: WorkAdd,
+          name: 'workAdd',
+        },
       ],
     },
     {
       path: '/skill',
-      component: Skill,
-      name: 'skill',
+      component: Parent,
+      children: [
+        {
+          path: '',
+          component: SkillIndex,
+          name: 'skill',
+        },
+        {
+          path: 'add',
+          component: SkillAdd,
+          name: 'skillAdd',
+        },
+      ],
     },
     {
       path: '/profile',

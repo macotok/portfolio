@@ -44,6 +44,16 @@
         linkTo="about"
         routerLink
       ) More
+      at-title-h2 Add work
+      at-button(
+        linkTo="workAdd"
+        routerLink
+      ) Add
+      at-title-h2 Add skill
+      at-button(
+        linkTo="skillAdd"
+        routerLink
+      ) Add
     or-footer @portfolio-205d8.firebaseapp.com
 </template>
 

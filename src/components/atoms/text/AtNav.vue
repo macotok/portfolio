@@ -1,6 +1,6 @@
 <template lang="pug">
   router-link.atNav(
-    :to="{name: nav.route}", exact
+    :to="{name: nav.route}", :exact="nav.exact"
   ) {{ nav.name }}
 </template>
 

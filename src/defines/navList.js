@@ -2,6 +2,7 @@ const NAV_LIST = [
   {
     name: 'Top',
     route: 'root',
+    exact: true,
   },
   {
     name: 'Work',

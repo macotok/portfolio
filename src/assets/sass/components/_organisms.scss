@@ -12,11 +12,18 @@
   position: relative;
 }
 
-.OrSideBlock {
+.ProfileOrSideBlock {
   &-list {
     display: flex;
   }
   &-item {
     margin-right: .5rem;
+  }
+}
+
+.WorkOrDetail {
+  display: flex;
+  &-inner {
+    padding-left: 2rem;
   }
 }

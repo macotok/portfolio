@@ -9,8 +9,8 @@
     at-text(
       :styles="styles.atText"
     ) @macotok
-    ul.OrSideBlock-list
-      li.OrSideBlock-item
+    ul.ProfileOrSideBlock-list
+      li.ProfileOrSideBlock-item
         at-link(
           href="https://github.com/macotok"
           target="_blank"

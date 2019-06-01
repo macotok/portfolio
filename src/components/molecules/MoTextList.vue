@@ -2,6 +2,7 @@
   div.moTextList
     at-ul-li(
       :list="list"
+      :styles="styles"
     )
 </template>
 
@@ -16,6 +17,10 @@ export default {
     list: {
       type: Array,
       default: () => [],
+    },
+    styles: {
+      type: Object,
+      default: null,
     },
   },
 };

@@ -29,10 +29,10 @@
 }
 
 .moTextList {
-  margin-bottom: $block-padding;
   .atUlLi {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: $block-padding;
     &-item {
       background-color: $sub-color;
       padding: 3px 6px;

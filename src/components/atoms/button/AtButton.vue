@@ -3,12 +3,14 @@
     template(v-if="routerLink")
       router-link.atButton-link(
         :to="{name: linkTo}"
+        :style="styles"
       )
         slot
     template(v-else)
       a.atButton-link(
         :href="href"
         :target="target"
+        :style="styles"
       )
         slot
 </template>
@@ -22,7 +24,7 @@ export default {
     },
     linkTo: {
       type: String,
-      required: null,
+      default: null,
     },
     href: {
       type: String,
@@ -30,6 +32,10 @@ export default {
     },
     target: {
       type: String,
+      default: '_blank',
+    },
+    styles: {
+      type: Object,
       default: null,
     },
   },

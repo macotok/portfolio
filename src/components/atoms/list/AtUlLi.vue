@@ -1,5 +1,7 @@
 <template lang="pug">
-  ul.atUlLi(:style="styles.ul")
+  ul.atUlLi(
+    :style="styles.ul"
+  )
     template(v-for="text in list")
       li.atUlLi-item(
         :style="styles.li"

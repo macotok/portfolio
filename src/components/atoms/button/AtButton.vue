@@ -1,16 +1,18 @@
 <template lang="pug">
-  div.atButton
+  div.atButton(
+    :style="styles.button"
+  )
     template(v-if="routerLink")
       router-link.atButton-link(
         :to="{name: linkTo}"
-        :style="styles"
+        :style="styles.link"
       )
         slot
     template(v-else)
       a.atButton-link(
         :href="href"
         :target="target"
-        :style="styles"
+        :style="styles.link"
       )
         slot
 </template>
@@ -36,7 +38,10 @@ export default {
     },
     styles: {
       type: Object,
-      default: null,
+      default: () => ({
+        button: null,
+        link: null,
+      }),
     },
   },
 };

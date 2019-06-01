@@ -20,6 +20,10 @@ const NAV_LIST = [
     name: 'About',
     route: 'about',
   },
+  {
+    name: 'Admin',
+    route: 'admin',
+  },
 ];
 
 export default NAV_LIST;

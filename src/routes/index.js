@@ -7,6 +7,7 @@ import SkillIndex from '@/components/pages/Skill/Index';
 import SkillAdd from '@/components/pages/Skill/Add';
 import Profile from '@/components/pages/Profile';
 import About from '@/components/pages/About';
+import Admin from '@/components/pages/Admin';
 
 export default {
   mode: 'history',
@@ -62,6 +63,11 @@ export default {
       path: '/about',
       component: About,
       name: 'about',
+    },
+    {
+      path: '/admin',
+      component: Admin,
+      name: 'admin',
     },
   ],
   // ページを開くとScrollTopが0の位置で表示

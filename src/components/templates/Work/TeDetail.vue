@@ -3,7 +3,7 @@
     or-header Portfolio
     or-header-nav
     div.l-container
-      at-title-h2 test
+      at-title-h2 {{ data.title }}
     or-footer @portfolio-205d8.firebaseapp.com
 </template>
 
@@ -19,6 +19,12 @@ export default {
     OrFooter,
     OrHeader,
     OrHeaderNav,
+  },
+  props: {
+    data: {
+      type: Object,
+      required: true,
+    },
   },
 };
 </script>

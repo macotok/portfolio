@@ -20,7 +20,10 @@ export default {
     },
     styles: {
       type: Object,
-      default: null,
+      default: () => ({
+        ul: null,
+        li: null,
+      }),
     },
   },
 };

@@ -1,6 +1,6 @@
 <template lang="pug">
-  form
-    table
+  form.workOrAdd
+    table.workOrAdd-table
       MoInputText(
         actionType="action01"
         name="title"
@@ -22,18 +22,28 @@
         actionType="action01"
         name="text"
       ) 内容
+    at-submit(
+      @click-button="clickButton"
+    ) 追加
 </template>
 
 <script>
+import AtSubmit from '@/components/atoms/form/AtSubmit';
 import MoInputFile from '@/components/molecules/MoInputFile';
 import MoInputText from '@/components/molecules/MoInputText';
 import MoInputTextArea from '@/components/molecules/MoInputTextArea';
 
 export default {
   components: {
+    AtSubmit,
     MoInputFile,
     MoInputText,
     MoInputTextArea,
+  },
+  methods: {
+    clickButton() {
+      console.log('click');
+    },
   },
 };
 </script>

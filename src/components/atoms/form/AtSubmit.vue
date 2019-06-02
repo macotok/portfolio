@@ -1,16 +1,17 @@
 <template lang="pug">
-  button(
-    type="submit"
-    @click="clickButton"
-  )
-    slot ボタン
+  div.atSubmit
+    button.atSubmit-button(
+      type="submit"
+      @click="clickButton"
+    )
+      slot
 </template>
 
 <script>
 export default {
   methods: {
     clickButton() {
-      console.log('click button');
+      this.$emit('click-button');
     },
   },
 };

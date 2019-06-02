@@ -2,8 +2,9 @@
   div.atInputFile
     label.atInputFile-label(
       :for="labelName"
-    ) {{ text }}
-     input.atInputFile-input(
+    )
+      slot 選択
+      input.atInputFile-input(
       type="file"
       :id="labelName"
       :name="name"
@@ -17,10 +18,6 @@ export default {
     labelName: {
       type: String,
       default: 'file',
-    },
-    text: {
-      type: String,
-      default: '選択',
     },
     name: {
       type: String,

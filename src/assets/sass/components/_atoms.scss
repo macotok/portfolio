@@ -9,7 +9,7 @@
     color: $gray-color-04;
     padding: $buttonPadding;
     text-align: center;
-    border-radius: 3px;
+    border-radius: $border-radius;
     font-size: .9rem;
     transition: .1s ease-in-out;
     border: 1px solid $link-color;
@@ -46,45 +46,43 @@
 }
 
 .atInputText {
-  font-size: 1rem;
-  width: 100%;
-  padding: 10px;
-  border: 1px solid $gray-color-03;
-  resize: none;
-  box-sizing: border-box;
+  @include formInput();
+}
+
+.atInputTextArea {
+  @include formInput();
 }
 
 .atPagination {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2.5%;
-}
-
-.atPagination .atPagination-item {
-  margin-right: 1%;
-}
-
-.atPagination li:nth-last-child(2) {
-  margin-right: 0;
-}
-
-.atPagination .atPagination-item a {
-  background-color: #F6F9FF;
-  color: #4B4D52;
-  display: inline-block;
-  padding: 10px 16px;
-  border: 1px solid #1C93FA;
-}
-
-.atPagination .atPagination-item.active a,
-.atPagination .atPagination-item a:hover {
-  background-color: #1C93FA;
-  color: #F6F9FF;
-}
-
-.atPagination .displayNone {
-  display: none;
+  .atPagination-item {
+    margin-right: 1rem;
+    &:nth-last-child(2) {
+      margin-right: 0;
+    }
+    &.active {
+      a {
+        background-color: $link-color;
+        color: $gray-color-04;
+      }
+    }
+    a {
+      background-color: $gray-color-04;
+      color: $key-color;
+      display: inline-block;
+      padding: 10px 16px;
+      border: 1px solid $link-color;
+      &:hover {
+        background-color: $link-color;
+        color: $gray-color-04;
+      }
+    }
+  }
+  .displayNone {
+    display: none;
+  }
 }
 
 .atNav {
@@ -102,6 +100,28 @@
     pointer-events: none;
     color: $white-color;
     background-color: $key-color;
+  }
+}
+
+.atSubmit {
+  display: flex;
+  justify-content: flex-end;
+  &-button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: $link-color;
+    color: $gray-color-04;
+    padding: $buttonPadding;
+    text-align: center;
+    border-radius: $border-radius;
+    font-size: .9rem;
+    transition: .1s ease-in-out;
+    border: 1px solid $link-color;
+    &:hover {
+      background-color: $gray-color-04;
+      color: $link-color;
+      cursor: pointer;
+    }
   }
 }
 

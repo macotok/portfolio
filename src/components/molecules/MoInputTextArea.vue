@@ -8,7 +8,7 @@
         :actionType="actionType"
         :name="name"
       )
-        at-text-input(
+        at-text-area(
           :name="name"
           :placeholder="placeholder"
           slot-scope="{inputData}"
@@ -19,13 +19,13 @@
 <script>
 import AtField from '@/components/atoms/form/AtField';
 import AtLabel from '@/components/atoms/form/AtLabel';
-import AtTextInput from '@/components/atoms/form/AtTextInput';
+import AtTextArea from '@/components/atoms/form/AtTextArea';
 
 export default {
   components: {
     AtField,
     AtLabel,
-    AtTextInput,
+    AtTextArea,
   },
   props: {
     actionType: {

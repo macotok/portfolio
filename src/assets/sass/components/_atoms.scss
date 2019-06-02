@@ -99,6 +99,15 @@
   }
 }
 
+.atTextInput {
+  font-size: 1rem;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid $gray-color-03;
+  resize: none;
+  box-sizing: border-box;
+}
+
 .atTitleH1 {
   &-title {
    letter-spacing: 10px;

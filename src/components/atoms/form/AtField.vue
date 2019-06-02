@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     slot(
-      :inputText="inputText"
+      :inputData="inputData"
     )
 </template>
 
@@ -18,7 +18,7 @@ export default {
     },
   },
   methods: {
-    inputText(e) {
+    inputData(e) {
       return this.$store.dispatch(this.actionType, {
         name: this.name,
         value: e.target.value,

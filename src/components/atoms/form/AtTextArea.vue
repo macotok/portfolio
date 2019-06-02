@@ -1,7 +1,6 @@
 <template lang="pug">
-  input(
-    class="atTextInput"
-    type="text"
+  textarea(
+    class="atTextarea"
     :name="name"
     :placeholder="placeholder"
     @input="inputText"

@@ -8,6 +8,10 @@
 <script>
 export default {
   props: {
+    nameSpace: {
+      type: String,
+      default: '',
+    },
     actionType: {
       type: String,
       required: true,
@@ -19,9 +23,9 @@ export default {
   },
   methods: {
     inputData(e) {
-      return this.$store.dispatch(this.actionType, {
+      return this.$store.dispatch(`${this.nameSpace}/${this.actionType}`, {
         name: this.name,
-        value: e.target.value,
+        value: e,
       });
     },
   },

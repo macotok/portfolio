@@ -2,25 +2,30 @@
   form.workOrAdd
     table.workOrAdd-table
       MoInputText(
-        actionType="action01"
         name="title"
+        :nameSpace="nameSpace"
+        :actionType="actionType"
       ) タイトル
       MoInputText(
-        placeholder="カンマ区切りで指定"
-        actionType="action01"
         name="tags"
+        placeholder="カンマ区切りで指定"
+        :nameSpace="nameSpace"
+        :actionType="actionType"
       ) タグ
       MoInputFile(
-        actionType="action01"
         name="file"
+        :nameSpace="nameSpace"
+        :actionType="actionType"
       ) 画像
       MoInputText(
-        actionType="action01"
         name="url"
+        :nameSpace="nameSpace"
+        :actionType="actionType"
       ) URL
       MoInputTextArea(
-        actionType="action01"
         name="text"
+        :nameSpace="nameSpace"
+        :actionType="actionType"
       ) 内容
     at-submit(
       @click-button="clickButton"
@@ -39,6 +44,16 @@ export default {
     MoInputFile,
     MoInputText,
     MoInputTextArea,
+  },
+  props: {
+    nameSpace: {
+      type: String,
+      required: true,
+    },
+    actionType: {
+      type: String,
+      required: true,
+    },
   },
   methods: {
     clickButton() {

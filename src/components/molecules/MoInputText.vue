@@ -5,13 +5,14 @@
         slot
     td
       at-field(
+        :nameSpace="nameSpace"
         :actionType="actionType"
         :name="name"
       )
         at-input-text(
+          slot-scope="{inputData}"
           :name="name"
           :placeholder="placeholder"
-          slot-scope="{inputData}"
           @input-text="inputData"
         )
 </template>
@@ -28,10 +29,6 @@ export default {
     AtInputText,
   },
   props: {
-    actionType: {
-      type: String,
-      required: true,
-    },
     name: {
       type: String,
       required: true,
@@ -39,6 +36,14 @@ export default {
     placeholder: {
       type: String,
       default: '',
+    },
+    nameSpace: {
+      type: String,
+      required: true,
+    },
+    actionType: {
+      type: String,
+      required: true,
     },
   },
 };

@@ -4,7 +4,10 @@
     or-header-nav
     div.l-container
       at-title-h2 add Work
-      or-add
+      or-add(
+        :nameSpace="nameSpace"
+        :actionType="actionType"
+      )
     or-footer @portfolio-205d8.firebaseapp.com
 </template>
 
@@ -24,6 +27,16 @@ export default {
     OrHeader,
     OrHeaderNav,
     MoInputText,
+  },
+  props: {
+    nameSpace: {
+      type: String,
+      required: true,
+    },
+    actionType: {
+      type: String,
+      required: true,
+    },
   },
 };
 </script>

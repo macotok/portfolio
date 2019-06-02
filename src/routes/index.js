@@ -27,14 +27,14 @@ export default {
           name: 'work',
         },
         {
-          path: ':id',
-          component: WorkDetail,
-          name: 'workDetail',
-        },
-        {
           path: 'add',
           component: WorkAdd,
           name: 'workAdd',
+        },
+        {
+          path: ':id',
+          component: WorkDetail,
+          name: 'workDetail',
         },
       ],
     },

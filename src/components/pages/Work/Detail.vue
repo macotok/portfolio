@@ -1,16 +1,16 @@
 <template lang="pug">
-  work-te-detail(
+  te-detail(
     :data="data"
   )
 </template>
 
 <script>
 import { mapState } from 'vuex';
-import WorkTeDetail from '@/components/templates/Work/TeDetail.vue';
+import TeDetail from '@/components/templates/Work/TeDetail.vue';
 
 export default {
   components: {
-    WorkTeDetail,
+    TeDetail,
   },
   computed: {
     ...mapState('work', {

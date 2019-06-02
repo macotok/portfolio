@@ -1,9 +1,9 @@
 <template lang="pug">
-  div.AtInputFile
-    label.AtInputFile-label(
+  div.atInputFile
+    label.atInputFile-label(
       :for="labelName"
     ) {{ text }}
-     input.AtInputFile-input(
+     input.atInputFile-input(
       type="file"
       :id="labelName"
       :name="name"

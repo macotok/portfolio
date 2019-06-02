@@ -7,7 +7,7 @@
     text-decoration: none;
     background-color: $link-color;
     color: $gray-color-04;
-    padding: 10px 25px;
+    padding: $buttonPadding;
     text-align: center;
     border-radius: 3px;
     font-size: .9rem;
@@ -33,8 +33,11 @@
     color: $gray-color-04;
     background-color: $sub-color;
     border-radius: $border-radius;
-    padding: 10px 25px;
+    padding: $buttonPadding;
     display: inline-block;
+    &:hover {
+      cursor: pointer;
+    }
   }
   &-input {
     border: none;

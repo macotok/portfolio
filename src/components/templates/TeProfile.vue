@@ -4,7 +4,7 @@
     or-header-nav
     div.l-container
       at-title-h2 Profile
-      divw.teProfile
+      div.teProfile
         or-side-block
         div.teProfile-list
           at-dl-dt-dd(

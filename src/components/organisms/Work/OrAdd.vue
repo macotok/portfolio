@@ -10,6 +10,10 @@
         actionType="action01"
         name="tags"
       ) タグ
+      MoInputFile(
+        actionType="action01"
+        name="file"
+      ) 画像
       MoInputText(
         actionType="action01"
         name="url"
@@ -21,11 +25,13 @@
 </template>
 
 <script>
+import MoInputFile from '@/components/molecules/MoInputFile';
 import MoInputText from '@/components/molecules/MoInputText';
 import MoInputTextArea from '@/components/molecules/MoInputTextArea';
 
 export default {
   components: {
+    MoInputFile,
     MoInputText,
     MoInputTextArea,
   },

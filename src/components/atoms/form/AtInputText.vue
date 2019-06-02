@@ -1,6 +1,6 @@
 <template lang="pug">
   input(
-    class="atTextInput"
+    class="atInputText"
     type="text"
     :name="name"
     :placeholder="placeholder"

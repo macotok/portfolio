@@ -8,24 +8,23 @@
         :actionType="actionType"
         :name="name"
       )
-        at-input-text(
+        at-input-file(
           :name="name"
-          :placeholder="placeholder"
           slot-scope="{inputData}"
-          @input-text="inputData"
+          @input-file="inputData"
         )
 </template>
 
 <script>
 import AtField from '@/components/atoms/form/AtField';
 import AtLabel from '@/components/atoms/form/AtLabel';
-import AtInputText from '@/components/atoms/form/AtInputText';
+import AtInputFile from '@/components/atoms/form/AtInputFile';
 
 export default {
   components: {
     AtField,
     AtLabel,
-    AtInputText,
+    AtInputFile,
   },
   props: {
     actionType: {
@@ -35,10 +34,6 @@ export default {
     name: {
       type: String,
       required: true,
-    },
-    placeholder: {
-      type: String,
-      default: '',
     },
   },
 };

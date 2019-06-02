@@ -59,12 +59,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-.teProfile {
-  display: flex;
-  &-list {
-    margin-left: 5rem;
-  }
-}
-</style>

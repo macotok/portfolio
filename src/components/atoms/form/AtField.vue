@@ -25,7 +25,7 @@ export default {
     inputData(e) {
       return this.$store.dispatch(`${this.nameSpace}/${this.actionType}`, {
         name: this.name,
-        value: e,
+        value: e.target.value,
       });
     },
   },

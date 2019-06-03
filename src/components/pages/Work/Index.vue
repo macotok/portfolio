@@ -18,7 +18,7 @@ export default {
   computed: {
     ...mapState('work', {
       workList(state) {
-        return state.work;
+        return state.db;
       },
     }),
     workLength() {

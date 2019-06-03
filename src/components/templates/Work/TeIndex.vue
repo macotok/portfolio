@@ -13,6 +13,7 @@
       at-pagination(
         :length="workLength"
         pageType="work"
+        targetKey="db"
       )
     or-footer @portfolio-205d8.firebaseapp.com
 </template>

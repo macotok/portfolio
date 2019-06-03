@@ -30,11 +30,15 @@ export default {
       type: String,
       required: true,
     },
+    targetKey: {
+      type: String,
+      required: true,
+    },
   },
   computed: {
     ...mapState({
       paginationNumber(state) {
-        return state[this.pageType][this.pageType].length / this.length;
+        return state[this.pageType][this.targetKey].length / this.length;
       },
     }),
   },

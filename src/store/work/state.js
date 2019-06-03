@@ -1,7 +1,9 @@
 import db from '@/store/stub';
+import inputDataList from './inputDataList';
 
 const state = {
-  work: db.work,
+  db: db.work,
+  update: inputDataList,
 };
 
 export default state;

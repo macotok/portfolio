@@ -15,7 +15,7 @@ export default {
   computed: {
     ...mapState('work', {
       data(state) {
-        return state.work.find(w => (
+        return state.db.find(w => (
           w.id === parseInt(this.$route.params.id, 10)
         ));
       },

@@ -14,9 +14,7 @@ export default {
     MoNavList,
   },
   computed: {
-    navList() {
-      return NAV_LIST;
-    },
+    navList: () => NAV_LIST,
   },
 };
 </script>

@@ -14,9 +14,7 @@ export default {
     TeAdd,
   },
   computed: {
-    AC_UPDATE_WORK() {
-      return AC_UPDATE_WORK;
-    },
+    AC_UPDATE_WORK: () => AC_UPDATE_WORK,
   },
 };
 </script>

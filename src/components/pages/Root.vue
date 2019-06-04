@@ -18,21 +18,13 @@ export default {
   },
   computed: {
     ...mapState('work', {
-      workList(state) {
-        return state.db;
-      },
+      workList: state => state.db,
     }),
     ...mapState('skill', {
-      skillList(state) {
-        return state.skill;
-      },
+      skillList: state => state.skill,
     }),
-    workLength() {
-      return WORK_LIST_TOP_LENGTH;
-    },
-    workListStart() {
-      return LIST_START;
-    },
+    workLength: () => WORK_LIST_TOP_LENGTH,
+    workListStart: () => LIST_START,
   },
 };
 </script>

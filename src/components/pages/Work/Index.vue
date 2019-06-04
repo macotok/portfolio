@@ -17,16 +17,10 @@ export default {
   },
   computed: {
     ...mapState('work', {
-      workList(state) {
-        return state.db;
-      },
+      workList: state => state.db,
     }),
-    workLength() {
-      return WORK_LIST_LENGTH;
-    },
-    workListStart() {
-      return LIST_START;
-    },
+    workLength: () => WORK_LIST_LENGTH,
+    workListStart: () => LIST_START,
   },
 };
 </script>

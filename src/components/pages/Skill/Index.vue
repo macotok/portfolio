@@ -14,9 +14,7 @@ export default {
   },
   computed: {
     ...mapState('skill', {
-      skill(state) {
-        return state.skill;
-      },
+      skill: state => state.skill,
     }),
   },
 };

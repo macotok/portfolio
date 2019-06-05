@@ -1,5 +1,6 @@
 import Vue from 'vue';
-import { MU_UPDATE_WORK } from './actions';
+
+export const MU_UPDATE_WORK = 'MU_UPDATE_WORK';
 
 const mutations = {
   [MU_UPDATE_WORK](state, payload) {

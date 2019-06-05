@@ -8998,7 +8998,7 @@ remark-parse@^6.0.0:
     markdown-escapes "^1.0.0"
     parse-entities "^1.1.0"
     repeat-string "^1.5.4"
-    state-toggle "^1.0.0"
+    index-toggle "^1.0.0"
     trim "0.0.1"
     trim-trailing-lines "^1.0.0"
     unherit "^1.0.4"
@@ -9021,7 +9021,7 @@ remark-stringify@^6.0.0:
     mdast-util-compact "^1.0.0"
     parse-entities "^1.0.2"
     repeat-string "^1.5.4"
-    state-toggle "^1.0.0"
+    index-toggle "^1.0.0"
     stringify-entities "^1.0.1"
     unherit "^1.0.4"
     xtend "^4.0.1"
@@ -9805,9 +9805,9 @@ stack-utils@^1.0.1:
   resolved "https://registry.yarnpkg.com/stack-utils/-/stack-utils-1.0.2.tgz#33eba3897788558bebfc2db059dc158ec36cebb8"
   integrity sha512-MTX+MeG5U994cazkjd/9KNAapsHnibjMLnfXodlkXw76JEea0UiNzrqidzo1emMwk7w5Qhc9jd4Bn9TBb1MFwA==
 
-state-toggle@^1.0.0:
+index-toggle@^1.0.0:
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/state-toggle/-/state-toggle-1.0.1.tgz#c3cb0974f40a6a0f8e905b96789eb41afa1cde3a"
+  resolved "https://registry.yarnpkg.com/index-toggle/-/index-toggle-1.0.1.tgz#c3cb0974f40a6a0f8e905b96789eb41afa1cde3a"
   integrity sha512-Qe8QntFrrpWTnHwvwj2FZTgv+PKIsp0B9VxLzLLbSpPXWOgRgc5LVj/aTiSfK1RqIeF9jeC1UeOH8Q8y60A7og==
 
 static-extend@^0.1.1:

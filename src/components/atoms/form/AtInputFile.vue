@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     inputFile(e) {
-      this.$emit('input-file', e);
+      this.$emit('input-file', e.target.files[0].name);
     },
   },
 };

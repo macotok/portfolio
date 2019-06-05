@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     inputText(e) {
-      this.$emit('input-text', e);
+      this.$emit('input-text', e.target.value);
     },
   },
 };

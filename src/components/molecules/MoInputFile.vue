@@ -5,6 +5,7 @@
         slot
     td
       at-field(
+        :nameSpace="nameSpace"
         :actionType="actionType"
         :name="name"
       )
@@ -32,6 +33,10 @@ export default {
       required: true,
     },
     name: {
+      type: String,
+      required: true,
+    },
+    nameSpace: {
       type: String,
       required: true,
     },

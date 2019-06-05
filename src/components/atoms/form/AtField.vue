@@ -22,10 +22,10 @@ export default {
     },
   },
   methods: {
-    inputData(e) {
+    inputData(value) {
       return this.$store.dispatch(`${this.nameSpace}/${this.actionType}`, {
         name: this.name,
-        value: e.target.value,
+        value,
       });
     },
   },

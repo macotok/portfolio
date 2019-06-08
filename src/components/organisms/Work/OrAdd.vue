@@ -13,7 +13,7 @@
         :actionType="actionType"
       ) タグ
       MoInputFile(
-        name="image_path"
+        name="image_name"
         :nameSpace="nameSpace"
         :actionType="actionType"
       ) 画像

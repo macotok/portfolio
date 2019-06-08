@@ -1,5 +1,5 @@
 <template lang="pug">
-  form.workOrAdd
+  div.workOrAdd
     table.workOrAdd-table
       MoInputText(
         name="title"
@@ -33,6 +33,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+import { AC_SAVE_WORK } from '@/store/work/actions';
 import AtSubmit from '@/components/atoms/form/AtSubmit';
 import MoInputFile from '@/components/molecules/MoInputFile';
 import MoInputText from '@/components/molecules/MoInputText';
@@ -56,8 +58,9 @@ export default {
     },
   },
   methods: {
+    ...mapActions('work', [AC_SAVE_WORK]),
     clickButton() {
-      console.log('click');
+      this[AC_SAVE_WORK]();
     },
   },
 };

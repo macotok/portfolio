@@ -1,7 +1,7 @@
 <template lang="pug">
   div.atSubmit
     button.atSubmit-button(
-      type="submit"
+      type="button"
       @click="clickButton"
     )
       slot

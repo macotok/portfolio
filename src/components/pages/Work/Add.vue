@@ -1,20 +1,20 @@
 <template lang="pug">
   te-add(
     nameSpace="work"
-    :actionType="AC_UPDATE_WORK"
+    :actionType="AC_INPUT_UPDATE_WORK"
   )
 </template>
 
 <script>
 import TeAdd from '@/components/templates/Work/TeAdd';
-import { AC_UPDATE_WORK } from '@/store/work/actions';
+import { AC_INPUT_UPDATE_WORK } from '@/store/work/actions';
 
 export default {
   components: {
     TeAdd,
   },
   computed: {
-    AC_UPDATE_WORK: () => AC_UPDATE_WORK,
+    AC_INPUT_UPDATE_WORK: () => AC_INPUT_UPDATE_WORK,
   },
 };
 </script>

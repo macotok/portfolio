@@ -1,9 +1,9 @@
-import { MU_INPUT_UPDATE_WORK } from '../mutations';
+import { MU_UPDATE_INPUT_WORK } from '../mutations/updateInput';
 
-export const AC_INPUT_UPDATE_WORK = 'AC_INPUT_UPDATE_WORK';
+export const AC_UPDATE_INPUT_WORK = 'AC_UPDATE_INPUT_WORK';
 
-const inputUpdate = {
-  [AC_INPUT_UPDATE_WORK](context, payload) {
+const updateInput = {
+  [AC_UPDATE_INPUT_WORK](context, payload) {
     const { name } = payload;
     let { value } = payload;
     const updateData = context.state.update;
@@ -11,8 +11,8 @@ const inputUpdate = {
       value = value.trim() ? value.replace(/\s+/g, '').split(',') : [];
     }
     Object.assign({}, updateData, updateData[name] = value);
-    context.commit(MU_INPUT_UPDATE_WORK, updateData);
+    context.commit(MU_UPDATE_INPUT_WORK, updateData);
   },
 };
 
-export default inputUpdate;
+export default updateInput;

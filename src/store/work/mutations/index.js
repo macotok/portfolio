@@ -1,9 +1,9 @@
 import updateInput from './updateInput';
 import saveData from './saveData';
 
-const actions = Object.assign(
+const mutations = Object.assign(
   updateInput,
   saveData,
 );
 
-export default actions;
+export default mutations;

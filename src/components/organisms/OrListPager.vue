@@ -7,7 +7,7 @@
       :length="length"
     )
     at-pagination(
-      :actionType="AC_PAGINATION_NUMBER"
+      :actionType="AC_PAGER_NUMBER"
       :length="length"
       :pageType="pageType"
       :targetKey="targetKey"
@@ -17,7 +17,7 @@
 <script>
 import AtPagination from '@/components/atoms/pagination/AtPagination';
 import MoImageList from '@/components/molecules/MoImageList';
-import { AC_PAGINATION_NUMBER } from '@/store/work/actions/paginationNumber';
+import { AC_PAGER_NUMBER } from '@/store/work/actions/pagerNumber';
 
 export default {
   components: {
@@ -47,7 +47,7 @@ export default {
     },
   },
   computed: {
-    AC_PAGINATION_NUMBER: () => (AC_PAGINATION_NUMBER),
+    AC_PAGER_NUMBER: () => (AC_PAGER_NUMBER),
   },
 };
 </script>

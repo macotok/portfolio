@@ -1,11 +1,11 @@
 import updateInput from './updateInput';
 import saveData from './saveData';
-import paginationNumber from './paginationNumber';
+import pagerNumber from './pagerNumber';
 
 const actions = Object.assign(
   updateInput,
   saveData,
-  paginationNumber,
+  pagerNumber,
 );
 
 export default actions;

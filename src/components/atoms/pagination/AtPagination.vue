@@ -1,6 +1,6 @@
 <template lang="pug">
   at-pagination(
-    :page-count="paginationNumber",
+    :page-count="pagerNumber",
     :page-range="length",
     :margin-pages="0",
     :prev-text=null,
@@ -41,17 +41,16 @@ export default {
   },
   computed: {
     ...mapState({
-      paginationNumber(state) {
+      pagerNumber(state) {
         return state[this.pageType][this.targetKey].length / this.length;
       },
     }),
   },
   methods: {
-    clickCallback(pagerNumber) {
-      this.$store.dispatch(`${this.pageType}/${this.actionType}`, {
-        pagerNumber,
+    clickCallback(currentPagerNumber) {
+      return this.$store.dispatch(`${this.pageType}/${this.actionType}`, {
+        currentPagerNumber,
       });
-      window.scrollTo(0, 0);
     },
   },
 };

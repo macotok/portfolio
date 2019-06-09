@@ -48,9 +48,10 @@ export default {
   },
   methods: {
     clickCallback(currentPagerNumber) {
-      return this.$store.dispatch(`${this.pageType}/${this.actionType}`, {
+      this.$store.dispatch(`${this.pageType}/${this.actionType}`, {
         currentPagerNumber,
       });
+      window.scrollTo(0, 0);
     },
   },
 };

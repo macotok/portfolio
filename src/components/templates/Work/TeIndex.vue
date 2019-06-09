@@ -7,14 +7,16 @@
       or-list-pager(
         pageType="work"
         targetKey="db"
+        :actionType="AC_PAGER_NUMBER"
         :list="workList"
-        :listStart="workListStart"
+        :pagerNumber="pagerNumber"
         :length="workLength"
       )
     or-footer @portfolio-205d8.firebaseapp.com
 </template>
 
 <script>
+import { AC_PAGER_NUMBER } from '@/store/work/actions/pagerNumber';
 import AtTitleH2 from '@/components/atoms/text/AtTitleH2';
 import OrFooter from '@/components/organisms/OrFooter';
 import OrHeader from '@/components/organisms/OrHeader';
@@ -38,10 +40,13 @@ export default {
       type: Array,
       default: () => [],
     },
-    workListStart: {
+    pagerNumber: {
       type: Number,
       required: true,
     },
+  },
+  computed: {
+    AC_PAGER_NUMBER: () => (AC_PAGER_NUMBER),
   },
 };
 </script>

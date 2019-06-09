@@ -3,11 +3,11 @@
     mo-image-list(
       :pageType="pageType"
       :list="list"
-      :listStart="listStart"
+      :pagerNumber="pagerNumber"
       :length="length"
     )
     at-pagination(
-      :actionType="AC_PAGER_NUMBER"
+      :actionType="actionType"
       :length="length"
       :pageType="pageType"
       :targetKey="targetKey"
@@ -17,7 +17,6 @@
 <script>
 import AtPagination from '@/components/atoms/pagination/AtPagination';
 import MoImageList from '@/components/molecules/MoImageList';
-import { AC_PAGER_NUMBER } from '@/store/work/actions/pagerNumber';
 
 export default {
   components: {
@@ -25,6 +24,10 @@ export default {
     MoImageList,
   },
   props: {
+    actionType: {
+      type: String,
+      required: true,
+    },
     length: {
       type: Number,
       required: true,
@@ -33,7 +36,7 @@ export default {
       type: Array,
       default: () => [],
     },
-    listStart: {
+    pagerNumber: {
       type: Number,
       required: true,
     },
@@ -45,9 +48,6 @@ export default {
       type: String,
       required: true,
     },
-  },
-  computed: {
-    AC_PAGER_NUMBER: () => (AC_PAGER_NUMBER),
   },
 };
 </script>

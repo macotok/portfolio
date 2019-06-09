@@ -37,6 +37,10 @@ export default {
       type: String,
       required: true,
     },
+    pagerNumber: {
+      type: Number,
+      required: true,
+    },
     length: {
       type: Number,
       required: true,
@@ -45,14 +49,10 @@ export default {
       type: Array,
       default: () => [],
     },
-    listStart: {
-      type: Number,
-      required: true,
-    },
   },
   computed: {
     displayList() {
-      return [...this.list].splice(this.listStart, this.length);
+      return [...this.list].splice(this.pagerNumber, this.length);
     },
     styles() {
       return {

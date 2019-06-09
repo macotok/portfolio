@@ -2,7 +2,7 @@
   work-te-index(
     :workList="workList"
     :workLength="workLength"
-    :workListStart="workListStart"
+    :pagerNumber="pagerNumber"
   )
 </template>
 
@@ -18,6 +18,7 @@ export default {
   computed: {
     ...mapState('work', {
       workList: state => state.db,
+      pagerNumber: state => state.pagerNumber,
     }),
     workLength: () => WORK_LIST_LENGTH,
     workListStart: () => LIST_START,

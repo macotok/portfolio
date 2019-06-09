@@ -17,6 +17,7 @@
 import Vue from 'vue';
 import { mapState, mapActions } from 'vuex';
 import Paginate from 'vuejs-paginate';
+import { AC_PAGINATION_NUMBER } from '@/store/work/actions/paginationNumber';
 
 Vue.component('at-pagination', Paginate);
 
@@ -43,9 +44,9 @@ export default {
     }),
   },
   methods: {
-    ...mapActions(['worksPaginationNUmber']),
+    ...mapActions('work', [AC_PAGINATION_NUMBER]),
     clickCallback(pageNum) {
-      this.worksPaginationNUmber({ pagerNumber: pageNum });
+      this[AC_PAGINATION_NUMBER]({ pagerNumber: pageNum });
       window.scrollTo(0, 0);
     },
   },

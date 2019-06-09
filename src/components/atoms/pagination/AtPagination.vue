@@ -37,7 +37,7 @@ export default {
   },
   computed: {
     ...mapState({
-      paginationNumber(index) {
+      paginationNumber(state) {
         return state[this.pageType][this.targetKey].length / this.length;
       },
     }),

@@ -41,7 +41,9 @@ export default {
     styles() {
       return {
         atButton: {
-          marginTop: '2rem',
+          button: {
+            marginTop: '2rem',
+          },
         },
         moTextList: {
           ul: {

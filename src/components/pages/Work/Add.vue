@@ -7,7 +7,7 @@
 
 <script>
 import TeAdd from '@/components/templates/Work/TeAdd';
-import { AC_INPUT_UPDATE_WORK } from '@/store/work/actions';
+import { AC_INPUT_UPDATE_WORK } from '@/store/work/actions/inputUpdate';
 
 export default {
   components: {

@@ -34,7 +34,7 @@
 
 <script>
 import { mapActions } from 'vuex';
-import { AC_SAVE_WORK } from '@/store/work/actions';
+import { AC_SAVE_WORK } from '@/store/work/actions/saveData';
 import AtSubmit from '@/components/atoms/form/AtSubmit';
 import MoInputFile from '@/components/molecules/MoInputFile';
 import MoInputText from '@/components/molecules/MoInputText';

@@ -1,6 +1,6 @@
-import actions, { SAMPLE_ACTION01 } from '@/store/actions';
+import actions, { SAMPLE_ACTION01 } from '@/store/index';
 
-describe('actions test', () => {
+describe('index test', () => {
   test('action01のcommitでデータを渡せるかどうか', () => {
     const commit = jest.fn();
     const { action01 } = actions;

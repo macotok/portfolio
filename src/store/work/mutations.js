@@ -8,6 +8,7 @@ const mutations = {
     Vue.set(state, 'update', payload);
   },
   [MU_SAVE_WORK](state, payload) {
+    console.log(payload)
     Vue.set(state, 'db', payload);
   },
 };

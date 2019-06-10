@@ -44,3 +44,30 @@
     }
   }
 }
+
+.moTwoButton {
+  display: flex;
+  justify-content: flex-end;
+  .atButton {
+    margin-left: 1rem;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .atButtonLeft {
+    background-color: $red-color;
+    border: 1px solid $red-color;
+    &:hover {
+      background-color: $gray-color-04;
+      color: $red-color;
+    }
+  }
+  .atButtonRight {
+    background-color: $green-color;
+    border: 1px solid $green-color;
+    &:hover {
+      background-color: $gray-color-04;
+      color: $green-color;
+    }
+  }
+}

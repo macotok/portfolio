@@ -8,6 +8,13 @@
         :style="styles.link"
       )
         slot
+    template(v-else-if="hasEvent")
+      div.atButton-link(
+        :style="styles.link"
+        :class="className"
+        @click="clickButton"
+      )
+        slot
     template(v-else)
       a.atButton-link(
         :href="href"
@@ -24,7 +31,15 @@ export default {
       type: Boolean,
       default: false,
     },
+    hasEvent: {
+      type: Boolean,
+      default: false,
+    },
     linkTo: {
+      type: String,
+      default: null,
+    },
+    className: {
       type: String,
       default: null,
     },
@@ -42,6 +57,11 @@ export default {
         button: null,
         link: null,
       }),
+    },
+  },
+  methods: {
+    clickButton() {
+      this.$emit('click-button');
     },
   },
 };

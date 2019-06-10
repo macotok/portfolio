@@ -16,6 +16,14 @@
         :styles="styles.atButton"
         :href="data.url"
       ) To Page
+      mo-two-button(
+        classNameLeft="atButtonLeft"
+        classNameRight="atButtonRight"
+        @click-button-left="clickButtonLeft"
+        @click-button-right="clickButtonRight"
+      )
+        template(v-slot:first) 削除
+        template(v-slot:second) 編集
 </template>
 
 <script>
@@ -23,6 +31,7 @@ import AtButton from '@/components/atoms/button/AtButton';
 import AtImage from '@/components/atoms/image/AtImage';
 import AtText from '@/components/atoms/text/AtText';
 import MoTextList from '@/components/molecules/MoTextList';
+import MoTwoButton from '@/components/molecules/MoTwoButton';
 
 export default {
   components: {
@@ -30,6 +39,7 @@ export default {
     AtImage,
     AtText,
     MoTextList,
+    MoTwoButton,
   },
   props: {
     data: {
@@ -51,6 +61,14 @@ export default {
           },
         },
       };
+    },
+  },
+  methods: {
+    clickButtonLeft() {
+      console.log(1);
+    },
+    clickButtonRight() {
+      console.log(2);
     },
   },
 };

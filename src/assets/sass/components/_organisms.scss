@@ -25,6 +25,8 @@
   display: flex;
   &-inner {
     padding-left: 2rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 }
 

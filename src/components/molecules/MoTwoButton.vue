@@ -1,5 +1,7 @@
 <template lang="pug">
-  div.moTwoButton
+  div.moTwoButton(
+    :style="styles"
+  )
     at-button(
       :hasEvent="hasEvent"
       :className="classNameLeft"
@@ -33,6 +35,10 @@ export default {
     classNameRight: {
       type: String,
       default: null,
+    },
+    styles: {
+      type: Object,
+      default: () => {},
     },
   },
   methods: {

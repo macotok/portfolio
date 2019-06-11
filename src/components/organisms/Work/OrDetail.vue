@@ -21,6 +21,7 @@
         classNameRight="atButtonRight"
         @click-button-left="clickButtonLeft"
         @click-button-right="clickButtonRight"
+        :styles="styles.moTwoButton"
       )
         template(v-slot:first) 削除
         template(v-slot:second) 編集
@@ -59,6 +60,9 @@ export default {
           ul: {
             marginBottom: '0',
           },
+        },
+        moTwoButton: {
+          justifyContent: 'flex-end',
         },
       };
     },

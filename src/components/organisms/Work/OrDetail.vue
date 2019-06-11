@@ -25,7 +25,7 @@
       )
         template(v-slot:first) 削除
         template(v-slot:second) 編集
-    at-modal(
+    mo-confirm-modal(
       modalName="permitDelete"
     )
 </template>
@@ -34,18 +34,18 @@
 import AtButton from '@/components/atoms/button/AtButton';
 import AtImage from '@/components/atoms/image/AtImage';
 import AtText from '@/components/atoms/text/AtText';
-import AtModal from '@/components/atoms/modal/AtModal';
 import MoTextList from '@/components/molecules/MoTextList';
 import MoTwoButton from '@/components/molecules/MoTwoButton';
+import MoConfirmModal from '@/components/molecules/MoConfirmModal';
 
 export default {
   components: {
     AtButton,
     AtImage,
     AtText,
-    AtModal,
     MoTextList,
     MoTwoButton,
+    MoConfirmModal,
   },
   props: {
     data: {

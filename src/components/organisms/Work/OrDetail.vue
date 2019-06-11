@@ -27,6 +27,7 @@
         template(v-slot:second) 編集
     mo-confirm-modal(
       modalName="permitDelete"
+      :confirmText="`「${targetDeleteTitle}」を削除しますか？`"
     )
 </template>
 
@@ -70,6 +71,9 @@ export default {
           justifyContent: 'flex-end',
         },
       };
+    },
+    targetDeleteTitle() {
+      return this.data.title;
     },
   },
   methods: {

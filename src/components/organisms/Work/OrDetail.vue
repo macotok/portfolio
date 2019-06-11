@@ -19,18 +19,22 @@
       mo-two-button(
         classNameLeft="atButtonLeft"
         classNameRight="atButtonRight"
-        @click-button-left="clickButtonLeft"
-        @click-button-right="clickButtonRight"
+        @click-button-left="clickDelete"
+        @click-button-right="clickEdit"
         :styles="styles.moTwoButton"
       )
         template(v-slot:first) 削除
         template(v-slot:second) 編集
+    at-modal(
+      modalName="permitDelete"
+    )
 </template>
 
 <script>
 import AtButton from '@/components/atoms/button/AtButton';
 import AtImage from '@/components/atoms/image/AtImage';
 import AtText from '@/components/atoms/text/AtText';
+import AtModal from '@/components/atoms/modal/AtModal';
 import MoTextList from '@/components/molecules/MoTextList';
 import MoTwoButton from '@/components/molecules/MoTwoButton';
 
@@ -39,6 +43,7 @@ export default {
     AtButton,
     AtImage,
     AtText,
+    AtModal,
     MoTextList,
     MoTwoButton,
   },
@@ -68,10 +73,10 @@ export default {
     },
   },
   methods: {
-    clickButtonLeft() {
-      console.log(1);
+    clickDelete() {
+      this.$modal.show('permitDelete');
     },
-    clickButtonRight() {
+    clickEdit() {
       console.log(2);
     },
   },

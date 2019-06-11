@@ -1,12 +1,14 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Vuex from 'vuex';
+import VModal from 'vue-js-modal';
 import App from './App';
 import routes from './routes';
 import _store from './store';
 
 Vue.use(VueRouter);
 Vue.use(Vuex);
+Vue.use(VModal);
 
 const router = new VueRouter(routes);
 const store = new Vuex.Store(_store);

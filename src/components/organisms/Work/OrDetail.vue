@@ -19,7 +19,7 @@
       mo-two-button(
         classNameLeft="atButtonLeft"
         classNameRight="atButtonRight"
-        @click-button-left="clickDelete"
+        @click-button-left="confirmDelete"
         @click-button-right="clickEdit"
         :styles="styles.moTwoButton"
       )
@@ -27,11 +27,14 @@
         template(v-slot:second) 編集
     mo-confirm-modal(
       modalName="permitDelete"
+      @click-action="actionDelete"
       :confirmText="`「${targetDeleteTitle}」を削除しますか？`"
     )
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+import { AC_DELETE_DATA } from '@/store/work/actions/deleteData';
 import AtButton from '@/components/atoms/button/AtButton';
 import AtImage from '@/components/atoms/image/AtImage';
 import AtText from '@/components/atoms/text/AtText';
@@ -77,11 +80,17 @@ export default {
     },
   },
   methods: {
-    clickDelete() {
+    ...mapActions('work', [AC_DELETE_DATA]),
+    confirmDelete() {
       this.$modal.show('permitDelete');
     },
     clickEdit() {
       console.log(2);
+    },
+    actionDelete() {
+      this[AC_DELETE_DATA](this.data.id);
+      this.$modal.hide('permitDelete');
+      this.$router.push({ name: 'root' });
     },
   },
 };

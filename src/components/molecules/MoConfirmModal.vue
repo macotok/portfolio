@@ -12,7 +12,7 @@
           @click-button-right="clickAction"
           :styles="styles.moTwoButton"
         )
-          template(v-slot:first) 戻る
+          template(v-slot:first) 閉じる
           template(v-slot:second) 決定
 </template>
 
@@ -49,7 +49,8 @@ export default {
       this.$modal.hide(this.modalName);
     },
     clickAction() {
+      this.$emit('click-action');
     },
-  }
+  },
 };
 </script>

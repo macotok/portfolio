@@ -39,7 +39,7 @@ export default {
     },
     pagerNumber: {
       type: Number,
-      required: true,
+      default: null,
     },
     length: {
       type: Number,

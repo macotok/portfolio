@@ -3,15 +3,17 @@
     or-header Portfolio
     or-header-nav
     div.l-container
-      at-title-h2 add Work
+      at-title-h2 {{ pageTitle }}
       or-add(
         :nameSpace="nameSpace"
         :actionType="actionType"
+        :editData="editData"
       )
     or-footer @portfolio-205d8.firebaseapp.com
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import AtTitleH2 from '@/components/atoms/text/AtTitleH2';
 import OrAdd from '@/components/organisms/Work/OrAdd';
 import OrFooter from '@/components/organisms/OrFooter';
@@ -40,6 +42,18 @@ export default {
     isEditPage: {
       type: String,
       default: undefined,
+    },
+  },
+  computed: {
+    ...mapState('work', {
+      dataList: state => state.db,
+    }),
+    pageTitle() {
+      return (this.isEditPage) ? 'edit Work' : 'add Work';
+    },
+    editData() {
+      if (!this.isEditPage) return false;
+      return this.dataList.find(data => data.id === parseInt(this.isEditPage, 10));
     },
   },
 };

@@ -1,8 +1,10 @@
 <template lang="pug">
-  te-add(
-    nameSpace="work"
-    :actionType="AC_UPDATE_INPUT_WORK"
-  )
+  div
+    te-add(
+      nameSpace="work"
+      :actionType="AC_UPDATE_INPUT_WORK"
+      :isEditPage="isEditPage"
+    )
 </template>
 
 <script>
@@ -15,6 +17,9 @@ export default {
   },
   computed: {
     AC_UPDATE_INPUT_WORK: () => AC_UPDATE_INPUT_WORK,
+    isEditPage() {
+      return this.$route.params.id;
+    },
   },
 };
 </script>

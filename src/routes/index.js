@@ -36,6 +36,11 @@ export default {
           component: WorkDetail,
           name: 'workDetail',
         },
+        {
+          path: ':id/edit',
+          component: WorkAdd,
+          name: 'workEdit',
+        },
       ],
     },
     {

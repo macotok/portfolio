@@ -37,6 +37,10 @@ export default {
       type: String,
       required: true,
     },
+    isEditPage: {
+      type: String,
+      default: undefined,
+    },
   },
 };
 </script>

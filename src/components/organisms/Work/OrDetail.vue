@@ -26,7 +26,7 @@
         template(v-slot:first) 削除
         template(v-slot:second) 編集
     mo-confirm-modal(
-      :modalName="PERMIT_DELETE"
+      :modalName="PERMIT_DELETE_WORK"
       @click-action="actionDelete"
       :confirmText="`「${targetDeleteTitle}」を削除しますか？`"
     )
@@ -35,7 +35,7 @@
 <script>
 import { mapActions } from 'vuex';
 import { AC_DELETE_DATA } from '@/store/work/actions/deleteData';
-import { PERMIT_DELETE } from '@/defines';
+import { PERMIT_DELETE_WORK } from '@/defines';
 import AtButton from '@/components/atoms/button/AtButton';
 import AtImage from '@/components/atoms/image/AtImage';
 import AtText from '@/components/atoms/text/AtText';
@@ -79,19 +79,19 @@ export default {
     targetDeleteTitle() {
       return this.data.title;
     },
-    PERMIT_DELETE: () => PERMIT_DELETE,
+    PERMIT_DELETE_WORK: () => PERMIT_DELETE_WORK,
   },
   methods: {
     ...mapActions('work', [AC_DELETE_DATA]),
     confirmDelete() {
-      this.$modal.show(PERMIT_DELETE);
+      this.$modal.show(PERMIT_DELETE_WORK);
     },
     clickEdit() {
-      console.log(2);
+      this.$router.push({ name: 'workEdit' });
     },
     actionDelete() {
       this[AC_DELETE_DATA](this.data.id);
-      this.$modal.hide(PERMIT_DELETE);
+      this.$modal.hide(PERMIT_DELETE_WORK);
       this.$router.push({ name: 'root' });
     },
   },

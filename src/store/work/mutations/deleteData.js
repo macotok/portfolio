@@ -4,6 +4,7 @@ export const MU_DELETE_DATA = 'MU_DELETE_DATA';
 
 const deleteData = {
   [MU_DELETE_DATA](state, payload) {
+    console.log(payload)
     Vue.set(state, 'db', payload);
   },
 };

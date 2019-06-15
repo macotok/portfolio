@@ -6,9 +6,9 @@ export const AC_SAVE_DATA = 'AC_SAVE_DATA';
 const saveData = {
   [AC_SAVE_DATA](context) {
     const stateDB = context.state.db;
-    const newId = stateDB.reduce((id, data) => (id < data.id ? data.id : id), 0) + 1;
+    const newID = stateDB.reduce((id, data) => (id < data.id ? data.id : id), 0) + 1;
     const addOtherData = {
-      id: newId,
+      id: newID,
       updatedAt: moment().format(),
       createdAt: moment().format(),
     };

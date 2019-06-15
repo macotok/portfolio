@@ -8,7 +8,7 @@ const db = {
   skill: [],
 };
 
-for (let i = 0; i < 50; i += 1) {
+for (let i = 0; i < 3; i += 1) {
   db.work.push({
     id: i + 1,
     title: Vue.faker().name.title(),
@@ -21,7 +21,7 @@ for (let i = 0; i < 50; i += 1) {
   });
 }
 
-for (let i = 0; i < 20; i += 1) {
+for (let i = 0; i < 3; i += 1) {
   db.skill.push({
     id: i + 1,
     title: Vue.faker().name.title(),

@@ -61,6 +61,7 @@ export default {
     ...mapActions('work', [AC_SAVE_DATA]),
     clickButton() {
       this[AC_SAVE_DATA]();
+      this.$router.push({ name: 'root' });
     },
   },
 };

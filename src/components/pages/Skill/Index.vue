@@ -7,6 +7,7 @@
 <script>
 import { mapState } from 'vuex';
 import TeSkill from '@/components/templates/TeSkill';
+import sortUpdatedAt from '@/utils/sortUpdatedAt';
 
 export default {
   components: {
@@ -14,7 +15,7 @@ export default {
   },
   computed: {
     ...mapState('skill', {
-      skill: state => state.skill,
+      skill: state => sortUpdatedAt(state.skill),
     }),
   },
 };

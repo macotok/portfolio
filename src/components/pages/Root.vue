@@ -22,7 +22,7 @@ export default {
       workList: state => sortUpdatedAt(state.db),
     }),
     ...mapState('skill', {
-      skillList: state => state.skill,
+      skillList: state => sortUpdatedAt(state.skill),
     }),
     workLength: () => WORK_LIST_TOP_LENGTH,
     workListStart: () => LIST_START,

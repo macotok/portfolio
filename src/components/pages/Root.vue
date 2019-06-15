@@ -11,6 +11,7 @@
 import { mapState } from 'vuex';
 import TeRoot from '@/components/templates/TeRoot';
 import { WORK_LIST_TOP_LENGTH, LIST_START } from '@/defines';
+import sortUpdatedAt from '@/utils/sortUpdatedAt';
 
 export default {
   components: {
@@ -18,7 +19,7 @@ export default {
   },
   computed: {
     ...mapState('work', {
-      workList: state => state.db,
+      workList: state => sortUpdatedAt(state.db),
     }),
     ...mapState('skill', {
       skillList: state => state.skill,

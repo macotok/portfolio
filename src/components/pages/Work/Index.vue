@@ -10,6 +10,7 @@
 import { mapState } from 'vuex';
 import WorkTeIndex from '@/components/templates/Work/TeIndex';
 import { WORK_LIST_LENGTH, LIST_START } from '@/defines';
+import sortUpdatedAt from '@/utils/sortUpdatedAt';
 
 export default {
   components: {
@@ -17,7 +18,7 @@ export default {
   },
   computed: {
     ...mapState('work', {
-      workList: state => state.db,
+      workList: state => sortUpdatedAt(state.db),
       pagerNumber: state => state.pagerNumber,
     }),
     workLength: () => WORK_LIST_LENGTH,

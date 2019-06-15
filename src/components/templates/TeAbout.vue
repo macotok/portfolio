@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    or-header Portfolio
+    or-header
     or-header-nav
     div.l-container
       at-title-h2 About this Portfolio
@@ -19,7 +19,7 @@
         href="https://github.com/macotok/portfolio"
         target="_blank"
       ) To GitHub
-    or-footer @portfolio-205d8.firebaseapp.com
+    or-footer
 </template>
 
 <script>

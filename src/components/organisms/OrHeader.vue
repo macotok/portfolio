@@ -1,7 +1,6 @@
 <template lang="pug">
   header.orHeader
-    at-title-h1
-      slot
+    at-title-h1 Portfolio
 </template>
 
 <script>

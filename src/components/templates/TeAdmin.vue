@@ -1,6 +1,6 @@
 <template lang="pug">
   div.teAdmin
-    or-header Portfolio
+    or-header
     or-header-nav
     div.l-container
       at-title-h2 Admin
@@ -9,7 +9,7 @@
         :styles="styles.AtButton"
         href="https://github.com/macotok/portfolio"
       ) ログインする
-    or-footer @portfolio-205d8.firebaseapp.com
+    or-footer
 </template>
 
 <script>

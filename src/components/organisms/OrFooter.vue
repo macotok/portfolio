@@ -1,4 +1,3 @@
 <template lang="pug">
-  footer.orFooter
-    slot
+  footer.orFooter @portfolio-205d8.firebaseapp.com
 </template>

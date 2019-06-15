@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    or-header Portfolio
+    or-header
     or-header-nav
     div.l-container
       at-title-h2 Work
@@ -54,7 +54,7 @@
         linkTo="skillAdd"
         routerLink
       ) Add
-    or-footer @portfolio-205d8.firebaseapp.com
+    or-footer
 </template>
 
 <script>

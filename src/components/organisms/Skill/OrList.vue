@@ -15,6 +15,7 @@
           classNameLeft="atButtonLeft"
           classNameRight="atButtonRight"
           :dataID="slotProps.data.id"
+          :styles="styles"
           @click-button-left="confirmDelete"
           @click-button-right="clickEdit"
         )
@@ -56,6 +57,12 @@ export default {
       return 'title';
     },
     PERMIT_DELETE_SKILL: () => PERMIT_DELETE_SKILL,
+    styles() {
+      return {
+        justifyContent: 'flex-end',
+        marginTop: '1rem',
+      };
+    },
   },
   methods: {
     ...mapActions('skill', [AC_DELETE_DATA]),

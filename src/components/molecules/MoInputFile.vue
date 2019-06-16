@@ -11,7 +11,6 @@
       )
         at-input-file(
           :name="name"
-          :value="value"
           slot-scope="{inputData}"
           @input-file="inputData"
         )
@@ -36,10 +35,6 @@ export default {
     name: {
       type: String,
       required: true,
-    },
-    value: {
-      type: String,
-      default: '',
     },
     nameSpace: {
       type: String,

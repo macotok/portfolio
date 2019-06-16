@@ -12,6 +12,7 @@
       div.atButton-link(
         :style="styles.link"
         :class="className"
+        :data-dataID="dataID"
         @click="clickButton"
       )
         slot
@@ -58,10 +59,14 @@ export default {
         link: null,
       }),
     },
+    dataID: {
+      type: Number,
+      default: null,
+    },
   },
   methods: {
-    clickButton() {
-      this.$emit('click-button');
+    clickButton(e) {
+      this.$emit('click-button', e.target);
     },
   },
 };

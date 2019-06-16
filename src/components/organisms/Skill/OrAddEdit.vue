@@ -9,7 +9,6 @@
       ) スキル名
       MoInputFile(
         name="image_name"
-        :value="editData.image_name"
         :nameSpace="nameSpace"
         :actionType="actionType"
       ) 画像

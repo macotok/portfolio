@@ -11,6 +11,7 @@
     at-button(
       :hasEvent="hasEvent"
       :className="classNameRight"
+      :dataID="dataID"
       @click-button="clickButtonRight"
     )
       slot(name="second")
@@ -40,13 +41,17 @@ export default {
       type: Object,
       default: () => {},
     },
+    dataID: {
+      type: Number,
+      default: null,
+    },
   },
   methods: {
     clickButtonLeft() {
       this.$emit('click-button-left');
     },
-    clickButtonRight() {
-      this.$emit('click-button-right');
+    clickButtonRight(eventTarget) {
+      this.$emit('click-button-right', eventTarget);
     },
   },
 };

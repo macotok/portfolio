@@ -14,6 +14,7 @@
         mo-two-button(
           classNameLeft="atButtonLeft"
           classNameRight="atButtonRight"
+          :dataID="slotProps.data.id"
           @click-button-left="confirmDelete"
           @click-button-right="clickEdit"
         )
@@ -61,8 +62,13 @@ export default {
     confirmDelete() {
       this.$modal.show(PERMIT_DELETE_SKILL);
     },
-    clickEdit() {
-      this.$router.push({ name: 'skillEdit' });
+    clickEdit(eventTarget) {
+      this.$router.push({
+        name: 'skillEdit',
+        params: {
+          id: eventTarget.dataset.dataid,
+        },
+      });
     },
     actionDelete() {
       this[AC_DELETE_DATA](this.data.id);

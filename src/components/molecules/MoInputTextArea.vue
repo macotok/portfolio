@@ -11,6 +11,7 @@
       )
         at-input-text-area(
           :name="name"
+          :value="value"
           :placeholder="placeholder"
           slot-scope="{inputData}"
           @input-text="inputData"
@@ -36,6 +37,10 @@ export default {
     name: {
       type: String,
       required: true,
+    },
+    value: {
+      type: String,
+      default: '',
     },
     nameSpace: {
       type: String,

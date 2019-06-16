@@ -47,12 +47,13 @@ export default {
   computed: {
     ...mapState('work', {
       dataList: state => state.db,
+      defaultDataList: state => state.update,
     }),
     pageTitle() {
       return (this.isEditPage) ? 'edit Work' : 'add Work';
     },
     editData() {
-      if (!this.isEditPage) return false;
+      if (!this.isEditPage) return this.defaultDataList;
       return this.dataList.find(data => data.id === parseInt(this.isEditPage, 10));
     },
   },

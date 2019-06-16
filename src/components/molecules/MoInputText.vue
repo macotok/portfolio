@@ -12,6 +12,7 @@
         at-input-text(
           slot-scope="{inputData}"
           :name="name"
+          :value="value"
           :placeholder="placeholder"
           @input-text="inputData"
         )
@@ -32,6 +33,10 @@ export default {
     name: {
       type: String,
       required: true,
+    },
+    value: {
+      type: String,
+      default: '',
     },
     placeholder: {
       type: String,

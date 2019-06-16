@@ -3,27 +3,32 @@
     table.workOrAddEdit-table
       MoInputText(
         name="title"
+        :value="editData.title"
         :nameSpace="nameSpace"
         :actionType="actionType"
       ) タイトル
       MoInputText(
         name="tags"
         placeholder="カンマ区切りで指定"
+        :value="fixStringOfTags"
         :nameSpace="nameSpace"
         :actionType="actionType"
       ) タグ
       MoInputFile(
         name="image_name"
+        :value="editData.image_name"
         :nameSpace="nameSpace"
         :actionType="actionType"
       ) 画像
       MoInputText(
         name="url"
+        :value="editData.url"
         :nameSpace="nameSpace"
         :actionType="actionType"
       ) URL
       MoInputTextArea(
         name="text"
+        :value="editData.text"
         :nameSpace="nameSpace"
         :actionType="actionType"
       ) 内容
@@ -55,6 +60,16 @@ export default {
     actionType: {
       type: String,
       required: true,
+    },
+    editData: {
+      type: Object,
+      default: () => {},
+    },
+  },
+  computed: {
+    fixStringOfTags() {
+      if (!this.editData.tags) return null;
+      return (this.editData.tags).join(',');
     },
   },
   methods: {

@@ -5,11 +5,12 @@
     )
       slot 選択
       input.atInputFile-input(
-      type="file"
-      :id="labelName"
-      :name="name"
-      @change="inputFile"
-     )
+        type="file"
+        :id="labelName"
+        :name="name"
+        :value="value"
+        @change="inputFile"
+       )
 </template>
 
 <script>
@@ -22,6 +23,10 @@ export default {
     name: {
       type: String,
       required: true,
+    },
+    value: {
+      type: String,
+      default: '',
     },
   },
   methods: {

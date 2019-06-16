@@ -1,6 +1,7 @@
 <template lang="pug">
   textarea.atInputTextArea(
     :name="name"
+    :value="value"
     :rows="rows"
     :placeholder="placeholder"
     @input="inputText"
@@ -13,6 +14,10 @@ export default {
     name: {
       type: String,
       required: true,
+    },
+    value: {
+      type: String,
+      default: '',
     },
     placeholder: {
       type: String,

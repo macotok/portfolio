@@ -15,7 +15,7 @@
 <script>
 import { mapState } from 'vuex';
 import AtTitleH2 from '@/components/atoms/text/AtTitleH2';
-import OrAddEdit from '@/components/organisms/Work/OrAddEdit';
+import OrAddEdit from '@/components/organisms/Skill/OrAddEdit';
 import OrFooter from '@/components/organisms/OrFooter';
 import OrHeader from '@/components/organisms/OrHeader';
 import OrHeaderNav from '@/components/organisms/OrHeaderNav';

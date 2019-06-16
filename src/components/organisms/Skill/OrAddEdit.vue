@@ -6,26 +6,13 @@
         :value="editData.title"
         :nameSpace="nameSpace"
         :actionType="actionType"
-      ) タイトル
-      MoInputText(
-        name="tags"
-        placeholder="カンマ区切りで指定"
-        :value="fixStringOfTags"
-        :nameSpace="nameSpace"
-        :actionType="actionType"
-      ) タグ
+      ) スキル名
       MoInputFile(
         name="image_name"
         :value="editData.image_name"
         :nameSpace="nameSpace"
         :actionType="actionType"
       ) 画像
-      MoInputText(
-        name="url"
-        :value="editData.url"
-        :nameSpace="nameSpace"
-        :actionType="actionType"
-      ) URL
       MoInputTextArea(
         name="text"
         :value="editData.text"
@@ -66,14 +53,8 @@ export default {
       default: () => {},
     },
   },
-  computed: {
-    fixStringOfTags() {
-      if (!this.editData.tags) return null;
-      return (this.editData.tags).join(',');
-    },
-  },
   methods: {
-    ...mapActions('work', [AC_SAVE_DATA]),
+    ...mapActions('skill', [AC_SAVE_DATA]),
     clickButton() {
       this[AC_SAVE_DATA]();
       this.$router.push({ name: 'root' });

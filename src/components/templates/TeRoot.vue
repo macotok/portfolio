@@ -103,8 +103,8 @@ export default {
   computed: {
     skillTitle() {
       const titleList = [];
-      this.skillList.forEach((s) => {
-        titleList.push(s.title);
+      this.skillList.forEach((skill) => {
+        titleList.push(skill.title);
       });
       return titleList;
     },

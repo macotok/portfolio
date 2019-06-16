@@ -4,7 +4,7 @@ import WorkIndex from '@/components/pages/Work/Index';
 import WorkDetail from '@/components/pages/Work/Detail';
 import WorkAddEdit from '@/components/pages/Work/AddEdit';
 import SkillIndex from '@/components/pages/Skill/Index';
-import SkillAdd from '@/components/pages/Skill/Add';
+import SkillAddEdit from '@/components/pages/Skill/AddEdit';
 import Profile from '@/components/pages/Profile';
 import About from '@/components/pages/About';
 import Admin from '@/components/pages/Admin';
@@ -54,8 +54,13 @@ export default {
         },
         {
           path: 'add',
-          component: SkillAdd,
+          component: SkillAddEdit,
           name: 'skillAdd',
+        },
+        {
+          path: ':id/edit',
+          component: SkillAddEdit,
+          name: 'skillEdit',
         },
       ],
     },

@@ -1,6 +1,6 @@
 <template lang="pug">
-  div.workOrAdd
-    table.workOrAdd-table
+  div.workOrAddEdit
+    table.workOrAddEdit-table
       MoInputText(
         name="title"
         :nameSpace="nameSpace"

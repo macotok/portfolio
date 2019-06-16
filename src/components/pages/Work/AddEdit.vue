@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    te-add(
+    te-add-edit(
       nameSpace="work"
       :actionType="AC_UPDATE_INPUT_WORK"
       :isEditPage="isEditPage"
@@ -8,12 +8,12 @@
 </template>
 
 <script>
-import TeAdd from '@/components/templates/Work/TeAdd';
+import TeAddEdit from '@/components/templates/Work/TeAddEdit';
 import { AC_UPDATE_INPUT_WORK } from '@/store/work/actions/updateInput';
 
 export default {
   components: {
-    TeAdd,
+    TeAddEdit,
   },
   computed: {
     AC_UPDATE_INPUT_WORK: () => AC_UPDATE_INPUT_WORK,

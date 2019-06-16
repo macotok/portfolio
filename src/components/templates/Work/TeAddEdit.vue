@@ -4,7 +4,7 @@
     or-header-nav
     div.l-container
       at-title-h2 {{ pageTitle }}
-      or-add(
+      or-add-edit(
         :nameSpace="nameSpace"
         :actionType="actionType"
         :editData="editData"
@@ -15,7 +15,7 @@
 <script>
 import { mapState } from 'vuex';
 import AtTitleH2 from '@/components/atoms/text/AtTitleH2';
-import OrAdd from '@/components/organisms/Work/OrAdd';
+import OrAddEdit from '@/components/organisms/Work/OrAddEdit';
 import OrFooter from '@/components/organisms/OrFooter';
 import OrHeader from '@/components/organisms/OrHeader';
 import OrHeaderNav from '@/components/organisms/OrHeaderNav';
@@ -24,7 +24,7 @@ import MoInputText from '@/components/molecules/MoInputText';
 export default {
   components: {
     AtTitleH2,
-    OrAdd,
+    OrAddEdit,
     OrFooter,
     OrHeader,
     OrHeaderNav,

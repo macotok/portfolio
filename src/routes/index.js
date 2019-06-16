@@ -2,7 +2,7 @@ import Root from '@/components/pages/Root';
 import Parent from '@/components/pages/Parent';
 import WorkIndex from '@/components/pages/Work/Index';
 import WorkDetail from '@/components/pages/Work/Detail';
-import WorkAdd from '@/components/pages/Work/Add';
+import WorkAddEdit from '@/components/pages/Work/AddEdit';
 import SkillIndex from '@/components/pages/Skill/Index';
 import SkillAdd from '@/components/pages/Skill/Add';
 import Profile from '@/components/pages/Profile';
@@ -28,7 +28,7 @@ export default {
         },
         {
           path: 'add',
-          component: WorkAdd,
+          component: WorkAddEdit,
           name: 'workAdd',
         },
         {
@@ -38,7 +38,7 @@ export default {
         },
         {
           path: ':id/edit',
-          component: WorkAdd,
+          component: WorkAddEdit,
           name: 'workEdit',
         },
       ],

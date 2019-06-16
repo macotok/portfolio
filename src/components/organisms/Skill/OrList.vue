@@ -85,7 +85,7 @@ export default {
       });
     },
     actionDelete() {
-      this[AC_DELETE_DATA](this.data.id);
+      this[AC_DELETE_DATA](this.dataID);
       this.$modal.hide(PERMIT_DELETE_SKILL);
       this.$router.push({ name: 'root' });
     },

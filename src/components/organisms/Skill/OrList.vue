@@ -52,9 +52,15 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      dataID: '',
+    };
+  },
   computed: {
     targetDeleteTitle() {
-      return 'title';
+      if (!this.dataID) return null;
+      return (this.dataList.find(data => data.id === parseInt(this.dataID, 10)).title);
     },
     PERMIT_DELETE_SKILL: () => PERMIT_DELETE_SKILL,
     styles() {
@@ -66,7 +72,8 @@ export default {
   },
   methods: {
     ...mapActions('skill', [AC_DELETE_DATA]),
-    confirmDelete() {
+    confirmDelete(eventTarget) {
+      this.dataID = eventTarget.dataset.dataid;
       this.$modal.show(PERMIT_DELETE_SKILL);
     },
     clickEdit(eventTarget) {

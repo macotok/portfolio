@@ -1,21 +1,21 @@
 <template lang="pug">
-  skill-te-index(
-    :skillList="skill"
+  te-index(
+    :skillList="skillList"
   )
 </template>
 
 <script>
 import { mapState } from 'vuex';
-import SkillTeIndex from '@/components/templates/Skill/TeIndex';
+import teIndex from '@/components/templates/Skill/TeIndex';
 import sortUpdatedAt from '@/utils/sortUpdatedAt';
 
 export default {
   components: {
-    SkillTeIndex,
+    teIndex,
   },
   computed: {
     ...mapState('skill', {
-      skill: state => sortUpdatedAt(state.db),
+      skillList: state => sortUpdatedAt(state.db),
     }),
   },
 };

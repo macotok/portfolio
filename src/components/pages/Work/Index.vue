@@ -1,5 +1,5 @@
 <template lang="pug">
-  work-te-index(
+  te-index(
     :workList="workList"
     :workLength="workLength"
     :pagerNumber="pagerNumber"
@@ -8,13 +8,13 @@
 
 <script>
 import { mapState } from 'vuex';
-import WorkTeIndex from '@/components/templates/Work/TeIndex';
+import teIndex from '@/components/templates/Work/TeIndex';
 import { WORK_LIST_LENGTH, LIST_START } from '@/defines';
 import sortUpdatedAt from '@/utils/sortUpdatedAt';
 
 export default {
   components: {
-    WorkTeIndex,
+    teIndex,
   },
   computed: {
     ...mapState('work', {

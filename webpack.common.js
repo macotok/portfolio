@@ -56,11 +56,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               plugins: [
-                AutoPrefixer(
-                  {
-                    browsers: ['last 2 versions', 'Android >= 4'],
-                  },
-                ),
+                AutoPrefixer(),
               ],
             },
           },

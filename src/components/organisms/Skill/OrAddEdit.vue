@@ -1,6 +1,10 @@
 <template lang="pug">
   div.orAddEdit
     table.orAddEdit-table
+      MoLabelID(
+        v-if="editData.id"
+        :numberID="editData.id"
+      )
       MoInputText(
         name="title"
         :value="editData.title"
@@ -26,17 +30,21 @@
 <script>
 import { mapActions } from 'vuex';
 import { AC_SAVE_DATA } from '@/store/work/actions/saveData';
+import AtLabel from '@/components/atoms/form/AtLabel';
 import AtSubmit from '@/components/atoms/form/AtSubmit';
 import MoInputFile from '@/components/molecules/MoInputFile';
 import MoInputText from '@/components/molecules/MoInputText';
 import MoInputTextArea from '@/components/molecules/MoInputTextArea';
+import MoLabelID from '@/components/molecules/MoLabelID';
 
 export default {
   components: {
+    AtLabel,
     AtSubmit,
     MoInputFile,
     MoInputText,
     MoInputTextArea,
+    MoLabelID,
   },
   props: {
     nameSpace: {

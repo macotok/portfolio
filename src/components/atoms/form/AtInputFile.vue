@@ -11,6 +11,12 @@
         :value="value"
         @change="inputFile"
        )
+    img.fileThumnail(
+      v-if="privateState.image_path",
+      :src="privateState.image_path",
+    )
+    img.fileThumnail
+    p(v-if="privateState.errorMessage") {{privateState.errorMessage}}
 </template>
 
 <script>
@@ -29,9 +35,34 @@ export default {
       default: '',
     },
   },
+  data() {
+    return {
+      privateState: {
+        image_path: '',
+        errorMessage: '',
+      },
+    };
+  },
   methods: {
     inputFile(e) {
-      this.$emit('input-file', e.target.files[0].name);
+      this.createImage(e.target.files[0], e.target.files[0].name);
+    },
+    createImage(file, fileName) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        this.privateState.image_path = e.target.result;
+        this.$emit('input-file', {
+          image_path: e.target.result,
+          image_name: fileName,
+        });
+      };
+      reader.onerror = () => {
+        this.privateState.errorMessage = '読み込みに失敗しました';
+        reader.abort();
+      };
+      if (file) {
+        reader.readAsDataURL(file);
+      }
     },
   },
 };

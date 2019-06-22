@@ -11,15 +11,12 @@ Vue.use(Vuex);
 Vue.use(VModal);
 
 const router = new VueRouter(routes);
-const storeObj = Object.assign({}, _store, {
-  strict: process.env.NODE_ENV !== 'production',
-});
 const store = new Vuex.Store(_store);
 
-new Vue({ // eslint-disable-line no-new
-  el: '#app',
+const app = new Vue({
   components: { App },
   template: '<App/>',
   router,
   store,
 });
+app.$mount('#app');

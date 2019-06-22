@@ -27,7 +27,6 @@ $ firebase deploy
 
 ## Vue.js
 
-- VueCLIで開発環境構築
 - VueRouterでRouting処理
 - Vuexで状態管理
 - Work/Skillの追加/更新/削除
@@ -45,7 +44,8 @@ $ firebase deploy
 - Authenticationでログイン/ログアウト処理
 
 ## Other
-
+ 
+ - Atomic Designで制作
  - レスポンシブ対応
  - PugでHTMLコーディング
  - Webpack/babelのversionを上げてスプレット演算子対応

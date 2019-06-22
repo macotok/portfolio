@@ -1,16 +1,13 @@
-import Root from '../pages/Root';
-import Parent from '../pages/Parent';
-import AddWork from '../pages/work/Add';
-import WorkList from '../pages/work/List';
-import WorkDetail from '../pages/work/Detail';
-import EditWorkDetail from '../pages/work/Edit';
-import AddSkill from '../pages/skill/Add';
-import EditSkill from '../pages/skill/Edit';
-import SkillList from '../pages/skill/List';
-import Profile from '../pages/Profile';
-import Admin from '../pages/Admin';
-import About from '../pages/About';
-import NotFound from '../pages/NotFound';
+import Root from '@/components/pages/Root';
+import Parent from '@/components/pages/Parent';
+import WorkIndex from '@/components/pages/Work/Index';
+import WorkDetail from '@/components/pages/Work/Detail';
+import WorkAddEdit from '@/components/pages/Work/AddEdit';
+import SkillIndex from '@/components/pages/Skill/Index';
+import SkillAddEdit from '@/components/pages/Skill/AddEdit';
+import Profile from '@/components/pages/Profile';
+import About from '@/components/pages/About';
+import Admin from '@/components/pages/Admin';
 
 export default {
   mode: 'history',
@@ -26,8 +23,13 @@ export default {
       children: [
         {
           path: '',
-          component: WorkList,
-          name: 'works',
+          component: WorkIndex,
+          name: 'work',
+        },
+        {
+          path: 'add',
+          component: WorkAddEdit,
+          name: 'workAdd',
         },
         {
           path: ':id',
@@ -36,13 +38,8 @@ export default {
         },
         {
           path: ':id/edit',
-          component: EditWorkDetail,
-          name: 'editWorkDetail',
-        },
-        {
-          path: 'add',
-          component: AddWork,
-          name: 'addWork',
+          component: WorkAddEdit,
+          name: 'workEdit',
         },
       ],
     },
@@ -52,18 +49,18 @@ export default {
       children: [
         {
           path: '',
-          component: SkillList,
-          name: 'skills',
+          component: SkillIndex,
+          name: 'skill',
         },
         {
           path: 'add',
-          component: AddSkill,
-          name: 'addSkill',
+          component: SkillAddEdit,
+          name: 'skillAdd',
         },
         {
           path: ':id/edit',
-          component: EditSkill,
-          name: 'editSkill',
+          component: SkillAddEdit,
+          name: 'skillEdit',
         },
       ],
     },
@@ -73,20 +70,18 @@ export default {
       name: 'profile',
     },
     {
-      path: '/admin',
-      component: Admin,
-      name: 'admin',
-    },
-    {
       path: '/about',
       component: About,
       name: 'about',
     },
     {
-      path: '*',
-      component: NotFound,
+      path: '/admin',
+      component: Admin,
+      name: 'admin',
     },
   ],
+  // ページを開くとScrollTopが0の位置で表示
+  // ブラウザバックをすると元のScrollTopの位置で表示
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition;

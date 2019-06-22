@@ -1,6 +1,6 @@
-export const WORKS_LIST_LENGTH = 12;
-export const WORKS_LIST_TOP_LENGTH = 8;
+export const WORK_LIST_LENGTH = 12;
+export const WORK_LIST_TOP_LENGTH = 8;
+export const LIST_START = 0;
 export const WORKS_START_NUMBER = 1;
-export const NON_SKILL_DATA = '表示するSkillがありません。';
-export const NON_WORKS_DATA = '表示するWorkがありません。';
-export const NON_INPUT_MESSAGE = '未入力箇所があります。';
+export const PERMIT_DELETE_WORK = 'permit_delete_work';
+export const PERMIT_DELETE_SKILL = 'permit_delete_skill';

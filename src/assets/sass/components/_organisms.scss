@@ -1,0 +1,56 @@
+.orFooter {
+  text-align: center;
+  font-size: .8rem;
+  color: $gray-color-02;
+  padding: 1rem 0;
+}
+
+.orHeader {
+  text-align: center;
+  padding: 20px 0;
+  background-color: $gray-color-04;
+  position: relative;
+}
+
+.ProfileOrSideBlock {
+  &-list {
+    display: flex;
+  }
+  &-item {
+    margin-right: .5rem;
+  }
+}
+
+.WorkOrDetail {
+  display: flex;
+  &-inner {
+    padding-left: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+.orAddEdit {
+  &-table {
+    margin-bottom: $block-padding;
+    border-left: 1px solid $gray-color-04;
+    border-top: 1px solid $gray-color-04;
+    width: 100%;
+    th {
+      border-bottom: 1px solid $gray-color-04;
+      vertical-align: middle;
+      text-align: center;
+      padding: .5rem;
+      width: 15%;
+    }
+    td {
+      border-right: 1px solid $gray-color-04;
+      border-bottom: 1px solid $gray-color-04;
+      vertical-align: middle;
+      text-align: left;
+      padding: .5rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+}

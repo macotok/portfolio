@@ -1,0 +1,87 @@
+.moImageList {
+  display: flex;
+  flex-wrap: wrap;
+  &-item {
+    width: 23.125%;
+    margin: 0 2.5% 2.5% 0;
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+  &-link {
+    display: block;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+      .atUlLi {
+        &-item {
+          background-color: $white-color;
+          color: $sub-color;
+        }
+      }
+    }
+  }
+}
+
+.moNavList {
+  display: flex;
+  justify-content: center;
+  background-color: $gray-color-01;
+}
+
+.moTextList {
+  .atUlLi {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: $block-padding;
+    &-item {
+      background-color: $sub-color;
+      padding: 3px 6px;
+      margin: 0 .5rem .5rem 0;
+      font-size: .7rem;
+      color: $gray-color-04;
+      border-radius: $border-radius;
+      border: 1px solid $sub-color;
+    }
+  }
+}
+
+.moTwoButton {
+  display: flex;
+  .atButton {
+    margin-left: 1rem;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .atButtonLeft {
+    background-color: $red-color;
+    border: 1px solid $red-color;
+    &:hover {
+      background-color: $gray-color-04;
+      color: $red-color;
+    }
+  }
+  .atButtonRight {
+    background-color: $green-color;
+    border: 1px solid $green-color;
+    &:hover {
+      background-color: $gray-color-04;
+      color: $green-color;
+    }
+  }
+}
+
+.moConfirmModal {
+  &-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+  &-text {
+    width: 100%;
+    text-align: center;
+  }
+}

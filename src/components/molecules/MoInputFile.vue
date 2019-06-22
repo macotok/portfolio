@@ -12,6 +12,7 @@
         mo-input-file-preview(
           slot-scope="{inputData}"
           :name="name"
+          :nameSpace="nameSpace"
           :src="src"
           @input-file="inputData"
         )

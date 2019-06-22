@@ -29,11 +29,6 @@ export default {
       default: '',
     },
   },
-  data() {
-    return {
-      image_path: '',
-    };
-  },
   methods: {
     inputFile(e) {
       this.createImage(e.target.files[0], e.target.files[0].name);
@@ -42,8 +37,8 @@ export default {
       const reader = new FileReader();
       reader.onload = (e) => {
         this.$emit('input-file', {
-          image_path: e.target.result,
-          image_name: fileName,
+          path: e.target.result,
+          name: fileName,
         });
       };
       reader.onerror = () => {

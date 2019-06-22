@@ -1,11 +1,13 @@
 <template lang="pug">
-  div
+  div.moInputFilePreview
     at-input-file(
       :name="name"
       @input-file="inputData"
     )
     at-image(
-      :src="src"
+      :src="inputList.image.path || src"
+      :styles="styles"
+      width="150"
     )
 </template>
 
@@ -23,9 +25,23 @@ export default {
       type: String,
       required: true,
     },
+    nameSpace: {
+      type: String,
+      required: true,
+    },
     src: {
       type: String,
       default: '',
+    },
+  },
+  computed: {
+    inputList() {
+      return this.$store.state[this.nameSpace].update;
+    },
+    styles() {
+      return {
+        marginLeft: '2rem',
+      };
     },
   },
   methods: {

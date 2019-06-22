@@ -1,12 +1,15 @@
 <template lang="pug">
-  input(
-    class="atInputText"
-    type="text"
-    :name="name"
-    :value="value"
-    :placeholder="placeholder"
-    @input="inputText"
-  )
+  div
+    input(
+      class="atInputText"
+      type="text"
+      v-validate="'required'"
+      :name="name"
+      :value="value"
+      :placeholder="placeholder"
+      @input="inputText"
+    )
+    span {{ errors.first(name) }}
 </template>
 
 <script>

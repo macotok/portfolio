@@ -14,6 +14,7 @@
           :name="name"
           :value="value"
           :placeholder="placeholder"
+          :vValidate="vValidate"
           @input-text="inputData"
         )
 </template>
@@ -49,6 +50,10 @@ export default {
     actionType: {
       type: String,
       required: true,
+    },
+    vValidate: {
+      type: Object,
+      default: () => {},
     },
   },
 };

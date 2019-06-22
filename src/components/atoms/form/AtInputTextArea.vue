@@ -1,11 +1,14 @@
 <template lang="pug">
-  textarea.atInputTextArea(
-    :name="name"
-    :value="value"
-    :rows="rows"
-    :placeholder="placeholder"
-    @input="inputText"
-  )
+  div
+    textarea.atInputTextArea(
+      v-validate="vValidate"
+      :name="name"
+      :value="value"
+      :rows="rows"
+      :placeholder="placeholder"
+      @input="inputText"
+    )
+    span {{ errors.first(name) }}
 </template>
 
 <script>
@@ -26,6 +29,10 @@ export default {
     rows: {
       type: Number,
       default: 10,
+    },
+    vValidate: {
+      type: Object,
+      default: () => {},
     },
   },
   methods: {

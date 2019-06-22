@@ -10,6 +10,7 @@
         :value="editData.title"
         :nameSpace="nameSpace"
         :actionType="actionType"
+        :vValidate="vValidate.required"
       ) タイトル
       MoInputText(
         name="tags"
@@ -17,24 +18,28 @@
         :value="fixStringOfTags"
         :nameSpace="nameSpace"
         :actionType="actionType"
+        :vValidate="vValidate.required"
       ) タグ
       MoInputFile(
         name="image"
         :src="editData.image.path"
         :nameSpace="nameSpace"
         :actionType="actionType"
+        :vValidate="vValidate.required"
       ) 画像
       MoInputText(
         name="url"
         :value="editData.url"
         :nameSpace="nameSpace"
         :actionType="actionType"
+        :vValidate="vValidate.required"
       ) URL
       MoInputTextArea(
         name="text"
         :value="editData.text"
         :nameSpace="nameSpace"
         :actionType="actionType"
+        :vValidate="vValidate.required"
       ) 内容
     at-submit(
       @click-button="clickButton"
@@ -76,6 +81,13 @@ export default {
     fixStringOfTags() {
       if (!this.editData.tags) return null;
       return (this.editData.tags).join(',');
+    },
+    vValidate() {
+      return {
+        required: {
+          required: true,
+        },
+      };
     },
   },
   methods: {

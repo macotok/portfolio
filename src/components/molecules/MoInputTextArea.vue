@@ -13,6 +13,7 @@
           :name="name"
           :value="value"
           :placeholder="placeholder"
+          :vValidate="vValidate"
           slot-scope="{inputData}"
           @input-text="inputData"
         )
@@ -49,6 +50,10 @@ export default {
     placeholder: {
       type: String,
       default: '',
+    },
+    vValidate: {
+      type: Object,
+      default: () => {},
     },
   },
 };

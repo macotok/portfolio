@@ -3,7 +3,7 @@
     input(
       class="atInputText"
       type="text"
-      v-validate="'required'"
+      v-validate="vValidate"
       :name="name"
       :value="value"
       :placeholder="placeholder"
@@ -26,6 +26,10 @@ export default {
     placeholder: {
       type: String,
       default: '',
+    },
+    vValidate: {
+      type: Object,
+      default: () => {},
     },
   },
   methods: {

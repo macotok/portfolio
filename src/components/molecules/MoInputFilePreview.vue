@@ -2,6 +2,7 @@
   div.moInputFilePreview
     at-input-file(
       :name="name"
+      :vValidate="vValidate"
       @input-file="inputData"
     )
     at-image(
@@ -32,6 +33,10 @@ export default {
     src: {
       type: String,
       default: '',
+    },
+    vValidate: {
+      type: Object,
+      default: () => {},
     },
   },
   computed: {

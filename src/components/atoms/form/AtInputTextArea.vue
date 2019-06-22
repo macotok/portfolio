@@ -1,14 +1,15 @@
 <template lang="pug">
   div
     textarea.atInputTextArea(
-      v-validate="vValidate"
+      v-validate.continues="vValidate"
       :name="name"
       :value="value"
       :rows="rows"
       :placeholder="placeholder"
       @input="inputText"
     )
-    span {{ errors.first(name) }}
+    ul
+      li(v-for="error in errors.collect(name)") {{ error }}
 </template>
 
 <script>

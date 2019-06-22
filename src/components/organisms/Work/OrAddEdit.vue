@@ -32,7 +32,7 @@
         :value="editData.url"
         :nameSpace="nameSpace"
         :actionType="actionType"
-        :vValidate="vValidate.required"
+        :vValidate="vValidate.url"
       ) URL
       MoInputTextArea(
         name="text"
@@ -86,6 +86,13 @@ export default {
       return {
         required: {
           required: true,
+        },
+        url: {
+          required: true,
+          min: 20,
+          url: {
+            require_protocol: true,
+          },
         },
       };
     },

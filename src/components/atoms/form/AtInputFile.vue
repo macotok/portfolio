@@ -6,11 +6,14 @@
       slot 選択
       input.atInputFile-input(
         type="file"
+        v-validate.continues="vValidate"
         :id="labelName"
         :name="name"
         :value="value"
         @change="inputFile"
-       )
+      )
+    ul
+      li(v-for="error in errors.collect(name)") {{ error }}
 </template>
 
 <script>
@@ -27,6 +30,10 @@ export default {
     value: {
       type: String,
       default: '',
+    },
+    vValidate: {
+      type: Object,
+      default: () => {},
     },
   },
   methods: {

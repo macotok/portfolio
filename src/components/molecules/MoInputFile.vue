@@ -9,23 +9,25 @@
         :actionType="actionType"
         :name="name"
       )
-        at-input-file(
-          :name="name"
+        mo-input-file-preview(
           slot-scope="{inputData}"
+          :name="name"
+          :src="src"
           @input-file="inputData"
         )
+
 </template>
 
 <script>
 import AtField from '@/components/atoms/form/AtField';
 import AtLabel from '@/components/atoms/form/AtLabel';
-import AtInputFile from '@/components/atoms/form/AtInputFile';
+import MoInputFilePreview from '@/components/molecules/MoInputFilePreview';
 
 export default {
   components: {
     AtField,
     AtLabel,
-    AtInputFile,
+    MoInputFilePreview,
   },
   props: {
     actionType: {
@@ -39,6 +41,10 @@ export default {
     nameSpace: {
       type: String,
       required: true,
+    },
+    src: {
+      type: String,
+      default: '',
     },
   },
 };

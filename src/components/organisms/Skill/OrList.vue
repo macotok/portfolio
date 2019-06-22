@@ -5,7 +5,7 @@
     )
       template(v-slot:header="slotProps")
         at-image(
-          :src="slotProps.data.image_path"
+          :src="slotProps.data.image.path"
           :alt="slotProps.data.title"
           :width=75
         )

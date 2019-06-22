@@ -1,7 +1,9 @@
 export default {
   id: '',
   title: '',
-  image_path: '',
-  image_name: '',
+  image: {
+    path: '',
+    name: '',
+  },
   text: '',
 };

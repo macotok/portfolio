@@ -19,7 +19,8 @@
         :actionType="actionType"
       ) タグ
       MoInputFile(
-        name="image_name"
+        name="image"
+        :src="editData.image.path"
         :nameSpace="nameSpace"
         :actionType="actionType"
       ) 画像

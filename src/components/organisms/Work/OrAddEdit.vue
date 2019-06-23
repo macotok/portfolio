@@ -89,7 +89,6 @@ export default {
         },
         url: {
           required: true,
-          min: 20,
           url: {
             require_protocol: true,
           },

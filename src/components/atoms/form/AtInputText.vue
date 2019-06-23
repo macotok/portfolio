@@ -1,20 +1,28 @@
 <template lang="pug">
-  div
+  ValidationProvider(
+    v-slot="{ errors }"
+    tag="div"
+    :rules="vValidate"
+    :name="name"
+  )
     input(
       class="atInputText"
       type="text"
-      v-validate.continues="vValidate"
+      v-model="inputValue"
       :name="name"
-      :value="value"
       :placeholder="placeholder"
       @input="inputText"
     )
-    ul
-      li(v-for="error in errors.collect(name)") {{ error }}
+    span {{ errors[0] }}
 </template>
 
 <script>
+import { ValidationProvider } from 'vee-validate';
+
 export default {
+  components: {
+    ValidationProvider,
+  },
   props: {
     name: {
       type: String,
@@ -32,6 +40,11 @@ export default {
       type: Object,
       default: () => {},
     },
+  },
+  data() {
+    return {
+      inputValue: this.value,
+    };
   },
   methods: {
     inputText(e) {

@@ -1,19 +1,31 @@
 <template lang="pug">
-  div
+  ValidationProvider(
+    v-slot="{ errors }"
+    tag="div"
+    :rules="vValidate"
+    :name="name"
+  )
     textarea.atInputTextArea(
-      v-validate.continues="vValidate"
+      v-model="inputValue"
       :name="name"
-      :value="value"
       :rows="rows"
       :placeholder="placeholder"
       @input="inputText"
     )
-    ul
-      li(v-for="error in errors.collect(name)") {{ error }}
+    at-text(
+      :styles="styles.errorMessage"
+    ) {{ errors[0] }}
 </template>
 
 <script>
+import { ValidationProvider } from 'vee-validate';
+import AtText from '@/components/atoms/text/AtText';
+
 export default {
+  components: {
+    ValidationProvider,
+    AtText,
+  },
   props: {
     name: {
       type: String,
@@ -34,6 +46,21 @@ export default {
     vValidate: {
       type: Object,
       default: () => {},
+    },
+  },
+  data() {
+    return {
+      inputValue: this.value,
+    };
+  },
+  computed: {
+    styles() {
+      return {
+        errorMessage: {
+          marginTop: '0.5rem',
+          color: '#B31F57',
+        },
+      };
     },
   },
   methods: {

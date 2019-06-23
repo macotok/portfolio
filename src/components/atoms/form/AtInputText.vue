@@ -13,15 +13,19 @@
       :placeholder="placeholder"
       @input="inputText"
     )
-    span {{ errors[0] }}
+    at-text(
+      :styles="styles.errorMessage"
+    ) {{ errors[0] }}
 </template>
 
 <script>
 import { ValidationProvider } from 'vee-validate';
+import AtText from '@/components/atoms/text/AtText';
 
 export default {
   components: {
     ValidationProvider,
+    AtText,
   },
   props: {
     name: {
@@ -45,6 +49,16 @@ export default {
     return {
       inputValue: this.value,
     };
+  },
+  computed: {
+    styles() {
+      return {
+        errorMessage: {
+          marginTop: '0.5rem',
+          color: '#B31F57',
+        },
+      };
+    },
   },
   methods: {
     inputText(e) {

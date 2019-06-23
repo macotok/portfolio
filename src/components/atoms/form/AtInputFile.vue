@@ -1,23 +1,35 @@
 <template lang="pug">
   div.atInputFile
-    label.atInputFile-label(
-      :for="labelName"
+     ValidationProvider(
+      v-slot="{ validate, errors }"
+      tag="div"
+      :rules="vValidate"
+      :name="name"
     )
-      slot 選択
-      input.atInputFile-input(
-        type="file"
-        v-validate.continues="vValidate"
-        :id="labelName"
-        :name="name"
-        :value="value"
-        @change="inputFile"
+      label.atInputFile-label(
+        :for="labelName"
       )
-    ul
-      li(v-for="error in errors.collect(name)") {{ error }}
+        slot 選択
+        input.atInputFile-input(
+          type="file"
+          :id="labelName"
+          :name="name"
+          @change="inputFile || validate(inputValue)"
+        )
+      at-text(
+        :styles="styles.errorMessage"
+      ) {{ errors[0] }}
 </template>
 
 <script>
+import { ValidationProvider } from 'vee-validate';
+import AtText from '@/components/atoms/text/AtText';
+
 export default {
+  components: {
+    ValidationProvider,
+    AtText,
+  },
   props: {
     labelName: {
       type: String,
@@ -34,6 +46,21 @@ export default {
     vValidate: {
       type: Object,
       default: () => {},
+    },
+  },
+  data() {
+    return {
+      inputValue: this.value,
+    };
+  },
+  computed: {
+    styles() {
+      return {
+        errorMessage: {
+          marginTop: '0.5rem',
+          color: '#B31F57',
+        },
+      };
     },
   },
   methods: {

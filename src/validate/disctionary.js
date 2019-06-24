@@ -6,6 +6,9 @@ const dictionary = {
     tags: {
       required: 'タグを入力してください。複数指定するときはカンマ区切りで入力してください。',
     },
+    image: {
+      required: '画像を選択してください。',
+    },
     url: {
       required: 'URLを入力してください。',
       url: 'URLの形式が違っています。',

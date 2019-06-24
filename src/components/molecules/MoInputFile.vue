@@ -14,7 +14,6 @@
           :name="name"
           :nameSpace="nameSpace"
           :src="src"
-          :vValidate="vValidate"
           @input-file="inputData"
         )
 
@@ -47,10 +46,6 @@ export default {
     src: {
       type: String,
       default: '',
-    },
-    vValidate: {
-      type: Object,
-      default: () => {},
     },
   },
 };

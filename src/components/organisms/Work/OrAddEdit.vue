@@ -31,7 +31,6 @@
           :src="editData.image.path"
           :nameSpace="nameSpace"
           :actionType="actionType"
-          :vValidate="vValidate.required"
         ) 画像
         MoInputText(
           name="url"
@@ -104,17 +103,15 @@ export default {
     },
   },
   methods: {
-    // ...mapActions('work', [AC_SAVE_DATA]),
-    // clickButton() {
-    //   this[AC_SAVE_DATA]();
-    //   this.$router.push({ name: 'root' });
-    // },
+    ...mapActions('work', [AC_SAVE_DATA]),
     async submit() {
       const isValid = await this.$refs.observer.validate();
       if (!isValid) {
-        console.log(1)
+        return false;
       }
-      console.log(2)
+      this[AC_SAVE_DATA]();
+      this.$router.push({ name: 'root' });
+      return false;
     },
   },
 };

@@ -4,15 +4,17 @@ import { MU_SAVE_DATA } from '../mutations/saveData';
 export const AC_SAVE_DATA = 'AC_SAVE_DATA';
 
 const saveData = {
-  [AC_SAVE_DATA](context, editId) {
+  [AC_SAVE_DATA](context, isEditId) {
     const stateDB = context.state.db;
     let addOtherData;
-    if (editId) {
-      const editData = stateDB.find(state => state.id === editId);
-      addOtherData = {
+    if (isEditId) {
+      const editIdOfArray = stateDB.findIndex(state => state.id === isEditId);
+      const updateData = {
+        ...stateDB[editIdOfArray],
+        ...context.state.update,
         updatedAt: moment().format(),
       };
-      Object.assign({}, { ...context.state.update }, { ...addOtherData });
+      stateDB.splice(editIdOfArray, 1, updateData);
     } else {
       const newID = stateDB.reduce((id, data) => (id < data.id ? data.id : id), 0) + 1;
       addOtherData = {

@@ -110,7 +110,7 @@ export default {
         return false;
       }
       this[AC_SAVE_DATA]();
-      // this.$router.push({ name: 'root' });
+      this.$router.push({ name: 'root' });
       return false;
     },
   },

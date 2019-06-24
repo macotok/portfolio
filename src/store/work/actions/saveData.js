@@ -6,11 +6,11 @@ export const AC_SAVE_DATA = 'AC_SAVE_DATA';
 const saveData = {
   [AC_SAVE_DATA](context) {
     const stateDB = context.state.db;
-    const editId = context.state.update.id;
+    const editID = context.state.update.id;
     let addOtherData;
     // 編集画面でstateのDBを更新
-    if (editId) {
-      const editIdOfArray = stateDB.findIndex(state => state.id === editId);
+    if (editID) {
+      const editIdOfArray = stateDB.findIndex(state => state.id === editID);
       const updateData = {
         ...stateDB[editIdOfArray],
         ...context.state.update,

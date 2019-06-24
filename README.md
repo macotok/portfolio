@@ -32,6 +32,7 @@ $ firebase deploy
  - Work/Skillの追加/更新/削除
  - 削除の確認で「vue-js-modal」モーダル実装
  - Atomic Designの概念でUI構築
+ - 「vee-validate」でWork/Skillの追加/更新バリデーション実装
  - fakerでstubデータ作成
  - ページネーション実装
     

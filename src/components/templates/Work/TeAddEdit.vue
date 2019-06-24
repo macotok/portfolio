@@ -13,7 +13,8 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
+import { AC_UPDATE_INPUT_OF_EDIT } from '@/store/work/actions/updateInputOfEdit';
 import AtTitleH2 from '@/components/atoms/text/AtTitleH2';
 import OrAddEdit from '@/components/organisms/Work/OrAddEdit';
 import OrFooter from '@/components/organisms/OrFooter';
@@ -54,8 +55,13 @@ export default {
     },
     editData() {
       if (!this.isEditPage) return this.inputList;
-      return this.dataList.find(data => data.id === parseInt(this.isEditPage, 10));
+      const editData = this.dataList.find(data => data.id === parseInt(this.isEditPage, 10));
+      this[AC_UPDATE_INPUT_OF_EDIT](editData);
+      return editData;
     },
+  },
+  methods: {
+    ...mapActions('work', [AC_UPDATE_INPUT_OF_EDIT]),
   },
 };
 </script>

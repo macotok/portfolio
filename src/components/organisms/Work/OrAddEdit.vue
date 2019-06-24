@@ -47,7 +47,7 @@
           :vValidate="vValidate.required"
         ) 内容
       at-submit(
-      ) 追加
+      ) {{ buttonText }}
 </template>
 
 <script>
@@ -100,6 +100,9 @@ export default {
           },
         },
       };
+    },
+    buttonText() {
+      return this.editData.id ? '編集' : '追加';
     },
   },
   methods: {

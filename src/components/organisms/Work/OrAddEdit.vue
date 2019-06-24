@@ -109,7 +109,7 @@ export default {
       if (!isValid) {
         return false;
       }
-      this[AC_SAVE_DATA](this.editData.id);
+      this[AC_SAVE_DATA]();
       // this.$router.push({ name: 'root' });
       return false;
     },

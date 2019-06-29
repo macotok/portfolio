@@ -18,7 +18,7 @@
 
 <script>
 import AtModal from '@/components/atoms/modal/AtModal';
-import MoTwoButton from '@/components/molecules/MoTwoButton';
+import MoTwoButton from '@/components/molecules/button/MoTwoButton';
 
 export default {
   components: {

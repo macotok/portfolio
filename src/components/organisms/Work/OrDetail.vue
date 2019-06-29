@@ -39,9 +39,9 @@ import { PERMIT_DELETE_WORK } from '@/defines';
 import AtHrefButton from '@/components/atoms/button/AtHrefButton';
 import AtImage from '@/components/atoms/image/AtImage';
 import AtText from '@/components/atoms/text/AtText';
-import MoTextList from '@/components/molecules/MoTextList';
-import MoTwoButton from '@/components/molecules/MoTwoButton';
-import MoConfirmModal from '@/components/molecules/MoConfirmModal';
+import MoTextList from '@/components/molecules/list/MoTextList';
+import MoTwoButton from '@/components/molecules/button/MoTwoButton';
+import MoConfirmModal from '@/components/molecules/modal/MoConfirmModal';
 
 export default {
   components: {

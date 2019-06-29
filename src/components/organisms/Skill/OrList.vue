@@ -35,8 +35,8 @@ import { PERMIT_DELETE_SKILL } from '@/defines';
 import AtTable from '@/components/atoms/list/AtTable';
 import AtText from '@/components/atoms/text/AtText';
 import AtImage from '@/components/atoms/image/AtImage';
-import MoTwoButton from '@/components/molecules/MoTwoButton';
-import MoConfirmModal from '@/components/molecules/MoConfirmModal';
+import MoTwoButton from '@/components/molecules/button/MoTwoButton';
+import MoConfirmModal from '@/components/molecules/modal/MoConfirmModal';
 
 export default {
   components: {

@@ -16,7 +16,7 @@
 
 <script>
 import AtPagination from '@/components/atoms/pagination/AtPagination';
-import MoImageList from '@/components/molecules/MoImageList';
+import MoImageList from '@/components/molecules/list/MoImageList';
 
 export default {
   components: {

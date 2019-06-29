@@ -19,7 +19,7 @@ import OrAddEdit from '@/components/organisms/Skill/OrAddEdit';
 import OrFooter from '@/components/organisms/OrFooter';
 import OrHeader from '@/components/organisms/OrHeader';
 import OrHeaderNav from '@/components/organisms/OrHeaderNav';
-import MoInputText from '@/components/molecules/MoInputText';
+import MoInputText from '@/components/molecules/form/MoInputText';
 
 export default {
   components: {

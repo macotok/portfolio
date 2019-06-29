@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import MoNavList from '@/components/molecules/MoNavList';
+import MoNavList from '@/components/molecules/list/MoNavList';
 import NAV_LIST from '@/defines/navList';
 
 export default {

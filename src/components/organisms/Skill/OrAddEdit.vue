@@ -33,10 +33,10 @@ import { mapActions } from 'vuex';
 import { AC_SAVE_DATA } from '@/store/work/actions/saveData';
 import AtLabel from '@/components/atoms/form/AtLabel';
 import AtSubmit from '@/components/atoms/form/AtSubmit';
-import MoInputFile from '@/components/molecules/MoInputFile';
-import MoInputText from '@/components/molecules/MoInputText';
-import MoInputTextArea from '@/components/molecules/MoInputTextArea';
-import MoLabelID from '@/components/molecules/MoLabelID';
+import MoInputFile from '@/components/molecules/form/MoInputFile';
+import MoInputText from '@/components/molecules/form/MoInputText';
+import MoInputTextArea from '@/components/molecules/form/MoInputTextArea';
+import MoLabelID from '@/components/molecules/form/MoLabelID';
 
 export default {
   components: {

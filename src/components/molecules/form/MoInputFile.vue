@@ -16,13 +16,12 @@
           :src="src"
           @input-file="inputData"
         )
-
 </template>
 
 <script>
 import AtField from '@/components/atoms/form/AtField';
 import AtLabel from '@/components/atoms/form/AtLabel';
-import MoInputFilePreview from '@/components/molecules/MoInputFilePreview';
+import MoInputFilePreview from '@/components/molecules/form/MoInputFilePreview';
 
 export default {
   components: {

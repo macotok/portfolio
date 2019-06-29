@@ -24,7 +24,7 @@
 <script>
 import AtImage from '@/components/atoms/image/AtImage';
 import AtText from '@/components/atoms/text/AtText';
-import MoTextList from '@/components/molecules/MoTextList';
+import MoTextList from '@/components/molecules/list/MoTextList';
 
 export default {
   components: {

@@ -55,10 +55,10 @@ import { mapActions } from 'vuex';
 import { ValidationObserver } from 'vee-validate';
 import { AC_SAVE_DATA } from '@/store/work/actions/saveData';
 import AtSubmit from '@/components/atoms/form/AtSubmit';
-import MoInputFile from '@/components/molecules/MoInputFile';
-import MoInputText from '@/components/molecules/MoInputText';
-import MoInputTextArea from '@/components/molecules/MoInputTextArea';
-import MoLabelID from '@/components/molecules/MoLabelID';
+import MoInputFile from '@/components/molecules/form/MoInputFile';
+import MoInputText from '@/components/molecules/form/MoInputText';
+import MoInputTextArea from '@/components/molecules/form/MoInputTextArea';
+import MoLabelID from '@/components/molecules/form/MoLabelID';
 
 export default {
   components: {

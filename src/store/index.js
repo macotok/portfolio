@@ -1,8 +1,5 @@
-import work from './work';
-import skill from './skill';
-import works from '@/server/work';
-
-console.log(works())
+import work from '@/store/work';
+import skill from '@/store/skill';
 
 export default {
   modules: {

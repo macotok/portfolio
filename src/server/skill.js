@@ -1,4 +1,4 @@
-import { firestore } from './firebase';
+import { firestore } from '@/server/firebase';
 
 const skill = () => {
   const skillData = [];

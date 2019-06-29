@@ -59,7 +59,6 @@ import AtUlLi from '@/components/atoms/list/AtUlLi';
 import MoImageList from '@/components/molecules/list/MoImageList';
 import MoTextList from '@/components/molecules/list/MoTextList';
 import OrFooter from '@/components/organisms/OrFooter';
-import OrForm from '@/components/organisms/OrForm';
 import OrHeader from '@/components/organisms/OrHeader';
 import OrHeaderNav from '@/components/organisms/OrHeaderNav';
 
@@ -72,7 +71,6 @@ export default {
     MoImageList,
     MoTextList,
     OrFooter,
-    OrForm,
     OrHeader,
     OrHeaderNav,
   },

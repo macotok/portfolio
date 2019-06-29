@@ -1,5 +1,5 @@
-import { MU_RESET_INPUT_DATA } from '@/store/work/mutations/resetInputData';
-import inputDataList from '@/store/work/state/inputDataList';
+import { MU_RESET_INPUT_DATA } from '@/store/skill/mutations/resetInputData';
+import inputDataList from '@/store/skill/state/inputDataList';
 
 export const AC_RESET_INPUT_DATA = 'AC_RESET_INPUT_DATA';
 

@@ -46,8 +46,7 @@
           :actionType="actionType"
           :vValidate="vValidate.required"
         ) 内容
-      at-submit(
-      ) {{ buttonText }}
+      at-submit {{ buttonText }}
 </template>
 
 <script>

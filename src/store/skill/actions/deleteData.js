@@ -1,4 +1,4 @@
-import { MU_DELETE_DATA } from '../mutations/deleteData';
+import { MU_DELETE_DATA } from '@/store/skill/mutations/deleteData';
 
 export const AC_DELETE_DATA = 'AC_DELETE_DATA';
 

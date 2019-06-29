@@ -1,5 +1,5 @@
 import db from '@/store/stub';
-import inputDataList from './inputDataList';
+import inputDataList from '@/store/work/state/inputDataList';
 import { WORKS_START_NUMBER } from '@/defines';
 
 const state = {

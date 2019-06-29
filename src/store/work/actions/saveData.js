@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { MU_SAVE_DATA } from '../mutations/saveData';
+import { MU_SAVE_DATA } from '@/store/work/mutations/saveData';
 
 export const AC_SAVE_DATA = 'AC_SAVE_DATA';
 

@@ -1,37 +1,43 @@
 <template lang="pug">
   div.orAddEdit
-    table.orAddEdit-table
-      MoLabelID(
-        v-if="editData.id"
-        :numberID="editData.id"
-      )
-      MoInputText(
-        name="title"
-        :value="editData.title"
-        :nameSpace="nameSpace"
-        :actionType="actionType"
-      ) スキル名
-      MoInputFile(
-        name="image"
-        :src="editData.image.path"
-        :nameSpace="nameSpace"
-        :actionType="actionType"
-      ) 画像
-      MoInputTextArea(
-        name="text"
-        :value="editData.text"
-        :nameSpace="nameSpace"
-        :actionType="actionType"
-      ) 内容
-    at-submit(
-      @click-button="clickButton"
-    ) 追加
+    ValidationObserver(
+      ref="observer"
+      v-slot="{ invalid }"
+      tag="form"
+      @submit.prevent="submit()"
+    )
+      table.orAddEdit-table
+        MoLabelID(
+          v-if="editData.id"
+          :numberID="editData.id"
+        )
+        MoInputText(
+          name="title"
+          :value="editData.title"
+          :nameSpace="nameSpace"
+          :actionType="actionType"
+          :vValidate="vValidate.required"
+        ) スキル名
+        MoInputFile(
+          name="image"
+          :src="editData.image.path"
+          :nameSpace="nameSpace"
+          :actionType="actionType"
+        ) 画像
+        MoInputTextArea(
+          name="text"
+          :value="editData.text"
+          :nameSpace="nameSpace"
+          :actionType="actionType"
+          :vValidate="vValidate.required"
+        ) 内容
+      at-submit {{ buttonText }}
 </template>
 
 <script>
 import { mapActions } from 'vuex';
-import { AC_SAVE_DATA } from '@/store/work/actions/saveData';
-import AtLabel from '@/components/atoms/form/AtLabel';
+import { ValidationObserver } from 'vee-validate';
+import { AC_SAVE_DATA } from '@/store/skill/actions/saveData';
 import AtSubmit from '@/components/atoms/form/AtSubmit';
 import MoInputFile from '@/components/molecules/form/MoInputFile';
 import MoInputText from '@/components/molecules/form/MoInputText';
@@ -40,7 +46,7 @@ import MoLabelID from '@/components/molecules/form/MoLabelID';
 
 export default {
   components: {
-    AtLabel,
+    ValidationObserver,
     AtSubmit,
     MoInputFile,
     MoInputText,
@@ -61,11 +67,28 @@ export default {
       default: () => {},
     },
   },
+  computed: {
+    vValidate() {
+      return {
+        required: {
+          required: true,
+        },
+      };
+    },
+    buttonText() {
+      return this.editData.id ? '編集' : '追加';
+    },
+  },
   methods: {
     ...mapActions('skill', [AC_SAVE_DATA]),
-    clickButton() {
+    async submit() {
+      const isValid = await this.$refs.observer.validate();
+      if (!isValid) {
+        return false;
+      }
       this[AC_SAVE_DATA]();
       this.$router.push({ name: 'root' });
+      return false;
     },
   },
 };

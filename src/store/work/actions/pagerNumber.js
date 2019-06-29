@@ -1,4 +1,4 @@
-import { MU_PAGER_NUMBER } from '../mutations/pagerNumber';
+import { MU_PAGER_NUMBER } from '@/store/work/mutations/pagerNumber';
 
 export const AC_PAGER_NUMBER = 'AC_PAGER_NUMBER';
 

@@ -1,4 +1,4 @@
-import { MU_UPDATE_INPUT_OF_EDIT } from '@/store/work/mutations/updateInputOfEdit';
+import { MU_UPDATE_INPUT_OF_EDIT } from '@/store/skill/mutations/updateInputOfEdit';
 
 export const AC_UPDATE_INPUT_OF_EDIT = 'AC_UPDATE_INPUT_OF_EDIT';
 

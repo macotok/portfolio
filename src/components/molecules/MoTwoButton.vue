@@ -2,15 +2,13 @@
   div.moTwoButton(
     :style="styles"
   )
-    at-button(
-      :hasEvent="hasEvent"
+    at-event-button(
       :className="classNameLeft"
       :dataID="dataID"
       @click-button="clickButtonLeft"
     )
       slot(name="first")
-    at-button(
-      :hasEvent="hasEvent"
+    at-event-button(
       :className="classNameRight"
       :dataID="dataID"
       @click-button="clickButtonRight"
@@ -19,11 +17,11 @@
 </template>
 
 <script>
-import AtButton from '@/components/atoms/button/AtButton';
+import AtEventButton from '@/components/atoms/button/AtEventButton';
 
 export default {
   components: {
-    AtButton,
+    AtEventButton,
   },
   props: {
     hasEvent: {

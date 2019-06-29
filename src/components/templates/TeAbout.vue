@@ -15,7 +15,7 @@
         | このサイトはGitHubで管理しています。
         br
         | そのリポジトリはこちらになります。
-      at-button(
+      at-href-button(
         href="https://github.com/macotok/portfolio"
         target="_blank"
       ) To GitHub
@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import AtButton from '@/components/atoms/button/AtButton';
+import AtHrefButton from '@/components/atoms/button/AtHrefButton';
 import AtDlDtDd from '@/components/atoms/list/AtDlDtDd';
 import AtTitleH2 from '@/components/atoms/text/AtTitleH2';
 import AtText from '@/components/atoms/text/AtText';
@@ -34,8 +34,8 @@ import { TITLE, LIST } from '@/defines/about';
 
 export default {
   components: {
-    AtButton,
     AtDlDtDd,
+    AtHrefButton,
     AtTitleH2,
     AtText,
     OrFooter,

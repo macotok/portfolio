@@ -12,7 +12,7 @@
         :styles="styles.moTextList"
       )
       at-text {{ data.text }}
-      at-button(
+      at-href-button(
         :styles="styles.atButton"
         :href="data.url"
       ) To Page
@@ -36,7 +36,7 @@
 import { mapActions } from 'vuex';
 import { AC_DELETE_DATA } from '@/store/work/actions/deleteData';
 import { PERMIT_DELETE_WORK } from '@/defines';
-import AtButton from '@/components/atoms/button/AtButton';
+import AtHrefButton from '@/components/atoms/button/AtHrefButton';
 import AtImage from '@/components/atoms/image/AtImage';
 import AtText from '@/components/atoms/text/AtText';
 import MoTextList from '@/components/molecules/MoTextList';
@@ -45,7 +45,7 @@ import MoConfirmModal from '@/components/molecules/MoConfirmModal';
 
 export default {
   components: {
-    AtButton,
+    AtHrefButton,
     AtImage,
     AtText,
     MoTextList,

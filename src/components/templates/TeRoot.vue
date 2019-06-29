@@ -10,17 +10,15 @@
         :listStart="workListStart"
         :length="workLength"
       )
-      at-button(
+      at-router-button(
         linkTo="work"
-        routerLink
       ) More
       at-title-h2 Skill
       mo-text-list(
         :list="skillTitle"
       )
-      at-button(
+      at-router-button(
         linkTo="skill"
-        routerLink
       ) More
       at-title-h2 Profile
       at-text(
@@ -29,9 +27,8 @@
         | GitHub/Qiitaアカウントのリンク先、
         br
         | 今までしてきたこと、これからしたいことを記載しました。
-      at-button(
+      at-router-button(
         linkTo="profile"
-        routerLink
       ) More
       at-title-h2 About this Portfolio
       at-text(
@@ -40,25 +37,22 @@
         | このPortfolioはVue/Firebaseで開発、
         br
         | その開発項目について記載しました。
-      at-button(
+      at-router-button(
         linkTo="about"
-        routerLink
       ) More
       at-title-h2 Add work
-      at-button(
+      at-router-button(
         linkTo="workAdd"
-        routerLink
       ) Add
       at-title-h2 Add skill
-      at-button(
+      at-router-button(
         linkTo="skillAdd"
-        routerLink
       ) Add
     or-footer
 </template>
 
 <script>
-import AtButton from '@/components/atoms/button/AtButton';
+import AtRouterButton from '@/components/atoms/button/AtRouterButton';
 import AtText from '@/components/atoms/text/AtText';
 import AtTitleH2 from '@/components/atoms/text/AtTitleH2';
 import AtUlLi from '@/components/atoms/list/AtUlLi';
@@ -71,10 +65,10 @@ import OrHeaderNav from '@/components/organisms/OrHeaderNav';
 
 export default {
   components: {
-    AtButton,
     AtText,
     AtTitleH2,
     AtUlLi,
+    AtRouterButton,
     MoImageList,
     MoTextList,
     OrFooter,

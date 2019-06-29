@@ -5,7 +5,7 @@
     div.l-container
       at-title-h2 Admin
       at-text 管理者用アカウントのみログインできます。
-      at-button(
+      at-href-button(
         :styles="styles.AtButton"
         href="https://github.com/macotok/portfolio"
       ) ログインする
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import AtButton from '@/components/atoms/button/AtButton';
+import AtHrefButton from '@/components/atoms/button/AtHrefButton';
 import AtTitleH2 from '@/components/atoms/text/AtTitleH2';
 import AtText from '@/components/atoms/text/AtText';
 import OrFooter from '@/components/organisms/OrFooter';
@@ -22,7 +22,7 @@ import OrHeaderNav from '@/components/organisms/OrHeaderNav';
 
 export default {
   components: {
-    AtButton,
+    AtHrefButton,
     AtTitleH2,
     AtText,
     OrFooter,

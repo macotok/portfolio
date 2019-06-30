@@ -4,3 +4,5 @@ export const LIST_START = 0;
 export const WORKS_START_NUMBER = 1;
 export const PERMIT_DELETE_WORK = 'permit_delete_work';
 export const PERMIT_DELETE_SKILL = 'permit_delete_skill';
+export const FIREBASE_WORK = 'work2';
+export const FIREBASE_SKILL = 'skill2';

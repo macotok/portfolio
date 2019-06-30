@@ -1,8 +1,9 @@
 import { firestore } from '@/server/firebase';
+import { FIREBASE_SKILL } from '@/defines';
 
 const skill = () => {
   const skillData = [];
-  firestore.collection('skill').get().then((querySnapshot) => {
+  firestore.collection(FIREBASE_SKILL).get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       skillData.push(doc.data());
     });

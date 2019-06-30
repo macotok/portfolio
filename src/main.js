@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Vuex from 'vuex';
 import VModal from 'vue-js-modal';
+import dotenv from 'dotenv';
 import VeeValidate, { Validator } from 'vee-validate';
 import dictionary from './validate/disctionary';
 import App from './App';
@@ -13,6 +14,7 @@ Vue.use(Vuex);
 Vue.use(VModal);
 Vue.use(VeeValidate);
 
+dotenv.config();
 const router = new VueRouter(routes);
 const store = new Vuex.Store(_store);
 Validator.localize('ja', dictionary);

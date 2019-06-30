@@ -106,6 +106,9 @@ module.exports = {
       '@': path.resolve(__dirname, 'src'),
     },
   },
+  node: {
+    fs: 'empty', // Uncaught Error: Cannot find module 'fs'対応
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({

@@ -14,7 +14,8 @@
 
 <script>
 import firebase from 'firebase';
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
+import { AC_LOGIN_ADMIN } from '@/store/admin/actions/loginAdmin';
 import AtEventButton from '@/components/atoms/button/AtEventButton';
 import AtTitleH2 from '@/components/atoms/text/AtTitleH2';
 import AtText from '@/components/atoms/text/AtText';
@@ -45,11 +46,12 @@ export default {
     },
   },
   methods: {
+    ...mapActions('admin', [AC_LOGIN_ADMIN]),
     login() {
       const provider = new firebase.auth.GoogleAuthProvider();
       firebase.auth().signInWithPopup(provider).then((result) => {
-        if (result.user.uid === process.env.FIRE_BASE.UID) {
-          this.admin({ isAdmin: true });
+        if (result.user.uid === process.env.UID) {
+          this[AC_LOGIN_ADMIN](true);
           this.$router.push({ name: 'root' });
         }
       }).catch(() => {

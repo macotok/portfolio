@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import MoNavList from '@/components/molecules/list/MoNavList';
 import NAV_LIST from '@/defines/navList';
 
@@ -14,7 +15,12 @@ export default {
     MoNavList,
   },
   computed: {
-    navList: () => NAV_LIST,
+    ...mapState('admin', {
+      isLoginAdmin: state => state.isLoginAdmin,
+    }),
+    navList() {
+      return this.isLoginAdmin ? NAV_LIST : NAV_LIST.filter(nav => (nav.name !== 'Admin'));
+    },
   },
 };
 </script>

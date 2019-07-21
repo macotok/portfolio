@@ -5,15 +5,16 @@
     div.l-container
       at-title-h2 Admin
       at-text 管理者用アカウントのみログインできます。
-      at-href-button(
+      at-event-button(
         :styles="styles.AtButton"
-        href="https://github.com/macotok/portfolio"
+        @click-button="login"
       ) ログインする
     or-footer
 </template>
 
 <script>
-import AtHrefButton from '@/components/atoms/button/AtHrefButton';
+import firebase from 'firebase';
+import AtEventButton from '@/components/atoms/button/AtEventButton';
 import AtTitleH2 from '@/components/atoms/text/AtTitleH2';
 import AtText from '@/components/atoms/text/AtText';
 import OrFooter from '@/components/organisms/OrFooter';
@@ -22,7 +23,7 @@ import OrHeaderNav from '@/components/organisms/OrHeaderNav';
 
 export default {
   components: {
-    AtHrefButton,
+    AtEventButton,
     AtTitleH2,
     AtText,
     OrFooter,
@@ -40,6 +41,18 @@ export default {
           },
         },
       };
+    },
+  },
+  methods: {
+    login() {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      firebase.auth().signInWithPopup(provider).then((result) => {
+        if (result.user.uid === process.env.FIRE_BASE.UID) {
+          this.admin({ isAdmin: true });
+          this.$router.push({ name: 'root' });
+        }
+      }).catch(() => {
+      });
     },
   },
 };

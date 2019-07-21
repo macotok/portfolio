@@ -4,6 +4,7 @@
     :workLength="workLength"
     :workListStart="workListStart"
     :skillList="skillList"
+    :isLoginAdmin="isLoginAdmin"
   )
 </template>
 
@@ -23,6 +24,9 @@ export default {
     }),
     ...mapState('skill', {
       skillList: state => sortUpdatedAt(state.db),
+    }),
+    ...mapState('admin', {
+      isLoginAdmin: state => state.isLoginAdmin,
     }),
     workLength: () => WORK_LIST_TOP_LENGTH,
     workListStart: () => LIST_START,

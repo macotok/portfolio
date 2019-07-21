@@ -40,14 +40,17 @@
       at-router-button(
         linkTo="about"
       ) More
-      at-title-h2 Add work
-      at-router-button(
-        linkTo="workAdd"
-      ) Add
-      at-title-h2 Add skill
-      at-router-button(
-        linkTo="skillAdd"
-      ) Add
+      template(
+        v-if="isLoginAdmin"
+      )
+        at-title-h2 Add work
+        at-router-button(
+          linkTo="workAdd"
+        ) Add
+        at-title-h2 Add skill
+        at-router-button(
+          linkTo="skillAdd"
+        ) Add
     or-footer
 </template>
 
@@ -90,6 +93,10 @@ export default {
     skillList: {
       type: Array,
       default: () => [],
+    },
+    isLoginAdmin: {
+      type: Boolean,
+      required: true,
     },
   },
   computed: {

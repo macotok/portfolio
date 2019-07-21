@@ -6,9 +6,15 @@
       at-title-h2 Admin
       at-text 管理者用アカウントのみログインできます。
       at-event-button(
+        v-if="!isLoginAdmin"
         :styles="styles.AtButton"
         @click-button="login"
       ) ログインする
+      at-event-button(
+        v-if="isLoginAdmin"
+        :styles="styles.AtButton"
+        @click-button="logout"
+      ) ログアウトする
     or-footer
 </template>
 
@@ -33,6 +39,9 @@ export default {
     OrHeaderNav,
   },
   computed: {
+    ...mapState('admin', {
+      isLoginAdmin: state => state.isLoginAdmin,
+    }),
     styles() {
       return {
         AtButton: {
@@ -54,6 +63,13 @@ export default {
           this[AC_LOGIN_ADMIN](true);
           this.$router.push({ name: 'root' });
         }
+      }).catch(() => {
+      });
+    },
+    logout() {
+      firebase.auth().signOut().then(() => {
+        this[AC_LOGIN_ADMIN](false);
+        this.$router.push({ name: 'root' });
       }).catch(() => {
       });
     },

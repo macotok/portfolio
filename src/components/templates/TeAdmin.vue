@@ -4,14 +4,20 @@
     or-header-nav
     div.l-container
       at-title-h2 Admin
-      at-text 管理者用アカウントのみログインできます。
+      at-text
+        | 管理者用アカウントのみ
+        span(v-if="!isLoginAdmin") ログイン
+        span(v-if="isLoginAdmin") ログアウト
+        | できます。
       at-event-button(
         v-if="!isLoginAdmin"
+        class="atButton-login"
         :styles="styles.AtButton"
         @click-button="login"
       ) ログインする
       at-event-button(
         v-if="isLoginAdmin"
+        class="atButton-logout"
         :styles="styles.AtButton"
         @click-button="logout"
       ) ログアウトする

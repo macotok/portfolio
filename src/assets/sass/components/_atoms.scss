@@ -13,16 +13,24 @@
     font-size: .9rem;
     transition: .1s ease-in-out;
     border: 1px solid $link-color;
-    .teAdmin & {
+    .atButton-login & {
       background-color: $green-color;
       border: 1px solid $green-color;
+    }
+    .atButton-logout & {
+      background-color: $red-color;
+      border: 1px solid $red-color;
     }
     &:hover {
       background-color: $gray-color-04;
       color: $link-color;
-      .teAdmin & {
+      .atButton-login & {
         background-color: $gray-color-04;
         color: $green-color;
+      }
+      .atButton-logout & {
+        background-color: $gray-color-04;
+        color: $red-color;
       }
     }
   }

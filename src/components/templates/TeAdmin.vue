@@ -14,6 +14,7 @@
 
 <script>
 import firebase from 'firebase';
+import { mapState } from 'vuex';
 import AtEventButton from '@/components/atoms/button/AtEventButton';
 import AtTitleH2 from '@/components/atoms/text/AtTitleH2';
 import AtText from '@/components/atoms/text/AtText';

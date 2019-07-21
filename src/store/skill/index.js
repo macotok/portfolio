@@ -1,6 +1,6 @@
-import state from './state/index';
-import actions from './actions/index';
-import mutations from './mutations/index';
+import state from '@/store/skill/state/index';
+import actions from '@/store/skill/actions/index';
+import mutations from '@/store/skill/mutations/index';
 
 const skill = {
   namespaced: true,

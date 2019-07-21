@@ -1,6 +1,7 @@
 <template lang="pug">
   te-detail(
     :data="data"
+    :isLoginAdmin="isLoginAdmin"
   )
 </template>
 
@@ -19,6 +20,9 @@ export default {
           w.id === parseInt(this.$route.params.id, 10)
         ));
       },
+    }),
+    ...mapState('admin', {
+      isLoginAdmin: state => state.isLoginAdmin,
     }),
   },
 };

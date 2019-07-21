@@ -11,21 +11,27 @@
         )
       template(v-slot:data="slotProps")
         at-text {{ slotProps.data.text }}
-        mo-two-button(
-          classNameLeft="atButtonLeft"
-          classNameRight="atButtonRight"
-          :dataID="slotProps.data.id"
-          :styles="styles"
-          @click-button-left="confirmDelete"
-          @click-button-right="clickEdit"
+        template(
+          v-if="isLoginAdmin"
         )
-          template(v-slot:first) 削除
-          template(v-slot:second) 編集
-    mo-confirm-modal(
-      :modalName="PERMIT_DELETE_SKILL"
-      @click-action="actionDelete"
-      :confirmText="`「${targetDeleteTitle}」を削除しますか？`"
+          mo-two-button(
+            classNameLeft="atButtonLeft"
+            classNameRight="atButtonRight"
+            :dataID="slotProps.data.id"
+            :styles="styles"
+            @click-button-left="confirmDelete"
+            @click-button-right="clickEdit"
+          )
+            template(v-slot:first) 削除
+            template(v-slot:second) 編集
+    template(
+      v-if="isLoginAdmin"
     )
+      mo-confirm-modal(
+        :modalName="PERMIT_DELETE_SKILL"
+        @click-action="actionDelete"
+        :confirmText="`「${targetDeleteTitle}」を削除しますか？`"
+      )
 </template>
 
 <script>
@@ -49,6 +55,10 @@ export default {
   props: {
     dataList: {
       type: Array,
+      required: true,
+    },
+    isLoginAdmin: {
+      type: Boolean,
       required: true,
     },
   },

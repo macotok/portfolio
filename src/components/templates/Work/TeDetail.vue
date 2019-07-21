@@ -6,6 +6,7 @@
       at-title-h2 {{ data.title }}
       or-detail(
         :data="data"
+        :isLoginAdmin="isLoginAdmin"
       )
     or-footer
 </template>
@@ -29,6 +30,10 @@ export default {
     data: {
       type: Object,
       default: () => {},
+    },
+    isLoginAdmin: {
+      type: Boolean,
+      required: true,
     },
   },
 };

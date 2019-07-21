@@ -6,6 +6,7 @@
       at-title-h2 Skill
       or-list(
         :dataList="skillList"
+        :isLoginAdmin="isLoginAdmin"
       )
     or-footer
 </template>
@@ -28,6 +29,10 @@ export default {
   props: {
     skillList: {
       type: Array,
+      required: true,
+    },
+    isLoginAdmin: {
+      type: Boolean,
       required: true,
     },
   },

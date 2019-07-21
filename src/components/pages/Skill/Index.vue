@@ -1,6 +1,7 @@
 <template lang="pug">
   te-index(
     :skillList="skillList"
+    :isLoginAdmin="isLoginAdmin"
   )
 </template>
 
@@ -16,6 +17,9 @@ export default {
   computed: {
     ...mapState('skill', {
       skillList: state => sortUpdatedAt(state.db),
+    }),
+    ...mapState('admin', {
+      isLoginAdmin: state => state.isLoginAdmin,
     }),
   },
 };

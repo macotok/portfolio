@@ -16,20 +16,26 @@
         :styles="styles.atButton"
         :href="data.url"
       ) To Page
-      mo-two-button(
-        classNameLeft="atButtonLeft"
-        classNameRight="atButtonRight"
-        @click-button-left="confirmDelete"
-        @click-button-right="clickEdit"
-        :styles="styles.moTwoButton"
+      template(
+        v-if="isLoginAdmin"
       )
-        template(v-slot:first) 削除
-        template(v-slot:second) 編集
-    mo-confirm-modal(
-      :modalName="PERMIT_DELETE_WORK"
-      @click-action="actionDelete"
-      :confirmText="`「${targetDeleteTitle}」を削除しますか？`"
+        mo-two-button(
+          classNameLeft="atButtonLeft"
+          classNameRight="atButtonRight"
+          @click-button-left="confirmDelete"
+          @click-button-right="clickEdit"
+          :styles="styles.moTwoButton"
+        )
+          template(v-slot:first) 削除
+          template(v-slot:second) 編集
+    template(
+      v-if="isLoginAdmin"
     )
+      mo-confirm-modal(
+        :modalName="PERMIT_DELETE_WORK"
+        @click-action="actionDelete"
+        :confirmText="`「${targetDeleteTitle}」を削除しますか？`"
+      )
 </template>
 
 <script>
@@ -55,6 +61,10 @@ export default {
   props: {
     data: {
       type: Object,
+      required: true,
+    },
+    isLoginAdmin: {
+      type: Boolean,
       required: true,
     },
   },

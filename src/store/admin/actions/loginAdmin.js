@@ -1,10 +1,10 @@
-import { MU_LOGIN_ADMIN } from '@/store/admin/mutations';
+import { MU_LOGIN_ADMIN } from '@/store/admin/mutations/loginAdmin';
 
 export const AC_LOGIN_ADMIN = 'AC_LOGIN_ADMIN';
 
 const loginAdmin = {
-  [AC_LOGIN_ADMIN](context, isAdmin) {
-    console.log(isAdmin)
+  [AC_LOGIN_ADMIN](context, isLoginAdmin) {
+    context.commit(MU_LOGIN_ADMIN, isLoginAdmin);
   },
 };
 

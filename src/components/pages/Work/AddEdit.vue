@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import TeAddEdit from '@/components/templates/Work/TeAddEdit';
 import { AC_UPDATE_INPUT } from '@/store/work/actions/updateInput';
 
@@ -16,10 +17,18 @@ export default {
     TeAddEdit,
   },
   computed: {
+    ...mapState('admin', {
+      isLoginAdmin: state => state.isLoginAdmin,
+    }),
     AC_UPDATE_INPUT: () => AC_UPDATE_INPUT,
     isEditPage() {
       return this.$route.params.id;
     },
+  },
+  created() {
+    if (!this.isLoginAdmin) {
+      this.$router.push({ name: 'root' });
+    }
   },
 };
 </script>

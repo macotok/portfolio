@@ -14,3 +14,15 @@ $transition:  .1s ease-in-out;
 $buttonPadding: 10px 25px;
 $block-margin: 2rem;
 $block-padding: 1rem;
+$breakpoint-up: (
+  'sm': 'screen and (min-width: 480px)',
+  'md': 'screen and (min-width: 768px)',
+  'lg': 'screen and (min-width: 1000px)',
+  'xl': 'screen and (min-width: 1200px)',
+) !default;
+$breakpoint-down: (
+  'sm': 'screen and (max-width: 479px)',
+  'md': 'screen and (max-width: 768px)',
+  'lg': 'screen and (max-width: 1000px)',
+  'xl': 'screen and (max-width: 1200px)',
+) !default;

@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 import { ValidationObserver } from 'vee-validate';
 import { AC_SAVE_DATA } from '@/store/skill/actions/saveData';
 import AtSubmit from '@/components/atoms/form/AtSubmit';
@@ -68,6 +68,9 @@ export default {
     },
   },
   computed: {
+    ...mapState('admin', {
+      isLoginAdmin: state => state.isLoginAdmin,
+    }),
     vValidate() {
       return {
         required: {
@@ -85,6 +88,9 @@ export default {
       const isValid = await this.$refs.observer.validate();
       if (!isValid) {
         return false;
+      }
+      if (!this.isLoginAdmin) {
+        this.$router.push({ name: 'root' });
       }
       this[AC_SAVE_DATA]();
       this.$router.push({ name: 'root' });

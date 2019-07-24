@@ -6,3 +6,4 @@ export const PERMIT_DELETE_WORK = 'permit_delete_work';
 export const PERMIT_DELETE_SKILL = 'permit_delete_skill';
 export const FIREBASE_WORK = 'work2';
 export const FIREBASE_SKILL = 'skill2';
+export const POST_ERROR_MESSAGE = '管理者でないと投稿できません';

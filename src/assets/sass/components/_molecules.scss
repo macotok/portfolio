@@ -99,3 +99,10 @@
   display: flex;
   align-items: center;
 }
+
+.moMessageBoard {
+  background-color: $red-color;
+  border: 1px solid $gray-color-02;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+}

@@ -1,5 +1,9 @@
 <template lang="pug">
   div.orAddEdit
+    mo-message-board(
+      v-if="!isLoginAdmin"
+      :styles="styles"
+    ) {{ POST_ERROR_MESSAGE }}
     ValidationObserver(
       ref="observer"
       v-slot="{ invalid }"
@@ -37,12 +41,14 @@
 <script>
 import { mapState, mapActions } from 'vuex';
 import { ValidationObserver } from 'vee-validate';
+import { POST_ERROR_MESSAGE } from '@/defines';
 import { AC_SAVE_DATA } from '@/store/skill/actions/saveData';
 import AtSubmit from '@/components/atoms/form/AtSubmit';
 import MoInputFile from '@/components/molecules/form/MoInputFile';
 import MoInputText from '@/components/molecules/form/MoInputText';
 import MoInputTextArea from '@/components/molecules/form/MoInputTextArea';
 import MoLabelID from '@/components/molecules/form/MoLabelID';
+import MoMessageBoard from '@/components/molecules/text/MoMessageBoard';
 
 export default {
   components: {
@@ -52,6 +58,7 @@ export default {
     MoInputText,
     MoInputTextArea,
     MoLabelID,
+    MoMessageBoard,
   },
   props: {
     nameSpace: {
@@ -81,12 +88,27 @@ export default {
     buttonText() {
       return this.editData.id ? '編集' : '追加';
     },
+    POST_ERROR_MESSAGE: () => POST_ERROR_MESSAGE,
+    styles() {
+      return {
+        textColor: {
+          color: '#fff',
+        },
+      };
+    },
   },
   methods: {
     ...mapActions('skill', [AC_SAVE_DATA]),
     async submit() {
       const isValid = await this.$refs.observer.validate();
       if (!isValid) {
+        return false;
+      }
+      if (!this.isLoginAdmin) {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
         return false;
       }
       if (!this.isLoginAdmin) {

@@ -1,5 +1,6 @@
 <template lang="pug">
   img(
+    :class="className"
     :style="styles"
     :src="src"
     :alt="alt"
@@ -11,6 +12,10 @@
 <script>
 export default {
   props: {
+    className: {
+      type: String,
+      default: null,
+    },
     src: {
       type: String,
       required: true,

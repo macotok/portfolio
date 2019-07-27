@@ -5,9 +5,9 @@ Error: File to import not found or unreadable: ~yui/cssreset/cssreset-min.
 1: @import "variable";
 2: @import "~yui/cssreset/cssreset-min";
 3: @import "base";
-4: @import "layout";
-5: @import "function";
-6: @import "mixin";
+4: @import "function";
+5: @import "mixin";
+6: @import "layout";
 7: @import "module";
 
 Backtrace:
@@ -54,4 +54,4 @@ style.scss:2
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: ~yui/cssreset/cssreset-min.\A         on line 2 of style.scss\A \A 1: @import \"variable\";\A 2: @import \"~yui/cssreset/cssreset-min\";\A 3: @import \"base\";\A 4: @import \"layout\";\A 5: @import \"function\";\A 6: @import \"mixin\";\A 7: @import \"module\";"; }
+  content: "Error: File to import not found or unreadable: ~yui/cssreset/cssreset-min.\A         on line 2 of style.scss\A \A 1: @import \"variable\";\A 2: @import \"~yui/cssreset/cssreset-min\";\A 3: @import \"base\";\A 4: @import \"function\";\A 5: @import \"mixin\";\A 6: @import \"layout\";\A 7: @import \"module\";"; }

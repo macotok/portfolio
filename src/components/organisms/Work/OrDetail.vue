@@ -1,6 +1,7 @@
 <template lang="pug">
   div.WorkOrDetail
     at-image(
+      className="WorkOrDetail-img"
       :src="data.image.path"
       :alt="data.title"
       width="300"

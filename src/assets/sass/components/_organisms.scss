@@ -23,10 +23,24 @@
 
 .WorkOrDetail {
   display: flex;
+  @include mq-down(md) {
+    display: block;
+  }
+  &-img {
+    @include mq-down(md) {
+      display: block;
+      margin: 0 auto 5%;
+      width: 100%;
+      max-width: 500px;
+    }
+  }
   &-inner {
     padding-left: 2rem;
     width: 100%;
     box-sizing: border-box;
+    @include mq-down(md) {
+      padding-left: 0;
+    }
   }
 }
 

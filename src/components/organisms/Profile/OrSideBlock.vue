@@ -1,6 +1,7 @@
 <template lang="pug">
-  div
+  div.ProfileOrSideBlock
     at-image(
+      class="ProfileOrSideBlock-img"
       src="/images/profile.jpg"
       alt="@macotok"
       width="200"
@@ -20,7 +21,7 @@
             alt="github"
             width="20"
           )
-      li
+      li.ProfileOrSideBlock-item
         at-link(
           href="https://qiita.com/macotok"
           target="_blank"

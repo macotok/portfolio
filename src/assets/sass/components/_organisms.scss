@@ -13,11 +13,30 @@
 }
 
 .ProfileOrSideBlock {
+  @include mq-down(md) {
+    text-align: center;
+    margin-bottom: 5%;
+  }
+  &-img {
+    @include mq-down(md) {
+      display: block;
+      margin: 0 auto;
+    }
+  }
   &-list {
     display: flex;
+    @include mq-down(md) {
+      display: block;
+    }
   }
   &-item {
     margin-right: .5rem;
+    @include mq-down(md) {
+      display: inline-block;
+      &:last-child {
+        padding-right: 0;
+      }
+    }
   }
 }
 

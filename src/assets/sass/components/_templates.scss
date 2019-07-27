@@ -1,6 +1,12 @@
 .teProfile {
   display: flex;
+  @include mq-down(md) {
+    display: block;
+  }
   &-list {
     margin-left: 5rem;
+    @include mq-down(md) {
+      margin-left: 0;
+    }
   }
 }

@@ -10,6 +10,12 @@
   padding: 20px 0;
   background-color: $gray-color-04;
   position: relative;
+  &-icon {
+    position: absolute;
+    top: 29px;
+    right: .5rem;
+    z-index: 1;
+  }
 }
 
 .ProfileOrSideBlock {

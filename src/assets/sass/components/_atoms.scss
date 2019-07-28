@@ -201,3 +201,22 @@
     font-size: 1.4rem;
   }
 }
+
+.atHamburgerMenu {
+  position: relative;
+  height: 30px;
+  width: 42px;
+  &-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 30px;
+    background-color: $key-color;
+    border-radius: $border-radius;
+    &:nth-of-type(2) {
+      width: 20px;
+      top: 10px;
+    }
+  }
+}

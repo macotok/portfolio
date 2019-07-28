@@ -6,7 +6,7 @@
       :height="height"
     )
       div.moDrawerMenu-inner
-        p もだ
+        slot
 </template>
 
 <script>

@@ -126,3 +126,16 @@
   padding: 1rem 2rem;
   margin-bottom: 1rem;
 }
+
+.moDrawerMenu {
+  position: relative;
+}
+
+.moDrawerList {
+  text-align: center;
+  padding: 6rem 0;
+  &-item {
+    padding: 1rem 0;
+    font-size: 1.4rem;
+  }
+}

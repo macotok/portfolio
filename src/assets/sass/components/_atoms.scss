@@ -136,11 +136,21 @@
 .atTable {
   border-left: 1px solid $gray-color-04;
   border-top: 1px solid $gray-color-04;
+  @include mq-down() {
+    width: 100%;
+  }
   &-header {
     border-bottom: 1px solid $gray-color-04;
     vertical-align: middle;
     text-align: center;
     padding: .5rem;
+    @include mq-down() {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 1rem 1rem .5rem;
+      border-bottom: none;
+    }
   }
   &-data {
     border-right: 1px solid $gray-color-04;
@@ -150,6 +160,12 @@
     padding: .5rem;
     width: 100%;
     box-sizing: border-box;
+    @include mq-down() {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 1.5rem 1rem;
+    }
   }
 }
 
@@ -164,6 +180,9 @@
 .atTitleH2 {
   position: relative;
   margin-bottom: 1rem;
+  @include mq-down() {
+    margin: 1rem 0;
+  }
   &::before {
     content: '';
     width: 3%;

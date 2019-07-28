@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import TeProfile from '@/components/templates/TeProfile';
+const TeProfile = () => import('@/components/templates/TeProfile');
 
 export default {
   components: {

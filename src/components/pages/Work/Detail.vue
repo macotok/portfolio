@@ -7,7 +7,8 @@
 
 <script>
 import { mapState } from 'vuex';
-import TeDetail from '@/components/templates/Work/TeDetail.vue';
+
+const TeDetail = () => import('@/components/templates/Work/TeDetail.vue');
 
 export default {
   components: {

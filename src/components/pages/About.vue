@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import TeAbout from '@/components/templates/TeAbout';
+const TeAbout = () => import('@/components/templates/TeAbout');
 
 export default {
   components: {

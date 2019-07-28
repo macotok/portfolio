@@ -10,9 +10,10 @@
 
 <script>
 import { mapState } from 'vuex';
-import TeRoot from '@/components/templates/TeRoot';
 import { WORK_LIST_TOP_LENGTH, LIST_START } from '@/defines';
 import sortUpdatedAt from '@/utils/sortUpdatedAt';
+
+const TeRoot = () => import('@/components/templates/TeRoot');
 
 export default {
   components: {

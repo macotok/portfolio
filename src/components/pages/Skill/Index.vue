@@ -7,12 +7,13 @@
 
 <script>
 import { mapState } from 'vuex';
-import teIndex from '@/components/templates/Skill/TeIndex';
 import sortUpdatedAt from '@/utils/sortUpdatedAt';
+
+const TeIndex = () => import('@/components/templates/Skill/TeIndex');
 
 export default {
   components: {
-    teIndex,
+    TeIndex,
   },
   computed: {
     ...mapState('skill', {

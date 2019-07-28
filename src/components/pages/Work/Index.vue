@@ -8,9 +8,10 @@
 
 <script>
 import { mapState } from 'vuex';
-import teIndex from '@/components/templates/Work/TeIndex';
 import { WORK_LIST_LENGTH, LIST_START } from '@/defines';
 import sortUpdatedAt from '@/utils/sortUpdatedAt';
+
+const teIndex = () => import('@/components/templates/Work/TeIndex');
 
 export default {
   components: {

@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import TeAdmin from '@/components/templates/TeAdmin';
+const TeAdmin = () => import('@/components/templates/TeAdmin');
 
 export default {
   components: {

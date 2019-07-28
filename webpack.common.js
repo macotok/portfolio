@@ -1,4 +1,5 @@
 const AutoPrefixer = require('autoprefixer');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const DotEnv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -109,6 +110,11 @@ module.exports = {
   node: {
     fs: 'empty', // Uncaught Error: Cannot find module 'fs'対応
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
@@ -132,5 +138,6 @@ module.exports = {
     new DotEnv({
       path: `${__dirname}/.env`,
     }),
+    new BundleAnalyzerPlugin(),
   ],
 };

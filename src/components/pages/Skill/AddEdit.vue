@@ -9,8 +9,9 @@
 
 <script>
 import { mapState } from 'vuex';
-import TeAddEdit from '@/components/templates/Skill/TeAddEdit';
 import { AC_UPDATE_INPUT } from '@/store/skill/actions/updateInput';
+
+const TeAddEdit = () => import('@/components/templates/Skill/TeAddEdit');
 
 export default {
   components: {

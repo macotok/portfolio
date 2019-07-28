@@ -5,8 +5,7 @@
       :width="width"
       :height="height"
     )
-      div.moDrawerMenu-inner
-        slot
+      slot
 </template>
 
 <script>

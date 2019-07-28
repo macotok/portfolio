@@ -129,6 +129,11 @@
 
 .moDrawerMenu {
   position: relative;
+  &-icon {
+    position: absolute;
+    top: 22px;
+    right: 1.5rem;
+  }
 }
 
 .moDrawerList {

@@ -14,9 +14,10 @@
         :navList="navList"
         @click-item="clickItem"
       )
-      div.close(@click="closeModal(currentRouteName)")
-        div.close-box
-          span.close-icon
+      div.moDrawerMenu-icon
+        at-close-button(
+          @click-button="clickCloseButton"
+        )
 </template>
 
 <script>
@@ -25,6 +26,7 @@ import { DRAWER_MENU } from '@/defines';
 import NAV_LIST from '@/defines/navList';
 import AtTitleH1 from '@/components/atoms/text/AtTitleH1';
 import AtHamburgerMenu from '@/components/atoms/button/AtHamburgerMenu';
+import AtCloseButton from '@/components/atoms/button/AtCloseButton';
 import MoDrawerMenu from '@/components/molecules/modal/MoDrawerMenu';
 import MoDrawerList from '@/components/molecules/list/MoDrawerList';
 
@@ -32,6 +34,7 @@ export default {
   components: {
     AtTitleH1,
     AtHamburgerMenu,
+    AtCloseButton,
     MoDrawerMenu,
     MoDrawerList,
   },
@@ -51,6 +54,10 @@ export default {
     clickItem(e) {
       this.$modal.hide(DRAWER_MENU);
       this.$router.push({ name: e.target.dataset.route });
+    },
+    clickCloseButton() {
+      this.$modal.hide(DRAWER_MENU);
+      this.$router.push({ name: this.$route.name });
     },
   },
 };

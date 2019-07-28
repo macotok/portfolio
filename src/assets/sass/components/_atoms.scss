@@ -220,3 +220,28 @@
     }
   }
 }
+
+.atCloseButton {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  &-icon::before,
+  &-icon::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 95%;
+    height: 5%;
+    margin: -8% 0 0 -42%;
+    background: $gray-color-01;
+  }
+  &-icon::before {
+    transform: rotate(-45deg);
+  }
+  &-icon::after {
+    transform: rotate(45deg);
+  }
+}

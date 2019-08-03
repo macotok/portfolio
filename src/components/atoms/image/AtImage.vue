@@ -18,7 +18,7 @@ export default {
     },
     src: {
       type: String,
-      required: true,
+      default: '',
     },
     alt: {
       type: String,

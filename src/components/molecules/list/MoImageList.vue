@@ -8,7 +8,7 @@
         :to="`/${pageType}/${data.id}`"
       )
         at-image(
-          :src="data.image.path"
+          :src="data.image ? data.image.path : ''"
           :alt="data.title"
           :style="styles.atImage"
           :width="200"

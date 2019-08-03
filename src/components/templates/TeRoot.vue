@@ -4,22 +4,28 @@
     or-header-nav
     div.l-container
       at-title-h2 Work
-      mo-image-list(
-        pageType="work"
-        :list="workList"
-        :listStart="workListStart"
-        :length="workLength"
+      template(
+        v-if="workList.length"
       )
-      at-router-button(
-        linkTo="work"
-      ) More
+        mo-image-list(
+          pageType="work"
+          :list="workList"
+          :listStart="workListStart"
+          :length="workLength"
+        )
+        at-router-button(
+          linkTo="work"
+        ) More
       at-title-h2 Skill
-      mo-text-list(
-        :list="skillTitle"
+      template(
+        v-if="skillList.length"
       )
-      at-router-button(
-        linkTo="skill"
-      ) More
+        mo-text-list(
+          :list="skillTitle"
+        )
+        at-router-button(
+          linkTo="skill"
+        ) More
       at-title-h2 Profile
       at-text(
         :styles="styles.atText"
@@ -102,10 +108,13 @@ export default {
   computed: {
     skillTitle() {
       const titleList = [];
-      this.skillList.forEach((skill) => {
-        titleList.push(skill.title);
-      });
-      return titleList;
+      if (this.skillList.length) {
+        this.skillList.forEach((skill) => {
+          titleList.push(skill.title);
+        });
+        return titleList;
+      }
+      return null;
     },
     styles() {
       return {

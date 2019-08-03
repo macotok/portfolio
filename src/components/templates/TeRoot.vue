@@ -16,6 +16,10 @@
         at-router-button(
           linkTo="work"
         ) More
+      at-text(
+        v-else
+        :styles="styles.atText"
+      ) {{ NOT_POST_MESSAGE }}
       at-title-h2 Skill
       template(
         v-if="skillList.length"
@@ -26,6 +30,10 @@
         at-router-button(
           linkTo="skill"
         ) More
+      at-text(
+        v-else
+        :styles="styles.atText"
+      ) {{ NOT_POST_MESSAGE }}
       at-title-h2 Profile
       at-text(
         :styles="styles.atText"
@@ -61,6 +69,7 @@
 </template>
 
 <script>
+import { NOT_POST_MESSAGE } from '@/defines';
 import AtRouterButton from '@/components/atoms/button/AtRouterButton';
 import AtText from '@/components/atoms/text/AtText';
 import AtTitleH2 from '@/components/atoms/text/AtTitleH2';
@@ -119,10 +128,11 @@ export default {
     styles() {
       return {
         atText: {
-          marginBottom: '1rem',
+          marginBottom: '2rem',
         },
       };
     },
+    NOT_POST_MESSAGE: () => NOT_POST_MESSAGE,
   },
 };
 </script>

@@ -8,3 +8,4 @@ export const DRAWER_MENU = 'drawer_menu';
 export const FIREBASE_WORK = 'work2';
 export const FIREBASE_SKILL = 'skill2';
 export const POST_ERROR_MESSAGE = '管理者でないと投稿できません';
+export const NOT_POST_MESSAGE = 'まだ投稿がありません';

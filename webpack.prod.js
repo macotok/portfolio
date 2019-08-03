@@ -1,3 +1,4 @@
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const merge = require('webpack-merge');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -24,5 +25,6 @@ module.exports = merge(common, {
         to: path.resolve(__dirname, 'public/media'),
       },
     ]),
+    new BundleAnalyzerPlugin(),
   ],
 });

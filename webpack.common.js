@@ -1,5 +1,4 @@
 const AutoPrefixer = require('autoprefixer');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const DotEnv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -138,6 +137,5 @@ module.exports = {
     new DotEnv({
       path: `${__dirname}/.env`,
     }),
-    new BundleAnalyzerPlugin(),
   ],
 };

@@ -1,6 +1,7 @@
 import moment from 'moment';
 import { FIREBASE_WORK } from '@/defines';
 import postServer from '@/server/POST';
+import putServer from '@/server/PUT';
 import { MU_SAVE_DATA } from '@/store/work/mutations/saveData';
 
 export const AC_SAVE_DATA = 'AC_SAVE_DATA';
@@ -19,6 +20,9 @@ const saveData = {
         updatedAt: moment().format(),
       };
       stateDB.splice(editIdOfArray, 1, updateData);
+      if (process.env.SWITCH_DATABASE === 'production') {
+        putServer(stateDB[editIdOfArray], updateData, FIREBASE_WORK);
+      }
     // 新規画面でstateのDBを追加
     } else {
       const newID = stateDB.reduce((id, data) => (id < data.id ? data.id : id), 0) + 1;

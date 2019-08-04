@@ -1,9 +1,8 @@
-import { FIREBASE_WORK } from '@/defines';
 import { firestore, storage } from '@/server/firebase';
 
-function postServer(payload) {
+function postServer(payload, targetCollection) {
   const storageRef = storage.ref();
-  const imagesRef = storageRef.child(`images/${FIREBASE_WORK}/${payload.id}_${payload.image.name}`);
+  const imagesRef = storageRef.child(`images/${targetCollection}/${payload.id}_${payload.image.name}`);
   imagesRef.putString(payload.image.path, 'data_url')
     .then((snapshot) => {
       const starsRef = storageRef.child(snapshot.metadata.fullPath);
@@ -16,7 +15,7 @@ function postServer(payload) {
             },
           };
           const concatData = Object.assign({}, { ...payload }, { ...updateImage });
-          firestore.collection(FIREBASE_WORK).doc((concatData.id).toString(10)).set(concatData);
+          firestore.collection(targetCollection).doc((concatData.id).toString(10)).set(concatData);
         });
     });
 }

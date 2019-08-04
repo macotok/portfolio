@@ -1,6 +1,7 @@
 import moment from 'moment';
+import { FIREBASE_WORK } from '@/defines';
+import postServer from '@/server/POST';
 import { MU_SAVE_DATA } from '@/store/work/mutations/saveData';
-import postServer from '@/server/POST/work';
 
 export const AC_SAVE_DATA = 'AC_SAVE_DATA';
 
@@ -29,7 +30,7 @@ const saveData = {
       const payload = Object.assign({}, { ...context.state.update }, { ...addOtherData });
       stateDB.push(payload);
       if (process.env.SWITCH_DATABASE === 'production') {
-        postServer(payload);
+        postServer(payload, FIREBASE_WORK);
       }
     }
     context.commit(MU_SAVE_DATA, stateDB);

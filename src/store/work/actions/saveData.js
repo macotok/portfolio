@@ -1,5 +1,6 @@
 import moment from 'moment';
 import { MU_SAVE_DATA } from '@/store/work/mutations/saveData';
+import postServer from '@/server/POST/work';
 
 export const AC_SAVE_DATA = 'AC_SAVE_DATA';
 
@@ -25,7 +26,11 @@ const saveData = {
         updatedAt: moment().format(),
         createdAt: moment().format(),
       };
-      stateDB.push(Object.assign({}, { ...context.state.update }, { ...addOtherData }));
+      const payload = Object.assign({}, { ...context.state.update }, { ...addOtherData });
+      stateDB.push(payload);
+      if (process.env.SWITCH_DATABASE === 'production') {
+        postServer(payload);
+      }
     }
     context.commit(MU_SAVE_DATA, stateDB);
   },

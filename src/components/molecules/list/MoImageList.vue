@@ -52,7 +52,10 @@ export default {
   },
   computed: {
     displayList() {
-      return [...this.list].splice(this.pagerNumber, this.length);
+      if (this.pagerNumber) {
+        return [...this.list].splice((this.pagerNumber - 1) * this.length, this.length);
+      }
+      return [...this.list].splice(0, this.length);
     },
     styles() {
       return {

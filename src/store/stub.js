@@ -7,8 +7,8 @@ const db = {
   work: [],
   skill: [],
 };
-const workLength = 3;
-const skillLength = 3;
+const workLength = 50;
+const skillLength = 20;
 
 for (let i = 0; i < workLength; i += 1) {
   db.work.push({

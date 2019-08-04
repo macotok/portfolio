@@ -1,6 +1,6 @@
 <template lang="pug">
   at-pagination(
-    :page-count="pagerNumber",
+    :page-count="pageCount",
     :page-range="length",
     :margin-pages="0",
     :prev-text=null,
@@ -41,7 +41,7 @@ export default {
   },
   computed: {
     ...mapState({
-      pagerNumber(state) {
+      pageCount(state) {
         return state[this.pageType][this.targetKey].length / this.length;
       },
     }),

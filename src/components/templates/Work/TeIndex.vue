@@ -55,7 +55,7 @@ export default {
     },
   },
   computed: {
-    AC_PAGER_NUMBER: () => (AC_PAGER_NUMBER),
+    AC_PAGER_NUMBER: () => AC_PAGER_NUMBER,
     NOT_POST_MESSAGE: () => NOT_POST_MESSAGE,
   },
 };

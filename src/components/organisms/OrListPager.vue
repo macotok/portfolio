@@ -49,5 +49,10 @@ export default {
       required: true,
     },
   },
+  created() {
+    this.$store.dispatch(`${this.pageType}/${this.actionType}`, {
+      currentPagerNumber: 1,
+    });
+  },
 };
 </script>

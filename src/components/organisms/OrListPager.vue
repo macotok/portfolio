@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import { PAGER_DEFAULT_NUMBER } from '@/defines';
 import AtPagination from '@/components/atoms/pagination/AtPagination';
 import MoImageList from '@/components/molecules/list/MoImageList';
 
@@ -51,7 +52,7 @@ export default {
   },
   created() {
     this.$store.dispatch(`${this.pageType}/${this.actionType}`, {
-      currentPagerNumber: 1,
+      currentPagerNumber: PAGER_DEFAULT_NUMBER,
     });
   },
 };

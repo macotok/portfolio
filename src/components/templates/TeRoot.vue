@@ -10,7 +10,6 @@
         mo-image-list(
           pageType="work"
           :list="workList"
-          :listStart="workListStart"
           :length="workLength"
         )
         at-router-button(
@@ -100,10 +99,6 @@ export default {
     workList: {
       type: Array,
       default: () => [],
-    },
-    workListStart: {
-      type: Number,
-      required: true,
     },
     skillList: {
       type: Array,

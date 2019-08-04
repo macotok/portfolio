@@ -1,8 +1,7 @@
 <template lang="pug">
   te-root(
     :workList="workList"
-    :workLength="workLength"
-    :workListStart="workListStart"
+    :workLength="WORK_LIST_TOP_LENGTH"
     :skillList="skillList"
     :isLoginAdmin="isLoginAdmin"
   )
@@ -10,7 +9,7 @@
 
 <script>
 import { mapState } from 'vuex';
-import { WORK_LIST_TOP_LENGTH, LIST_START } from '@/defines';
+import { WORK_LIST_TOP_LENGTH } from '@/defines';
 import sortUpdatedAt from '@/utils/sortUpdatedAt';
 
 const TeRoot = () => import('@/components/templates/TeRoot');
@@ -29,8 +28,7 @@ export default {
     ...mapState('admin', {
       isLoginAdmin: state => state.isLoginAdmin,
     }),
-    workLength: () => WORK_LIST_TOP_LENGTH,
-    workListStart: () => LIST_START,
+    WORK_LIST_TOP_LENGTH: () => WORK_LIST_TOP_LENGTH,
   },
 };
 </script>

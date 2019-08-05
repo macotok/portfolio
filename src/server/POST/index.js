@@ -2,7 +2,7 @@ import { firestore, storage } from '@/server/firebase';
 
 function postServer(payload, targetCollection) {
   const storageRef = storage.ref();
-  const imagesRef = storageRef.child(`images/${targetCollection}/${payload.id}_${payload.image.name}`);
+  const imagesRef = storageRef.child(`images/${targetCollection}/${payload.id}/${payload.image.name}`);
   imagesRef.putString(payload.image.path, 'data_url')
     .then((snapshot) => {
       const starsRef = storageRef.child(snapshot.metadata.fullPath);

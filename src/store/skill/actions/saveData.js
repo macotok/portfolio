@@ -1,4 +1,4 @@
-import moment from 'moment';
+import dateFns from 'date-fns';
 import { FIREBASE_SKILL } from '@/defines';
 import postServer from '@/server/POST';
 import putServer from '@/server/PUT';
@@ -17,7 +17,7 @@ const saveData = {
       const updateData = {
         ...stateDB[editIdOfArray],
         ...context.state.update,
-        updatedAt: moment().format(),
+        updatedAt: dateFns.format(new Date()),
       };
       stateDB.splice(editIdOfArray, 1, updateData);
       if (process.env.SWITCH_DATABASE === 'production') {
@@ -28,8 +28,8 @@ const saveData = {
       const newID = stateDB.reduce((id, data) => (id < data.id ? data.id : id), 0) + 1;
       addOtherData = {
         id: newID,
-        updatedAt: moment().format(),
-        createdAt: moment().format(),
+        updatedAt: dateFns.format(new Date()),
+        createdAt: dateFns.format(new Date()),
       };
       const payload = Object.assign({}, { ...context.state.update }, { ...addOtherData });
       stateDB.push(payload);

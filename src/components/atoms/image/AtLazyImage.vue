@@ -1,12 +1,12 @@
 <template lang="pug">
-  div.atLazyImage
+  div.atLazyImage(
+    :style="styles.lazyWrapper"
+  )
     v-lazy-image(
       :class="className"
-      :style="styles"
+      :style="styles.lazyImage"
       :src="src"
       :alt="alt"
-      :width="width"
-      :height="height"
     )
     .atLazyImage-loader
 </template>
@@ -30,14 +30,6 @@ export default {
     alt: {
       type: String,
       default: '',
-    },
-    width: {
-      type: [String, Number],
-      default: 'auto',
-    },
-    height: {
-      type: [String, Number],
-      default: 'auto',
     },
     styles: {
       type: Object,

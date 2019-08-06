@@ -10,7 +10,8 @@
         at-lazy-image(
           :src="data.image ? data.image.path : ''"
           :alt="data.title"
-          :width="200"
+          :imgWidth="200"
+          :styles="styles.atLazyImage"
         )
         at-text(
           :styles="styles.atText"
@@ -62,6 +63,15 @@ export default {
           color: '#333',
           fontWeight: 'bold',
           margin: '.5em 0',
+        },
+        atLazyImage: {
+          lazyWrapper: {
+            width: '200px',
+            height: '200px',
+          },
+          lazyImage: {
+            width: '200px',
+          },
         },
       };
     },

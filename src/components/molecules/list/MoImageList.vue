@@ -7,12 +7,17 @@
         class="moImageList-link"
         :to="`/${pageType}/${data.id}`"
       )
-        at-image(
+        v-lazy-image(
           :src="data.image ? data.image.path : ''"
           :alt="data.title"
-          :style="styles.atImage"
           :width="200"
         )
+        <!--at-image(-->
+          <!--:src="data.image ? data.image.path : ''"-->
+          <!--:alt="data.title"-->
+          <!--:style="styles.atImage"-->
+          <!--:width="200"-->
+        <!--)-->
         at-text(
           :styles="styles.atText"
         ) {{ data.title }}
@@ -22,12 +27,14 @@
 </template>
 
 <script>
+import VLazyImage from 'v-lazy-image';
 import AtImage from '@/components/atoms/image/AtImage';
 import AtText from '@/components/atoms/text/AtText';
 import MoTextList from '@/components/molecules/list/MoTextList';
 
 export default {
   components: {
+    VLazyImage,
     AtImage,
     AtText,
     MoTextList,

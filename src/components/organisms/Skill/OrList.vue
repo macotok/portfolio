@@ -4,10 +4,10 @@
       :dataList="dataList"
     )
       template(v-slot:header="slotProps")
-        at-image(
+        at-lazy-image(
           :src="slotProps.data.image.path"
           :alt="slotProps.data.title"
-          :width=75
+          :styles="styles.atLazyImage"
         )
       template(v-slot:data="slotProps")
         at-text {{ slotProps.data.text }}
@@ -18,7 +18,7 @@
             classNameLeft="atButtonLeft"
             classNameRight="atButtonRight"
             :dataID="slotProps.data.id"
-            :styles="styles"
+            :styles="styles.moTwoButton"
             @click-button-left="confirmDelete"
             @click-button-right="clickEdit"
           )
@@ -38,17 +38,17 @@
 import { mapActions } from 'vuex';
 import { AC_DELETE_DATA } from '@/store/skill/actions/deleteData';
 import { PERMIT_DELETE_SKILL } from '@/defines';
+import AtLazyImage from '@/components/atoms/image/AtLazyImage';
 import AtTable from '@/components/atoms/list/AtTable';
 import AtText from '@/components/atoms/text/AtText';
-import AtImage from '@/components/atoms/image/AtImage';
 import MoTwoButton from '@/components/molecules/button/MoTwoButton';
 import MoConfirmModal from '@/components/molecules/modal/MoConfirmModal';
 
 export default {
   components: {
+    AtLazyImage,
     AtTable,
     AtText,
-    AtImage,
     MoTwoButton,
     MoConfirmModal,
   },
@@ -75,8 +75,19 @@ export default {
     PERMIT_DELETE_SKILL: () => PERMIT_DELETE_SKILL,
     styles() {
       return {
-        justifyContent: 'flex-end',
-        marginTop: '1rem',
+        atLazyImage: {
+          lazyWrapper: {
+            width: '100px',
+            height: '100px',
+          },
+          lazyImage: {
+            width: '100px',
+          },
+        },
+        moTwoButton: {
+          justifyContent: 'flex-end',
+          marginTop: '1rem',
+        },
       };
     },
   },

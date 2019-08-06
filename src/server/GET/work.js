@@ -1,14 +1,14 @@
 import { firestore } from '@/server/firebase';
 import { FIREBASE_WORK } from '@/defines';
 
-const works = () => {
-  const worksData = [];
+const work = () => {
+  const workData = [];
   firestore.collection(FIREBASE_WORK).get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      worksData.push(doc.data());
+      workData.push(doc.data());
     });
   });
-  return worksData;
+  return workData;
 };
 
-export default works;
+export default work;

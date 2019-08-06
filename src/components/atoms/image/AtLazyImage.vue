@@ -8,6 +8,7 @@
       :width="width"
       :height="height"
     )
+    .atLazyImage-loader
 </template>
 
 <script>

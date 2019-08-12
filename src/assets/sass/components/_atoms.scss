@@ -252,8 +252,8 @@
   align-items: center;
   position: relative;
   .v-lazy-image {
-    height: auto;
     &-loaded {
+      height: auto !important;
       & + .atLazyImage-loader {
         display: none;
       }

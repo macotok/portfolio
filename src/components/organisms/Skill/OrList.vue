@@ -78,10 +78,10 @@ export default {
         atLazyImage: {
           lazyWrapper: {
             width: '100px',
-            height: '100px',
           },
           lazyImage: {
             width: '100px',
+            height: '100px',
           },
         },
         moTwoButton: {

@@ -10,7 +10,9 @@
           :styles="styles.atLazyImage"
         )
       template(v-slot:data="slotProps")
-        at-text {{ slotProps.data.text }}
+        at-nl2br-text(
+          :text="slotProps.data.text"
+        )
         template(
           v-if="isLoginAdmin"
         )
@@ -40,7 +42,7 @@ import { AC_DELETE_DATA } from '@/store/skill/actions/deleteData';
 import { PERMIT_DELETE_SKILL } from '@/defines';
 import AtLazyImage from '@/components/atoms/image/AtLazyImage';
 import AtTable from '@/components/atoms/list/AtTable';
-import AtText from '@/components/atoms/text/AtText';
+import AtNl2brText from '@/components/atoms/text/AtNl2brText';
 import MoTwoButton from '@/components/molecules/button/MoTwoButton';
 import MoConfirmModal from '@/components/molecules/modal/MoConfirmModal';
 
@@ -48,7 +50,7 @@ export default {
   components: {
     AtLazyImage,
     AtTable,
-    AtText,
+    AtNl2brText,
     MoTwoButton,
     MoConfirmModal,
   },

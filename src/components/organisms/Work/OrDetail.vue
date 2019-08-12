@@ -12,7 +12,9 @@
         :list="data.tags"
         :styles="styles.moTextList"
       )
-      at-text {{ data.text }}
+      at-nl2br-text(
+        :text="data.text"
+      )
       at-href-button(
         :styles="styles.atButton"
         :href="data.url"
@@ -45,7 +47,7 @@ import { AC_DELETE_DATA } from '@/store/work/actions/deleteData';
 import { PERMIT_DELETE_WORK } from '@/defines';
 import AtHrefButton from '@/components/atoms/button/AtHrefButton';
 import AtImage from '@/components/atoms/image/AtImage';
-import AtText from '@/components/atoms/text/AtText';
+import AtNl2brText from '@/components/atoms/text/AtNl2brText';
 import MoTextList from '@/components/molecules/list/MoTextList';
 import MoTwoButton from '@/components/molecules/button/MoTwoButton';
 import MoConfirmModal from '@/components/molecules/modal/MoConfirmModal';
@@ -54,7 +56,7 @@ export default {
   components: {
     AtHrefButton,
     AtImage,
-    AtText,
+    AtNl2brText,
     MoTextList,
     MoTwoButton,
     MoConfirmModal,

@@ -1,6 +1,9 @@
 <template lang="pug">
   table.atTable
-    tr(v-for="(data) in dataList")
+    tr(
+      v-for="(data) in dataList"
+      :key="data.id"
+    )
       th.atTable-header
         slot(
           :data="data"

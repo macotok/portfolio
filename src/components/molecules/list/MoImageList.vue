@@ -2,6 +2,7 @@
   ul.moImageList
     li.moImageList-item(
       v-for="data in displayList"
+      :key="data.id"
     )
       router-link(
         class="moImageList-link"

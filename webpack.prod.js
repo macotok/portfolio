@@ -18,11 +18,11 @@ module.exports = merge(common, {
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, 'src/assets/images/'),
-        to: path.resolve(__dirname, 'public/images'),
+        to: path.resolve(__dirname, 'dist/images'),
       },
       {
         from: path.resolve(__dirname, 'src/assets/media/'),
-        to: path.resolve(__dirname, 'public/media'),
+        to: path.resolve(__dirname, 'dist/media'),
       },
     ]),
     new BundleAnalyzerPlugin(),

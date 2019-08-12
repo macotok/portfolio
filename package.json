@@ -8,7 +8,8 @@
     "start": "webpack-dev-server --config webpack.dev.js",
     "dev": "webpack --config webpack.dev.js",
     "build": "webpack  --config webpack.prod.js",
-    "test": "jest"
+    "test": "jest",
+    "deploy": "firebase deploy"
   },
   "repository": {
     "type": "git",

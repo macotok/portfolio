@@ -1,11 +1,10 @@
 <template lang="pug">
   div.WorkOrDetail
-    at-image(
+    at-lazy-image(
       className="WorkOrDetail-img"
-      :src="data.image.path"
+      :src="data.image ? data.image.path : ''"
       :alt="data.title"
-      width="300"
-      height="100%"
+      :styles="styles.atLazyImage"
     )
     div.WorkOrDetail-inner
       mo-text-list(
@@ -46,7 +45,7 @@ import { mapActions } from 'vuex';
 import { AC_DELETE_DATA } from '@/store/work/actions/deleteData';
 import { PERMIT_DELETE_WORK } from '@/defines';
 import AtHrefButton from '@/components/atoms/button/AtHrefButton';
-import AtImage from '@/components/atoms/image/AtImage';
+import AtLazyImage from '@/components/atoms/image/AtLazyImage';
 import AtNl2brText from '@/components/atoms/text/AtNl2brText';
 import MoTextList from '@/components/molecules/list/MoTextList';
 import MoTwoButton from '@/components/molecules/button/MoTwoButton';
@@ -55,7 +54,7 @@ import MoConfirmModal from '@/components/molecules/modal/MoConfirmModal';
 export default {
   components: {
     AtHrefButton,
-    AtImage,
+    AtLazyImage,
     AtNl2brText,
     MoTextList,
     MoTwoButton,
@@ -64,7 +63,7 @@ export default {
   props: {
     data: {
       type: Object,
-      required: true,
+      default: () => {},
     },
     isLoginAdmin: {
       type: Boolean,
@@ -86,6 +85,15 @@ export default {
         },
         moTwoButton: {
           justifyContent: 'flex-end',
+        },
+        atLazyImage: {
+          lazyWrapper: {
+            height: '100%',
+            minHeight: '150px',
+          },
+          lazyImage: {
+            width: '300px',
+          },
         },
       };
     },

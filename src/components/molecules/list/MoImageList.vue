@@ -11,7 +11,6 @@
         at-lazy-image(
           :src="data.image ? data.image.path : ''"
           :alt="data.title"
-          :imgWidth="200"
           :styles="styles.atLazyImage"
         )
         at-text(

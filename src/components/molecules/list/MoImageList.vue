@@ -67,11 +67,12 @@ export default {
         atLazyImage: {
           lazyWrapper: {
             width: '200px',
+            height: '100%',
+            minHeight: '120px',
             margin: '0 auto',
           },
           lazyImage: {
             width: '200px',
-            height: '120px',
           },
         },
       };

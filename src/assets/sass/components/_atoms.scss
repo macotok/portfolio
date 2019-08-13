@@ -253,7 +253,6 @@
   position: relative;
   .v-lazy-image {
     &-loaded {
-      height: auto !important;
       & + .atLazyImage-loader {
         display: none;
       }

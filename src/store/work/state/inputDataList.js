@@ -1,7 +1,7 @@
 export default {
   id: '',
   title: '',
-  tags: '',
+  tags: [],
   image: {
     path: '',
     name: '',

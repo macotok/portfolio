@@ -1,17 +1,17 @@
 import { firestore } from '@/server/firebase';
 import { FIREBASE_WORK } from '@/defines';
 import db from '@/store/stub';
-import { MU_READ_TOP_LIST } from '@/store/work/mutations/readTopList';
+import { MU_WORK_TOP_LIST } from '@/store/work/mutations/readTopList';
 import sortUpdatedAt from '@/utils/sortUpdatedAt';
 
-export const AC_READ_TOP_LIST = 'AC_READ_TOP_LIST';
+export const AC_WORK_TOP_LIST = 'AC_WORK_TOP_LIST';
 
 const readTopList = {
-  [AC_READ_TOP_LIST](context, displayLength) {
+  [AC_WORK_TOP_LIST](context, displayLength) {
     switch (process.env.SWITCH_DATABASE) {
       case 'development': {
         const workDB = (sortUpdatedAt(db.work)).splice(0, displayLength);
-        context.commit(MU_READ_TOP_LIST, workDB);
+        context.commit(MU_WORK_TOP_LIST, workDB);
         break;
       }
       case 'production': {
@@ -25,7 +25,7 @@ const readTopList = {
           })
           .then((data) => {
             const workDB = sortUpdatedAt(data).splice(0, displayLength);
-            context.commit(MU_READ_TOP_LIST, workDB);
+            context.commit(MU_WORK_TOP_LIST, workDB);
           });
         break;
       }

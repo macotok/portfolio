@@ -9,8 +9,8 @@
 <script>
 import { mapState } from 'vuex';
 import { WORK_LIST_TOP_LENGTH } from '@/defines';
-import sortUpdatedAt from '@/utils/sortUpdatedAt';
-import { AC_READ_TOP_LIST } from '@/store/work/actions/readTopList';
+import { AC_WORK_TOP_LIST } from '@/store/work/actions/readTopList';
+import { AC_SKILL_TOP_LIST } from '@/store/skill/actions/readTopList';
 
 const TeRoot = () => import('@/components/templates/TeRoot');
 
@@ -23,14 +23,15 @@ export default {
       workList: state => state.db,
     }),
     ...mapState('skill', {
-      skillList: state => sortUpdatedAt(state.db),
+      skillList: state => state.db,
     }),
     ...mapState('admin', {
       isLoginAdmin: state => state.isLoginAdmin,
     }),
   },
   created() {
-    this.$store.dispatch(`work/${AC_READ_TOP_LIST}`, WORK_LIST_TOP_LENGTH);
+    this.$store.dispatch(`work/${AC_WORK_TOP_LIST}`, WORK_LIST_TOP_LENGTH);
+    this.$store.dispatch(`skill/${AC_SKILL_TOP_LIST}`);
   },
 };
 </script>

@@ -20,7 +20,7 @@ export default {
   },
   computed: {
     ...mapState('work', {
-      workList: state => sortUpdatedAt(state.db),
+      workList: state => state.db,
     }),
     ...mapState('skill', {
       skillList: state => sortUpdatedAt(state.db),

@@ -10,7 +10,6 @@
         mo-image-list(
           pageType="work"
           :list="workList"
-          :length="workLength"
         )
         at-router-button(
           linkTo="work"
@@ -92,10 +91,6 @@ export default {
     OrHeaderNav,
   },
   props: {
-    workLength: {
-      type: Number,
-      required: true,
-    },
     workList: {
       type: Array,
       default: () => [],

@@ -43,7 +43,7 @@ export default {
     },
     length: {
       type: Number,
-      required: true,
+      default: 0,
     },
     list: {
       type: Array,
@@ -55,7 +55,7 @@ export default {
       if (this.pagerNumber) {
         return [...this.list].splice((this.pagerNumber - 1) * this.length, this.length);
       }
-      return [...this.list].splice(0, this.length);
+      return [...this.list];
     },
     styles() {
       return {

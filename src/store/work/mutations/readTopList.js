@@ -1,9 +1,9 @@
 import Vue from 'vue';
 
-export const MU_WORK_TOP_LIST = 'MU_WORK_TOP_LIST';
+export const MU_READ_WORK_TOP_LIST = 'MU_READ_WORK_TOP_LIST';
 
 const readTopList = {
-  [MU_WORK_TOP_LIST](state, payload) {
+  [MU_READ_WORK_TOP_LIST](state, payload) {
     Vue.set(state, 'db', payload);
   },
 };

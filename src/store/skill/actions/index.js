@@ -3,7 +3,7 @@ import updateInputOfEdit from '@/store/skill/actions/updateInputOfEdit';
 import resetInputData from '@/store/skill/actions/resetInputData';
 import saveData from '@/store/skill/actions/saveData';
 import deleteData from '@/store/skill/actions/deleteData';
-import readTopList from '@/store/skill/actions/readTopList';
+import readList from '@/store/skill/actions/readList';
 
 const actions = Object.assign(
   updateInput,
@@ -11,7 +11,7 @@ const actions = Object.assign(
   resetInputData,
   saveData,
   deleteData,
-  readTopList,
+  readList,
 );
 
 export default actions;

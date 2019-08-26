@@ -1,17 +1,17 @@
 import { firestore } from '@/server/firebase';
 import { FIREBASE_SKILL } from '@/defines';
 import db from '@/store/stub';
-import { MU_SKILL_TOP_LIST } from '@/store/skill/mutations/readTopList';
+import { MU_READ_SKILL_LIST } from '@/store/skill/mutations/readList';
 import sortUpdatedAt from '@/utils/sortUpdatedAt';
 
-export const AC_SKILL_TOP_LIST = 'AC_SKILL_TOP_LIST';
+export const AC_READ_SKILL_LIST = 'AC_READ_SKILL_LIST';
 
-const readTopList = {
-  [AC_SKILL_TOP_LIST](context) {
+const readList = {
+  [AC_READ_SKILL_LIST](context) {
     switch (process.env.SWITCH_DATABASE) {
       case 'development': {
         const skillDB = (sortUpdatedAt(db.skill));
-        context.commit(MU_SKILL_TOP_LIST, skillDB);
+        context.commit(MU_READ_SKILL_LIST, skillDB);
         break;
       }
       case 'production': {
@@ -25,7 +25,7 @@ const readTopList = {
           })
           .then((data) => {
             const skillDB = sortUpdatedAt(data);
-            context.commit(MU_SKILL_TOP_LIST, skillDB);
+            context.commit(MU_READ_SKILL_LIST, skillDB);
           });
         break;
       }
@@ -35,4 +35,4 @@ const readTopList = {
   },
 };
 
-export default readTopList;
+export default readList;

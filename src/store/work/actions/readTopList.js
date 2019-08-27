@@ -10,7 +10,7 @@ const readTopList = {
   [AC_READ_WORK_TOP_LIST](context, displayLength) {
     switch (process.env.SWITCH_DATABASE) {
       case 'development': {
-        const workDB = (sortUpdatedAt(db.work)).splice(0, displayLength);
+        const workDB = (sortUpdatedAt(db.work)).slice(0, displayLength);
         context.commit(MU_READ_WORK_TOP_LIST, workDB);
         break;
       }

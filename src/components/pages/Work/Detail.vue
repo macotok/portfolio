@@ -18,10 +18,8 @@ export default {
   computed: {
     ...mapState('work', {
       data(state) {
-        if (!state.db.length) { return inputDataList; }
-        return state.db.find(w => (
-          w.id === parseInt(this.$route.params.id, 10)
-        ));
+        if (!Object.values(state.db).length) { return inputDataList; }
+        return state.db[this.$route.params.id];
       },
     }),
     ...mapState('admin', {

@@ -5,7 +5,7 @@
     div.l-container
       at-title-h2 Work
       template(
-        v-if="workList.length"
+        v-if="Object.keys(workList).length"
       )
         mo-image-list(
           pageType="work"
@@ -92,8 +92,8 @@ export default {
   },
   props: {
     workList: {
-      type: Array,
-      default: () => [],
+      type: Object,
+      default: () => {},
     },
     skillList: {
       type: Array,

@@ -46,8 +46,8 @@ export default {
       default: 0,
     },
     list: {
-      type: Array,
-      default: () => [],
+      type: Object,
+      default: () => {},
     },
   },
   computed: {
@@ -55,7 +55,7 @@ export default {
       if (this.pagerNumber) {
         return [...this.list].splice((this.pagerNumber - 1) * this.length, this.length);
       }
-      return [...this.list];
+      return Object.values(this.list);
     },
     styles() {
       return {

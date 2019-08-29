@@ -5,6 +5,7 @@ import saveData from '@/store/work/actions/saveData';
 import deleteData from '@/store/work/actions/deleteData';
 import pagerNumber from '@/store/work/actions/pagerNumber';
 import readTopList from '@/store/work/actions/readTopList';
+import readDetail from '@/store/work/actions/readDetail';
 
 const actions = Object.assign(
   updateInput,
@@ -14,6 +15,7 @@ const actions = Object.assign(
   deleteData,
   pagerNumber,
   readTopList,
+  readDetail,
 );
 
 export default actions;

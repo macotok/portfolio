@@ -5,11 +5,12 @@
   "main": "index.js",
   "sideEffects": false,
   "scripts": {
-    "start": "webpack-dev-server --config webpack.dev.js",
+    "start": "concurrently \"webpack-dev-server --config webpack.dev.js\" \"yarn run tsc -- -w\"",
     "dev": "webpack --config webpack.dev.js",
     "build": "webpack  --config webpack.prod.js",
     "test": "jest",
-    "deploy": "firebase deploy"
+    "deploy": "firebase deploy",
+    "tsc": "tsc -p ./"
   },
   "repository": {
     "type": "git",
@@ -48,6 +49,7 @@
     "babel-jest": "^24.7.1",
     "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^2.0.1",
+    "concurrently": "^4.1.2",
     "copy-webpack-plugin": "^5.0.3",
     "core-js": "^3.0.1",
     "css-loader": "^2.1.1",
@@ -82,6 +84,8 @@
     "stylelint-scss": "^3.6.0",
     "stylelint-webpack-plugin": "^0.10.5",
     "terser-webpack-plugin": "^1.2.3",
+    "ts-loader": "^6.1.0",
+    "typescript": "^3.6.3",
     "url-loader": "^1.1.2",
     "vue-jest": "^3.0.4",
     "vue-loader": "^15.7.0",

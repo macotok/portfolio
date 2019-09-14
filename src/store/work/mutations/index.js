@@ -4,7 +4,7 @@ import resetInputData from '@/store/work/mutations/resetInputData';
 import saveData from '@/store/work/mutations/saveData';
 import deleteData from '@/store/work/mutations/deleteData';
 import pagerNumber from '@/store/work/mutations/pagerNumber';
-import readTopList from '@/store/work/mutations/readTopList';
+import readList from '@/store/work/mutations/readList';
 
 const mutations = Object.assign(
   updateInput,
@@ -13,7 +13,7 @@ const mutations = Object.assign(
   saveData,
   deleteData,
   pagerNumber,
-  readTopList,
+  readList,
 );
 
 export default mutations;

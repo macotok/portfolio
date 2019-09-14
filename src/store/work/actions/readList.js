@@ -1,17 +1,18 @@
 import { firestore } from '@/server/firebase';
 import { FIREBASE_WORK } from '@/defines';
 import db from '@/store/stub';
-import { MU_READ_WORK_TOP_LIST } from '@/store/work/mutations/readTopList';
+import { MU_READ_WORK_LIST } from '@/store/work/mutations/readList';
 import sortUpdatedAt from '@/utils/sortUpdatedAt';
 
-export const AC_READ_WORK_TOP_LIST = 'AC_READ_WORK_TOP_LIST';
+export const AC_READ_WORK_LIST = 'AC_READ_WORK_LIST';
 
-const readTopList = {
-  [AC_READ_WORK_TOP_LIST](context, displayLength) {
+const readList = {
+  [AC_READ_WORK_LIST](context, displayList) {
+    const { sliceRange, displayLength } = displayList;
     switch (process.env.SWITCH_DATABASE) {
       case 'development': {
-        const workDB = (sortUpdatedAt(db.work)).slice(0, displayLength);
-        context.commit(MU_READ_WORK_TOP_LIST, workDB);
+        const workDB = (sortUpdatedAt(db.work)).slice(sliceRange, displayLength);
+        context.commit(MU_READ_WORK_LIST, workDB);
         break;
       }
       case 'production': {
@@ -24,8 +25,8 @@ const readTopList = {
             return workData;
           })
           .then((data) => {
-            const workDB = sortUpdatedAt(data).splice(0, displayLength);
-            context.commit(MU_READ_WORK_TOP_LIST, workDB);
+            const workDB = sortUpdatedAt(data).splice(sliceRange, displayLength);
+            context.commit(MU_READ_WORK_LIST, workDB);
           });
         break;
       }
@@ -35,4 +36,4 @@ const readTopList = {
   },
 };
 
-export default readTopList;
+export default readList;

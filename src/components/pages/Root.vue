@@ -9,7 +9,7 @@
 <script>
 import { mapState } from 'vuex';
 import { WORK_LIST_TOP_LENGTH } from '@/defines';
-import { AC_READ_WORK_TOP_LIST } from '@/store/work/actions/readTopList';
+import { AC_READ_WORK_LIST } from '@/store/work/actions/readList';
 import { AC_READ_SKILL_LIST } from '@/store/skill/actions/readList';
 
 const TeRoot = () => import('@/components/templates/TeRoot');
@@ -30,7 +30,11 @@ export default {
     }),
   },
   created() {
-    this.$store.dispatch(`work/${AC_READ_WORK_TOP_LIST}`, WORK_LIST_TOP_LENGTH);
+    const displayList = {
+      displayLength: WORK_LIST_TOP_LENGTH,
+      listRange: 0,
+    };
+    this.$store.dispatch(`work/${AC_READ_WORK_LIST}`, displayList);
     this.$store.dispatch(`skill/${AC_READ_SKILL_LIST}`);
   },
 };

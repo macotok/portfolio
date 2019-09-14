@@ -1,17 +1,36 @@
+import { firestore, storage } from '@/server/firebase';
 import { FIREBASE_WORK } from '@/defines';
 import { MU_DELETE_DATA } from '@/store/work/mutations/deleteData';
-import deleteServer from '@/server/DELETE';
 
 export const AC_DELETE_DATA = 'AC_DELETE_DATA';
 
 const deleteData = {
   [AC_DELETE_DATA](context, dataID) {
-    const dataList = context.state.db;
-    const listNumber = dataList.findIndex(data => data.id === dataID);
-    const payload = dataList.find(data => data.id === dataID);
-    dataList.splice(listNumber, 1);
-    context.commit(MU_DELETE_DATA, dataList);
-    deleteServer(payload, FIREBASE_WORK);
+    switch (process.env.SWITCH_DATABASE) {
+      case 'development': {
+        const dataList = context.state.db;
+        dataList.splice(dataList.findIndex(data => data.id === dataID), 1);
+        context.commit(MU_DELETE_DATA, dataList);
+        break;
+      }
+      case 'production': {
+        const storageRef = storage.ref();
+        const dataList = context.state.db;
+        const payload = dataList.find(data => data.id === dataID);
+        const imagesRef = storageRef.child(`images/${FIREBASE_WORK}/${payload.id}/${payload.image.name}`);
+        imagesRef.delete()
+          .then(() => {
+            firestore.collection(FIREBASE_WORK).doc(payload.id.toString(10)).delete();
+          })
+          .then(() => {
+            dataList.splice(dataList.findIndex(data => data.id === dataID), 1);
+            context.commit(MU_DELETE_DATA, dataList);
+          });
+        break;
+      }
+      default:
+        break;
+    }
   },
 };
 

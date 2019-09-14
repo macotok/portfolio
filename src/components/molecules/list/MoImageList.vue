@@ -46,8 +46,8 @@ export default {
       default: 0,
     },
     list: {
-      type: Object,
-      default: () => {},
+      type: Array,
+      default: () => [],
     },
   },
   computed: {

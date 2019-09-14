@@ -92,8 +92,8 @@ export default {
   },
   props: {
     workList: {
-      type: Object,
-      default: () => {},
+      type: Array,
+      default: () => [],
     },
     skillList: {
       type: Array,

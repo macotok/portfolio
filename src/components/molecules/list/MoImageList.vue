@@ -1,7 +1,7 @@
 <template lang="pug">
   ul.moImageList
     li.moImageList-item(
-      v-for="data in displayList"
+      v-for="data in list"
       :key="data.id"
     )
       router-link(
@@ -51,12 +51,6 @@ export default {
     },
   },
   computed: {
-    displayList() {
-      if (this.pagerNumber) {
-        return [...this.list].splice((this.pagerNumber - 1) * this.length, this.length);
-      }
-      return Object.values(this.list);
-    },
     styles() {
       return {
         atText: {

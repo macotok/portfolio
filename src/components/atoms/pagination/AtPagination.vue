@@ -42,7 +42,7 @@ export default {
   computed: {
     ...mapState({
       pageCount(state) {
-        return state[this.pageType][this.targetKey].length / this.length;
+        return state[this.pageType][this.targetKey] / this.length;
       },
     }),
   },

@@ -32,7 +32,7 @@ export default {
   created() {
     const displayList = {
       displayLength: WORK_LIST_TOP_LENGTH,
-      listRange: 0,
+      targetState: null,
     };
     this.$store.dispatch(`work/${AC_READ_WORK_LIST}`, displayList);
     this.$store.dispatch(`skill/${AC_READ_SKILL_LIST}`);

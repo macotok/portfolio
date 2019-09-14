@@ -9,7 +9,7 @@
       )
         or-list-pager(
           pageType="work"
-          targetKey="db"
+          targetKey="dbLength"
           :actionType="AC_PAGER_NUMBER"
           :list="workList"
           :pagerNumber="pagerNumber"

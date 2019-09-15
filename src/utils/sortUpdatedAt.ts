@@ -5,8 +5,6 @@ interface data {
     name: string,
     path: string,
   },
-  image_name: string,
-  image_path: string,
   tags: string[],
   text: string,
   title: string,

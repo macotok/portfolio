@@ -11,6 +11,20 @@
         :list="data.tags"
         :styles="styles.moTextList"
       )
+      table.atTable02
+        thead
+          tr
+            th 機能
+            th 担当
+        tbody
+          tr
+            td 「イオンのお得なお買い物情報」「おすすめキャンヘーン」「周囲の店舗のお得な情報」「今日は何の日?」
+            td 開発要件定義/開発設計/開発工数出し/進捗管理
+          tr
+            td ヒシュアルの「ローテバナー」
+            td 開発要件定義/開発設計/開発工数出し/進捗管理
+      .atTitleH3
+        .atTitleH3-title 工夫したポイント
       at-nl2br-text(
         :text="data.text"
       )
@@ -92,7 +106,9 @@ export default {
             minHeight: '150px',
           },
           lazyImage: {
-            width: '300px',
+            maxWidth: '500px',
+            marginBottom: '2rem',
+            border: '1px solid #F6F9FF',
           },
         },
       };

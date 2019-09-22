@@ -51,11 +51,6 @@
 }
 
 .WorkOrDetail {
-  display: flex;
-  align-items: start;
-  @include mq-down(md) {
-    display: block;
-  }
   &-img {
     @include mq-down(md) {
       display: block;

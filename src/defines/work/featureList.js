@@ -54,6 +54,16 @@ const featureList = [
       ],
   },
   {
+    id: 19,
+    feature:
+      [
+        {
+          name: '全てのアニメーション作業',
+          role: 'CSS3とjQueryで開発',
+        },
+      ],
+  },
+  {
     id: 18,
     feature:
       [
@@ -88,7 +98,7 @@ const featureList = [
     feature:
       [
         {
-          name: '全てのアニメーション処理',
+          name: '全てのアニメーション作業',
           role: 'CSS3とjQueryで開発',
         },
       ],
@@ -108,6 +118,72 @@ const featureList = [
         {
           name: '「お問い合わせ」のお問い合わせ機能',
           role: 'WordPressのプラグインで開発',
+        },
+      ],
+  },
+  {
+    id: 15,
+    feature:
+      [
+        {
+          name: '全画面開発作業',
+          role: 'HTML/CSS/Javascript/WordPressで開発',
+        },
+        {
+          name: '「お知らせ」「ブログ」の投稿機能',
+          role: 'WordPressのカスタム投稿タイプとカスタムフィールドで開発',
+        },
+        {
+          name: '「お問い合わせ」のお問い合わせ機能',
+          role: 'WordPressのプラグインで開発',
+        },
+      ],
+  },
+  {
+    id: 14,
+    feature:
+      [
+        {
+          name: '全てのアニメーション作業',
+          role: 'CSS3とjQueryで開発',
+        },
+      ],
+  },
+  {
+    id: 13,
+    feature:
+      [
+        {
+          name: '全てのアニメーション作業',
+          role: 'CSS3とjQueryで開発',
+        },
+        {
+          name: 'エイプリルフールネタとしてギミック考察',
+          role: '企画から参加',
+        },
+      ],
+  },
+  {
+    id: 12,
+    feature:
+      [
+        {
+          name: 'TOPページ/下層テンプレートページ開発',
+          role: 'HTML/CSS/jQueryで開発作業',
+        },
+      ],
+  },
+  {
+    id: 10,
+    feature:
+      [
+        {
+          name: '全てのアニメーション作業',
+          role: 'CSS3とjQueryで開発',
+        },
+        {
+          name: 'エイプリルフールネタとしてギミック考察',
+          role: '企画から参加',
         },
       ],
   },

@@ -14,6 +14,7 @@ export const LIST = [
     '「vee-validate」でWork/Skillの追加/更新バリデーション実装',
     'fakerでstubデータ作成',
     'ページネーション実装',
+    'Workの詳細画面で次の記事/前の記事を実装',
   ],
   [
     'Firestoreでデータ登録/取得/更新/削除',

@@ -7,13 +7,13 @@
       :dataID="dataID"
       @click-button="clickButtonLeft"
     )
-      slot(name="first")
+      slot(name="left")
     at-event-button(
       :className="classNameRight"
       :dataID="dataID"
       @click-button="clickButtonRight"
     )
-      slot(name="second")
+      slot(name="right")
 </template>
 
 <script>

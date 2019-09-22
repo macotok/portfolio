@@ -4,7 +4,7 @@ const featureList = [
     feature:
       [
         {
-          name: '管理画面のアンケート設定画面をVue.jsで開発',
+          name: '管理画面のアンケート設定画面をVue.js/Vuexで開発(モーダル機能/表示並び替え機能/フォームバリデーション機能/ComponentをAtomic Designの概念で設計)',
           role: '開発作業/開発要件定義/開発工数出し/進捗管理',
         },
         {

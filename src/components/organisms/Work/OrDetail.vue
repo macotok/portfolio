@@ -42,8 +42,8 @@
           @click-button-right="clickEdit"
           :styles="styles.moTwoEventButton"
         )
-          template(v-slot:first) 削除
-          template(v-slot:second) 編集
+          template(v-slot:left) 削除
+          template(v-slot:right) 編集
     template(
       v-if="isLoginAdmin"
     )

@@ -11,13 +11,13 @@
         | できます。
       at-event-button(
         v-if="!isLoginAdmin"
-        class="atButton-login"
+        class="atButton-blank"
         :styles="styles.AtButton"
         @click-button="login"
       ) ログインする
       at-event-button(
         v-if="isLoginAdmin"
-        class="atButton-logout"
+        class="atButton-danger"
         :styles="styles.AtButton"
         @click-button="logout"
       ) ログアウトする

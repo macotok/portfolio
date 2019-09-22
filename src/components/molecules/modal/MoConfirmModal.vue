@@ -12,8 +12,8 @@
           @click-button-right="clickAction"
           :styles="styles.moTwoEventButton"
         )
-          template(v-slot:first) 閉じる
-          template(v-slot:second) 決定
+          template(v-slot:left) 閉じる
+          template(v-slot:right) 決定
 </template>
 
 <script>

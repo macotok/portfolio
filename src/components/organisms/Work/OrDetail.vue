@@ -11,15 +11,16 @@
         :list="data.tags"
         :styles="styles.moTextList"
       )
-      table.atTable02
-        thead
-          tr
-            th 機能
-            th 担当
-        tbody
-          tr(v-for="f in featureData.feature")
-            td {{ f.name }}
-            td {{ f.role }}
+      template(v-if="featureData")
+        table.atTable02
+          thead
+            tr
+              th 機能
+              th 担当
+          tbody
+            tr(v-for="f in featureData.feature")
+              td {{ f.name }}
+              td {{ f.role }}
       .atTitleH3
         .atTitleH3-title 工夫したポイント
       at-nl2br-text(
@@ -116,7 +117,7 @@ export default {
     },
     PERMIT_DELETE_WORK: () => PERMIT_DELETE_WORK,
     featureData() {
-      return featureList.find(f => f.id === 23);
+      return featureList.find(f => f.id === this.data.id);
     },
   },
   methods: {

@@ -6,6 +6,7 @@
       at-title-h2 {{ data.title }}
       or-detail(
         :data="data"
+        :dataList="dataList"
         :isLoginAdmin="isLoginAdmin"
       )
     or-footer
@@ -30,6 +31,10 @@ export default {
     data: {
       type: Object,
       default: () => {},
+    },
+    dataList: {
+      type: Array,
+      default: () => [],
     },
     isLoginAdmin: {
       type: Boolean,

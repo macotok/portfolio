@@ -24,6 +24,19 @@
         :styles="styles.atButton"
         :href="data.url"
       ) To Page
+      div
+        template(v-if="prevDataId")
+          div.prev
+            router-link(
+              class="moImageList-link"
+              :to="`/work/${prevDataId}`"
+            ) Prev
+        template(v-if="nextDataId")
+          div.next
+            router-link(
+              class="moImageList-link"
+              :to="`/work/${nextDataId}`"
+            ) Next
       template(
         v-if="isLoginAdmin"
       )
@@ -76,6 +89,10 @@ export default {
       type: Object,
       default: () => {},
     },
+    dataList: {
+      type: Array,
+      default: () => [],
+    },
     isLoginAdmin: {
       type: Boolean,
       required: true,
@@ -116,6 +133,16 @@ export default {
     PERMIT_DELETE_WORK: () => PERMIT_DELETE_WORK,
     featureData() {
       return featureList.find(f => f.id === this.data.id);
+    },
+    prevDataId() {
+      const dataIndex = this.dataList.findIndex(d => d.id === this.data.id);
+      if (!dataIndex) return false;
+      return this.dataList[dataIndex - 1].id;
+    },
+    nextDataId() {
+      const dataIndex = this.dataList.findIndex(d => d.id === this.data.id);
+      if (dataIndex === (this.dataList.length - 1)) return false;
+      return this.dataList[dataIndex + 1].id;
     },
   },
   methods: {

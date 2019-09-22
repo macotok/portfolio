@@ -5,6 +5,7 @@ import saveData from '@/store/work/mutations/saveData';
 import deleteData from '@/store/work/mutations/deleteData';
 import pagerNumber from '@/store/work/mutations/pagerNumber';
 import readList from '@/store/work/mutations/readList';
+import readAllList from '@/store/work/mutations/readAllList';
 
 const mutations = Object.assign(
   updateInput,
@@ -14,6 +15,7 @@ const mutations = Object.assign(
   deleteData,
   pagerNumber,
   readList,
+  readAllList,
 );
 
 export default mutations;

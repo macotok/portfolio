@@ -143,7 +143,7 @@
     border-bottom: 1px solid $gray-color-04;
     vertical-align: middle;
     text-align: center;
-    padding: .5rem;
+    padding: .5rem 1rem;
     @include mq-down() {
       display: block;
       width: 100%;
@@ -157,7 +157,7 @@
     border-bottom: 1px solid $gray-color-04;
     vertical-align: middle;
     text-align: left;
-    padding: .5rem;
+    padding: .5rem 1rem;
     width: 100%;
     box-sizing: border-box;
     @include mq-down() {
@@ -180,7 +180,7 @@
     color: $white-color;
     border-bottom: 1px solid $gray-color-03;
     border-right: 1px solid $gray-color-03;
-    padding: .5rem;
+    padding: .5rem 1rem;
     box-sizing: border-box;
     &:last-child {
       background-color: #686A85;
@@ -190,7 +190,7 @@
     width: 40%;
     border-bottom: 1px solid $gray-color-03;
     border-right: 1px solid $gray-color-03;
-    padding: .5rem;
+    padding: .5rem 1rem;
     box-sizing: border-box;
   }
 }

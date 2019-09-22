@@ -17,12 +17,9 @@
             th 機能
             th 担当
         tbody
-          tr
-            td 「イオンのお得なお買い物情報」「おすすめキャンヘーン」「周囲の店舗のお得な情報」「今日は何の日?」
-            td 開発要件定義/開発設計/開発工数出し/進捗管理
-          tr
-            td ヒシュアルの「ローテバナー」
-            td 開発要件定義/開発設計/開発工数出し/進捗管理
+          tr(v-for="f in featureData.feature")
+            td {{ f.name }}
+            td {{ f.role }}
       .atTitleH3
         .atTitleH3-title 工夫したポイント
       at-nl2br-text(
@@ -58,6 +55,7 @@
 import { mapActions } from 'vuex';
 import { AC_DELETE_DATA } from '@/store/work/actions/deleteData';
 import { PERMIT_DELETE_WORK } from '@/defines';
+import featureList from '@/defines/work/featureList';
 import AtHrefButton from '@/components/atoms/button/AtHrefButton';
 import AtLazyImage from '@/components/atoms/image/AtLazyImage';
 import AtNl2brText from '@/components/atoms/text/AtNl2brText';
@@ -117,6 +115,9 @@ export default {
       return this.data.title;
     },
     PERMIT_DELETE_WORK: () => PERMIT_DELETE_WORK,
+    featureData() {
+      return featureList.find(f => f.id === 23);
+    },
   },
   methods: {
     ...mapActions('work', [AC_DELETE_DATA]),

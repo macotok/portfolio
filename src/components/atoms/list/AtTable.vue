@@ -1,7 +1,7 @@
 <template lang="pug">
   table.atTable
     tr(
-      v-for="(data) in dataList"
+      v-for="data in dataList"
       :key="data.id"
     )
       th.atTable-header

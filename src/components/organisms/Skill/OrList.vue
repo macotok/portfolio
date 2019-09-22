@@ -16,7 +16,7 @@
         template(
           v-if="isLoginAdmin"
         )
-          mo-two-button(
+          mo-two-event-button(
             classNameLeft="atButtonLeft"
             classNameRight="atButtonRight"
             :dataID="slotProps.data.id"
@@ -43,7 +43,7 @@ import { PERMIT_DELETE_SKILL } from '@/defines';
 import AtLazyImage from '@/components/atoms/image/AtLazyImage';
 import AtTable from '@/components/atoms/list/AtTable';
 import AtNl2brText from '@/components/atoms/text/AtNl2brText';
-import MoTwoButton from '@/components/molecules/button/MoTwoButton';
+import MoTwoEventButton from '@/components/molecules/button/MoTwoEventButton';
 import MoConfirmModal from '@/components/molecules/modal/MoConfirmModal';
 
 export default {
@@ -51,7 +51,7 @@ export default {
     AtLazyImage,
     AtTable,
     AtNl2brText,
-    MoTwoButton,
+    MoTwoEventButton,
     MoConfirmModal,
   },
   props: {

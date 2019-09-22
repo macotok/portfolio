@@ -20,32 +20,27 @@
       at-nl2br-text(
         :text="data.text"
       )
-      at-href-button(
-        :styles="styles.atButton"
-        :href="data.url"
-      ) To Page
-      div
-        template(v-if="prevDataId")
-          div.prev
-            router-link(
-              class="moImageList-link"
-              :to="`/work/${prevDataId}`"
-            ) Prev
-        template(v-if="nextDataId")
-          div.next
-            router-link(
-              class="moImageList-link"
-              :to="`/work/${nextDataId}`"
-            ) Next
+      .atButton-blank
+        at-href-button(
+          :styles="styles.atButton"
+          :href="data.url"
+        ) To Page
+      mo-two-router-button(
+        :styles="styles.moTwoRouterButton"
+        :linkToLeft="prevDataId ? `/work/${prevDataId}` : null"
+        :linkToRight="nextDataId ? `/work/${nextDataId}` : null"
+      )
+        template(v-slot:left) Prev
+        template(v-slot:right) Next
       template(
         v-if="isLoginAdmin"
       )
-        mo-two-button(
+        mo-two-event-button(
           classNameLeft="atButtonLeft"
           classNameRight="atButtonRight"
           @click-button-left="confirmDelete"
           @click-button-right="clickEdit"
-          :styles="styles.moTwoButton"
+          :styles="styles.moTwoEventButton"
         )
           template(v-slot:first) 削除
           template(v-slot:second) 編集
@@ -70,7 +65,8 @@ import AtLazyImage from '@/components/atoms/image/AtLazyImage';
 import AtNl2brText from '@/components/atoms/text/AtNl2brText';
 import AtTable02 from '@/components/atoms/list/AtTable02';
 import MoTextList from '@/components/molecules/list/MoTextList';
-import MoTwoButton from '@/components/molecules/button/MoTwoButton';
+import MoTwoEventButton from '@/components/molecules/button/MoTwoEventButton';
+import MoTwoRouterButton from '@/components/molecules/button/MoTwoRouterButton';
 import MoConfirmModal from '@/components/molecules/modal/MoConfirmModal';
 
 export default {
@@ -81,7 +77,8 @@ export default {
     AtNl2brText,
     AtTable02,
     MoTextList,
-    MoTwoButton,
+    MoTwoEventButton,
+    MoTwoRouterButton,
     MoConfirmModal,
   },
   props: {
@@ -111,8 +108,11 @@ export default {
             marginBottom: '1rem',
           },
         },
-        moTwoButton: {
+        moTwoEventButton: {
           justifyContent: 'flex-end',
+        },
+        moTwoRouterButton: {
+          justifyContent: 'space-between',
         },
         atLazyImage: {
           lazyWrapper: {

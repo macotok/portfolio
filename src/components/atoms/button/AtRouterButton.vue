@@ -3,7 +3,7 @@
     :style="styles.button"
   )
     router-link.atButton-link(
-      :to="{name: linkTo}"
+      :to="linkTo ? { name: linkTo } : linkToDirectPage"
       :style="styles.link"
     )
       slot
@@ -13,6 +13,10 @@
 export default {
   props: {
     linkTo: {
+      type: String,
+      default: null,
+    },
+    linkToDirectPage: {
       type: String,
       default: null,
     },

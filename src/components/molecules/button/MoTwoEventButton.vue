@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.moTwoButton(
+  div.moTwoEventButton(
     :style="styles"
   )
     at-event-button(

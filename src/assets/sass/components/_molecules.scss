@@ -75,7 +75,7 @@
   }
 }
 
-.moTwoButton {
+.moTwoEventButton {
   display: flex;
   .atButton {
     margin-left: 1rem;
@@ -89,6 +89,31 @@
     &:hover {
       background-color: $gray-color-04;
       color: $red-color;
+    }
+  }
+  .atButtonRight {
+    background-color: $green-color;
+    border: 1px solid $green-color;
+    &:hover {
+      background-color: $gray-color-04;
+      color: $green-color;
+    }
+  }
+}
+
+.moTwoRouterButton {
+  display: flex;
+  .atButton {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .atButtonLeft {
+    background-color: $green-color;
+    border: 1px solid $green-color;
+    &:hover {
+      background-color: $gray-color-04;
+      color: $green-color;
     }
   }
   .atButtonRight {

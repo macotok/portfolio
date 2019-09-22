@@ -174,6 +174,16 @@ const featureList = [
       ],
   },
   {
+    id: 11,
+    feature:
+      [
+        {
+          name: 'TOPページ/下層テンプレートページ開発',
+          role: 'HTML/CSS/jQueryで開発作業',
+        },
+      ],
+  },
+  {
     id: 10,
     feature:
       [
@@ -184,6 +194,114 @@ const featureList = [
         {
           name: 'エイプリルフールネタとしてギミック考察',
           role: '企画から参加',
+        },
+      ],
+  },
+  {
+    id: 9,
+    feature:
+      [
+        {
+          name: '全画面の開発作業',
+          role: 'HTML/CSS/Javascript/WordPressで開発',
+        },
+        {
+          name: 'csvで記事一括投稿',
+          role: 'WordPressのプラグインで開発',
+        },
+        {
+          name: 'キャプチャ画面を自動ダウンロード',
+          role: '「casperjs」「phantomjs」で開発',
+        },
+        {
+          name: '全画面のデザイン',
+          role: 'デザイン業務',
+        },
+      ],
+  },
+  {
+    id: 8,
+    feature:
+      [
+        {
+          name: 'TOPページ/下層テンプレートページ開発',
+          role: 'HTML/CSS/jQueryで開発作業',
+        },
+      ],
+  },
+  {
+    id: 7,
+    feature:
+      [
+        {
+          name: '全てのアニメーション作業',
+          role: 'CSS3とjQueryで開発',
+        },
+      ],
+  },
+  {
+    id: 6,
+    feature:
+      [
+        {
+          name: '全画面の開発',
+          role: 'WordPressで開発作業',
+        },
+        {
+          name: '「ミスチルFansチャンネル」の投稿をajaxで取得してTOPページに表示',
+          role: '開発作業',
+        },
+        {
+          name: '全画面のデザイン',
+          role: 'デザイン業務',
+        },
+      ],
+  },
+  {
+    id: 5,
+    feature:
+      [
+        {
+          name: 'TOPページ/下層テンプレートページ開発',
+          role: 'HTML/CSS/jQueryで開発作業',
+        },
+      ],
+  },
+  {
+    id: 4,
+    feature:
+      [
+        {
+          name: '全てのアニメーション作業',
+          role: 'CSS3とjQueryで開発',
+        },
+      ],
+  },
+  {
+    id: 3,
+    feature:
+      [
+        {
+          name: '全画面の開発',
+          role: 'HTML/CSS/jQueryで開発作業',
+        },
+        {
+          name: '流し込み用のテンプレートページ開発',
+          role: 'HTML/CSS/jQueryで開発作業',
+        },
+      ],
+  },
+  {
+    id: 2,
+    feature:
+      [
+        {
+          name: 'アイテムの登録と詳細表示/おすすめアイテムの表示/各ショップの登録と詳細表示/Blogの投稿と詳細表示/Stylingの投稿と詳細表示/Newsの投稿と詳細表示をMovableTypeで実装',
+          role: '開発作業',
+        },
+        {
+          name: '全画面の開発作業',
+          role: 'HTML/CSS/jQueryで開発作業',
         },
       ],
   },

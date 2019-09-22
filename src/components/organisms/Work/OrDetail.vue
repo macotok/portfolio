@@ -12,17 +12,11 @@
         :styles="styles.moTextList"
       )
       template(v-if="featureData")
-        table.atTable02
-          thead
-            tr
-              th 機能
-              th 担当
-          tbody
-            tr(v-for="f in featureData.feature")
-              td {{ f.name }}
-              td {{ f.role }}
-      .atTitleH3
-        .atTitleH3-title 工夫したポイント
+        AtTable02(
+          :data="featureData"
+          keyName="feature"
+        )
+      at-title-h3 Point
       at-nl2br-text(
         :text="data.text"
       )
@@ -57,18 +51,22 @@ import { mapActions } from 'vuex';
 import { AC_DELETE_DATA } from '@/store/work/actions/deleteData';
 import { PERMIT_DELETE_WORK } from '@/defines';
 import featureList from '@/defines/work/featureList';
+import AtTitleH3 from '@/components/atoms/text/AtTitleH3';
 import AtHrefButton from '@/components/atoms/button/AtHrefButton';
 import AtLazyImage from '@/components/atoms/image/AtLazyImage';
 import AtNl2brText from '@/components/atoms/text/AtNl2brText';
+import AtTable02 from '@/components/atoms/list/AtTable02';
 import MoTextList from '@/components/molecules/list/MoTextList';
 import MoTwoButton from '@/components/molecules/button/MoTwoButton';
 import MoConfirmModal from '@/components/molecules/modal/MoConfirmModal';
 
 export default {
   components: {
+    AtTitleH3,
     AtHrefButton,
     AtLazyImage,
     AtNl2brText,
+    AtTable02,
     MoTextList,
     MoTwoButton,
     MoConfirmModal,
@@ -93,7 +91,7 @@ export default {
         },
         moTextList: {
           ul: {
-            marginBottom: '0',
+            marginBottom: '1rem',
           },
         },
         moTwoButton: {

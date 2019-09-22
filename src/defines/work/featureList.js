@@ -4,11 +4,11 @@ const featureList = [
     feature:
       [
         {
-          name: 'React/Redux/Material-UIでView側を制作',
+          name: 'React/Redux/Material-UIでView側を開発',
           role: '開発作業',
         },
         {
-          name: 'サーバーサイドは「Firebase」で制作',
+          name: 'サーバーサイドは「Firebase」で開発',
           role: '開発作業',
         },
       ],
@@ -45,10 +45,68 @@ const featureList = [
         },
         {
           name: '「News」「Collection」「Exhibition」の投稿機能',
-          role: 'WordPressのカスタム投稿タイプで開発',
+          role: 'WordPressのカスタム投稿タイプ、カスタムフィールドで開発',
         },
         {
           name: '「Contact」のお問い合わせ機能',
+          role: 'WordPressのプラグインで開発',
+        },
+      ],
+  },
+  {
+    id: 18,
+    feature:
+      [
+        {
+          name: 'Meteorでクライアント/サーバーの構築',
+          role: '投稿機能/ログインログアウト処理/スレッド編集削除機能/ユーザー管理画面構築/Routing処理/サーバー処理/いいね機能/返信機能/ユーザーと動画同時再生機能',
+        },
+        {
+          name: 'DBはMongoDBを使用',
+          role: 'MeteorからサーバーにRequest/Response',
+        },
+        {
+          name: 'Herokuでインフラ構築',
+          role: '構築作業',
+        },
+        {
+          name: 'YouTubeのAPIを使って動画選択/再生機能',
+          role: '開発作業とリアルタイム投稿機能',
+        },
+        {
+          name: 'TwitterのAPIを使って関連ツイートを取得',
+          role: '開発作業とCron構築',
+        },
+        {
+          name: '全画面のデザイン',
+          role: 'デザイン業務',
+        },
+      ],
+  },
+  {
+    id: 17,
+    feature:
+      [
+        {
+          name: '全てのアニメーション処理',
+          role: 'CSS3とjQueryで開発',
+        },
+      ],
+  },
+  {
+    id: 16,
+    feature:
+      [
+        {
+          name: '「採用情報」を除く全画面',
+          role: 'HTML/CSS/Javascript/WordPressで開発',
+        },
+        {
+          name: '「ニュース」の投稿機能',
+          role: 'WordPressのカスタムフィールドで開発',
+        },
+        {
+          name: '「お問い合わせ」のお問い合わせ機能',
           role: 'WordPressのプラグインで開発',
         },
       ],

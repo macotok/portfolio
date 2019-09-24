@@ -10,6 +10,7 @@
 body {
   color: $black-color-01;
   font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'メイリオ', sans-serif;
+  word-break : break-all;
 }
 a {
   :hover {

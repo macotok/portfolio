@@ -21,16 +21,23 @@
       background-color: $red-color;
       border: 1px solid $red-color;
     }
-    &:hover {
-      background-color: $gray-color-04;
-      color: $link-color;
-      .atButton-blank & {
+  }
+}
+
+@include mq-up(xl) {
+  .atButton {
+    &-link {
+      &:hover {
         background-color: $gray-color-04;
-        color: $green-color;
-      }
-      .atButton-danger & {
-        background-color: $gray-color-04;
-        color: $red-color;
+        color: $link-color;
+        .atButton-blank & {
+          background-color: $gray-color-04;
+          color: $green-color;
+        }
+        .atButton-danger & {
+          background-color: $gray-color-04;
+          color: $red-color;
+        }
       }
     }
   }

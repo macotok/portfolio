@@ -1,7 +1,7 @@
 import dateFns from 'date-fns';
+import { firestore, storage } from '@/server/firebase';
 import { FIREBASE_SKILL } from '@/defines';
 import postServer from '@/server/POST';
-import putServer from '@/server/PUT';
 import { MU_SAVE_DATA } from '@/store/skill/mutations/saveData';
 
 export const AC_SAVE_DATA = 'AC_SAVE_DATA';
@@ -21,7 +21,38 @@ const saveData = {
       };
       stateDB.splice(editIdOfArray, 1, updateData);
       if (process.env.SWITCH_DATABASE === 'production') {
-        putServer(stateDB[editIdOfArray], updateData, FIREBASE_SKILL);
+        if ((updateData.image.path).indexOf('https:') === 0) {
+          firestore.collection(FIREBASE_SKILL)
+          .doc((updateData.id).toString(10))
+          .update(updateData)
+          .then(() => {
+            context.commit(MU_SAVE_DATA, stateDB);
+          });
+        } else {
+          const storageRef = storage.ref();
+          const imagesRef = storageRef.child(`images/${FIREBASE_SKILL}/${updateData.id}/${updateData.image.name}`);
+          imagesRef.putString(updateData.image.path, 'data_url')
+            .then((snapshot) => {
+              const starsRef = storageRef.child(snapshot.metadata.fullPath);
+              starsRef.getDownloadURL()
+              .then((url) => {
+                const updateOtherData = {
+                  image: {
+                    path: url,
+                    name: updateData.image.name,
+                  },
+                };
+                firestore.collection(FIREBASE_SKILL)
+                  .doc((updateData.id).toString(10))
+                  .update(Object.assign({}, { ...updateData }, { ...updateOtherData }));
+              })
+              .then(() => {
+                context.commit(MU_SAVE_DATA, stateDB);
+              });
+            });
+        }
+      } else {
+          context.commit(MU_SAVE_DATA, stateDB);
       }
     // 新規画面でstateのDBを追加
     } else {

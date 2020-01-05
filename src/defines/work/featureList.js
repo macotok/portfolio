@@ -16,7 +16,7 @@ const featureList = [
           role: '開発作業',
         },
         {
-          name: 'hostingとcontact「Netlify」で構築、',
+          name: 'hostingとcontact「Netlify」で構築',
           role: '構築作業',
         },
       ],

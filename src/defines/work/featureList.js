@@ -1,5 +1,27 @@
 const featureList = [
   {
+    id: 29,
+    feature:
+      [
+        {
+          name: 'WordPressのCMSで投稿したdataをAPI(GraphQL)で受け取る。ViewはReactで構築',
+          role: '開発作業',
+        },
+        {
+          name: 'WordPressのCMS機能「投稿」「カスタムタイプ投稿」「固定ページ」「Advanced Custom Fields」「Menu」',
+          role: '開発作業',
+        },
+        {
+          name: 'styleはMaterial-UIとStyled-Componentsで構成',
+          role: '開発作業',
+        },
+        {
+          name: 'hostingとcontact「Netlify」で構築、',
+          role: '構築作業',
+        },
+      ],
+  },
+  {
     id: 28,
     feature:
       [

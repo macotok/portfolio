@@ -1,5 +1,23 @@
 const featureList = [
   {
+    id: 30,
+    feature:
+      [
+        {
+          name: 'React Hooks/Redux/BootstrapでView側を開発',
+          role: '開発作業',
+        },
+        {
+          name: 'React Hooks/ReduxにTypeScriptを導入',
+          role: '開発作業',
+        },
+        {
+          name: 'hostingは「Firebase」で構築',
+          role: '構築作業',
+        },
+      ],
+  },
+  {
     id: 29,
     feature:
       [

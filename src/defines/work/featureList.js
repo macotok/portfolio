@@ -48,7 +48,7 @@ const featureList = [
           role: '開発作業',
         },
         {
-          name: '記事の表示順制御機能、記事複製機能、記事の全件削除機能、faker制作、記事のプレビュー機能開発、記事の公開日時/表示日時の日時設定機能、都道府県店舗表示機能',
+          name: '記事一覧画面/新規登録画面/記事編集画面作成、Firebaseからdataを取得後、providerで管理する処理を開発、事業者ごとのFiltering機能、各入力項目の作成、記事の表示順制御機能、記事複製機能、他resourceのreference機能、providerからdata取得、connect関数でdata取得、dispatch、記事のプレビュー機能開発、記事の公開日時/表示日時の日時設定機能、検索機能、TypeScript導入、Jest導入、修正作業',
           role: '開発作業',
         },
       ],

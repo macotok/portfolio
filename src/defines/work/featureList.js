@@ -1,5 +1,19 @@
 const featureList = [
   {
+    id: 31,
+    feature:
+      [
+        {
+          name: '料金アラートを設定/IAMユーザー作成/CloudTrail設定',
+          role: '初期設定',
+        },
+        {
+          name: 'VPCネットワーク/パブリックサブネット/プライベートサブネット/ルーティング/EC2インスタンス/キーペアの作成/ApacheでWebサーバー構築/ファイアウォールの設定/Route53でDNS設定/RDSでDBサーバー構築',
+          role: '構築',
+        },
+      ],
+  },
+  {
     id: 30,
     feature:
       [
